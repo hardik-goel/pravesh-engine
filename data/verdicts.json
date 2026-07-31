@@ -1,0 +1,47 @@
+[
+  {
+    "ipo_slug": "manipal-health",
+    "ipo_name": "Manipal Health",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 14.2,
+    "created_at": "2026-07-31T08:42:36.350544+00:00",
+    "listing_date": "2026-08-05",
+    "issue_price": 590.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
+  },
+  {
+    "ipo_slug": "juniper-green-energy",
+    "ipo_name": "Juniper Green Energy",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 6.4,
+    "created_at": "2026-07-31T08:42:36.350901+00:00",
+    "listing_date": "2026-08-06",
+    "issue_price": 225.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
+  },
+  {
+    "ipo_slug": "mv-electrosystems",
+    "ipo_name": "MV Electrosystems",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 25.8,
+    "created_at": "2026-07-31T08:42:36.351266+00:00",
+    "listing_date": "2026-08-06",
+    "issue_price": 425.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
+  }
+]

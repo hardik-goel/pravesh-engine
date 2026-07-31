@@ -1,0 +1,113 @@
+name: Pravesh Daily
+
+on:
+  schedule:
+    # 03:30 UTC = 09:00 IST, weekdays only (Indian primary market does not bid on weekends)
+    - cron: "30 3 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (build the report, send nothing)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: pravesh-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    name: Scrape · score · deliver
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Pravesh
+        env:
+          # Delivery
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Store — leave PRAVESH_STORE unset for the default JSON store
+          PRAVESH_STORE: ${{ vars.PRAVESH_STORE }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          PRAVESH_LOG_LEVEL: INFO
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -m src.main --dry-run
+          else
+            python -m src.main
+          fi
+
+      - name: Commit results (JSON store only)
+        if: ${{ vars.PRAVESH_STORE != 'supabase' && inputs.dry_run != true }}
+        run: |
+          git config user.name  "pravesh-bot"
+          git config user.email "pravesh-bot@users.noreply.github.com"
+          git add data/verdicts.json data/source_calls.json data/latest.json
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "data: pravesh run $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase --autostash origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: Upload dry-run preview
+        if: ${{ inputs.dry_run == true }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pravesh-preview
+          path: out/pravesh_preview.html
+          if-no-files-found: ignore
+
+  notify-failure:
+    name: Email failure notice
+    runs-on: ubuntu-latest
+    needs: run
+    if: failure()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Send plain-text failure notice
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: |
+          python - <<'PY'
+          from src.report.email_builder import send_failure_notice
+          import os
+          run_url = (
+              f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/"
+              f"{os.environ.get('GITHUB_REPOSITORY', '')}/actions/runs/"
+              f"{os.environ.get('GITHUB_RUN_ID', '')}"
+          )
+          send_failure_notice(f"The daily job failed before delivering a report.\n\nRun log: {run_url}")
+          PY

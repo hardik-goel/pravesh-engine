@@ -1,0 +1,608 @@
+"""Dataclasses shared by every layer of Pravesh.
+
+Every object here is JSON round-trippable via `to_dict()` / `from_dict()` so the store
+backend (JSON files or Supabase) never needs bespoke serialisation logic.
+"""
+
+from __future__ import annotations
+
+import re
+from dataclasses import asdict, dataclass, field
+from datetime import date, datetime
+from enum import Enum
+from typing import Any, Optional
+
+# --------------------------------------------------------------------------------------
+# Enums
+# --------------------------------------------------------------------------------------
+
+
+class Segment(str, Enum):
+    MAINBOARD = "MAINBOARD"
+    SME = "SME"
+
+
+class IPOStatus(str, Enum):
+    UPCOMING = "UPCOMING"
+    OPEN = "OPEN"
+    CLOSED = "CLOSED"  # bidding done, not yet listed
+    LISTED = "LISTED"
+    UNKNOWN = "UNKNOWN"
+
+
+class Stance(str, Enum):
+    """What a source said. Ordered loosely from most positive to most negative."""
+
+    APPLY = "APPLY"
+    SUBSCRIBE_LONG_TERM = "SUBSCRIBE_LONG_TERM"
+    APPLY_LISTING_GAINS = "APPLY_LISTING_GAINS"
+    NEUTRAL = "NEUTRAL"
+    AVOID = "AVOID"
+    NO_VIEW = "NO_VIEW"
+
+    @property
+    def is_apply_type(self) -> bool:
+        return self in (Stance.APPLY, Stance.SUBSCRIBE_LONG_TERM, Stance.APPLY_LISTING_GAINS)
+
+    @property
+    def is_avoid_type(self) -> bool:
+        return self is Stance.AVOID
+
+    @property
+    def is_scorable(self) -> bool:
+        """NEUTRAL and NO_VIEW are excluded from the accuracy ledger."""
+        return self.is_apply_type or self.is_avoid_type
+
+    @property
+    def label(self) -> str:
+        return {
+            Stance.APPLY: "Subscribe",
+            Stance.SUBSCRIBE_LONG_TERM: "Subscribe — long term",
+            Stance.APPLY_LISTING_GAINS: "Subscribe — listing gains",
+            Stance.NEUTRAL: "Neutral",
+            Stance.AVOID: "Avoid",
+            Stance.NO_VIEW: "No view",
+        }[self]
+
+    @property
+    def polarity(self) -> float:
+        """+1 bullish, 0 neutral/no view, -1 bearish. Used by consensus maths."""
+        if self is Stance.APPLY:
+            return 1.0
+        if self is Stance.SUBSCRIBE_LONG_TERM:
+            return 0.85
+        if self is Stance.APPLY_LISTING_GAINS:
+            return 0.7
+        if self is Stance.AVOID:
+            return -1.0
+        return 0.0
+
+
+# --------------------------------------------------------------------------------------
+# Helpers
+# --------------------------------------------------------------------------------------
+
+
+def slugify(name: str) -> str:
+    """Stable identity for an IPO across runs and stores."""
+    cleaned = re.sub(r"[^a-z0-9]+", "-", name.strip().lower())
+    return cleaned.strip("-") or "unknown"
+
+
+def _iso(value: Optional[date | datetime]) -> Optional[str]:
+    return value.isoformat() if value is not None else None
+
+
+def _parse_date(value: Any) -> Optional[date]:
+    if value in (None, ""):
+        return None
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    try:
+        return date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
+
+
+def _parse_datetime(value: Any) -> Optional[datetime]:
+    if value in (None, ""):
+        return None
+    if isinstance(value, datetime):
+        return value
+    try:
+        return datetime.fromisoformat(str(value))
+    except ValueError:
+        return None
+
+
+# --------------------------------------------------------------------------------------
+# Core entities
+# --------------------------------------------------------------------------------------
+
+
+@dataclass
+class Subscription:
+    """Live bidding multiples. None means "not published yet"."""
+
+    qib: Optional[float] = None
+    nii: Optional[float] = None
+    retail: Optional[float] = None
+    employee: Optional[float] = None
+    total: Optional[float] = None
+    updated_at: Optional[str] = None
+
+    @property
+    def has_data(self) -> bool:
+        return any(v is not None for v in (self.qib, self.nii, self.retail, self.total))
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any] | None) -> "Subscription":
+        raw = raw or {}
+        return cls(
+            qib=raw.get("qib"),
+            nii=raw.get("nii"),
+            retail=raw.get("retail"),
+            employee=raw.get("employee"),
+            total=raw.get("total"),
+            updated_at=raw.get("updated_at"),
+        )
+
+
+@dataclass
+class IPO:
+    """The calendar spine. Everything else is matched onto this by name."""
+
+    name: str
+    segment: Segment
+    slug: str = ""
+    status: IPOStatus = IPOStatus.UNKNOWN
+    open_date: Optional[date] = None
+    close_date: Optional[date] = None
+    allotment_date: Optional[date] = None
+    listing_date: Optional[date] = None
+    price_band_low: Optional[float] = None
+    price_band_high: Optional[float] = None
+    lot_size: Optional[int] = None
+    min_investment: Optional[float] = None
+    issue_size_cr: Optional[float] = None
+    fresh_issue_cr: Optional[float] = None
+    ofs_cr: Optional[float] = None
+    subscription: Subscription = field(default_factory=Subscription)
+    gmp: Optional[float] = None
+    gmp_pct: Optional[float] = None
+    gmp_source: Optional[str] = None
+    detail_url: Optional[str] = None
+    exchange: Optional[str] = None
+
+    def __post_init__(self) -> None:
+        if not self.slug:
+            self.slug = slugify(self.name)
+        if isinstance(self.segment, str):
+            self.segment = Segment(self.segment)
+        if isinstance(self.status, str):
+            self.status = IPOStatus(self.status)
+
+    # -- derived -----------------------------------------------------------------------
+
+    @property
+    def is_sme(self) -> bool:
+        return self.segment is Segment.SME
+
+    @property
+    def ofs_pct(self) -> Optional[float]:
+        if self.issue_size_cr and self.ofs_cr is not None and self.issue_size_cr > 0:
+            return round(100.0 * self.ofs_cr / self.issue_size_cr, 1)
+        if self.issue_size_cr and self.fresh_issue_cr is not None and self.issue_size_cr > 0:
+            return round(100.0 * (1 - self.fresh_issue_cr / self.issue_size_cr), 1)
+        return None
+
+    @property
+    def price_band_label(self) -> str:
+        if self.price_band_low and self.price_band_high:
+            if abs(self.price_band_low - self.price_band_high) < 0.01:
+                return f"₹{self.price_band_high:,.0f}"
+            return f"₹{self.price_band_low:,.0f}–₹{self.price_band_high:,.0f}"
+        if self.price_band_high:
+            return f"₹{self.price_band_high:,.0f}"
+        return "—"
+
+    def status_on(self, today: date) -> IPOStatus:
+        """Recompute status against a reference date; dates beat whatever was scraped."""
+        if self.listing_date and today >= self.listing_date:
+            return IPOStatus.LISTED
+        if self.close_date and today > self.close_date:
+            return IPOStatus.CLOSED
+        if self.open_date and self.close_date and self.open_date <= today <= self.close_date:
+            return IPOStatus.OPEN
+        if self.open_date and today < self.open_date:
+            return IPOStatus.UPCOMING
+        return self.status
+
+    # -- serialisation -----------------------------------------------------------------
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "name": self.name,
+            "slug": self.slug,
+            "segment": self.segment.value,
+            "status": self.status.value,
+            "open_date": _iso(self.open_date),
+            "close_date": _iso(self.close_date),
+            "allotment_date": _iso(self.allotment_date),
+            "listing_date": _iso(self.listing_date),
+            "price_band_low": self.price_band_low,
+            "price_band_high": self.price_band_high,
+            "price_band_label": self.price_band_label,
+            "lot_size": self.lot_size,
+            "min_investment": self.min_investment,
+            "issue_size_cr": self.issue_size_cr,
+            "fresh_issue_cr": self.fresh_issue_cr,
+            "ofs_cr": self.ofs_cr,
+            "ofs_pct": self.ofs_pct,
+            "subscription": self.subscription.to_dict(),
+            "gmp": self.gmp,
+            "gmp_pct": self.gmp_pct,
+            "gmp_source": self.gmp_source,
+            "detail_url": self.detail_url,
+            "exchange": self.exchange,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> "IPO":
+        return cls(
+            name=raw["name"],
+            segment=Segment(raw.get("segment", "MAINBOARD")),
+            slug=raw.get("slug", ""),
+            status=IPOStatus(raw.get("status", "UNKNOWN")),
+            open_date=_parse_date(raw.get("open_date")),
+            close_date=_parse_date(raw.get("close_date")),
+            allotment_date=_parse_date(raw.get("allotment_date")),
+            listing_date=_parse_date(raw.get("listing_date")),
+            price_band_low=raw.get("price_band_low"),
+            price_band_high=raw.get("price_band_high"),
+            lot_size=raw.get("lot_size"),
+            min_investment=raw.get("min_investment"),
+            issue_size_cr=raw.get("issue_size_cr"),
+            fresh_issue_cr=raw.get("fresh_issue_cr"),
+            ofs_cr=raw.get("ofs_cr"),
+            subscription=Subscription.from_dict(raw.get("subscription")),
+            gmp=raw.get("gmp"),
+            gmp_pct=raw.get("gmp_pct"),
+            gmp_source=raw.get("gmp_source"),
+            detail_url=raw.get("detail_url"),
+            exchange=raw.get("exchange"),
+        )
+
+
+@dataclass
+class SourceCall:
+    """One named source's stance on one IPO. The atom of the accuracy ledger."""
+
+    source_name: str
+    ipo_slug: str
+    ipo_name: str
+    stance: Stance
+    rationale: str = ""
+    url: Optional[str] = None
+    captured_at: Optional[str] = None
+    segment: Segment = Segment.MAINBOARD
+    is_synthetic: bool = False  # GMP signal / QIB signal
+    # Outcome resolution (filled in once the IPO lists)
+    resolved: bool = False
+    correct: Optional[bool] = None
+    listing_gain_pct: Optional[float] = None
+    resolved_at: Optional[str] = None
+
+    def __post_init__(self) -> None:
+        if isinstance(self.stance, str):
+            self.stance = Stance(self.stance)
+        if isinstance(self.segment, str):
+            self.segment = Segment(self.segment)
+
+    @property
+    def key(self) -> str:
+        return f"{self.ipo_slug}::{self.source_name}"
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "ipo_slug": self.ipo_slug,
+            "ipo_name": self.ipo_name,
+            "stance": self.stance.value,
+            "rationale": self.rationale,
+            "url": self.url,
+            "captured_at": self.captured_at,
+            "segment": self.segment.value,
+            "is_synthetic": self.is_synthetic,
+            "resolved": self.resolved,
+            "correct": self.correct,
+            "listing_gain_pct": self.listing_gain_pct,
+            "resolved_at": self.resolved_at,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> "SourceCall":
+        return cls(
+            source_name=raw["source_name"],
+            ipo_slug=raw["ipo_slug"],
+            ipo_name=raw.get("ipo_name", raw["ipo_slug"]),
+            stance=Stance(raw.get("stance", "NO_VIEW")),
+            rationale=raw.get("rationale", ""),
+            url=raw.get("url"),
+            captured_at=raw.get("captured_at"),
+            segment=Segment(raw.get("segment", "MAINBOARD")),
+            is_synthetic=bool(raw.get("is_synthetic", False)),
+            resolved=bool(raw.get("resolved", False)),
+            correct=raw.get("correct"),
+            listing_gain_pct=raw.get("listing_gain_pct"),
+            resolved_at=raw.get("resolved_at"),
+        )
+
+
+@dataclass
+class SourceAccuracy:
+    """Rolling ledger stats for one source identity."""
+
+    source_name: str
+    n_all: int = 0
+    correct_all: int = 0
+    n_recent: int = 0
+    correct_recent: int = 0
+    is_synthetic: bool = False
+
+    @property
+    def accuracy_all(self) -> Optional[float]:
+        return round(100.0 * self.correct_all / self.n_all, 1) if self.n_all else None
+
+    @property
+    def accuracy_recent(self) -> Optional[float]:
+        return round(100.0 * self.correct_recent / self.n_recent, 1) if self.n_recent else None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "n_all": self.n_all,
+            "correct_all": self.correct_all,
+            "accuracy_all": self.accuracy_all,
+            "n_recent": self.n_recent,
+            "correct_recent": self.correct_recent,
+            "accuracy_recent": self.accuracy_recent,
+            "is_synthetic": self.is_synthetic,
+        }
+
+
+@dataclass
+class EvidenceRow:
+    """One row of the per-IPO evidence table — the product's heart."""
+
+    source_name: str
+    stance: Stance
+    rationale: str
+    accuracy_pct: Optional[float] = None
+    accuracy_n: int = 0
+    accuracy_label: str = ""
+    url: Optional[str] = None
+    is_synthetic: bool = False
+
+    def __post_init__(self) -> None:
+        if isinstance(self.stance, str):
+            self.stance = Stance(self.stance)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "source_name": self.source_name,
+            "stance": self.stance.value,
+            "stance_label": self.stance.label,
+            "rationale": self.rationale,
+            "accuracy_pct": self.accuracy_pct,
+            "accuracy_n": self.accuracy_n,
+            "accuracy_label": self.accuracy_label,
+            "url": self.url,
+            "is_synthetic": self.is_synthetic,
+        }
+
+
+@dataclass
+class Evidence:
+    ipo_slug: str
+    rows: list[EvidenceRow] = field(default_factory=list)
+
+    @property
+    def named_rows(self) -> list[EvidenceRow]:
+        """Human sources only — excludes GMP/QIB synthetic signals."""
+        return [r for r in self.rows if not r.is_synthetic]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"ipo_slug": self.ipo_slug, "rows": [r.to_dict() for r in self.rows]}
+
+
+@dataclass
+class ScoreComponent:
+    """Audit trail for one weighted input into My Take."""
+
+    key: str
+    label: str
+    raw_value: Optional[float]
+    normalised: float  # 0..1
+    base_weight: float
+    calibration_multiplier: float
+    effective_weight: float
+    contribution: float
+    note: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class Take:
+    """My take: score, band, reasoning, flags. Never the last word."""
+
+    ipo_slug: str
+    score: float
+    verdict_key: str
+    verdict_label: str
+    verdict_emoji: str
+    verdict_color: str
+    paragraph: str
+    one_liner: str
+    preliminary: bool = False
+    has_score: bool = True  # False when nothing has landed yet — we print "—", not 0/100
+    flags: list[str] = field(default_factory=list)
+    components: list[ScoreComponent] = field(default_factory=list)
+    modifiers: list[str] = field(default_factory=list)
+    strongest_for: str = ""
+    strongest_against: str = ""
+    created_at: Optional[str] = None
+
+    @property
+    def has_veto(self) -> bool:
+        return bool(self.flags)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ipo_slug": self.ipo_slug,
+            "score": self.score,
+            "verdict_key": self.verdict_key,
+            "verdict_label": self.verdict_label,
+            "verdict_emoji": self.verdict_emoji,
+            "verdict_color": self.verdict_color,
+            "paragraph": self.paragraph,
+            "one_liner": self.one_liner,
+            "preliminary": self.preliminary,
+            "has_score": self.has_score,
+            "flags": list(self.flags),
+            "components": [c.to_dict() for c in self.components],
+            "modifiers": list(self.modifiers),
+            "strongest_for": self.strongest_for,
+            "strongest_against": self.strongest_against,
+            "created_at": self.created_at,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> "Take":
+        return cls(
+            ipo_slug=raw["ipo_slug"],
+            score=raw.get("score", 0.0),
+            verdict_key=raw.get("verdict_key", "AVOID"),
+            verdict_label=raw.get("verdict_label", ""),
+            verdict_emoji=raw.get("verdict_emoji", ""),
+            verdict_color=raw.get("verdict_color", "#000000"),
+            paragraph=raw.get("paragraph", ""),
+            one_liner=raw.get("one_liner", ""),
+            preliminary=bool(raw.get("preliminary", False)),
+            has_score=bool(raw.get("has_score", True)),
+            flags=list(raw.get("flags", [])),
+            modifiers=list(raw.get("modifiers", [])),
+            strongest_for=raw.get("strongest_for", ""),
+            strongest_against=raw.get("strongest_against", ""),
+            created_at=raw.get("created_at"),
+        )
+
+
+@dataclass
+class VerdictRecord:
+    """Persisted my-take history + the eventual listing outcome."""
+
+    ipo_slug: str
+    ipo_name: str
+    segment: Segment
+    verdict_key: str
+    score: float
+    created_at: str
+    listing_date: Optional[str] = None
+    issue_price: Optional[float] = None
+    listing_price: Optional[float] = None
+    listing_gain_pct: Optional[float] = None
+    resolved: bool = False
+    correct: Optional[bool] = None
+    flags: list[str] = field(default_factory=list)
+
+    def __post_init__(self) -> None:
+        if isinstance(self.segment, str):
+            self.segment = Segment(self.segment)
+
+    def to_dict(self) -> dict[str, Any]:
+        payload = asdict(self)
+        payload["segment"] = self.segment.value
+        return payload
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> "VerdictRecord":
+        return cls(
+            ipo_slug=raw["ipo_slug"],
+            ipo_name=raw.get("ipo_name", raw["ipo_slug"]),
+            segment=Segment(raw.get("segment", "MAINBOARD")),
+            verdict_key=raw.get("verdict_key", "AVOID"),
+            score=raw.get("score", 0.0),
+            created_at=raw.get("created_at", ""),
+            listing_date=raw.get("listing_date"),
+            issue_price=raw.get("issue_price"),
+            listing_price=raw.get("listing_price"),
+            listing_gain_pct=raw.get("listing_gain_pct"),
+            resolved=bool(raw.get("resolved", False)),
+            correct=raw.get("correct"),
+            flags=list(raw.get("flags", [])),
+        )
+
+
+@dataclass
+class RunResult:
+    """Everything one run produced. Serialised straight into data/latest.json."""
+
+    run_at: str
+    run_date: str
+    ipos: list[IPO] = field(default_factory=list)
+    evidence: dict[str, Evidence] = field(default_factory=dict)
+    takes: dict[str, Take] = field(default_factory=dict)
+    leaderboard: list[SourceAccuracy] = field(default_factory=list)
+    own_accuracy: dict[str, Any] = field(default_factory=dict)
+    history: list[VerdictRecord] = field(default_factory=list)
+    sources_failed: list[str] = field(default_factory=list)
+    sources_ok: list[str] = field(default_factory=list)
+    dry_run: bool = False
+
+    # -- bucketing used by every surface --------------------------------------------
+
+    def by_status(self, status: IPOStatus) -> list[IPO]:
+        return [i for i in self.ipos if i.status is status]
+
+    @property
+    def open_ipos(self) -> list[IPO]:
+        return self.by_status(IPOStatus.OPEN)
+
+    @property
+    def upcoming_ipos(self) -> list[IPO]:
+        return self.by_status(IPOStatus.UPCOMING)
+
+    @property
+    def watch_ipos(self) -> list[IPO]:
+        """Closed but not yet listed — allotment & listing watch."""
+        return self.by_status(IPOStatus.CLOSED)
+
+    def closing_tomorrow(self, today: date) -> list[IPO]:
+        return [i for i in self.open_ipos if i.close_date and (i.close_date - today).days <= 1]
+
+    @property
+    def is_quiet(self) -> bool:
+        return not (self.open_ipos or self.upcoming_ipos or self.watch_ipos)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "run_at": self.run_at,
+            "run_date": self.run_date,
+            "ipos": [i.to_dict() for i in self.ipos],
+            "evidence": {k: v.to_dict() for k, v in self.evidence.items()},
+            "takes": {k: v.to_dict() for k, v in self.takes.items()},
+            "leaderboard": [s.to_dict() for s in self.leaderboard],
+            "own_accuracy": self.own_accuracy,
+            "history": [h.to_dict() for h in self.history],
+            "sources_failed": list(self.sources_failed),
+            "sources_ok": list(self.sources_ok),
+            "dry_run": self.dry_run,
+        }
