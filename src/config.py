@@ -431,6 +431,9 @@ TELEGRAM: Final[dict[str, object]] = {
     "token_env": "TELEGRAM_BOT_TOKEN",  # shared with the Trinetra stock bot
     "chat_env": "TELEGRAM_CHAT_ID",
     "max_chars": 4096,
+    # Telegram's hard ceiling is 4096; we start dropping the least urgent IPO lines well
+    # before that so the message ends on a clean "…+N more", never mid-word.
+    "soft_max_chars": 4000,
     "parse_mode": "HTML",
     "disable_web_page_preview": True,
     "closing_tomorrow_prefix": "⚡ ",

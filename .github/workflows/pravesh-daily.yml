@@ -61,17 +61,47 @@ jobs:
 
       - name: Commit results (JSON store only)
         if: ${{ vars.PRAVESH_STORE != 'supabase' && inputs.dry_run != true }}
+        env:
+          BRANCH: ${{ github.ref_name }}
         run: |
+          set -euo pipefail
+
           git config user.name  "pravesh-bot"
           git config user.email "pravesh-bot@users.noreply.github.com"
-          git add data/verdicts.json data/source_calls.json data/latest.json
-          if git diff --staged --quiet; then
-            echo "No data changes to commit."
-          else
-            git commit -m "data: pravesh run $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git pull --rebase --autostash origin ${{ github.ref_name }}
-            git push origin HEAD:${{ github.ref_name }}
-          fi
+
+          # These files are regenerated in full every run, so a line-by-line merge of them is
+          # meaningless — it only manufactures conflicts. We therefore never rebase or merge
+          # them. Instead: park this run's files, hard-reset onto the branch tip, drop the
+          # files back on top, and fold the branch's accumulated ledger back in (so "ours"
+          # is always a superset, never a truncation of history). Then commit and push.
+          STAGE="${RUNNER_TEMP}/pravesh-data"
+          rm -rf "$STAGE"
+          mkdir -p "$STAGE"
+          cp data/verdicts.json data/source_calls.json data/latest.json "$STAGE"/
+
+          for attempt in 1 2 3; do
+            git fetch --quiet origin "+refs/heads/${BRANCH}:refs/remotes/origin/${BRANCH}"
+            git reset --quiet --hard "origin/${BRANCH}"
+            cp "$STAGE"/*.json data/
+            python scripts/reconcile_data.py --ref "origin/${BRANCH}"
+
+            git add data/verdicts.json data/source_calls.json data/latest.json
+            if git diff --staged --quiet; then
+              echo "No data changes to commit."
+              exit 0
+            fi
+
+            git commit --quiet -m "data: pravesh run $(date -u +'%Y-%m-%d %H:%M UTC')"
+            if git push --quiet origin "HEAD:${BRANCH}"; then
+              echo "Pushed data update on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected on attempt ${attempt} — refetching and replaying."
+          done
+
+          # The report has already been delivered by this point, so a stubborn push race is
+          # not a failed run — failing here would fire the "failed before delivering" email.
+          echo "::warning::Could not push data updates after 3 attempts; tomorrow's run will carry them."
 
       - name: Upload dry-run preview
         if: ${{ inputs.dry_run == true }}
