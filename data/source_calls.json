@@ -474,10 +474,10 @@
     "captured_at": "2026-08-02T15:56:42.039869+00:00",
     "segment": "SME",
     "is_synthetic": true,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 8.16,
+    "resolved_at": "2026-08-02T16:41:59.734980+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -519,10 +519,10 @@
     "captured_at": "2026-08-02T15:56:42.053197+00:00",
     "segment": "SME",
     "is_synthetic": false,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 8.16,
+    "resolved_at": "2026-08-02T16:41:59.734980+00:00"
   },
   {
     "source_name": "Anil Singhvi",

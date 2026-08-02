@@ -4,8 +4,8 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-08-02T15:57:56.306698+00:00",
-  "generated_at_market": "02 Aug 2026, 21:27 IST",
+  "generated_at": "2026-08-02T16:43:06.518181+00:00",
+  "generated_at_market": "02 Aug 2026, 22:13 IST",
   "run_date": "2026-08-02",
   "counts": {
     "open": 6,
@@ -65,7 +65,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-02T15:57:56.304611+00:00"
+        "created_at": "2026-08-02T16:43:06.515529+00:00"
       },
       "flags": []
     },
@@ -120,7 +120,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-02T15:57:56.304662+00:00"
+        "created_at": "2026-08-02T16:43:06.515574+00:00"
       },
       "flags": []
     },
@@ -175,7 +175,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-02T15:57:56.304678+00:00"
+        "created_at": "2026-08-02T16:43:06.515594+00:00"
       },
       "flags": []
     },
@@ -217,9 +217,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹5 premium (+3.8% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -242,7 +242,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-02T15:57:56.304690+00:00"
+        "created_at": "2026-08-02T16:43:06.515606+00:00"
       },
       "flags": []
     },
@@ -284,9 +284,9 @@
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
           "rationale": "Indicative, unofficial grey-market premium: ₹5 premium (+5.3% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -313,7 +313,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 13.15,
-            "note": "+5.3% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+5.3% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -322,7 +322,7 @@
         ],
         "strongest_for": "the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-02T15:57:56.304820+00:00"
+        "created_at": "2026-08-02T16:43:06.515715+00:00"
       },
       "flags": []
     },
@@ -364,9 +364,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -393,7 +393,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -403,7 +403,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.304948+00:00"
+        "created_at": "2026-08-02T16:43:06.515874+00:00"
       },
       "flags": []
     },
@@ -445,9 +445,9 @@
           "stance": "APPLY",
           "stance_label": "Subscribe",
           "rationale": "Indicative, unofficial grey-market premium: ₹225 premium (+74.8% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -474,7 +474,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 100.0,
-            "note": "+74.8% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+74.8% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -483,7 +483,7 @@
         ],
         "strongest_for": "the grey market is quoting a 75% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-02T15:57:56.305063+00:00"
+        "created_at": "2026-08-02T16:43:06.516013+00:00"
       },
       "flags": []
     },
@@ -536,9 +536,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹2 premium (+2.3% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -565,7 +565,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 5.68,
-            "note": "+2.3% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+2.3% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -575,7 +575,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 2%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.305190+00:00"
+        "created_at": "2026-08-02T16:43:06.516159+00:00"
       },
       "flags": []
     },
@@ -628,9 +628,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         },
@@ -668,7 +668,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           },
           {
             "key": "singhvi",
@@ -688,7 +688,7 @@
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (insufficient history (n=0))",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.305307+00:00"
+        "created_at": "2026-08-02T16:43:06.516325+00:00"
       },
       "flags": []
     },
@@ -741,9 +741,9 @@
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
           "rationale": "Indicative, unofficial grey-market premium: ₹12 premium (+12.4% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -770,7 +770,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 30.92,
-            "note": "+12.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+12.4% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -779,7 +779,7 @@
         ],
         "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-02T15:57:56.305413+00:00"
+        "created_at": "2026-08-02T16:43:06.516469+00:00"
       },
       "flags": []
     },
@@ -832,9 +832,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹4 premium (+1.8% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         },
@@ -883,7 +883,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 1.59,
-            "note": "+1.8% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+1.8% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           },
           {
             "key": "total_subscription",
@@ -900,7 +900,7 @@
         "modifiers": [],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-08-02T15:57:56.305539+00:00"
+        "created_at": "2026-08-02T16:43:06.516613+00:00"
       },
       "flags": []
     },
@@ -964,9 +964,9 @@
           "stance": "APPLY",
           "stance_label": "Subscribe",
           "rationale": "Indicative, unofficial grey-market premium: ₹133 premium (+31.3% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         },
@@ -1015,7 +1015,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 23.01,
-            "note": "+31.3% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+31.3% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           },
           {
             "key": "total_subscription",
@@ -1043,7 +1043,7 @@
         "modifiers": [],
         "strongest_for": "the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Swastika Investmart explicitly say avoid",
-        "created_at": "2026-08-02T15:57:56.305726+00:00"
+        "created_at": "2026-08-02T16:43:06.516842+00:00"
       },
       "flags": []
     },
@@ -1096,9 +1096,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1125,7 +1125,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1134,7 +1134,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.305818+00:00"
+        "created_at": "2026-08-02T16:43:06.516988+00:00"
       },
       "flags": []
     },
@@ -1187,9 +1187,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+4.4% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1216,7 +1216,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 11.0,
-            "note": "+4.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+4.4% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1226,7 +1226,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 4%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.305921+00:00"
+        "created_at": "2026-08-02T16:43:06.517128+00:00"
       },
       "flags": []
     },
@@ -1279,9 +1279,9 @@
           "stance": "APPLY",
           "stance_label": "Subscribe",
           "rationale": "Indicative, unofficial grey-market premium: ₹25 premium (+19.2% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1308,7 +1308,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 48.08,
-            "note": "+19.2% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+19.2% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1318,7 +1318,7 @@
         ],
         "strongest_for": "the grey market is quoting a 19% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "591716% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-02T15:57:56.306015+00:00"
+        "created_at": "2026-08-02T16:43:06.517266+00:00"
       },
       "flags": []
     },
@@ -1371,9 +1371,9 @@
           "stance": "APPLY",
           "stance_label": "Subscribe",
           "rationale": "Indicative, unofficial grey-market premium: ₹80 premium (+29.6% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1400,7 +1400,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 74.08,
-            "note": "+29.6% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+29.6% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1411,7 +1411,7 @@
         ],
         "strongest_for": "the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "731567% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-02T15:57:56.306111+00:00"
+        "created_at": "2026-08-02T16:43:06.517407+00:00"
       },
       "flags": []
     },
@@ -1464,9 +1464,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1493,7 +1493,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1502,7 +1502,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.306215+00:00"
+        "created_at": "2026-08-02T16:43:06.517545+00:00"
       },
       "flags": []
     },
@@ -1555,9 +1555,9 @@
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
           "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+13.2% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1584,7 +1584,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 33.0,
-            "note": "+13.2% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+13.2% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1593,7 +1593,7 @@
         ],
         "strongest_for": "the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "4690398% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-02T15:57:56.306306+00:00"
+        "created_at": "2026-08-02T16:43:06.517675+00:00"
       },
       "flags": []
     },
@@ -1646,9 +1646,9 @@
           "stance": "APPLY",
           "stance_label": "Subscribe",
           "rationale": "Indicative, unofficial grey-market premium: ₹22 premium (+23.4% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1675,7 +1675,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 58.5,
-            "note": "+23.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+23.4% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1684,7 +1684,7 @@
         ],
         "strongest_for": "the grey market is quoting a 23% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-02T15:57:56.306396+00:00"
+        "created_at": "2026-08-02T16:43:06.517837+00:00"
       },
       "flags": []
     },
@@ -1737,9 +1737,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1766,7 +1766,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1775,7 +1775,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.306490+00:00"
+        "created_at": "2026-08-02T16:43:06.517962+00:00"
       },
       "flags": []
     },
@@ -1828,9 +1828,9 @@
           "stance": "AVOID",
           "stance_label": "Avoid",
           "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
+          "accuracy_pct": 100.0,
+          "accuracy_n": 1,
+          "accuracy_label": "insufficient history (n=1)",
           "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
           "is_synthetic": true
         }
@@ -1857,7 +1857,7 @@
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
             "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=1 < 10)"
           }
         ],
         "modifiers": [
@@ -1865,7 +1865,7 @@
         ],
         "strongest_for": "only 20% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-02T15:57:56.306595+00:00"
+        "created_at": "2026-08-02T16:43:06.518081+00:00"
       },
       "flags": []
     }
