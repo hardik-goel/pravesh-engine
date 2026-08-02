@@ -4,151 +4,16 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-07-31T08:42:36.352537+00:00",
-  "generated_at_market": "31 Jul 2026, 14:12 IST",
-  "run_date": "2026-07-31",
+  "generated_at": "2026-08-02T15:57:56.306698+00:00",
+  "generated_at_market": "02 Aug 2026, 21:27 IST",
+  "run_date": "2026-08-02",
   "counts": {
-    "open": 8,
-    "closing_tomorrow": 2,
-    "upcoming": 3,
-    "watch": 4
+    "open": 6,
+    "closing_tomorrow": 4,
+    "upcoming": 6,
+    "watch": 5
   },
   "ipos": [
-    {
-      "name": "Cube Highways Trust InvIT",
-      "slug": "cube-highways-trust-invit",
-      "segment": "MAINBOARD",
-      "status": "CLOSED",
-      "open_date": "2026-07-22",
-      "close_date": "2026-07-24",
-      "allotment_date": "2026-07-29",
-      "listing_date": "2026-08-03",
-      "price_band_low": 151.0,
-      "price_band_high": 152.0,
-      "price_band_label": "₹151–₹152",
-      "lot_size": 95,
-      "min_investment": 14440.0,
-      "issue_size_cr": 5000.0,
-      "fresh_issue_cr": 0.0,
-      "ofs_cr": 328947368.0,
-      "ofs_pct": 6578947.4,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": 2.0,
-      "gmp_pct": 1.32,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/cube-highways-trust-invit-ipo/",
-      "exchange": null,
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "GMP signal",
-          "stance": "AVOID",
-          "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹2 premium (+1.3% of the upper band), per ipowatch.in.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-          "is_synthetic": true
-        }
-      ],
-      "take": {
-        "ipo_slug": "cube-highways-trust-invit",
-        "score": 0.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Cube Highways Trust InvIT is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 1%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +1%)",
-        "preliminary": true,
-        "has_score": true,
-        "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 1.32,
-            "normalised": 0.033,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 25.0,
-            "contribution": 3.3,
-            "note": "+1.3% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
-          }
-        ],
-        "modifiers": [
-          "-10 — 6578947% of the issue is offer-for-sale",
-          "PRELIMINARY — bidding data not published yet"
-        ],
-        "strongest_for": "there is no strong positive signal on the table yet",
-        "strongest_against": "the grey market premium is only 1%, so no listing pop is being priced in",
-        "created_at": "2026-07-31T08:42:36.348560+00:00"
-      },
-      "flags": []
-    },
-    {
-      "name": "Shree Balaji (Mala) Textiles",
-      "slug": "shree-balaji-mala-textiles",
-      "segment": "SME",
-      "status": "LISTED",
-      "open_date": "2026-07-22",
-      "close_date": "2026-07-24",
-      "allotment_date": "2026-07-27",
-      "listing_date": "2026-07-29",
-      "price_band_low": 66.0,
-      "price_band_high": 70.0,
-      "price_band_label": "₹66–₹70",
-      "lot_size": 4000,
-      "min_investment": 280000.0,
-      "issue_size_cr": 18.9,
-      "fresh_issue_cr": 18.9,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/shree-balaji-mala-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [],
-      "take": {
-        "ipo_slug": "shree-balaji-mala-textiles",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Shree Balaji (Mala) Textiles yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-07-31T08:42:36.349251+00:00"
-      },
-      "flags": []
-    },
     {
       "name": "Indo-MIM",
       "slug": "indo-mim",
@@ -200,7 +65,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-07-31T08:42:36.349304+00:00"
+        "created_at": "2026-08-02T15:57:56.304611+00:00"
       },
       "flags": []
     },
@@ -255,7 +120,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-07-31T08:42:36.349334+00:00"
+        "created_at": "2026-08-02T15:57:56.304662+00:00"
       },
       "flags": []
     },
@@ -310,7 +175,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-07-31T08:42:36.349357+00:00"
+        "created_at": "2026-08-02T15:57:56.304678+00:00"
       },
       "flags": []
     },
@@ -340,9 +205,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 5.0,
-      "gmp_pct": 3.76,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/silverstorm-parks-resorts-ipo/",
       "exchange": "BSE SME",
       "closing_tomorrow": false,
@@ -362,35 +227,22 @@
       "take": {
         "ipo_slug": "silverstorm-parks",
         "score": 0.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Silverstorm Parks is that only 0% is offer-for-sale, so most of the raise funds the business. Against it: the grey market premium is only 4%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +4%)",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on Silverstorm Parks yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
         "preliminary": true,
-        "has_score": true,
+        "has_score": false,
         "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 3.76,
-            "normalised": 0.094,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 25.0,
-            "contribution": 9.4,
-            "note": "+3.8% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
-          }
-        ],
+        "components": [],
         "modifiers": [
-          "-10 — SME segment risk",
-          "PRELIMINARY — bidding data not published yet"
+          "No scorable input available"
         ],
-        "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
-        "strongest_against": "the grey market premium is only 4%, so no listing pop is being priced in",
-        "created_at": "2026-07-31T08:42:36.349513+00:00"
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-08-02T15:57:56.304690+00:00"
       },
       "flags": []
     },
@@ -470,7 +322,7 @@
         ],
         "strongest_for": "the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-07-31T08:42:36.349742+00:00"
+        "created_at": "2026-08-02T15:57:56.304820+00:00"
       },
       "flags": []
     },
@@ -551,7 +403,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-07-31T08:42:36.349930+00:00"
+        "created_at": "2026-08-02T15:57:56.304948+00:00"
       },
       "flags": []
     },
@@ -631,7 +483,7 @@
         ],
         "strongest_for": "the grey market is quoting a 75% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-07-31T08:42:36.350100+00:00"
+        "created_at": "2026-08-02T15:57:56.305063+00:00"
       },
       "flags": []
     },
@@ -639,7 +491,7 @@
       "name": "H.R. Hygiene Products",
       "slug": "h-r-hygiene-products",
       "segment": "SME",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-07-29",
       "close_date": "2026-07-31",
       "allotment_date": "2026-08-03",
@@ -666,7 +518,7 @@
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/hr-hygiene-products-ipo/",
       "exchange": "BSE SME",
-      "closing_tomorrow": true,
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -723,7 +575,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 2%, so no listing pop is being priced in",
-        "created_at": "2026-07-31T08:42:36.350297+00:00"
+        "created_at": "2026-08-02T15:57:56.305190+00:00"
       },
       "flags": []
     },
@@ -731,7 +583,7 @@
       "name": "Manipal Health",
       "slug": "manipal-health",
       "segment": "MAINBOARD",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-07-29",
       "close_date": "2026-07-31",
       "allotment_date": "2026-08-03",
@@ -746,19 +598,19 @@
       "ofs_cr": 21613834.0,
       "ofs_pct": 233027.7,
       "subscription": {
-        "qib": 2.63,
-        "nii": 0.22,
-        "retail": 0.49,
-        "employee": 1.61,
-        "total": 1.59,
-        "updated_at": "NSE · MANIPALHOS"
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
       },
-      "gmp": 6.0,
-      "gmp_pct": 1.02,
+      "gmp": 0.0,
+      "gmp_pct": 0.0,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/manipal-health-ipo/",
       "exchange": null,
-      "closing_tomorrow": true,
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -775,7 +627,7 @@
           "source_name": "GMP signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹6 premium (+1.0% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -796,49 +648,27 @@
       ],
       "take": {
         "ipo_slug": "manipal-health",
-        "score": 14.2,
+        "score": 27.5,
         "verdict_key": "AVOID",
-        "verdict_label": "AVOID",
-        "verdict_emoji": "🔴",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Manipal Health is that Anil Singhvi has called it subscribe (insufficient history (n=0)). Against it: the QIB book is only 2.6x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 2.6x · total 1.6x · GMP +1% · Singhvi: Subscribe)",
-        "preliminary": false,
+        "paragraph": "The strongest argument for Manipal Health is that Anil Singhvi has called it subscribe (insufficient history (n=0)). Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +0% · Singhvi: Subscribe)",
+        "preliminary": true,
         "has_score": true,
         "flags": [],
         "components": [
           {
-            "key": "qib",
-            "label": "QIB subscription",
-            "raw_value": 2.63,
-            "normalised": 0.1315,
-            "base_weight": 30.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 30.0,
-            "contribution": 4.64,
-            "note": "2.63x vs 20x for full credit · uncalibrated (n=0 < 10)"
-          },
-          {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 1.02,
-            "normalised": 0.0255,
+            "raw_value": 0.0,
+            "normalised": 0.0,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 0.75,
-            "note": "+1.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
-          },
-          {
-            "key": "total_subscription",
-            "label": "Overall subscription",
-            "raw_value": 1.59,
-            "normalised": 0.0636,
-            "base_weight": 15.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 15.0,
-            "contribution": 1.12,
-            "note": "1.59x overall · not calibrated"
+            "contribution": 0.0,
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           },
           {
             "key": "singhvi",
@@ -848,16 +678,17 @@
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 17.65,
+            "contribution": 37.5,
             "note": "called it Subscribe · uncalibrated (n=0 < 10)"
           }
         ],
         "modifiers": [
-          "-10 — 233028% of the issue is offer-for-sale"
+          "-10 — 233028% of the issue is offer-for-sale",
+          "PRELIMINARY — bidding data not published yet"
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (insufficient history (n=0))",
-        "strongest_against": "the QIB book is only 2.6x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-07-31T08:42:36.350544+00:00"
+        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
+        "created_at": "2026-08-02T15:57:56.305307+00:00"
       },
       "flags": []
     },
@@ -887,12 +718,12 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 15.0,
-      "gmp_pct": 15.46,
+      "gmp": 12.0,
+      "gmp_pct": 12.37,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/dhaval-packaging-ipo/",
       "exchange": "BSE SME",
-      "closing_tomorrow": false,
+      "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -907,9 +738,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹15 premium (+15.5% of the upper band), per ipowatch.in.",
+          "stance": "NEUTRAL",
+          "stance_label": "Neutral",
+          "rationale": "Indicative, unofficial grey-market premium: ₹12 premium (+12.4% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -919,13 +750,13 @@
       ],
       "take": {
         "ipo_slug": "dhaval-packaging",
-        "score": 28.6,
+        "score": 20.9,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Dhaval Packaging is that the grey market is quoting a 15% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +15%)",
+        "paragraph": "The strongest argument for Dhaval Packaging is that the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +12%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -933,22 +764,22 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 15.46,
-            "normalised": 0.3865,
+            "raw_value": 12.37,
+            "normalised": 0.3092,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 38.65,
-            "note": "+15.5% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "contribution": 30.92,
+            "note": "+12.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           }
         ],
         "modifiers": [
           "-10 — SME segment risk",
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 15% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-07-31T08:42:36.350718+00:00"
+        "created_at": "2026-08-02T15:57:56.305413+00:00"
       },
       "flags": []
     },
@@ -972,18 +803,18 @@
       "ofs_pct": 0.0,
       "subscription": {
         "qib": 1.0,
-        "nii": 0.11,
-        "retail": 0.16,
-        "employee": 1.3,
-        "total": 0.38,
+        "nii": 0.12,
+        "retail": 0.17,
+        "employee": 1.42,
+        "total": 0.39,
         "updated_at": "NSE · JNPR"
       },
-      "gmp": 10.0,
-      "gmp_pct": 4.44,
+      "gmp": 4.0,
+      "gmp_pct": 1.78,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/juniper-green-energy-ipo/",
       "exchange": null,
-      "closing_tomorrow": false,
+      "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -1000,7 +831,7 @@
           "source_name": "GMP signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹10 premium (+4.4% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹4 premium (+1.8% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1011,7 +842,7 @@
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 1.00x · overall 0.38x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 1.00x · overall 0.39x; institutional demand below 3x — thin.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1021,13 +852,13 @@
       ],
       "take": {
         "ipo_slug": "juniper-green-energy",
-        "score": 6.4,
+        "score": 4.1,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
         "paragraph": "The strongest argument for Juniper Green Energy is that only 0% is offer-for-sale, so most of the raise funds the business. Against it: the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 1.0x · total 0.4x · GMP +4%)",
+        "one_liner": "AVOID (QIB 1.0x · total 0.4x · GMP +2%)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -1046,30 +877,30 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 4.44,
-            "normalised": 0.111,
+            "raw_value": 1.78,
+            "normalised": 0.0445,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 3.96,
-            "note": "+4.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "contribution": 1.59,
+            "note": "+1.8% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.38,
-            "normalised": 0.0152,
+            "raw_value": 0.39,
+            "normalised": 0.0156,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
             "contribution": 0.33,
-            "note": "0.38x overall · not calibrated"
+            "note": "0.39x overall · not calibrated"
           }
         ],
         "modifiers": [],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-07-31T08:42:36.350901+00:00"
+        "created_at": "2026-08-02T15:57:56.305539+00:00"
       },
       "flags": []
     },
@@ -1092,29 +923,29 @@
       "ofs_cr": 0.0,
       "ofs_pct": 0.0,
       "subscription": {
-        "qib": 0.01,
-        "nii": 10.07,
-        "retail": 22.35,
+        "qib": 0.03,
+        "nii": 14.71,
+        "retail": 29.38,
         "employee": null,
-        "total": 5.89,
+        "total": 8.32,
         "updated_at": "NSE · MVELECTRO"
       },
-      "gmp": 120.0,
-      "gmp_pct": 29.41,
+      "gmp": 133.0,
+      "gmp_pct": 31.29,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/mv-electrosystems-ipo/",
       "exchange": null,
-      "closing_tomorrow": false,
+      "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
           "stance": "NO_VIEW",
           "stance_label": "No view",
-          "rationale": "Indo-MIM shares make stellar debut on BSE, NSE; list at 44% premium — Book profits or hold? Anil Singhvi explains - zeebiz.com",
+          "rationale": "No Zee Business call found for this issue.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
-          "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVDhmUHFJT1BmdVkzMlRNUUFIbF9Nb09CZmtIaDNnNXF0amZHMXRwd0hSNEowMF9HZFIxTHdwbE9lRmRQVlhUNzlYRjdFRmlXNTB1ZURNVXVXU1RGYlBLa0M1UktGNzA2YlNmR2VNclFCNnBGNEFVQkRZOVdMbEFfc3pPVWN6RFdlRGlNRjN1ZmFfSkRmTl9aNjhTVlhabmh5cHBmY0l3WHJZbGU1UXFRS1lUWkRDcnNiMTNVdmpTR0N3U2tTTFdpSmVDbk4wVkFILThzTnZTWDhsbEVJT2JjdkwzdXJNeTIzY2VtYmZBQnJIMTdGanRaMkJCNXE?oc=5",
+          "url": null,
           "is_synthetic": false
         },
         {
@@ -1132,7 +963,7 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹120 premium (+29.4% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹133 premium (+31.3% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1143,7 +974,7 @@
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 0.01x · overall 5.89x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 0.03x · overall 8.32x; institutional demand below 3x — thin.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1153,13 +984,13 @@
       ],
       "take": {
         "ipo_slug": "mv-electrosystems",
-        "score": 25.8,
+        "score": 28.9,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for MV Electrosystems is that the grey market is quoting a 29% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Swastika Investmart explicitly say avoid. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 0.0x · total 5.9x · GMP +29% · brokers 0/1)",
+        "paragraph": "The strongest argument for MV Electrosystems is that the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Swastika Investmart explicitly say avoid. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 0.0x · total 8.3x · GMP +31% · brokers 0/1)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -1167,35 +998,35 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 0.01,
-            "normalised": 0.0005,
+            "raw_value": 0.03,
+            "normalised": 0.0015,
             "base_weight": 30.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 30.0,
-            "contribution": 0.02,
-            "note": "0.01x vs 20x for full credit · uncalibrated (n=0 < 10)"
+            "contribution": 0.05,
+            "note": "0.03x vs 20x for full credit · uncalibrated (n=0 < 10)"
           },
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 29.41,
-            "normalised": 0.7352,
+            "raw_value": 31.29,
+            "normalised": 0.7823,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 21.62,
-            "note": "+29.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "contribution": 23.01,
+            "note": "+31.3% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 5.89,
-            "normalised": 0.2356,
+            "raw_value": 8.32,
+            "normalised": 0.3328,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 4.16,
-            "note": "5.89x overall · not calibrated"
+            "contribution": 5.87,
+            "note": "8.32x overall · not calibrated"
           },
           {
             "key": "brokers",
@@ -1210,9 +1041,9 @@
           }
         ],
         "modifiers": [],
-        "strongest_for": "the grey market is quoting a 29% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Swastika Investmart explicitly say avoid",
-        "created_at": "2026-07-31T08:42:36.351266+00:00"
+        "created_at": "2026-08-02T15:57:56.305726+00:00"
       },
       "flags": []
     },
@@ -1247,7 +1078,7 @@
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/oneindig-technologies-ipo/",
       "exchange": "BSE SME",
-      "closing_tomorrow": false,
+      "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -1303,7 +1134,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-07-31T08:42:36.351466+00:00"
+        "created_at": "2026-08-02T15:57:56.305818+00:00"
       },
       "flags": []
     },
@@ -1333,8 +1164,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 9.0,
-      "gmp_pct": 5.66,
+      "gmp": 7.0,
+      "gmp_pct": 4.4,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/fusion-klassroom-ipo/",
       "exchange": "BSE SME",
@@ -1353,9 +1184,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹9 premium (+5.7% of the upper band), per ipowatch.in.",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+4.4% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1370,8 +1201,8 @@
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Fusion Klassroom is that the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 1193135% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +6%)",
+        "paragraph": "The strongest argument for Fusion Klassroom is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 4%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +4%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -1379,13 +1210,13 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 5.66,
-            "normalised": 0.1415,
+            "raw_value": 4.4,
+            "normalised": 0.11,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 14.15,
-            "note": "+5.7% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "contribution": 11.0,
+            "note": "+4.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           }
         ],
         "modifiers": [
@@ -1393,9 +1224,9 @@
           "-10 — SME segment risk",
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "1193135% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-07-31T08:42:36.351671+00:00"
+        "strongest_for": "there is no strong positive signal on the table yet",
+        "strongest_against": "the grey market premium is only 4%, so no listing pop is being priced in",
+        "created_at": "2026-08-02T15:57:56.305921+00:00"
       },
       "flags": []
     },
@@ -1487,7 +1318,7 @@
         ],
         "strongest_for": "the grey market is quoting a 19% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "591716% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-07-31T08:42:36.351844+00:00"
+        "created_at": "2026-08-02T15:57:56.306015+00:00"
       },
       "flags": []
     },
@@ -1517,8 +1348,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 70.0,
-      "gmp_pct": 25.93,
+      "gmp": 80.0,
+      "gmp_pct": 29.63,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/anawil-wire-engieering-ipo/",
       "exchange": "NSE SME",
@@ -1539,7 +1370,7 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹70 premium (+25.9% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹80 premium (+29.6% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1549,13 +1380,13 @@
       ],
       "take": {
         "ipo_slug": "anawil-wire-engineering",
-        "score": 44.8,
+        "score": 54.1,
         "verdict_key": "RISKY",
         "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
         "verdict_emoji": "⚪",
         "verdict_color": "#9A7407",
-        "paragraph": "The strongest argument for Anawil Wire & Engineering is that the grey market is quoting a 26% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 731567% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
-        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +26%)",
+        "paragraph": "The strongest argument for Anawil Wire & Engineering is that the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 731567% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
+        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +30%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -1563,23 +1394,24 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 25.93,
-            "normalised": 0.6482,
+            "raw_value": 29.63,
+            "normalised": 0.7408,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 64.82,
-            "note": "+25.9% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "contribution": 74.08,
+            "note": "+29.6% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           }
         ],
         "modifiers": [
           "-10 — 731567% of the issue is offer-for-sale",
           "-10 — SME segment risk",
+          "SME capped at RISKY (needs 80+ to rate higher)",
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 26% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "731567% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-07-31T08:42:36.352020+00:00"
+        "created_at": "2026-08-02T15:57:56.306111+00:00"
       },
       "flags": []
     },
@@ -1670,7 +1502,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-07-31T08:42:36.352194+00:00"
+        "created_at": "2026-08-02T15:57:56.306215+00:00"
       },
       "flags": []
     },
@@ -1700,8 +1532,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 13.0,
-      "gmp_pct": 24.53,
+      "gmp": 7.0,
+      "gmp_pct": 13.2,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/ardee-industries-ipo/",
       "exchange": null,
@@ -1720,9 +1552,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹13 premium (+24.5% of the upper band), per ipowatch.in.",
+          "stance": "NEUTRAL",
+          "stance_label": "Neutral",
+          "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+13.2% of the upper band), per ipowatch.in.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -1732,13 +1564,13 @@
       ],
       "take": {
         "ipo_slug": "ardee-industries",
-        "score": 51.3,
-        "verdict_key": "LISTING_GAINS",
-        "verdict_label": "PRELIMINARY — LISTING GAINS ONLY",
+        "score": 23.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
-        "verdict_color": "#1F5F9E",
-        "paragraph": "The strongest argument for Ardee Industries is that the grey market is quoting a 25% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 4690398% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That reads as a listing-day trade rather than something to hold — take the pop if it comes and reassess. Final call is yours.",
-        "one_liner": "PRELIMINARY — LISTING GAINS ONLY (GMP +25%)",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Ardee Industries is that the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 4690398% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +13%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -1746,22 +1578,294 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 24.53,
-            "normalised": 0.6133,
+            "raw_value": 13.2,
+            "normalised": 0.33,
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 61.33,
-            "note": "+24.5% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+            "contribution": 33.0,
+            "note": "+13.2% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
           }
         ],
         "modifiers": [
           "-10 — 4690398% of the issue is offer-for-sale",
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 25% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "4690398% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-07-31T08:42:36.352370+00:00"
+        "created_at": "2026-08-02T15:57:56.306306+00:00"
+      },
+      "flags": []
+    },
+    {
+      "name": "LAPL Automotive",
+      "slug": "lapl-automotive",
+      "segment": "SME",
+      "status": "UPCOMING",
+      "open_date": "2026-08-06",
+      "close_date": "2026-08-10",
+      "allotment_date": "2026-08-11",
+      "listing_date": "2026-08-13",
+      "price_band_low": 88.0,
+      "price_band_high": 94.0,
+      "price_band_label": "₹88–₹94",
+      "lot_size": 2400,
+      "min_investment": 225600.0,
+      "issue_size_cr": 32.4,
+      "fresh_issue_cr": 32.4,
+      "ofs_cr": 0.0,
+      "ofs_pct": 0.0,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": 22.0,
+      "gmp_pct": 23.4,
+      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "detail_url": "https://ipowatch.in/lapl-automotive-ipo/",
+      "exchange": "BSE SME",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "APPLY",
+          "stance_label": "Subscribe",
+          "rationale": "Indicative, unofficial grey-market premium: ₹22 premium (+23.4% of the upper band), per ipowatch.in.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "lapl-automotive",
+        "score": 48.5,
+        "verdict_key": "RISKY",
+        "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#9A7407",
+        "paragraph": "The strongest argument for LAPL Automotive is that the grey market is quoting a 23% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
+        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +23%)",
+        "preliminary": true,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 23.4,
+            "normalised": 0.585,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 25.0,
+            "contribution": 58.5,
+            "note": "+23.4% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+          }
+        ],
+        "modifiers": [
+          "-10 — SME segment risk",
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "the grey market is quoting a 23% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
+        "created_at": "2026-08-02T15:57:56.306396+00:00"
+      },
+      "flags": []
+    },
+    {
+      "name": "Optimystix Entertainment",
+      "slug": "optimystix-entertainment",
+      "segment": "SME",
+      "status": "UPCOMING",
+      "open_date": "2026-08-07",
+      "close_date": "2026-08-11",
+      "allotment_date": "2026-08-12",
+      "listing_date": "2026-08-14",
+      "price_band_low": null,
+      "price_band_high": null,
+      "price_band_label": "—",
+      "lot_size": null,
+      "min_investment": null,
+      "issue_size_cr": null,
+      "fresh_issue_cr": null,
+      "ofs_cr": 1200000.0,
+      "ofs_pct": null,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": 0.0,
+      "gmp_pct": 0.0,
+      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "detail_url": "https://ipowatch.in/optimystix-entertainment-ipo/",
+      "exchange": "NSE SME",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "optimystix-entertainment",
+        "score": 0.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Optimystix Entertainment is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +0%)",
+        "preliminary": true,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 25.0,
+            "contribution": 0.0,
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+          }
+        ],
+        "modifiers": [
+          "-10 — SME segment risk",
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "there is no strong positive signal on the table yet",
+        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
+        "created_at": "2026-08-02T15:57:56.306490+00:00"
+      },
+      "flags": []
+    },
+    {
+      "name": "Technocraft Ventures",
+      "slug": "technocraft-ventures",
+      "segment": "MAINBOARD",
+      "status": "UPCOMING",
+      "open_date": "2026-08-07",
+      "close_date": "2026-08-11",
+      "allotment_date": "2026-08-12",
+      "listing_date": "2026-08-14",
+      "price_band_low": null,
+      "price_band_high": null,
+      "price_band_label": "—",
+      "lot_size": null,
+      "min_investment": null,
+      "issue_size_cr": 11881000.0,
+      "fresh_issue_cr": 9505000.0,
+      "ofs_cr": 2376000.0,
+      "ofs_pct": 20.0,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": 0.0,
+      "gmp_pct": 0.0,
+      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "detail_url": "https://ipowatch.in/technocraft-ventures-ipo/",
+      "exchange": null,
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "technocraft-ventures",
+        "score": 0.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Technocraft Ventures is that only 20% is offer-for-sale, so most of the raise funds the business. Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +0%)",
+        "preliminary": true,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 25.0,
+            "contribution": 0.0,
+            "note": "+0.0% vs 40% for full credit (indicative) · uncalibrated (n=0 < 10)"
+          }
+        ],
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "only 20% is offer-for-sale, so most of the raise funds the business",
+        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
+        "created_at": "2026-08-02T15:57:56.306595+00:00"
       },
       "flags": []
     }
