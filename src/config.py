@@ -414,7 +414,9 @@ SUPABASE: Final[dict[str, str]] = {
 EMAIL: Final[dict[str, object]] = {
     "smtp_host": "smtp.gmail.com",
     "smtp_port": 587,
+    "smtp_timeout_seconds": 30,
     "use_starttls": True,
+    "app_password_length": 16,  # what Google issues — a different length means a wrong secret
     "address_env": "GMAIL_ADDRESS",
     "password_env": "GMAIL_APP_PASSWORD",
     "recipient_env": "RECIPIENT_EMAIL",

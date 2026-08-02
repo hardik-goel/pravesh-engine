@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import html
 import logging
+import re
 import smtplib
 import os
 from datetime import date
@@ -417,41 +418,139 @@ def write_preview(html_body: str, path: Optional[str] = None) -> Path:
     return target
 
 
-def send_email(subject: str, html_body: str) -> bool:
-    """Gmail SMTP over STARTTLS. Returns False instead of raising."""
+def _presence(value: str) -> str:
+    """Whether a secret arrived, never what it says."""
+    return f"present ({len(value)} chars)" if value else "MISSING"
+
+
+def _parse_recipients(raw: str) -> list[str]:
+    """RECIPIENT_EMAIL holds one address or many.
+
+    Separate them however is convenient — comma, semicolon, space or one per line — so
+    adding a second reader is a secret edit and nothing else. Anything without an "@" is
+    dropped loudly rather than handed to SMTP.
+    """
+    candidates = [part for part in re.split(r"[,;\s]+", raw) if part]
+    recipients = [c for c in candidates if "@" in c]
+    for rejected in [c for c in candidates if "@" not in c]:
+        log.warning("ignoring %r in %s — not an email address", rejected, EMAIL["recipient_env"])
+    return recipients
+
+
+def _credentials() -> Optional[tuple[str, str, list[str]]]:
+    """(sender, app password, recipients), or None with the exact reason logged.
+
+    A silent inbox is indistinguishable from a dead scraper, so every decision this
+    function makes — including the decision not to send — goes into the log.
+    """
     address = os.getenv(str(EMAIL["address_env"]), "").strip()
-    password = os.getenv(str(EMAIL["password_env"]), "").strip()
+    raw_password = os.getenv(str(EMAIL["password_env"]), "")
     recipients_raw = os.getenv(str(EMAIL["recipient_env"]), "").strip()
-    if not (address and password and recipients_raw):
-        log.error(
-            "email not sent: %s / %s / %s must all be set",
-            EMAIL["address_env"],
+
+    # Google shows app passwords as "abcd efgh ijkl mnop". Pasted verbatim into a secret,
+    # those spaces reach SMTP and the login is rejected — so drop all whitespace, not just
+    # the ends.
+    password = "".join(raw_password.split())
+    if raw_password.strip() != password:
+        log.info("app password contained whitespace (Google displays it spaced); removed it")
+
+    log.info(
+        "email credentials: %s=%s · %s=%s · %s=%s",
+        EMAIL["address_env"],
+        _presence(address),
+        EMAIL["password_env"],
+        _presence(password),
+        EMAIL["recipient_env"],
+        _presence(recipients_raw),
+    )
+    if password and len(password) != int(EMAIL["app_password_length"]):
+        log.warning(
+            "%s is %d characters — a Google app password is %d. If login fails, the secret is "
+            "probably the account password, not an app password.",
             EMAIL["password_env"],
+            len(password),
+            EMAIL["app_password_length"],
+        )
+
+    if not recipients_raw and address:
+        # Better to mail the report to the sending account than to send nothing at all.
+        log.error(
+            "%s is not set — falling back to the sending account itself. Set the secret to "
+            "control who receives the report.",
             EMAIL["recipient_env"],
         )
-        return False
+        recipients_raw = address
 
-    recipients = [r.strip() for r in recipients_raw.replace(";", ",").split(",") if r.strip()]
+    missing = [
+        str(EMAIL[key])
+        for key, value in (("address_env", address), ("password_env", password))
+        if not value
+    ]
+    if missing:
+        log.error("email NOT sent: %s not set in this environment", " and ".join(missing))
+        return None
+
+    recipients = _parse_recipients(recipients_raw)
+    if not recipients:
+        log.error("email NOT sent: %s held no usable address", EMAIL["recipient_env"])
+        return None
+    log.info("email recipients (%d): %s", len(recipients), ", ".join(recipients))
+    return address, password, recipients
+
+
+def _smtp_send(message: MIMEText | MIMEMultipart, address: str, password: str,
+               recipients: list[str], what: str) -> bool:
+    """One SMTP conversation, narrated step by step. Never raises."""
+    host = str(EMAIL["smtp_host"])
+    port = int(EMAIL["smtp_port"])
+    try:
+        log.info("%s: connecting to %s:%d", what, host, port)
+        with smtplib.SMTP(host, port, timeout=int(EMAIL["smtp_timeout_seconds"])) as server:
+            server.ehlo()
+            if EMAIL["use_starttls"]:
+                log.info("%s: STARTTLS", what)
+                server.starttls()
+                server.ehlo()
+            log.info("%s: logging in as %s", what, address)
+            server.login(address, password)
+            log.info("%s: sending to %s", what, ", ".join(recipients))
+            server.sendmail(address, recipients, message.as_string())
+    except smtplib.SMTPAuthenticationError as exc:
+        log.error(
+            "%s FAILED: Gmail rejected the login (SMTP %s: %s). %s must be a Google app "
+            "password generated with 2-Step Verification on, for %s.",
+            what,
+            exc.smtp_code,
+            exc.smtp_error,
+            EMAIL["password_env"],
+            EMAIL["address_env"],
+        )
+        return False
+    except smtplib.SMTPRecipientsRefused as exc:
+        log.error("%s FAILED: every recipient was refused: %s", what, exc.recipients)
+        return False
+    except Exception as exc:  # noqa: BLE001 — delivery failure must not kill the run
+        log.error("%s FAILED: %s: %s", what, type(exc).__name__, exc)
+        return False
+    log.info("%s: email sent to %s", what, ", ".join(recipients))
+    return True
+
+
+def send_email(subject: str, html_body: str) -> bool:
+    """Gmail SMTP over STARTTLS. Returns False instead of raising."""
+    log.info("email send starting · subject=%r", subject)
+    credentials = _credentials()
+    if credentials is None:
+        return False
+    address, password, recipients = credentials
+
     message = MIMEMultipart("alternative")
     message["Subject"] = subject
     message["From"] = f"{EMAIL['sender_name']} <{address}>"
     message["To"] = ", ".join(recipients)
     message.attach(MIMEText(_plain_text_fallback(subject), "plain", "utf-8"))
     message.attach(MIMEText(html_body, "html", "utf-8"))
-
-    try:
-        with smtplib.SMTP(str(EMAIL["smtp_host"]), int(EMAIL["smtp_port"]), timeout=30) as server:
-            server.ehlo()
-            if EMAIL["use_starttls"]:
-                server.starttls()
-                server.ehlo()
-            server.login(address, password)
-            server.sendmail(address, recipients, message.as_string())
-        log.info("email sent to %s", ", ".join(recipients))
-        return True
-    except Exception as exc:  # noqa: BLE001 — delivery failure must not kill the run
-        log.error("email send failed: %s", exc)
-        return False
+    return _smtp_send(message, address, password, recipients, "report email")
 
 
 def _plain_text_fallback(subject: str) -> str:
@@ -469,28 +568,16 @@ def send_failure_notice(reason: str) -> bool:
         f"{BRAND_NAME} failed to complete its run.\n\n{reason}\n\n"
         "Silence means breakage — check the GitHub Actions log."
     )
-    address = os.getenv(str(EMAIL["address_env"]), "").strip()
-    password = os.getenv(str(EMAIL["password_env"]), "").strip()
-    recipients_raw = os.getenv(str(EMAIL["recipient_env"]), "").strip()
-    if not (address and password and recipients_raw):
-        log.error("failure notice not sent: mail secrets missing")
+    log.info("failure notice send starting")
+    credentials = _credentials()
+    if credentials is None:
         return False
-    recipients = [r.strip() for r in recipients_raw.replace(";", ",").split(",") if r.strip()]
+    address, password, recipients = credentials
     message = MIMEText(body, "plain", "utf-8")
     message["Subject"] = subject
     message["From"] = f"{EMAIL['sender_name']} <{address}>"
     message["To"] = ", ".join(recipients)
-    try:
-        with smtplib.SMTP(str(EMAIL["smtp_host"]), int(EMAIL["smtp_port"]), timeout=30) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
-            server.login(address, password)
-            server.sendmail(address, recipients, message.as_string())
-        return True
-    except Exception as exc:  # noqa: BLE001
-        log.error("failure notice send failed: %s", exc)
-        return False
+    return _smtp_send(message, address, password, recipients, "failure notice")
 
 
 __all__ = [

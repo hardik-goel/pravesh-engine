@@ -125,14 +125,18 @@ Useful flags: `--no-email`, `--no-telegram`, `--store json|supabase`, `--date YY
 | Secret | Required | What it is |
 |---|---|---|
 | `GMAIL_ADDRESS` | yes | Sending Gmail address |
-| `GMAIL_APP_PASSWORD` | yes | 16-char app password from above |
-| `RECIPIENT_EMAIL` | yes | Recipient(s), comma-separated |
+| `GMAIL_APP_PASSWORD` | yes | 16-char app password from above (spaces are stripped, so paste it as Google shows it) |
+| `RECIPIENT_EMAIL` | yes | Recipient(s) — one address, or many separated by commas, semicolons, spaces or newlines |
 | `TELEGRAM_BOT_TOKEN` | yes | **Same token as the Trinetra stock bot** |
 | `TELEGRAM_CHAT_ID` | yes | Same channel/chat id as Trinetra |
 | `SUPABASE_URL` | only for Supabase store | Project URL |
 | `SUPABASE_SERVICE_KEY` | only for Supabase store | Service role key |
 
 Repository **variable** (not secret): `PRAVESH_STORE` = `json` (default) or `supabase`.
+
+To add or change readers later, edit `RECIPIENT_EMAIL` alone — nothing in the code needs
+touching. Every send logs which addresses it resolved, so the run log always shows where
+the report went.
 The workflow only commits `data/*.json` back when it is not `supabase`.
 
 ### Enabling the workflow

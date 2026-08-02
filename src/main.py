@@ -262,9 +262,18 @@ def run(
         store.save_latest(build_latest_payload(result, today))
 
     # 6. Deliver -------------------------------------------------------------------
+    # The email always goes out, including on a quiet day — silence has to mean "nothing
+    # to act on", never "the job broke". Every reason for not sending is logged below.
     subject = email_builder.build_subject(result, today)
     html_body = email_builder.build_html(result, today)
     message = telegram_ping.build_message(result, today)
+    log.info(
+        "delivery: %s report · %d IPO(s) · email=%s telegram=%s",
+        "quiet" if result.is_quiet else "full",
+        len(universe),
+        "skipped (dry run)" if dry_run else ("skipped (--no-email)" if skip_email else "sending"),
+        "skipped (dry run)" if dry_run else ("skipped (--no-telegram)" if skip_telegram else "sending"),
+    )
 
     if dry_run:
         path = email_builder.write_preview(html_body)
@@ -279,8 +288,8 @@ def run(
               f"{len(preview['leaderboard'])} leaderboard row(s), "
               f"{len(preview['history'])} history row(s)")
     else:
-        if not skip_email:
-            email_builder.send_email(subject, html_body)
+        if not skip_email and not email_builder.send_email(subject, html_body):
+            log.error("the report was NOT emailed — see the email log lines above for why")
         if not skip_telegram:
             telegram_ping.send(message)
 
