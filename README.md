@@ -336,7 +336,7 @@ Capture rules, held deliberately tight:
 | `target` / `stop` | **Always `null`** for IPO views, and never derived — from each other, from GMP, or from the price band. An expert's IPO call is "subscribe" or "avoid", not a level. |
 | `seenAt` | **Publication** time, or `null`. Never the scrape time. A two-month-old call scraped this morning is two months old; `capturedAt` holds the scrape time separately. |
 | `url` | **Required.** A row without one is dropped here rather than shipped, and the drop is counted in `expert_coverage.droppedNoUrl`. |
-| `NO_VIEW` | Never becomes a row — it is not a call. Counted in `expert_coverage.noView` so the absence stays visible. |
+| `NO_VIEW` | Never becomes a row — it is not a call. Counted in `expert_coverage.noView` so the absence stays visible, and split by `unreachable` so "could not check" is not counted as "had no view". |
 | `symbol` | `null` by construction — an unlisted IPO has no ticker. Join on `ipoSlug`. |
 
 **Blocked and silent are different states, and the payload keeps them apart.** An empty
@@ -345,6 +345,27 @@ reports, per discovery route, how many times it was attempted, how many times it
 how many matches it produced, whether we gave up on it mid-run, and the real reason
 (`HTTP 403` vs `responded 2/4, no matching item`). Read that block before concluding "no
 calls today".
+
+**Reachability is per ISSUE, not per source — read `expert_reachability`, not the
+aggregate.** This is the one that actually decides an empty state, and getting it from
+source-level counts is wrong in the normal case. Google News RSS rate-limits under repeated
+querying, so it answers for some issues in a run and not others; the source then looks alive
+in the aggregate while specific issues went genuinely unchecked. A measured run:
+
+| Issue | Reachable | Checked | Correct empty state |
+|---|---|---|---|
+| `juniper-green-energy` | yes | 2/2 | no expert view |
+| `mv-electrosystems` | yes | 1/2 | partly checked |
+| `dhaval-packaging` | **no** | 0/2 | **could not check** |
+| `fusion-klassroom` | **no** | 0/2 | **could not check** |
+| `g-v-electricals` | **no** | 0/2 | **could not check** |
+
+A source-level flag reads `blocked: false` there — both experts answered *for Juniper* — and
+would render all five as "no expert view". Only one of the five is. `expert_reachability`
+resolves it per issue: `reachable: false` means nothing answered about that issue and its
+absence carries no information at all; `reachable: true` with
+`expertsChecked < expertsTotal` is the partial case. `expert_coverage[].unreachable` is the
+same fact rolled up per expert, as the subset of `noView` that was never actually checked.
 
 **Which routes actually load** (measured 2026-08-03, from this machine):
 
@@ -395,10 +416,11 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
 
 ```jsonc
 {
-  // 2 added expert_calls / expert_coverage / source_status. Purely additive — every v1
-  // key is unchanged and still present, so a v1 consumer keeps working. The number moved
-  // anyway so consumers can feature-detect on it rather than on a key's presence.
-  "schema_version": 2,
+  // 2 added expert_calls / expert_coverage / source_status; 3 added expert_reachability.
+  // Both purely additive — every earlier key is unchanged and still present, so an older
+  // consumer keeps working. The number moves so consumers can feature-detect on it rather
+  // than on a key's presence.
+  "schema_version": 3,
   "brand": { "name": "Trinetra Pravesh", "tagline": "…" },
   "generated_at": "2026-08-03T09:34:11+00:00",   // UTC ISO
   "generated_at_market": "03 Aug 2026, 15:04 IST",
@@ -509,9 +531,24 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
     "listingDate": "2026-08-06"
   }],
   // What each expert was asked and what came back — so an empty `expert_calls` can be
-  // read correctly instead of as "he had nothing to say".
+  // read correctly instead of as "he had nothing to say". `unreachable` is the SUBSET of
+  // `noView` where nothing answered at all: those are "could not check", not "no view".
   "expert_coverage": [{ "expert": "Sandeep Jain", "queried": 13, "calls": 0,
-                        "noView": 13, "droppedNoUrl": 0 }],
+                        "noView": 13, "unreachable": 11, "droppedNoUrl": 0 }],
+
+  // Per-ISSUE discovery state (schema_version ≥ 3). THE basis for an empty state.
+  // `reachable: false` ⇒ nothing could be checked; absence means nothing. Render
+  // "could not check", never "no expert view".
+  // `reachable: true` + expertsChecked < expertsTotal ⇒ partly checked.
+  "expert_reachability": [{
+    "ipoSlug": "acme-solar-industries-limited",   // `ipo_slug` carries the same value
+    "ipo_slug": "acme-solar-industries-limited",
+    "ipoName": "Acme Solar Industries Limited",
+    "reachable": true,                            // true if ANY expert could be checked
+    "expertsChecked": 1, "expertsTotal": 2,       // the partial case, which is the common one
+    "routes": [{ "expert": "Anil Singhvi", "reachable": true, "via": "Google News RSS",
+                 "answeredRoutes": ["Google News RSS"], "quietRoutes": ["zeebiz search"] }]
+  }],
   // Per source: did it work, and if not WHY. "HTTP 403" and "no matching item" are
   // different states and this block is the only place that keeps them apart.
   "source_status": [{

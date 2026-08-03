@@ -40,7 +40,11 @@ from .config import (
 )
 from .engine import delta as delta_engine
 from .engine.evidence import build_all as build_evidence_tables
-from .engine.expert_feed import build_expert_calls, build_source_status
+from .engine.expert_feed import (
+    build_expert_calls,
+    build_expert_reachability,
+    build_source_status,
+)
 from .engine.source_tracker import SourceTracker
 from .engine.take import TakeEngine
 from .models import IPO, IPOStatus, RunResult, SourceCall
@@ -51,10 +55,13 @@ from .store.base import Store, build_store
 log = logging.getLogger("pravesh.main")
 
 # 2 (2026-08-03): added `expert_calls`, `expert_coverage` and `source_status` for the
-# trinetra-backend ingest. Purely ADDITIVE — every v1 key is unchanged and still present, so
-# a v1 consumer keeps working. Bumped anyway so the backend can feature-detect on the number
+#   trinetra-backend ingest.
+# 3 (2026-08-03): added `expert_reachability` — per-ISSUE discovery state, so an empty
+#   result can be told apart from an unchecked one per IPO rather than per source.
+# Both bumps are purely ADDITIVE: every v1 and v2 key is unchanged and still present, so an
+# older consumer keeps working. The number moves so consumers can feature-detect on it
 # rather than on the presence of a key.
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 
 def setup_logging(verbose: bool = False) -> None:
@@ -189,6 +196,10 @@ def build_latest_payload(result: RunResult, today: date) -> dict[str, Any]:
         # hard block can never be read as "no calls today" — see engine/expert_feed.py.
         "expert_calls": result.expert_calls,
         "expert_coverage": result.expert_coverage,
+        # Per-ISSUE reachability. Source-level flags cannot say whether a SPECIFIC issue
+        # was checked, and an empty state rendered off the aggregate is wrong exactly when
+        # discovery is intermittent — which is the normal case here.
+        "expert_reachability": result.expert_reachability,
         "source_status": result.source_status,
         "disclaimer": PRODUCT_DISCLAIMER,
     }
@@ -275,6 +286,7 @@ def run(
     # 5b. The named-expert feed the backend ingests. Built from this run's calls only —
     # the ledger's older calls belong to earlier runs and would re-publish as if new.
     expert_calls, expert_coverage = build_expert_calls(universe, calls)
+    expert_reachability = build_expert_reachability(universe, opinion_sources)
     source_status = build_source_status(opinion_sources)
 
     # 4. Evidence + take -----------------------------------------------------------
@@ -322,6 +334,7 @@ def run(
         deltas=deltas,
         expert_calls=expert_calls,
         expert_coverage=expert_coverage,
+        expert_reachability=expert_reachability,
         source_status=source_status,
     )
 

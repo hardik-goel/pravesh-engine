@@ -21,7 +21,7 @@ in config.SOURCE_URLS.
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from typing import Optional, Sequence
+from typing import Any, Optional, Sequence
 from urllib.parse import quote_plus, urljoin
 
 from ..config import SOURCE_URLS
@@ -46,6 +46,41 @@ MIN_NAME_SIMILARITY = 0.55
 # 25-minute budget. After this many consecutive no-answers a route is dropped for the rest of
 # the run and the remaining routes carry the source — which is exactly what they are for.
 ROUTE_GIVE_UP_AFTER = 3
+
+
+class Reach:
+    """What discovery managed for ONE issue.
+
+    `answered` is the question that matters downstream: did anything respond about this
+    specific IPO? If nothing did, a NO_VIEW on it carries no information — it is "we could
+    not check", not "nobody had a view" — and the two must never render the same.
+    """
+
+    __slots__ = ("answered_routes", "quiet_routes", "found_via")
+
+    def __init__(self) -> None:
+        self.answered_routes: list[str] = []
+        self.quiet_routes: list[str] = []
+        self.found_via: Optional[str] = None
+
+    @property
+    def answered(self) -> bool:
+        return bool(self.answered_routes)
+
+    def note(self, route: str, *, answered: bool) -> None:
+        (self.answered_routes if answered else self.quiet_routes).append(route)
+
+    def via(self, route: str) -> "Reach":
+        self.found_via = route
+        return self
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "reachable": self.answered,
+            "answeredRoutes": list(self.answered_routes),
+            "quietRoutes": list(self.quiet_routes),
+            "foundVia": self.found_via,
+        }
 
 
 class NamedExpertSource(Source):
@@ -79,6 +114,10 @@ class NamedExpertSource(Source):
         #: Per-route outcome for this run — what each route DID, not just whether it helped.
         #: {route: {"attempted", "answered", "hits", "reason"}}. Read by engine/expert_feed.
         self.route_report: dict[str, dict[str, object]] = {}
+        #: Per-ISSUE discovery outcome: {ipo_slug: Reach.to_dict()}. Run-level route counts
+        #: cannot answer "could we check THIS issue?" — a route that answers 2 of 4 times
+        #: leaves 2 issues unchecked while still looking alive in the aggregate.
+        self.issue_reach: dict[str, dict[str, Any]] = {}
 
     def fetch(self, ipos: Sequence[IPO]) -> list[SourceCall]:
         now = datetime.now(timezone.utc).isoformat()
@@ -86,10 +125,12 @@ class NamedExpertSource(Source):
         any_route_answered = False
         self._route_misses = {}
         self.route_report = {}
+        self.issue_reach = {}
 
         for ipo in self._targets(ipos):
-            hit, body, reachable = self._find(ipo)
-            any_route_answered = any_route_answered or reachable
+            hit, body, reach = self._find(ipo)
+            any_route_answered = any_route_answered or reach.answered
+            self.issue_reach[ipo.slug] = reach.to_dict()
             raw_call = ""
             published_at = None
             publisher = ""
@@ -122,6 +163,8 @@ class NamedExpertSource(Source):
                     raw_call=raw_call,
                     published_at=published_at,
                     publisher=publisher,
+                    discovery_reachable=reach.answered,
+                    discovery_route=reach.found_via,
                 )
             )
 
@@ -196,14 +239,19 @@ class NamedExpertSource(Source):
                 reason = f"{reason} — route dropped after {ROUTE_GIVE_UP_AFTER} in a row"
             entry["reason"] = reason
 
-    def _find(self, ipo: IPO) -> tuple[Optional[SearchHit], str, bool]:
-        """-> (best hit, article body if fetchable, whether any route responded at all).
+    def _find(self, ipo: IPO) -> tuple[Optional[SearchHit], str, "Reach"]:
+        """-> (best hit, article body if fetchable, what discovery managed FOR THIS ISSUE).
 
         Routes are tried in order and each is dropped for the remainder of the run once it
         has gone quiet ROUTE_GIVE_UP_AFTER times in a row — a host that is blocking us is
         blocking us for the whole run, and re-proving that per IPO costs minutes.
+
+        Reachability is tracked PER ISSUE, not per run. A route that answered for three
+        IPOs and went quiet on the fourth leaves that fourth issue genuinely unchecked, and
+        reporting it as "nobody had a view" would manufacture a coverage fact out of a rate
+        limit.
         """
-        reachable = False
+        reach = Reach()
 
         site_route = f"{self.discovery_label} search"
         if self._route_open(site_route):
@@ -214,9 +262,9 @@ class NamedExpertSource(Source):
                 hits=1 if site_hit is not None else 0,
                 reason=self._host_reason(SOURCE_URLS[self.search_urls_key]),
             )
-            reachable = reachable or site_reachable
+            reach.note(site_route, answered=site_reachable)
             if site_hit is not None:
-                return site_hit, self._article_body(site_hit.url), reachable
+                return site_hit, self._article_body(site_hit.url), reach.via(site_route)
 
         if self._route_open("Google News RSS"):
             news_hits = news_search(self.query_templates["news"].format(name=ipo.name))
@@ -229,11 +277,10 @@ class NamedExpertSource(Source):
                 hits=1 if hit is not None else 0,
                 reason=self._host_reason(SOURCE_URLS.get("news_search", [])),
             )
-            if news_hits:
-                reachable = True
-                if hit is not None:
-                    # Google News links are wrappers; the body is not fetchable server-side.
-                    return hit, "", reachable
+            reach.note("Google News RSS", answered=bool(news_hits))
+            if hit is not None:
+                # Google News links are wrappers; the body is not fetchable server-side.
+                return hit, "", reach.via("Google News RSS")
 
         if self._route_open("DuckDuckGo"):
             web_hits = web_search(self.query_templates["web"].format(name=ipo.name))
@@ -244,12 +291,11 @@ class NamedExpertSource(Source):
                 hits=1 if hit is not None else 0,
                 reason=self._host_reason(SOURCE_URLS.get("broker_search_fallback", [])),
             )
-            if web_hits:
-                reachable = True
-                if hit is not None:
-                    return hit, self._article_body(hit.url), reachable
+            reach.note("DuckDuckGo", answered=bool(web_hits))
+            if hit is not None:
+                return hit, self._article_body(hit.url), reach.via("DuckDuckGo")
 
-        return None, "", reachable
+        return None, "", reach
 
     @staticmethod
     def _host_reason(url_templates: Sequence[str]) -> str:

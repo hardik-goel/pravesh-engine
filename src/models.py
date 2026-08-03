@@ -340,6 +340,14 @@ class SourceCall:
     published_at: Optional[str] = None
     #: Who published it ("zeebiz.com", "Zee Business"). Not the person who said it.
     publisher: str = ""
+    #: Did ANY discovery route answer for THIS issue? False means we could not check —
+    #: which is not the same as "there was nothing to find". A NO_VIEW with
+    #: discovery_reachable=False carries no information at all and must never be rendered
+    #: as coverage absence. Defaults True: sources that do not do per-issue discovery
+    #: (GMP, QIB, the calendar providers) are always "reachable" by construction.
+    discovery_reachable: bool = True
+    #: Which route produced this call ("Google News RSS"), or None when nothing answered.
+    discovery_route: Optional[str] = None
     # Outcome resolution (filled in once the IPO lists)
     resolved: bool = False
     correct: Optional[bool] = None
@@ -370,6 +378,8 @@ class SourceCall:
             "raw_call": self.raw_call,
             "published_at": self.published_at,
             "publisher": self.publisher,
+            "discovery_reachable": self.discovery_reachable,
+            "discovery_route": self.discovery_route,
             "resolved": self.resolved,
             "correct": self.correct,
             "listing_gain_pct": self.listing_gain_pct,
@@ -391,6 +401,8 @@ class SourceCall:
             raw_call=raw.get("raw_call", ""),
             published_at=raw.get("published_at"),
             publisher=raw.get("publisher", ""),
+            discovery_reachable=bool(raw.get("discovery_reachable", True)),
+            discovery_route=raw.get("discovery_route"),
             resolved=bool(raw.get("resolved", False)),
             correct=raw.get("correct"),
             listing_gain_pct=raw.get("listing_gain_pct"),
@@ -628,6 +640,7 @@ class RunResult:
     # The named-expert feed consumed by trinetra-backend. See engine/expert_feed.py.
     expert_calls: list[dict[str, Any]] = field(default_factory=list)
     expert_coverage: list[dict[str, Any]] = field(default_factory=list)
+    expert_reachability: list[dict[str, Any]] = field(default_factory=list)
     source_status: list[dict[str, Any]] = field(default_factory=list)
 
     # -- bucketing used by every surface --------------------------------------------
@@ -673,5 +686,6 @@ class RunResult:
             "deltas": {k: v.to_dict() for k, v in self.deltas.items()},
             "expert_calls": list(self.expert_calls),
             "expert_coverage": list(self.expert_coverage),
+            "expert_reachability": list(self.expert_reachability),
             "source_status": list(self.source_status),
         }

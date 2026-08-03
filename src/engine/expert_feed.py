@@ -68,7 +68,17 @@ def build_expert_calls(
     by_slug = {i.slug: i for i in ipos}
     rows: list[dict[str, Any]] = []
     coverage: dict[str, dict[str, Any]] = {
-        name: {"expert": name, "queried": 0, "calls": 0, "noView": 0, "droppedNoUrl": 0}
+        name: {
+            "expert": name,
+            "queried": 0,
+            "calls": 0,
+            "noView": 0,
+            # Subset of noView where NOTHING answered about that issue. These are not
+            # "he had no view" — they are "we could not check", and the difference is the
+            # whole point of this block.
+            "unreachable": 0,
+            "droppedNoUrl": 0,
+        }
         for name in EXPERT_SOURCES
     }
 
@@ -77,6 +87,8 @@ def build_expert_calls(
             continue
         stats = coverage[call.source_name]
         stats["queried"] = int(stats["queried"]) + 1
+        if not call.discovery_reachable:
+            stats["unreachable"] = int(stats["unreachable"]) + 1
         if call.stance is Stance.NO_VIEW:
             stats["noView"] = int(stats["noView"]) + 1
             continue
@@ -144,4 +156,70 @@ def _route_summary(route_rows: Sequence[dict[str, Any]]) -> str:
     return "; ".join(parts)
 
 
-__all__ = ["build_expert_calls", "build_source_status"]
+# --------------------------------------------------------------------------------------
+# Per-issue reachability — the only honest basis for an empty state
+# --------------------------------------------------------------------------------------
+
+
+def build_expert_reachability(
+    ipos: Sequence[IPO], sources: Sequence[Any]
+) -> list[dict[str, Any]]:
+    """One row per IPO: could we check it, and for which experts.
+
+    Run-level route counts cannot answer this. Google News RSS rate-limits under repeated
+    querying, so it routinely answers for some issues in a run and not others — leaving the
+    source looking alive in the aggregate while specific issues went genuinely unchecked.
+    Rendering those as "no expert view" would state a coverage fact we never established.
+
+    `reachable` is true when AT LEAST ONE expert's discovery answered for that issue, so
+    `reachable: false` is unambiguous: nothing could be checked at all. `expertsChecked` vs
+    `expertsTotal` carries the partial case, which is the common one here.
+    """
+    rows: list[dict[str, Any]] = []
+    experts = [s for s in sources if getattr(s, "issue_reach", None) is not None]
+    if not experts:
+        return rows
+
+    for ipo in ipos:
+        per_expert: list[dict[str, Any]] = []
+        for source in experts:
+            reach = source.issue_reach.get(ipo.slug)
+            if reach is None:
+                continue  # this expert was never asked about this issue (segment/status)
+            per_expert.append(
+                {
+                    "expert": getattr(source, "expert_name", getattr(source, "name", "")),
+                    "reachable": bool(reach.get("reachable")),
+                    "via": reach.get("foundVia"),
+                    "answeredRoutes": reach.get("answeredRoutes", []),
+                    "quietRoutes": reach.get("quietRoutes", []),
+                }
+            )
+        if not per_expert:
+            continue
+        checked = sum(1 for r in per_expert if r["reachable"])
+        rows.append(
+            {
+                # Both spellings: the consumer accepts either and this removes the guess.
+                "ipoSlug": ipo.slug,
+                "ipo_slug": ipo.slug,
+                "ipoName": ipo.name,
+                "reachable": checked > 0,
+                "expertsChecked": checked,
+                "expertsTotal": len(per_expert),
+                "routes": per_expert,
+            }
+        )
+
+    unchecked = sum(1 for r in rows if not r["reachable"])
+    partial = sum(1 for r in rows if r["reachable"] and r["expertsChecked"] < r["expertsTotal"])
+    log.info(
+        "expert reachability: %d issue(s) — %d fully unchecked, %d partly checked",
+        len(rows),
+        unchecked,
+        partial,
+    )
+    return rows
+
+
+__all__ = ["build_expert_calls", "build_expert_reachability", "build_source_status"]
