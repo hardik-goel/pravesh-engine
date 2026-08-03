@@ -3,9 +3,10 @@
 Each row is: source name · stance · rationale snippet · that source's own historical
 accuracy (always with n, "insufficient history" below n=5).
 
-Row order is deliberate and fixed: Anil Singhvi, then each named brokerage, then the two
-synthetic signals. The named humans come first because the table is meant to be read as
-"here is who said what", not as a scoreboard.
+Row order is deliberate and fixed: the named experts (Anil Singhvi, then Sandeep Jain, in
+config.EXPERT_SOURCES order), then each named brokerage, then the two synthetic signals. The
+named humans come first because the table is meant to be read as "here is who said what",
+not as a scoreboard. Every expert is a normal row — same columns, same accuracy, same n.
 """
 
 from __future__ import annotations
@@ -13,21 +14,22 @@ from __future__ import annotations
 import logging
 from typing import Sequence
 
-from ..config import SOURCE_GMP, SOURCE_QIB, SOURCE_SINGHVI
+from ..config import EXPERT_SOURCES, SOURCE_GMP, SOURCE_QIB
 from ..models import IPO, Evidence, EvidenceRow, SourceCall, Stance
 from .source_tracker import SourceTracker
 
 log = logging.getLogger(__name__)
 
 SYNTHETIC_ORDER = [SOURCE_GMP, SOURCE_QIB]
+EXPERT_ORDER = list(EXPERT_SOURCES)
 
 
-def _sort_key(call: SourceCall) -> tuple[int, str]:
-    if call.source_name == SOURCE_SINGHVI:
-        return (0, call.source_name)
+def _sort_key(call: SourceCall) -> tuple[int, int, str]:
+    if call.source_name in EXPERT_ORDER:
+        return (0, EXPERT_ORDER.index(call.source_name), call.source_name)
     if call.source_name in SYNTHETIC_ORDER:
-        return (2 + SYNTHETIC_ORDER.index(call.source_name), call.source_name)
-    return (1, call.source_name.lower())
+        return (2, SYNTHETIC_ORDER.index(call.source_name), call.source_name)
+    return (1, 0, call.source_name.lower())
 
 
 def build_evidence(ipo: IPO, calls: Sequence[SourceCall], tracker: SourceTracker) -> Evidence:
@@ -69,8 +71,22 @@ def build_all(
 
 
 def broker_rows(evidence: Evidence) -> list[EvidenceRow]:
-    """Named brokerages only — excludes Singhvi and the synthetic signals."""
-    return [r for r in evidence.rows if not r.is_synthetic and r.source_name != SOURCE_SINGHVI]
+    """Named brokerages only — excludes the named experts and the synthetic signals."""
+    return [
+        r for r in evidence.rows if not r.is_synthetic and r.source_name not in EXPERT_SOURCES
+    ]
+
+
+def expert_rows(evidence: Evidence) -> list[EvidenceRow]:
+    """The named experts, in EXPERT_SOURCES order. NO_VIEW rows included — caller filters."""
+    by_name = {r.source_name: r for r in evidence.rows}
+    return [by_name[name] for name in EXPERT_SOURCES if name in by_name]
+
+
+def experts_with_stance(evidence: Evidence, *, avoid_only: bool = False) -> list[EvidenceRow]:
+    """Experts who actually said something. `avoid_only` narrows it to the veto set."""
+    rows = [r for r in expert_rows(evidence) if r.stance is not Stance.NO_VIEW]
+    return [r for r in rows if r.stance.is_avoid_type] if avoid_only else rows
 
 
 def row_for(evidence: Evidence, source_name: str) -> EvidenceRow | None:

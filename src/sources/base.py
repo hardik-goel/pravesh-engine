@@ -32,6 +32,52 @@ _LAST_HOST_HIT: dict[str, float] = {}
 
 
 # --------------------------------------------------------------------------------------
+# HTTP outcome recorder
+# --------------------------------------------------------------------------------------
+#
+# Downstream consumers need to tell "this host refused us" apart from "this host answered
+# and had nothing". Both look like an empty result at the call site, and reporting them as
+# the same thing would let a hard block masquerade as "no calls today". http_get records
+# what actually happened per host so any source can quote the real reason.
+
+
+class HttpOutcome:
+    """The last thing a host did to us. `blocked` means it refused, not that it was empty."""
+
+    __slots__ = ("url", "status", "error")
+
+    def __init__(self, url: str, status: Optional[int], error: str = "") -> None:
+        self.url = url
+        self.status = status
+        self.error = error
+
+    @property
+    def ok(self) -> bool:
+        return self.status is not None and self.status < 400
+
+    @property
+    def blocked(self) -> bool:
+        """Refused, rate-limited or unreachable — as opposed to answered-but-empty."""
+        return not self.ok
+
+    @property
+    def reason(self) -> str:
+        """Short enough to read in a status payload. The full error is in the log."""
+        if self.status is not None:
+            return f"HTTP {self.status}"
+        return f"{self.error} ({_host_of(self.url)})" if self.error else "unreachable"
+
+
+_LAST_OUTCOME: dict[str, HttpOutcome] = {}
+
+
+def last_outcome(url_or_host: str) -> Optional[HttpOutcome]:
+    """What this host last did. Accepts a full URL or a bare host."""
+    host = _host_of(url_or_host) if "://" in url_or_host else url_or_host
+    return _LAST_OUTCOME.get(host)
+
+
+# --------------------------------------------------------------------------------------
 # HTTP
 # --------------------------------------------------------------------------------------
 
@@ -71,6 +117,7 @@ def http_get(url: str, *, params: dict[str, Any] | None = None) -> Optional[requ
     """GET with retries + backoff. Returns None instead of raising."""
     attempts = int(HTTP["retries"]) + 1
     backoff = float(HTTP["backoff_base_seconds"])
+    host = _host_of(url)
     for attempt in range(1, attempts + 1):
         try:
             _be_polite(url)
@@ -79,11 +126,14 @@ def http_get(url: str, *, params: dict[str, Any] | None = None) -> Optional[requ
                 raise requests.HTTPError(f"HTTP {response.status_code}")
             if response.status_code >= 400:
                 log.warning("GET %s -> HTTP %s (not retrying)", url, response.status_code)
+                _LAST_OUTCOME[host] = HttpOutcome(url, response.status_code)
                 return None
+            _LAST_OUTCOME[host] = HttpOutcome(url, response.status_code)
             return response
         except Exception as exc:  # noqa: BLE001 — deliberate: scrapers never raise upward
             if attempt >= attempts:
                 log.warning("GET %s failed after %s attempts: %s", url, attempts, exc)
+                _LAST_OUTCOME[host] = HttpOutcome(url, None, type(exc).__name__)
                 return None
             sleep_for = backoff**attempt
             log.debug("GET %s attempt %s failed (%s); retrying in %.1fs", url, attempt, exc, sleep_for)
@@ -415,19 +465,31 @@ def match_ipo(name: str, ipos: Iterable[IPO], *, min_ratio: Optional[float] = No
 # --------------------------------------------------------------------------------------
 
 
-def classify_stance(text: str) -> Stance:
-    """Map free text onto a Stance. Order matters: most specific phrases win."""
-    blob = clean_text(text).lower()
+def classify_stance_verbatim(text: str) -> tuple[Stance, str]:
+    """Map free text onto a Stance, and hand back the phrase AS PUBLISHED that decided it.
+
+    The verbatim phrase matters downstream: consumers of the expert feed grade on what the
+    person actually said, and normalising (say) "book profit" into "sell" would erase a
+    distinction someone trades on. `Stance` is our reading; the second element is theirs.
+    """
+    cleaned = clean_text(text)
+    blob = cleaned.lower()  # same length as `cleaned`, so indices map 1:1
     if not blob:
-        return Stance.NO_VIEW
+        return Stance.NO_VIEW, ""
     for stance_key in ("AVOID", "APPLY_LISTING_GAINS", "SUBSCRIBE_LONG_TERM", "NEUTRAL", "APPLY"):
         for phrase in STANCE_KEYWORDS.get(stance_key, []):
-            if phrase in blob:
+            index = blob.find(phrase)
+            if index >= 0:
                 # "do not subscribe" must not be read as "subscribe"
                 if stance_key == "APPLY" and re.search(r"(not|avoid|n't)\s+\w*\s*subscrib", blob):
                     continue
-                return Stance(stance_key)
-    return Stance.NO_VIEW
+                return Stance(stance_key), cleaned[index : index + len(phrase)]
+    return Stance.NO_VIEW, ""
+
+
+def classify_stance(text: str) -> Stance:
+    """Map free text onto a Stance. Order matters: most specific phrases win."""
+    return classify_stance_verbatim(text)[0]
 
 
 def snippet(text: str, limit: int = 180) -> str:

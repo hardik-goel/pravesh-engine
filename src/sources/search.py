@@ -22,6 +22,8 @@ from __future__ import annotations
 import logging
 import re
 from dataclasses import dataclass
+from datetime import timezone
+from email.utils import parsedate_to_datetime
 from typing import Optional, Sequence
 from urllib.parse import parse_qs, quote_plus, urlparse
 
@@ -38,6 +40,7 @@ SELECTORS: dict[str, str] = {
     "rss_link": "link",
     "rss_source": "source",
     "rss_description": "description",
+    "rss_published": "pubDate",
     "ddg_result": "div.result, div.web-result",
     "ddg_link": "a.result__a",
     "topic_link": "a[href]",
@@ -52,10 +55,30 @@ class SearchHit:
     url: str
     publisher: str = ""
     summary: str = ""
+    #: When the item was PUBLISHED (ISO 8601), when the feed says so. Never the scrape time —
+    #: staleness downstream is measured from publication, and defaulting to "now" would make
+    #: a two-month-old call look fresh.
+    published_at: Optional[str] = None
 
     @property
     def blob(self) -> str:
         return f"{self.title} {self.summary}"
+
+
+def _rss_published(raw: str) -> Optional[str]:
+    """RFC 822 pubDate -> ISO 8601. None when absent or unparseable — never guessed."""
+    text = clean_text(raw)
+    if not text:
+        return None
+    try:
+        parsed = parsedate_to_datetime(text)
+    except (TypeError, ValueError):
+        return None
+    if parsed is None:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc).isoformat()
 
 
 def slugify_for_topic(name: str) -> str:
@@ -84,12 +107,17 @@ def news_search(query: str, *, limit: int = 10) -> list[SearchHit]:
                 continue
             source = item.find(SELECTORS["rss_source"])
             description = clean_text(item.find(SELECTORS["rss_description"]))
+            # lxml-xml preserves tag case; the html.parser fallback lowercases it.
+            published = item.find(SELECTORS["rss_published"]) or item.find(
+                SELECTORS["rss_published"].lower()
+            )
             hits.append(
                 SearchHit(
                     title=title,
                     url=link,
                     publisher=clean_text(source) if source else "",
                     summary=description,
+                    published_at=_rss_published(clean_text(published) if published else ""),
                 )
             )
         if hits:

@@ -1,8 +1,9 @@
 # Trinetra Pravesh — IPO intelligence engine
 
 **Evidence first, not verdict first.** For every live IPO, Pravesh builds a table of named
-sources — Anil Singhvi, each brokerage that went on record, plus two synthetic signals
-(GMP, QIB) — showing what each said *and how often that source has actually been right*.
+sources — the named market experts (Anil Singhvi, Sandeep Jain), each brokerage that went on
+record, plus two synthetic signals (GMP, QIB) — showing what each said *and how often that
+source has actually been right*.
 Only then does it give **My Take**: a scored, reasoned opinion that names the strongest
 evidence for and against, and always ends with **"Final call is yours."**
 
@@ -33,7 +34,8 @@ flowchart TD
     end
 
     subgraph opinions["Opinion sources (config.SOURCES_ENABLED)"]
-        SI[singhvi.py<br/>Zee Business · DuckDuckGo fallback]
+        SI[singhvi.py<br/>Anil Singhvi · Zee Business]
+        SJ[sandeep_jain.py<br/>Sandeep Jain · Zee Business]
         BR[brokers.py<br/>Moneycontrol / ET / Livemint roundups]
         GM[gmp.py<br/>synthetic 'GMP signal']
         QI[qib_signal.py<br/>synthetic 'QIB signal']
@@ -78,10 +80,13 @@ pravesh-engine/
 │   │   ├── search.py              discovery chain: Google News RSS · topic pages · DDG
 │   │   ├── gmp.py                 GMP + synthetic "GMP signal"
 │   │   ├── qib_signal.py          synthetic "QIB signal"
-│   │   ├── singhvi.py             Anil Singhvi (Zee Business)
+│   │   ├── expert.py              shared machinery for any named expert source
+│   │   ├── singhvi.py             Anil Singhvi (Zee Business) — constants only
+│   │   ├── sandeep_jain.py        Sandeep Jain (Zee Business) — constants only
 │   │   └── brokers.py             named brokerages from roundups
 │   ├── engine/
 │   │   ├── evidence.py            per-IPO evidence table
+│   │   ├── expert_feed.py         expert_calls + source_status for trinetra-backend
 │   │   ├── take.py                self-calibrating score + reasoned paragraph
 │   │   ├── delta.py               what moved since the earlier run of the same day
 │   │   └── source_tracker.py      accuracy ledger + leaderboard
@@ -276,10 +281,18 @@ call and grades it identically (`RISKY` is excluded — it is an explicit refusa
 
 ### Self-calibration
 
-Base weights: **QIB 30 · GMP 25 · total subscription 15 · Singhvi 15 · broker consensus 15**.
-Once a source has **n ≥ 10** resolved calls, its weight is multiplied by
-`clamp(accuracy / 60 %, 0.5, 1.5)`. Absent sources are dropped and the rest renormalised,
+Base weights: **QIB 30 · GMP 25 · total subscription 15 · Singhvi 7.5 · Sandeep Jain 7.5 ·
+broker consensus 15**. Once a source has **n ≥ 10** resolved calls, its weight is multiplied
+by `clamp(accuracy / 60 %, 0.5, 1.5)`. Absent sources are dropped and the rest renormalised,
 so a dead scraper shifts emphasis instead of silently scoring zero.
+
+**The named experts split one budget, they do not each get one.** `EXPERT_WEIGHT_BUDGET` is
+**15** in total and Singhvi and Sandeep Jain hold 7.5 each — adding a second expert did not
+increase how much personal opinion counts against the hard numbers, it divided the existing
+allocation. An assertion in `config.py` fails at import if that ever stops being true. Each
+expert calibrates **independently** once they clear n ≥ 10, so a good record lifts one
+without lifting the other, and neither is pooled into the broker consensus (that would let
+one person's record move two dials at once).
 
 Modifiers: OFS > 75 % ⇒ −10 · SME ⇒ −10 and capped at RISKY unless the score ≥ 80 ·
 no bidding data yet ⇒ PRELIMINARY. When *nothing* has landed — no bidding, no GMP, nobody
@@ -288,12 +301,90 @@ a 0/100 there would read as AVOID, which would be a lie.
 
 Bands: **≥70 🟢 APPLY · 50–69 🔵 LISTING GAINS ONLY · 35–49 🟡 RISKY · <35 🔴 AVOID**.
 
-### The Singhvi veto rule
+### The expert veto rule
 
-If Anil Singhvi says **AVOID**, the score does **not** change. Instead a hard red banner —
-`⚠ Anil Singhvi says AVOID` — is attached to the IPO and rendered *above* My Take in every
-surface (email card, Telegram line, web card). The reasoning behind the number stays
-honest; the warning is impossible to miss; the decision stays yours.
+If a named expert says **AVOID**, the score does **not** change. Instead a hard red banner is
+attached to the IPO and rendered *above* My Take in every surface (email card, Telegram line,
+web card). The reasoning behind the number stays honest; the warning is impossible to miss;
+the decision stays yours.
+
+Both experts carry the **same** veto — this is parity, not a hierarchy:
+
+| Who said AVOID | Banner |
+|---|---|
+| Anil Singhvi | `⚠ Anil Singhvi says AVOID` |
+| Sandeep Jain | `⚠ Sandeep Jain says AVOID` |
+| **Both** | `⚠⚠ BOTH Anil Singhvi and Sandeep Jain say AVOID — two independent experts against this issue` |
+
+Two independent experts against the same issue is a materially stronger warning than either
+alone, so it collapses into **one** louder banner that names them together rather than two
+near-identical lines the eye can slide past. The take paragraph says the same thing in
+words. None of it touches the score — the banners live in `take.flags`, which every surface
+already renders. Configured in `config.EXPERT_VETOES` / `config.BOTH_EXPERTS_VETO`.
+
+### The named-expert feed (`expert_calls`) — what `trinetra-backend` ingests
+
+`data/latest.json` carries a machine-readable feed of expert views so the backend stops
+relying on manual entry. Built by `engine/expert_feed.py` from **this run's** calls only —
+republishing the ledger's older calls would present last week's view as today's.
+
+Capture rules, held deliberately tight:
+
+| Field | Rule |
+|---|---|
+| `call` | **Verbatim as published.** Never normalised. `stanceNormalised` carries our reading in a *separate* field, so our vocabulary can never overwrite theirs. |
+| `target` / `stop` | **Always `null`** for IPO views, and never derived — from each other, from GMP, or from the price band. An expert's IPO call is "subscribe" or "avoid", not a level. |
+| `seenAt` | **Publication** time, or `null`. Never the scrape time. A two-month-old call scraped this morning is two months old; `capturedAt` holds the scrape time separately. |
+| `url` | **Required.** A row without one is dropped here rather than shipped, and the drop is counted in `expert_coverage.droppedNoUrl`. |
+| `NO_VIEW` | Never becomes a row — it is not a call. Counted in `expert_coverage.noView` so the absence stays visible. |
+| `symbol` | `null` by construction — an unlisted IPO has no ticker. Join on `ipoSlug`. |
+
+**Blocked and silent are different states, and the payload keeps them apart.** An empty
+`expert_calls` is ambiguous on its own, so it never travels alone: `source_status[].routes`
+reports, per discovery route, how many times it was attempted, how many times it *answered*,
+how many matches it produced, whether we gave up on it mid-run, and the real reason
+(`HTTP 403` vs `responded 2/4, no matching item`). Read that block before concluding "no
+calls today".
+
+**Which routes actually load** (measured 2026-08-03, from this machine):
+
+| Route | State | Consequence |
+|---|---|---|
+| `zeebiz.com/search` | **HTTP 403** on every request, both experts | Never contributes. Dropped after 3 attempts per run. |
+| DuckDuckGo HTML | **Connect timeout / captcha** | Never contributes. Dropped after 3 attempts per run. |
+| **Google News RSS** | **Partly works** — server-rendered XML, not walled, but answered only 1–2 of 4 queries in a measured run (it rate-limits under repeated querying) | The only route carrying these sources at all. |
+
+So: the anti-bot wall the backend hit is the same wall here, on the same two hosts — stated
+plainly rather than hidden behind an empty result. What Pravesh has that the backend's path
+does not is **Google News RSS**, which does answer and carries the headline, the publisher
+and the `pubDate` that becomes `seenAt`.
+
+Do not over-read that. Its limits are real:
+
+* It is **intermittent**, not reliable — it rate-limits under repeated querying, so a run
+  can query an issue and get nothing back for reasons that have nothing to do with whether
+  the expert covered it. The `answered` vs `attempted` counts in `source_status` are there
+  precisely so this is visible per run rather than inferred.
+* It gives **headline + RSS summary only**. Its article links are Google wrappers that
+  cannot be de-referenced server-side, so there is no article body to fall back on.
+* A headline stating no explicit stance classifies as `NO_VIEW` rather than being guessed
+  into a call.
+
+Net effect: a modest trickle of attributable rows, not a firehose, and plenty of runs with
+**zero** rows — `noView` equal to `queried`, every route's state spelled out. That is a real
+signal about coverage, not a scraper quietly failing, and the two are distinguishable in the
+payload without asking anyone.
+
+A route dropped mid-run is flagged `dropped: true`, because its zeroes are a give-up rather
+than a full sweep that found nothing — a distinction that would otherwise silently
+understate coverage.
+
+### Adding a third named expert
+
+One identity in `config.SOURCE_*` + one entry in `EXPERT_SOURCES`, `EXPERT_SHORT_NAMES`,
+`EXPERT_VETOES`, `EXPERT_WEIGHT_KEYS` and `WEIGHT_CALIBRATION_SOURCE`; a re-split of the
+same `EXPERT_WEIGHT_BUDGET` across `BASE_WEIGHTS`; one constants-only scraper subclassing
+`sources/expert.py`; one line in `sources.REGISTRY` and `SOURCES_ENABLED`. No engine change.
 
 ---
 
@@ -304,7 +395,10 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
 
 ```jsonc
 {
-  "schema_version": 1,
+  // 2 added expert_calls / expert_coverage / source_status. Purely additive — every v1
+  // key is unchanged and still present, so a v1 consumer keeps working. The number moved
+  // anyway so consumers can feature-detect on it rather than on a key's presence.
+  "schema_version": 2,
   "brand": { "name": "Trinetra Pravesh", "tagline": "…" },
   "generated_at": "2026-08-03T09:34:11+00:00",   // UTC ISO
   "generated_at_market": "03 Aug 2026, 15:04 IST",
@@ -331,7 +425,9 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
     "gmp": 52, "gmp_pct": 17.7, "gmp_source": "https://ipowatch.in/…",
     "detail_url": "https://…", "exchange": "BSE, NSE",
 
-    "evidence": [{                                // the product's heart
+    // the product's heart. Row order is fixed: named experts (Anil Singhvi, then
+    // Sandeep Jain), then brokerages A–Z, then the synthetic signals.
+    "evidence": [{
       "source_name": "Anil Singhvi",
       "stance": "APPLY" | "SUBSCRIBE_LONG_TERM" | "APPLY_LISTING_GAINS"
               | "NEUTRAL" | "AVOID" | "NO_VIEW",
@@ -342,6 +438,13 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
       "accuracy_label": "71% (n=14)",              // or "insufficient history (n=2)"
       "url": "https://…",
       "is_synthetic": false                        // true for GMP/QIB signals
+    }, {
+      "source_name": "Sandeep Jain",               // same shape, same treatment, own n
+      "stance": "AVOID", "stance_label": "Avoid",
+      "rationale": "Zee Business: “…”",
+      "accuracy_pct": null, "accuracy_n": 3,
+      "accuracy_label": "insufficient history (n=3)",
+      "url": "https://…", "is_synthetic": false
     }],
 
     "take": {
@@ -352,7 +455,9 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
       "paragraph": "The strongest argument … Final call is yours.",
       "one_liner": "LISTING GAINS ONLY (QIB 24.3x · GMP +18%)",
       "preliminary": false,
-      "flags": ["⚠ Anil Singhvi says AVOID"],      // render above My Take
+      // render above My Take. One entry per vetoing expert; when BOTH say AVOID this
+      // collapses to the single stronger "⚠⚠ BOTH …" banner instead of two lines.
+      "flags": ["⚠ Anil Singhvi says AVOID"],
       "components": [{ "key": "qib", "label": "QIB subscription", "raw_value": 24.3,
                        "normalised": 1.0, "base_weight": 30, "calibration_multiplier": 1.1,
                        "effective_weight": 33, "contribution": 28.4, "note": "…" }],
@@ -383,6 +488,38 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
                 "resolved": true, "correct": true, "flags": [] }],
   "sources_ok": ["ipowatch", "nse_subscription", "gmp"],
   "sources_failed": ["singhvi: … "],               // non-empty ⇒ show a degraded notice
+
+  // ---- named-expert ingest surface (schema_version ≥ 2) -------------------------
+  // One row per attributable expert view. NO_VIEW is never a row (it is not a call);
+  // a row without a url is never emitted. See "The named-expert feed" below.
+  "expert_calls": [{
+    "symbol": null,                                // an unlisted IPO has no ticker
+    "ipoSlug": "acme-solar-industries-limited",    // join on this, not on symbol
+    "ipoName": "Acme Solar Industries Limited",
+    "segment": "MAINBOARD",
+    "expert": "Sandeep Jain",
+    "call": "subscribe for listing gains",         // VERBATIM as published
+    "stanceNormalised": "APPLY_LISTING_GAINS",     // our reading, kept separate
+    "target": null, "stop": null,                  // always null for IPO views
+    "rationale": "Zee Business: “…”",
+    "url": "https://…",                            // required; no url ⇒ no row
+    "seenAt": "2026-08-02T09:15:00+00:00",         // PUBLICATION time, or null
+    "capturedAt": "2026-08-03T06:44:02+00:00",     // scrape time — never used as seenAt
+    "source": "zeebiz.com",
+    "listingDate": "2026-08-06"
+  }],
+  // What each expert was asked and what came back — so an empty `expert_calls` can be
+  // read correctly instead of as "he had nothing to say".
+  "expert_coverage": [{ "expert": "Sandeep Jain", "queried": 13, "calls": 0,
+                        "noView": 13, "droppedNoUrl": 0 }],
+  // Per source: did it work, and if not WHY. "HTTP 403" and "no matching item" are
+  // different states and this block is the only place that keeps them apart.
+  "source_status": [{
+    "source": "sandeep_jain", "ok": true,
+    "reason": "zeebiz search: HTTP 403 …; Google News RSS: responded 1/4, no matching item …",
+    "routes": [{ "route": "zeebiz search", "attempted": 3, "answered": 0, "hits": 0,
+                 "dropped": true, "reason": "HTTP 403 — route dropped after 3 in a row" }]
+  }],
   "disclaimer": "Informational only. Not investment advice. …"
 }
 ```
@@ -446,6 +583,7 @@ column headings, add the new wording. Nothing below those blocks should need edi
 | `nse: current-issue feed empty` | `sources/nse_subscription.py` → `ENDPOINTS`, `CATEGORY_KEYS` |
 | `gmp: … returned no rows` | `sources/gmp.py` → `SELECTORS`, `GMP_HEADER_KEYS` |
 | `singhvi: every discovery route … returned nothing` | `sources/singhvi.py` → `SELECTORS`, `QUERY_TEMPLATES`; `sources/search.py` |
+| `sandeep_jain: every discovery route … returned nothing` | `sources/sandeep_jain.py` → `SELECTORS`, `QUERY_TEMPLATES`; `sources/search.py` |
 | `brokers: no roundup article reachable` | `sources/brokers.py` → `SELECTORS`, `ALLOWED_DOMAINS`, `FIRM_PATTERN`; `sources/search.py` |
 
 **Known gaps, stated plainly** (verified 2026-07-31, all degrade to "not published yet"
@@ -454,11 +592,19 @@ rather than to a guess):
 * **BSE SME bidding data.** NSE's API covers mainboard and NSE Emerge; no server-rendered
   source for BSE SME subscription was found. Those issues stay `PRELIMINARY` until they
   close, scored on GMP and published views alone.
-* **Singhvi article bodies.** zeebiz.com returns 403 to this crawler, so his stance is
-  classified from the headline plus the news summary. Hindi-language headlines classify as
-  `NO_VIEW` rather than being machine-translated into a call.
+* **Expert article bodies.** zeebiz.com returns 403 to this crawler, so both Singhvi's and
+  Sandeep Jain's stances are classified from the headline plus the news summary.
+  Hindi-language headlines classify as `NO_VIEW` rather than being machine-translated into
+  a call. Sandeep Jain anchors on the **full** name — "Jain" alone is far too common a
+  surname to attribute a call on, and a near-miss costs a `NO_VIEW`, which is the safe
+  failure.
 * **Google News links** are wrappers that cannot be de-referenced server-side; they are
-  used for headline evidence, never for full-text extraction.
+  used for headline evidence, never for full-text extraction. They are still a valid `url`
+  in `expert_calls` — they resolve to the publisher in a browser, so the call stays
+  attributable, which is the bar for shipping a row.
+* **zeebiz.com and DuckDuckGo are hard-blocked** (403 and captcha respectively) and
+  contribute nothing to either expert. This is reported per route in `source_status`, never
+  smoothed into a plain empty result.
 
 **A whole site going client-side is not a code change — it is a config change.** As of
 2026-07-31, `chittorgarh.com`'s report pages became a client-rendered Next.js app that
@@ -479,12 +625,15 @@ the workflow's `if: failure()` job emails a plain-text failure notice with the r
 1. The evidence table comes first; My Take is visually separate and always ends with
    **"Final call is yours."**
 2. Accuracy is always shown with `n`; under n = 5 it reads *insufficient history*.
-3. `NO_VIEW` is first-class and never penalised — Singhvi simply does not cover most SME
-   issues, and pretending otherwise would fabricate a signal.
+3. `NO_VIEW` is first-class and never penalised — neither expert covers every SME issue,
+   and pretending otherwise would fabricate a signal.
 4. GMP is labelled indicative and unofficial everywhere it appears.
-5. The Singhvi veto warns without secretly moving the number.
-6. No evidence ⇒ no score, not a zero.
-7. No earlier snapshot ⇒ no "since this morning" line. A delta is a measurement against a
+5. An expert veto warns without secretly moving the number, and no expert outranks another
+   — both get the same banner, and both AVOIDs together get a louder one.
+6. Named experts split a fixed weight budget rather than each adding one, so the panel can
+   grow without the engine becoming a channel for personal opinion over the hard numbers.
+7. No evidence ⇒ no score, not a zero.
+8. No earlier snapshot ⇒ no "since this morning" line. A delta is a measurement against a
    real prior run or it does not appear, and a number that vanished from a source is a scrape
    gap, never reported as a fall.
 

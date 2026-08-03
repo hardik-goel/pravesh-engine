@@ -87,6 +87,14 @@ SOURCE_URLS: Final[dict[str, list[str]]] = {
     "singhvi_fallback_search": [
         "https://html.duckduckgo.com/html/?q={query}",
     ],
+    # Sandeep Jain appears on the same network, but the endpoints are listed per source so a
+    # host that breaks for one expert can be repointed without touching the other.
+    "sandeep_jain_search": [
+        "https://www.zeebiz.com/search?q={query}",
+    ],
+    "sandeep_jain_fallback_search": [
+        "https://html.duckduckgo.com/html/?q={query}",
+    ],
     "broker_roundups": [
         "https://www.moneycontrol.com/news/tags/ipo.html",
         "https://economictimes.indiatimes.com/markets/ipos/fpos",
@@ -113,6 +121,7 @@ SOURCES_ENABLED: Final[list[str]] = [
     "gmp",
     "qib_signal",
     "singhvi",
+    "sandeep_jain",
     "brokers",
 ]
 
@@ -135,6 +144,20 @@ DATA_PROVIDERS: Final[dict[str, list[str]]] = {
 SOURCE_GMP: Final[str] = "GMP signal"
 SOURCE_QIB: Final[str] = "QIB signal"
 SOURCE_SINGHVI: Final[str] = "Anil Singhvi"
+SOURCE_SANDEEP_JAIN: Final[str] = "Sandeep Jain"
+
+# Named market experts, as opposed to brokerage houses. They sit at the top of the evidence
+# table, are pooled separately from the broker consensus, and each carries its own veto.
+# Adding a third expert is: one identity above, one entry here, one weight in BASE_WEIGHTS,
+# one scraper, one line in sources.REGISTRY.
+EXPERT_SOURCES: Final[tuple[str, ...]] = (SOURCE_SINGHVI, SOURCE_SANDEEP_JAIN)
+
+# Short forms for the one place space is charged by the character (the Telegram one-liner).
+# "Jain" alone would be ambiguous in this market, so his stays full.
+EXPERT_SHORT_NAMES: Final[dict[str, str]] = {
+    SOURCE_SINGHVI: "Singhvi",
+    SOURCE_SANDEEP_JAIN: "Sandeep Jain",
+}
 
 # Alias map — every variant collapses to one ledger identity.
 BROKER_ALIASES: Final[dict[str, str]] = {
@@ -273,22 +296,43 @@ THRESHOLDS: Final[dict[str, float]] = {
 # --------------------------------------------------------------------------------------
 
 # Base weights. Must sum to 100 for readability; the engine renormalises anyway.
+#
+# The named-expert allocation is 15 in total and does not grow when an expert is added —
+# Singhvi and Sandeep Jain SPLIT the old 15, they do not each get it. One more voice on the
+# panel must not mean more influence for personal opinion over the hard numbers.
 BASE_WEIGHTS: Final[dict[str, float]] = {
     "qib": 30.0,
     "gmp": 25.0,
     "total_subscription": 15.0,
-    "singhvi": 15.0,
+    "singhvi": 7.5,
+    "sandeep_jain": 7.5,
     "brokers": 15.0,
 }
 
+#: Total base weight the named experts may hold between them. Asserted at import.
+EXPERT_WEIGHT_BUDGET: Final[float] = 15.0
+
 # Which ledger identity calibrates which weight. None => never calibrated.
+# Each expert calibrates independently once they clear CALIBRATION["min_resolved_calls"],
+# so a good record lifts one without lifting the other.
 WEIGHT_CALIBRATION_SOURCE: Final[dict[str, str | None]] = {
     "qib": SOURCE_QIB,
     "gmp": SOURCE_GMP,
     "total_subscription": None,
     "singhvi": SOURCE_SINGHVI,
+    "sandeep_jain": SOURCE_SANDEEP_JAIN,
     "brokers": "__broker_consensus__",  # aggregate of all broker identities
 }
+
+#: weight key -> ledger identity, for the expert weights only. Used by take.py.
+EXPERT_WEIGHT_KEYS: Final[dict[str, str]] = {
+    "singhvi": SOURCE_SINGHVI,
+    "sandeep_jain": SOURCE_SANDEEP_JAIN,
+}
+
+assert (
+    abs(sum(BASE_WEIGHTS[k] for k in EXPERT_WEIGHT_KEYS) - EXPERT_WEIGHT_BUDGET) < 1e-9
+), "named experts must SPLIT EXPERT_WEIGHT_BUDGET, not each be given it"
 
 CALIBRATION: Final[dict[str, float]] = {
     "min_resolved_calls": 10,  # n >= 10 before a weight is scaled
@@ -323,11 +367,36 @@ NO_EVIDENCE: Final[dict[str, str]] = {
     "color": "#6B6B63",
 }
 
-# Singhvi veto: never touches the score, always renders as a banner.
-SINGHVI_VETO: Final[dict[str, object]] = {
+# Expert vetoes: never touch the score, always render as a banner above My Take.
+#
+# Parity is deliberate — both named experts get the same treatment, in declaration order.
+# A veto is a warning to the reader, not a secret adjustment to the number.
+EXPERT_VETOES: Final[list[dict[str, object]]] = [
+    {
+        "source": SOURCE_SINGHVI,
+        "enabled": True,
+        "trigger_stance": "AVOID",
+        "banner_text": "⚠ Anil Singhvi says AVOID",
+        "affects_score": False,
+    },
+    {
+        "source": SOURCE_SANDEEP_JAIN,
+        "enabled": True,
+        "trigger_stance": "AVOID",
+        "banner_text": "⚠ Sandeep Jain says AVOID",
+        "affects_score": False,
+    },
+]
+
+# Two independent experts against the same issue is a materially stronger signal than one,
+# and the banner has to say so rather than leaving the reader to notice two stacked lines.
+BOTH_EXPERTS_VETO: Final[dict[str, object]] = {
     "enabled": True,
-    "trigger_stance": "AVOID",
-    "banner_text": "⚠ Anil Singhvi says AVOID",
+    "banner_text": (
+        "⚠⚠ BOTH Anil Singhvi and Sandeep Jain say AVOID — two independent experts "
+        "against this issue"
+    ),
+    "replaces_individual_banners": True,
     "affects_score": False,
 }
 

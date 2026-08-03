@@ -15,10 +15,12 @@ from ..config import DATA_PROVIDERS, SOURCES_ENABLED
 from .base import DataProvider, Source
 from .brokers import BrokersSource
 from .chittorgarh import ChittorgarhSource
+from .expert import NamedExpertSource
 from .gmp import GMPSource
 from .ipowatch import IPOWatchSource
 from .nse_subscription import NSESubscriptionSource
 from .qib_signal import QIBSignalSource
+from .sandeep_jain import SandeepJainSource
 from .singhvi import SinghviSource
 
 PROVIDER_REGISTRY: dict[str, type[DataProvider]] = {
@@ -31,6 +33,7 @@ REGISTRY: dict[str, type[Source]] = {
     "gmp": GMPSource,
     "qib_signal": QIBSignalSource,
     "singhvi": SinghviSource,
+    "sandeep_jain": SandeepJainSource,
     "brokers": BrokersSource,
 }
 
@@ -57,6 +60,7 @@ def provider_chain(role: str, providers: dict[str, DataProvider]) -> list[DataPr
 
 __all__ = [
     "DataProvider",
+    "NamedExpertSource",
     "PROVIDER_REGISTRY",
     "REGISTRY",
     "Source",
@@ -69,5 +73,6 @@ __all__ = [
     "IPOWatchSource",
     "NSESubscriptionSource",
     "QIBSignalSource",
+    "SandeepJainSource",
     "SinghviSource",
 ]

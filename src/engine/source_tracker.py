@@ -19,7 +19,7 @@ import logging
 from datetime import datetime, timezone
 from typing import Any, Iterable, Optional, Sequence
 
-from ..config import ACCURACY, SOURCE_GMP, SOURCE_QIB, SOURCE_SINGHVI, THRESHOLDS
+from ..config import ACCURACY, EXPERT_SOURCES, SOURCE_GMP, SOURCE_QIB, THRESHOLDS
 from ..models import (
     IPO,
     Segment,
@@ -193,7 +193,11 @@ class SourceTracker:
         return stats
 
     def broker_consensus_accuracy(self) -> SourceAccuracy:
-        """Every named brokerage pooled — calibrates the 'brokers' weight."""
+        """Every named brokerage pooled — calibrates the 'brokers' weight.
+
+        The named experts are excluded: each of them calibrates their own weight, so pooling
+        them in here would let one person's record move two dials at once.
+        """
         rows = [
             c
             for c in self.calls
@@ -201,7 +205,7 @@ class SourceTracker:
             and c.correct is not None
             and not c.is_synthetic
             and c.source_name not in SYNTHETIC_SOURCES
-            and c.source_name != SOURCE_SINGHVI
+            and c.source_name not in EXPERT_SOURCES
         ]
         rows.sort(key=lambda c: c.resolved_at or c.captured_at or "")
         window = int(ACCURACY["recent_window"])

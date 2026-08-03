@@ -331,6 +331,15 @@ class SourceCall:
     captured_at: Optional[str] = None
     segment: Segment = Segment.MAINBOARD
     is_synthetic: bool = False  # GMP signal / QIB signal
+    # -- provenance, for consumers that grade on what was actually said ----------------
+    #: The phrase AS PUBLISHED that produced `stance` ("subscribe for listing gains").
+    #: `stance` is our reading of it; this is theirs, unnormalised.
+    raw_call: str = ""
+    #: When the item was PUBLISHED, if the source states it. None when it does not —
+    #: never back-filled with the scrape time, because staleness is measured from here.
+    published_at: Optional[str] = None
+    #: Who published it ("zeebiz.com", "Zee Business"). Not the person who said it.
+    publisher: str = ""
     # Outcome resolution (filled in once the IPO lists)
     resolved: bool = False
     correct: Optional[bool] = None
@@ -358,6 +367,9 @@ class SourceCall:
             "captured_at": self.captured_at,
             "segment": self.segment.value,
             "is_synthetic": self.is_synthetic,
+            "raw_call": self.raw_call,
+            "published_at": self.published_at,
+            "publisher": self.publisher,
             "resolved": self.resolved,
             "correct": self.correct,
             "listing_gain_pct": self.listing_gain_pct,
@@ -376,6 +388,9 @@ class SourceCall:
             captured_at=raw.get("captured_at"),
             segment=Segment(raw.get("segment", "MAINBOARD")),
             is_synthetic=bool(raw.get("is_synthetic", False)),
+            raw_call=raw.get("raw_call", ""),
+            published_at=raw.get("published_at"),
+            publisher=raw.get("publisher", ""),
             resolved=bool(raw.get("resolved", False)),
             correct=raw.get("correct"),
             listing_gain_pct=raw.get("listing_gain_pct"),
@@ -610,6 +625,10 @@ class RunResult:
     slot: str = "manual"
     run_at_market: str = ""  # ISO 8601 with the market offset
     deltas: dict[str, IPODelta] = field(default_factory=dict)  # by ipo_slug, may be empty
+    # The named-expert feed consumed by trinetra-backend. See engine/expert_feed.py.
+    expert_calls: list[dict[str, Any]] = field(default_factory=list)
+    expert_coverage: list[dict[str, Any]] = field(default_factory=list)
+    source_status: list[dict[str, Any]] = field(default_factory=list)
 
     # -- bucketing used by every surface --------------------------------------------
 
@@ -652,4 +671,7 @@ class RunResult:
             "slot": self.slot,
             "run_at_market": self.run_at_market,
             "deltas": {k: v.to_dict() for k, v in self.deltas.items()},
+            "expert_calls": list(self.expert_calls),
+            "expert_coverage": list(self.expert_coverage),
+            "source_status": list(self.source_status),
         }

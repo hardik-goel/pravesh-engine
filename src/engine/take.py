@@ -5,8 +5,14 @@ weight is multiplied by clamp(accuracy / 60%, 0.5, 1.5). Sources that are absent
 dropped and the remaining weights renormalised, so a missing scraper shifts emphasis
 instead of silently scoring zero.
 
-The Singhvi veto NEVER moves the score. It attaches a hard red banner that every surface
-renders above My Take, and the reader decides.
+An expert veto NEVER moves the score. It attaches a hard red banner that every surface
+renders above My Take, and the reader decides. Both named experts carry the same veto; when
+BOTH say AVOID the banner says so explicitly, because two independent experts against one
+issue is a materially stronger warning than either alone.
+
+The two experts SPLIT one expert weight budget (config.EXPERT_WEIGHT_BUDGET) rather than
+each holding a full one, so adding a voice to the panel never inflates how much personal
+opinion counts against the hard numbers.
 
 Every take ends with "Final call is yours." — because it does.
 """
@@ -19,22 +25,24 @@ from typing import Optional, Sequence
 
 from ..config import (
     BASE_WEIGHTS,
+    BOTH_EXPERTS_VETO,
     CALIBRATION,
+    EXPERT_SHORT_NAMES,
+    EXPERT_VETOES,
+    EXPERT_WEIGHT_KEYS,
     NO_EVIDENCE,
     PRELIMINARY_EMOJI,
     PRELIMINARY_LABEL,
     SCORE_MODIFIERS,
-    SINGHVI_VETO,
     SOURCE_GMP,
     SOURCE_QIB,
-    SOURCE_SINGHVI,
     TAKE_CLOSER,
     THRESHOLDS,
     VERDICT_BANDS,
     WEIGHT_CALIBRATION_SOURCE,
 )
-from ..models import IPO, Evidence, ScoreComponent, Stance, Take
-from .evidence import broker_consensus, broker_rows, row_for
+from ..models import IPO, Evidence, EvidenceRow, ScoreComponent, Stance, Take
+from .evidence import broker_consensus, broker_rows, expert_rows, row_for
 from .source_tracker import SourceTracker
 
 log = logging.getLogger(__name__)
@@ -150,16 +158,18 @@ class TakeEngine:
                 f"{book.total:.2f}x overall",
             )
 
-        # Singhvi — NO_VIEW is absent, not a zero
-        singhvi_row = row_for(evidence, SOURCE_SINGHVI)
-        if singhvi_row is not None and singhvi_row.stance in STANCE_SCORE:
-            add(
-                "singhvi",
-                "Anil Singhvi",
-                None,
-                STANCE_SCORE[singhvi_row.stance],
-                f"called it {singhvi_row.stance.label}",
-            )
+        # Named experts, each on their own weight — NO_VIEW is absent, not a zero. An
+        # expert who has not spoken simply drops out and the rest renormalise.
+        for weight_key, source_name in EXPERT_WEIGHT_KEYS.items():
+            expert_row = row_for(evidence, source_name)
+            if expert_row is not None and expert_row.stance in STANCE_SCORE:
+                add(
+                    weight_key,
+                    source_name,
+                    None,
+                    STANCE_SCORE[expert_row.stance],
+                    f"called it {expert_row.stance.label}",
+                )
 
         # Broker consensus
         consensus = broker_consensus(evidence)
@@ -223,17 +233,14 @@ class TakeEngine:
         if preliminary:
             modifiers.append("PRELIMINARY — bidding data not published yet")
 
-        # Singhvi veto: banner only, score untouched.
-        flags: list[str] = []
-        if SINGHVI_VETO["enabled"]:
-            singhvi_row = row_for(evidence, SOURCE_SINGHVI)
-            if singhvi_row is not None and singhvi_row.stance.value == SINGHVI_VETO["trigger_stance"]:
-                flags.append(str(SINGHVI_VETO["banner_text"]))
+        # Expert vetoes: banner only, score untouched.
+        flags = self._veto_flags(evidence)
+        vetoing_experts = [r.source_name for r in expert_rows(evidence) if r.stance.is_avoid_type]
 
         strongest_for = self._strongest_for(ipo, evidence, components)
         strongest_against = self._strongest_against(ipo, evidence, components, flags)
         paragraph = self._paragraph(
-            ipo, str(band["key"]), strongest_for, strongest_against, preliminary, flags
+            ipo, str(band["key"]), strongest_for, strongest_against, preliminary, vetoing_experts
         )
 
         verdict_label = str(band["label"])
@@ -261,6 +268,33 @@ class TakeEngine:
         )
         log.info("take for %s: %s (%.1f)", ipo.name, take.verdict_label, take.score)
         return take
+
+    @staticmethod
+    def _veto_flags(evidence: Evidence) -> list[str]:
+        """Red banners from the named experts. Never touches the score — by design.
+
+        One expert on AVOID gets their own banner. Both on AVOID collapses into a single
+        stronger banner that names them together, because two independent experts against
+        the same issue is a different message from one, and stacking two identical-looking
+        warnings would bury that.
+        """
+        triggered: list[str] = []
+        for veto in EXPERT_VETOES:
+            if not veto.get("enabled"):
+                continue
+            row = row_for(evidence, str(veto["source"]))
+            if row is not None and row.stance.value == veto["trigger_stance"]:
+                triggered.append(str(veto["banner_text"]))
+
+        if (
+            len(triggered) > 1
+            and BOTH_EXPERTS_VETO.get("enabled")
+            and BOTH_EXPERTS_VETO.get("replaces_individual_banners")
+        ):
+            return [str(BOTH_EXPERTS_VETO["banner_text"])]
+        if len(triggered) > 1 and BOTH_EXPERTS_VETO.get("enabled"):
+            return [*triggered, str(BOTH_EXPERTS_VETO["banner_text"])]
+        return triggered
 
     @staticmethod
     def _no_evidence_take(ipo: IPO) -> Take:
@@ -302,6 +336,16 @@ class TakeEngine:
     # Reasoning — cite the actual evidence, never just the numbers
     # ---------------------------------------------------------------------------------
 
+    @staticmethod
+    def _expert_contribution(
+        row: EvidenceRow, by_key: dict[str, ScoreComponent], *, fallback: float
+    ) -> float:
+        """How much this expert actually moved the score, for ranking the reasoning lines."""
+        for weight_key, source_name in EXPERT_WEIGHT_KEYS.items():
+            if source_name == row.source_name and weight_key in by_key:
+                return by_key[weight_key].contribution
+        return fallback
+
     def _strongest_for(
         self, ipo: IPO, evidence: Evidence, components: Sequence[ScoreComponent]
     ) -> str:
@@ -333,13 +377,22 @@ class TakeEngine:
                 (total.contribution, f"the book is {book.total:.1f}x subscribed overall")
             )
 
-        singhvi_row = row_for(evidence, SOURCE_SINGHVI)
-        if singhvi_row is not None and singhvi_row.stance.is_apply_type:
+        bulls_named = [r for r in expert_rows(evidence) if r.stance.is_apply_type]
+        for row in bulls_named:
             candidates.append(
                 (
-                    by_key["singhvi"].contribution if "singhvi" in by_key else 12.0,
-                    f"Anil Singhvi has called it {singhvi_row.stance.label.lower()} "
-                    f"({singhvi_row.accuracy_label})",
+                    self._expert_contribution(row, by_key, fallback=12.0),
+                    f"{row.source_name} has called it {row.stance.label.lower()} "
+                    f"({row.accuracy_label})",
+                )
+            )
+        if len(bulls_named) > 1:
+            named = " and ".join(r.source_name for r in bulls_named)
+            candidates.append(
+                (
+                    sum(self._expert_contribution(r, by_key, fallback=12.0) for r in bulls_named),
+                    f"both named experts are behind it — {named} have each told viewers to "
+                    "subscribe",
                 )
             )
 
@@ -374,10 +427,19 @@ class TakeEngine:
         candidates: list[tuple[float, str]] = []
         book = ipo.subscription
 
-        singhvi_row = row_for(evidence, SOURCE_SINGHVI)
-        if singhvi_row is not None and singhvi_row.stance.is_avoid_type:
+        bears_named = [r for r in expert_rows(evidence) if r.stance.is_avoid_type]
+        if len(bears_named) > 1:
+            named = " and ".join(r.source_name for r in bears_named)
             candidates.append(
-                (100.0, f"Anil Singhvi has told viewers to avoid it ({singhvi_row.accuracy_label})")
+                (
+                    120.0,  # outranks a single expert — two independent AVOIDs is the story
+                    f"{named} have BOTH told viewers to avoid it — "
+                    + "; ".join(f"{r.source_name} {r.accuracy_label}" for r in bears_named),
+                )
+            )
+        for row in bears_named:
+            candidates.append(
+                (100.0, f"{row.source_name} has told viewers to avoid it ({row.accuracy_label})")
             )
 
         bears = [r for r in broker_rows(evidence) if r.stance.is_avoid_type]
@@ -429,7 +491,7 @@ class TakeEngine:
         strongest_for: str,
         strongest_against: str,
         preliminary: bool,
-        flags: Sequence[str],
+        vetoing_experts: Sequence[str],
     ) -> str:
         closer = {
             "APPLY": "On balance the case for applying holds up, with that risk priced in rather than ignored.",
@@ -455,11 +517,20 @@ class TakeEngine:
                 "Bidding has not opened yet, so this is a preliminary read that will move once QIB and "
                 "grey-market numbers land.",
             )
-        if flags:
-            sentences.insert(
-                0,
-                "Read the red banner above first — a source with a real track record is against this one.",
-            )
+        if vetoing_experts:
+            if len(vetoing_experts) > 1:
+                sentences.insert(
+                    0,
+                    "Read the red banner above first — "
+                    f"{' and '.join(vetoing_experts)} are BOTH against this one, and two "
+                    "independent experts agreeing is a heavier warning than either alone.",
+                )
+            else:
+                sentences.insert(
+                    0,
+                    f"Read the red banner above first — {vetoing_experts[0]}, a source with a "
+                    "real track record, is against this one.",
+                )
         return " ".join(sentences) + f" {TAKE_CLOSER}"
 
     @staticmethod
@@ -472,9 +543,10 @@ class TakeEngine:
             bits.append(f"total {ipo.subscription.total:.1f}x")
         if ipo.gmp_pct is not None:
             bits.append(f"GMP {ipo.gmp_pct:+.0f}%")
-        singhvi_row = row_for(evidence, SOURCE_SINGHVI)
-        if singhvi_row is not None and singhvi_row.stance is not Stance.NO_VIEW:
-            bits.append(f"Singhvi: {singhvi_row.stance.label}")
+        for row in expert_rows(evidence):
+            if row.stance is not Stance.NO_VIEW:
+                bits.append(f"{EXPERT_SHORT_NAMES.get(row.source_name, row.source_name)}: "
+                            f"{row.stance.label}")
         consensus = broker_consensus(evidence)
         if int(consensus["n"]):
             bits.append(f"brokers {consensus['bullish']}/{consensus['n']}")

@@ -40,6 +40,7 @@ from .config import (
 )
 from .engine import delta as delta_engine
 from .engine.evidence import build_all as build_evidence_tables
+from .engine.expert_feed import build_expert_calls, build_source_status
 from .engine.source_tracker import SourceTracker
 from .engine.take import TakeEngine
 from .models import IPO, IPOStatus, RunResult, SourceCall
@@ -49,7 +50,11 @@ from .store.base import Store, build_store
 
 log = logging.getLogger("pravesh.main")
 
-SCHEMA_VERSION = 1
+# 2 (2026-08-03): added `expert_calls`, `expert_coverage` and `source_status` for the
+# trinetra-backend ingest. Purely ADDITIVE — every v1 key is unchanged and still present, so
+# a v1 consumer keeps working. Bumped anyway so the backend can feature-detect on the number
+# rather than on the presence of a key.
+SCHEMA_VERSION = 2
 
 
 def setup_logging(verbose: bool = False) -> None:
@@ -180,6 +185,11 @@ def build_latest_payload(result: RunResult, today: date) -> dict[str, Any]:
         "history": [record.to_dict() for record in result.history],
         "sources_ok": result.sources_ok,
         "sources_failed": result.sources_failed,
+        # Machine-readable ingest surface for trinetra-backend. `source_status` exists so a
+        # hard block can never be read as "no calls today" — see engine/expert_feed.py.
+        "expert_calls": result.expert_calls,
+        "expert_coverage": result.expert_coverage,
+        "source_status": result.source_status,
         "disclaimer": PRODUCT_DISCLAIMER,
     }
 
@@ -251,7 +261,8 @@ def run(
 
     # 5. Opinions -------------------------------------------------------------------
     calls: list[SourceCall] = []
-    for source in build_sources():
+    opinion_sources = build_sources()  # kept: their per-route report feeds source_status
+    for source in opinion_sources:
         produced = source.run(universe)
         calls.extend(produced)
         if source.failures:
@@ -260,6 +271,11 @@ def run(
             sources_ok.append(source.name)
     log.info("collected %d source call(s) from %s", len(calls), ", ".join(SOURCES_ENABLED))
     tracker.record_calls(calls)
+
+    # 5b. The named-expert feed the backend ingests. Built from this run's calls only —
+    # the ledger's older calls belong to earlier runs and would re-publish as if new.
+    expert_calls, expert_coverage = build_expert_calls(universe, calls)
+    source_status = build_source_status(opinion_sources)
 
     # 4. Evidence + take -----------------------------------------------------------
     evidence = build_evidence_tables(universe, tracker.calls_for_universe(universe), tracker)
@@ -304,6 +320,9 @@ def run(
         slot=slot,
         run_at_market=run_at_market.isoformat(),
         deltas=deltas,
+        expert_calls=expert_calls,
+        expert_coverage=expert_coverage,
+        source_status=source_status,
     )
 
     if dry_run:
