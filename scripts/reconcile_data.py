@@ -10,6 +10,10 @@ that "our version wins" is *always* the correct outcome:
   * data/verdicts.json        of whatever is already on the branch. Both are re-merged here
                               through the exact upsert the engine uses (Store.merge_*), which
                               keeps resolved rows frozen and refreshes unresolved ones.
+  * data/history/*.json     — one payload per (date, slot), each written once and never
+                              edited, so the workflow unions ours with the branch's. Pruning
+                              happens here rather than in the engine because the reset onto
+                              origin resurrects whatever the engine deleted.
 
 Normally this is a no-op: the run started from the same commit we are pushing onto, so the
 engine already loaded and merged that history in memory. It matters when the branch moved
@@ -32,6 +36,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from src.config import HISTORY_STORE  # noqa: E402
 from src.models import SourceCall, VerdictRecord  # noqa: E402
 from src.store.base import Store  # noqa: E402
 from src.store.json_store import JsonStore  # noqa: E402
@@ -75,8 +80,10 @@ def _parse(rows: list[dict[str, Any]], factory: Any, label: str) -> list[Any]:
     return parsed
 
 
-def reconcile(ref: str, data_dir: str | None = None) -> tuple[int, int]:
+def reconcile(ref: str, data_dir: str | None = None, retain_days: int | None = None) -> tuple[int, int]:
     store = JsonStore(data_dir)
+    if retain_days is None:
+        retain_days = int(HISTORY_STORE["retain_days"])
 
     remote_calls = _parse(
         _blob_rows(ref, _repo_rel(store.source_calls_path)),
@@ -94,6 +101,11 @@ def reconcile(ref: str, data_dir: str | None = None) -> tuple[int, int]:
     merged_verdicts = Store.merge_verdicts(remote_verdicts, store.load_verdicts())
     store.save_verdicts(merged_verdicts)
 
+    # The archive is committed back to the repo, so it has to stay bounded. This runs after
+    # the union of ours and the branch's snapshots is in place — pruning before that would
+    # be undone by the reset onto origin.
+    store.prune_run_snapshots(retain_days)
+
     log.info(
         "reconciled against %s: %d call(s) (%d on branch), %d verdict(s) (%d on branch)",
         ref,
@@ -109,10 +121,16 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="reconcile-data", description=__doc__)
     parser.add_argument("--ref", default="origin/master", help="git ref holding the committed ledger")
     parser.add_argument("--data-dir", default=None, help="override the data directory")
+    parser.add_argument(
+        "--retain-days",
+        type=int,
+        default=None,
+        help=f"prune archived runs older than this (default: {HISTORY_STORE['retain_days']}; 0 disables)",
+    )
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s", stream=sys.stdout)
-    reconcile(args.ref, args.data_dir)
+    reconcile(args.ref, args.data_dir, args.retain_days)
     return 0
 
 

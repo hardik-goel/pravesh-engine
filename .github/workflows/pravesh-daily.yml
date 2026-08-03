@@ -1,11 +1,29 @@
 name: Pravesh Daily
 
 on:
+  # PENDING REMOVAL — see "Two runs a day" in the README.
+  #
+  # GitHub's scheduler has never fired this workflow: the block below is correct and on the
+  # default branch, and nothing has ever dispatched from it (checked on weekdays at 09:00,
+  # 09:30 and 11:20 IST). Free-tier scheduled workflows are best-effort. The trinetra-backend
+  # trigger replaces it and dispatches both slots itself.
+  #
+  # Delete this block once that trigger is verified in production. Leaving both live risks a
+  # duplicate morning run — the schedule cannot pass a slot, so its runs fall back to
+  # "morning" and would collide with the backend's morning dispatch.
   schedule:
     # 03:30 UTC = 09:00 IST, weekdays only (Indian primary market does not bid on weekends)
     - cron: "30 3 * * 1-5"
   workflow_dispatch:
     inputs:
+      slot:
+        description: "Which of the day's runs this is"
+        type: choice
+        options:
+          - manual
+          - morning
+          - afternoon
+        default: manual
       dry_run:
         description: "Dry run (build the report, send nothing)"
         type: boolean
@@ -41,6 +59,9 @@ jobs:
 
       - name: Run Pravesh
         env:
+          # Which of the day's runs this is. Set by whoever dispatched us; a schedule
+          # trigger carries no inputs, so it falls back to the morning slot.
+          PRAVESH_SLOT: ${{ inputs.slot || 'morning' }}
           # Delivery
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -76,16 +97,22 @@ jobs:
           # is always a superset, never a truncation of history). Then commit and push.
           STAGE="${RUNNER_TEMP}/pravesh-data"
           rm -rf "$STAGE"
-          mkdir -p "$STAGE"
+          mkdir -p "$STAGE/history"
           cp data/verdicts.json data/source_calls.json data/latest.json "$STAGE"/
+          # data/history/ holds one payload per (date, slot) — this run's snapshot plus every
+          # earlier one. Each file is written once and never edited, so the union of ours and
+          # the branch's is always the right answer; reconcile_data.py prunes the old tail.
+          [ -d data/history ] && cp -R data/history/. "$STAGE/history/" || true
 
           for attempt in 1 2 3; do
             git fetch --quiet origin "+refs/heads/${BRANCH}:refs/remotes/origin/${BRANCH}"
             git reset --quiet --hard "origin/${BRANCH}"
             cp "$STAGE"/*.json data/
+            mkdir -p data/history
+            cp -R "$STAGE/history/." data/history/ 2>/dev/null || true
             python scripts/reconcile_data.py --ref "origin/${BRANCH}"
 
-            git add data/verdicts.json data/source_calls.json data/latest.json
+            git add data/verdicts.json data/source_calls.json data/latest.json data/history
             if git diff --staged --quiet; then
               echo "No data changes to commit."
               exit 0

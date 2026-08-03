@@ -46,6 +46,27 @@ class Store(ABC):
     def save_latest(self, payload: dict[str, Any]) -> None:
         """Machine-readable snapshot consumed by the Pravesh web tab."""
 
+    def load_latest(self) -> dict[str, Any] | None:
+        """The previous run's payload, or None. Used as the delta baseline of last resort."""
+        return None
+
+    # -- run archive -------------------------------------------------------------------
+    #
+    # One payload per (run_date, slot). The afternoon update diffs against the morning
+    # snapshot, and the Track Record view reads a real history rather than one moment.
+    # Optional by design: a store that cannot archive simply produces no deltas, which the
+    # report surfaces handle by omitting the "since" line.
+
+    def save_run_snapshot(self, run_date: str, slot: str, payload: dict[str, Any]) -> None:
+        log.debug("%s store does not archive runs; no snapshot kept for %s/%s", self.name, run_date, slot)
+
+    def load_run_snapshot(self, run_date: str, slot: str) -> dict[str, Any] | None:
+        return None
+
+    def prune_run_snapshots(self, retain_days: int) -> int:
+        """Drop archived runs older than `retain_days`. Returns how many went."""
+        return 0
+
     # -- merge helpers (shared by all backends) ----------------------------------------
 
     @staticmethod

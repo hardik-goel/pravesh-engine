@@ -280,6 +280,45 @@ class IPO:
 
 
 @dataclass
+class IPODelta:
+    """What moved on one IPO since an earlier run of the same trading day.
+
+    Built by ``engine.delta`` against an archived snapshot. Never invented: with no earlier
+    snapshot to compare against there is no delta, and every surface omits the line rather
+    than printing a change it cannot substantiate.
+    """
+
+    ipo_slug: str
+    since_label: str  # "since this morning" — phrased from the *baseline* run
+    baseline_slot: str = ""
+    parts: list[str] = field(default_factory=list)  # "QIB 4.20x → 11.80x", most material first
+    is_new: bool = False  # absent from the baseline run entirely
+
+    @property
+    def has_content(self) -> bool:
+        return self.is_new or bool(self.parts)
+
+    @property
+    def line(self) -> str:
+        """The one-liner every surface renders. Empty when there is nothing to say."""
+        if self.is_new:
+            return f"new {self.since_label}"
+        if not self.parts:
+            return ""
+        return " · ".join([self.since_label, *self.parts])
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "ipo_slug": self.ipo_slug,
+            "since_label": self.since_label,
+            "baseline_slot": self.baseline_slot,
+            "parts": list(self.parts),
+            "is_new": self.is_new,
+            "line": self.line,
+        }
+
+
+@dataclass
 class SourceCall:
     """One named source's stance on one IPO. The atom of the accuracy ledger."""
 
@@ -566,6 +605,11 @@ class RunResult:
     sources_failed: list[str] = field(default_factory=list)
     sources_ok: list[str] = field(default_factory=list)
     dry_run: bool = False
+    # Which of the day's runs this is, and when it happened in market time. Captured once
+    # so the email, the ping and latest.json cannot disagree about the timestamp.
+    slot: str = "manual"
+    run_at_market: str = ""  # ISO 8601 with the market offset
+    deltas: dict[str, IPODelta] = field(default_factory=dict)  # by ipo_slug, may be empty
 
     # -- bucketing used by every surface --------------------------------------------
 
@@ -605,4 +649,7 @@ class RunResult:
             "sources_failed": list(self.sources_failed),
             "sources_ok": list(self.sources_ok),
             "dry_run": self.dry_run,
+            "slot": self.slot,
+            "run_at_market": self.run_at_market,
+            "deltas": {k: v.to_dict() for k, v in self.deltas.items()},
         }

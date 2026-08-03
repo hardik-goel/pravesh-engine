@@ -33,8 +33,19 @@ def today_market() -> date:
     return now_market().date()
 
 
-def stamp(fmt: str = "%d %b %Y, %H:%M") -> str:
-    return f"{now_market().strftime(fmt)} {MARKET['tz_label']}"
+def stamp(fmt: str = "%d %b %Y, %H:%M", when: datetime | str | None = None) -> str:
+    """Human market-time stamp. Pass `when` to stamp a captured moment, not "now".
+
+    Every surface of a single run has to agree on when that run happened, so the timestamp
+    is captured once and handed around rather than re-read per caller.
+    """
+    moment = when if isinstance(when, datetime) else None
+    if moment is None and isinstance(when, str) and when:
+        try:
+            moment = datetime.fromisoformat(when)
+        except ValueError:
+            moment = None
+    return f"{(moment or now_market()).strftime(fmt)} {MARKET['tz_label']}"
 
 
 def human_date(value: date | None, fmt: str = "%d %b") -> str:

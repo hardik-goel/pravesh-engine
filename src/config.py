@@ -385,6 +385,42 @@ WINDOWS: Final[dict[str, int]] = {
 }
 
 # --------------------------------------------------------------------------------------
+# Run slots — the same weekday can produce more than one report
+# --------------------------------------------------------------------------------------
+
+# Subscription multiples and GMP move a lot between the open and mid-afternoon, so an open
+# IPO is worth reading twice. Every surface says which run it is looking at, because "3.2x"
+# means something different at 09:00 than at 15:00.
+#
+# The slot arrives as PRAVESH_SLOT, set by whoever dispatched the run. Declaration order is
+# chronological order: a run's delta baseline is the most recent EARLIER slot of the same
+# trading day, so adding a midday slot is an edit here and nothing else.
+SLOT_ENV: Final[str] = "PRAVESH_SLOT"
+DEFAULT_SLOT: Final[str] = "manual"
+
+RUN_SLOTS: Final[dict[str, dict[str, str]]] = {
+    "morning": {"label": "morning report", "since": "since this morning"},
+    "afternoon": {"label": "afternoon update", "since": "since this afternoon"},
+    "manual": {"label": "manual run", "since": "since the last run"},
+}
+
+SLOT_HEADLINE: Final[dict[str, str]] = {
+    "template": "{date} · {time} {tz} · {label}",
+    "date_format": "%d %b",
+    "time_format": "%H:%M",
+}
+
+# What counts as "moved" between two runs of the same day. Below these the number is
+# rounding noise, and printing it would manufacture a story out of nothing.
+DELTA: Final[dict[str, object]] = {
+    "subscription_min_change_x": 0.05,
+    "gmp_min_change_pct": 0.5,
+    "max_parts": 4,  # per IPO, most material first — the full numbers are in the strip
+    "now_open_label": "now open",
+    "now_closing_label": "now closing",
+}
+
+# --------------------------------------------------------------------------------------
 # Store
 # --------------------------------------------------------------------------------------
 
@@ -396,6 +432,15 @@ JSON_STORE: Final[dict[str, str]] = {
     "verdicts_file": "verdicts.json",
     "source_calls_file": "source_calls.json",
     "latest_file": "latest.json",
+}
+
+# Every run's payload is archived under its (date, slot) so the afternoon update can say
+# what moved, and so the Track Record view reads a real history instead of one snapshot.
+HISTORY_STORE: Final[dict[str, object]] = {
+    "dir": "history",  # under JSON_STORE["data_dir"]
+    "filename": "{run_date}-{slot}.json",
+    "retain_days": 90,
+    "supabase_key_prefix": "run:",  # rows in the latest table: run:2026-08-03:afternoon
 }
 
 SUPABASE: Final[dict[str, str]] = {
@@ -421,9 +466,10 @@ EMAIL: Final[dict[str, object]] = {
     "password_env": "GMAIL_APP_PASSWORD",
     "recipient_env": "RECIPIENT_EMAIL",
     "sender_name": BRAND_NAME,
-    "subject_template": "{brand} · {date} · {open_count} open · {closing_count} closing soon",
+    # {headline} is "03 Aug · 15:04 IST · afternoon update" — which run this is, always.
+    "subject_template": "{brand} · {headline} · {open_count} open · {closing_count} closing soon",
     "subject_urgent_prefix": "⚡ ",
-    "quiet_subject_template": "{brand} · {date} · all quiet",
+    "quiet_subject_template": "{brand} · {headline} · all quiet",
     "quiet_body": "No open, closing or listing IPOs today. Nothing to act on.",
     "dry_run_path": "out/pravesh_preview.html",
 }

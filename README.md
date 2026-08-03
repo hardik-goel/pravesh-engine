@@ -11,10 +11,14 @@ Node backend (that handles live stock data). It shares exactly two things with T
 the same Telegram bot token/channel, and the visual language of the web tab.
 
 ```
-9:00 IST, weekdays  →  scrape  →  evidence table  →  my take  →  email + telegram
-                                        ↓
-                             data/*.json  →  trinetra-web "Pravesh" tab
+09:00 & 15:00 IST, weekdays  →  scrape  →  evidence table  →  my take  →  email + telegram
+                                                ↓                ↑
+                                     data/*.json  →  trinetra-web "Pravesh" tab
+                                     data/history/  ──────────┘  what moved since this morning
 ```
+
+Twice a day, because subscription multiples and GMP move a lot between the open and
+mid-afternoon — see **Two runs a day**.
 
 ---
 
@@ -63,8 +67,9 @@ pravesh-engine/
 ├── src/
 │   ├── main.py                    orchestrator + --dry-run
 │   ├── config.py                  ALL tunables
-│   ├── models.py                  IPO · SourceCall · Evidence · Take · RunResult
+│   ├── models.py                  IPO · SourceCall · Evidence · Take · IPODelta · RunResult
 │   ├── clock.py                   market-timezone helpers (IST by default)
+│   ├── slots.py                   which of the day's runs this is, and how it is labelled
 │   ├── sources/
 │   │   ├── base.py                Source + DataProvider ABCs, HTTP, table/date parsing
 │   │   ├── ipowatch.py            calendar spine · detail strip · listing outcomes
@@ -78,6 +83,7 @@ pravesh-engine/
 │   ├── engine/
 │   │   ├── evidence.py            per-IPO evidence table
 │   │   ├── take.py                self-calibrating score + reasoned paragraph
+│   │   ├── delta.py               what moved since the earlier run of the same day
 │   │   └── source_tracker.py      accuracy ledger + leaderboard
 │   ├── store/
 │   │   ├── base.py                Store ABC + merge rules + factory
@@ -89,7 +95,8 @@ pravesh-engine/
 ├── data/
 │   ├── verdicts.json              my-take history + listing outcomes
 │   ├── source_calls.json          every source call + its outcome
-│   └── latest.json                the web contract
+│   ├── latest.json                the web contract
+│   └── history/                   one payload per run: YYYY-MM-DD-<slot>.json, 90-day tail
 └── requirements.txt
 ```
 
@@ -99,6 +106,10 @@ Four files are additions to the original spec, for reasons documented below:
 one route) and `clock.py` (so the IST assumption lives in exactly one place). All four are
 plain `Source` / `DataProvider` implementations wired through `config.py` — see
 "When scrapers break".
+
+`slots.py` and `engine/delta.py` came with the move to two runs a weekday: one owns the run's
+identity, the other owns what changed since the earlier run. Both are config-driven — see
+"Two runs a day".
 
 ---
 
@@ -112,7 +123,8 @@ python -m src.main                # the real thing
 ```
 
 Useful flags: `--no-email`, `--no-telegram`, `--store json|supabase`, `--date YYYY-MM-DD`
-(backfill), `-v` (debug logging).
+(backfill), `--slot morning|afternoon|manual` (which of the day's runs this is — see
+"Two runs a day"), `-v` (debug logging).
 
 ### Gmail app password
 
@@ -141,10 +153,95 @@ The workflow only commits `data/*.json` back when it is not `supabase`.
 
 ### Enabling the workflow
 
-Push to `main`, open the **Actions** tab, enable workflows, then run **Pravesh Daily** via
+Push to `master`, open the **Actions** tab, enable workflows, then run **Pravesh Daily** via
 `workflow_dispatch` once (tick *dry run* for a no-send rehearsal; the preview HTML is
-uploaded as an artifact). After that it runs at `30 3 * * 1-5` — 09:00 IST, weekdays.
-`permissions: contents: write` is required so the JSON store can commit results back.
+uploaded as an artifact). `permissions: contents: write` is required so the JSON store can
+commit results back. What triggers it from then on is the next section.
+
+---
+
+## Two runs a day — slots, and what moved
+
+An open IPO is a moving target. QIB can go from 4x at the open to 12x by mid-afternoon and
+GMP moves with it, so one report a day is a snapshot of the least informative moment. Pravesh
+therefore runs **twice on a weekday**:
+
+| Slot | IST | What it is |
+|---|---|---|
+| `morning` | 09:00 (window 09:00–10:30) | the day's first read |
+| `afternoon` | 15:00 (window 15:00–16:00) | an **update** — what changed since the morning |
+| `manual` | — | any hand-dispatched or local run; the default when nothing says otherwise |
+
+Slot names, labels and their chronological order live in `config.RUN_SLOTS`. Adding a midday
+slot is an edit there plus a window in the backend's config — no code change.
+
+### What triggers a run
+
+**Not GitHub's scheduler.** The `schedule:` block in `pravesh-daily.yml` is correct and has
+been on the default branch throughout, and it has *never* fired — checked on weekdays at
+09:00, 09:30 and 11:20 IST, with every run in the history a manual one. Free-tier scheduled
+workflows are best-effort on shared infrastructure and can drift or skip entirely.
+
+The trigger we control lives in **trinetra-backend** (`lib/praveshTrigger.js`): it checks the
+IST clock every few minutes and, when it is inside a slot's window on a weekday and that slot
+has not been dispatched today, calls
+
+```
+POST /repos/{owner}/pravesh-engine/actions/workflows/pravesh-daily.yml/dispatches
+{ "ref": "master", "inputs": { "slot": "morning" | "afternoon" } }
+```
+
+It is a **window, not an instant**, because Render's free tier sleeps the instance overnight
+and a keep-alive cannot wake a sleeping process — the first request that wakes it inside the
+window fires the dispatch. An external uptime pinger hitting `/health` from ~08:45 IST is what
+makes the morning run punctual; without one it happens whenever the instance first wakes inside
+the window. See that repo's README for the env vars and `/pravesh/trigger-status`.
+
+> **Remove the `schedule:` block once the backend trigger is verified in production.** With
+> both live you risk a duplicate morning run: a schedule trigger carries no inputs, so its
+> runs fall back to the `morning` slot and collide with the backend's morning dispatch. The
+> block is marked `PENDING REMOVAL` in the workflow — delete those four lines, keep the
+> `workflow_dispatch` block, and the backend becomes the only trigger.
+
+### How a run knows which slot it is
+
+`PRAVESH_SLOT` — set by the workflow from the dispatch input (`inputs.slot || 'morning'`, so a
+schedule trigger still labels itself). Locally, `--slot morning|afternoon|manual`. An unknown
+or missing value degrades to `manual`: a mislabelled report still goes out.
+
+The slot and the IST timestamp appear in the Telegram header, the email subject and header
+band, and `latest.json` — all three from one captured moment, so they cannot disagree:
+
+```
+Trinetra Pravesh · 03 Aug · 15:04 IST · afternoon update
+```
+
+### The "since this morning" line
+
+Every run archives its full payload to `data/history/YYYY-MM-DD-<slot>.json` (Supabase: a
+`run:<date>:<slot>` row in the latest table). The afternoon run diffs against the most recent
+*earlier* slot of the same day and renders one line per IPO:
+
+```
+since this morning · now closing · QIB 4.20x → 11.80x · GMP +18.0% → +24.0%
+```
+
+Ordered most-material-first (status change → QIB → Total → GMP → NII → Retail) and capped at
+four fragments; the full numbers are in the detail strip below it either way. The rules that
+keep it honest:
+
+* **No baseline, no delta.** First run of the day, first run after a deploy, an archive that
+  never got committed — the line is omitted silently rather than invented. `latest.json` is
+  the fallback baseline when it is from the same day and an earlier slot, which is what makes
+  the first afternoon update after this shipped carry a real delta.
+* **A number that vanished is not a fall.** A category with data this morning and none now is
+  a scrape gap, so it is skipped, not reported as a move.
+* **Movement below `config.DELTA` thresholds is not printed** — 0.05x and 0.5pp. Below those
+  it is rounding noise, and printing it would manufacture a story.
+
+The archive keeps a **90-day** tail (`config.HISTORY_STORE["retain_days"]`). Pruning happens in
+`scripts/reconcile_data.py`, after the workflow has unioned this run's snapshots with the
+branch's — pruning earlier would just be undone by the reset onto `origin`.
 
 ---
 
@@ -191,15 +288,20 @@ honest; the warning is impossible to miss; the decision stays yours.
 
 ## Web contract — `data/latest.json`
 
-Written every run (raw GitHub URL is the default feed for the web tab).
+Written every run (raw GitHub URL is the default feed for the web tab). The same payload is
+archived to `data/history/<run_date>-<slot>.json`, so any past run reads with this exact shape.
 
 ```jsonc
 {
   "schema_version": 1,
   "brand": { "name": "Trinetra Pravesh", "tagline": "…" },
-  "generated_at": "2026-07-31T03:30:11+00:00",   // UTC ISO
-  "generated_at_market": "31 Jul 2026, 09:00 IST",
-  "run_date": "2026-07-31",
+  "generated_at": "2026-08-03T09:34:11+00:00",   // UTC ISO
+  "generated_at_market": "03 Aug 2026, 15:04 IST",
+  "generated_at_ist": "2026-08-03T15:04:00+05:30",  // same moment, ISO with the IST offset
+  "run_date": "2026-08-03",
+  "slot": "morning" | "afternoon" | "manual",
+  "slot_label": "afternoon update",
+  "slot_headline": "03 Aug · 15:04 IST · afternoon update",   // render this verbatim
   "counts": { "open": 3, "closing_tomorrow": 1, "upcoming": 2, "watch": 1 },
 
   "ipos": [{
@@ -247,7 +349,15 @@ Written every run (raw GitHub URL is the default feed for the web tab).
       "strongest_for": "…", "strongest_against": "…",
       "created_at": "2026-07-31T03:30:11+00:00"
     },
-    "flags": ["⚠ Anil Singhvi says AVOID"]         // mirror of take.flags
+    "flags": ["⚠ Anil Singhvi says AVOID"],        // mirror of take.flags
+
+    "delta": {                                     // null on the day's first run, and
+      "since_label": "since this morning",         //   null when nothing moved — never a
+      "baseline_slot": "morning",                  //   fabricated "no change"
+      "parts": ["now closing", "QIB 4.20x → 11.80x", "GMP +18.0% → +24.0%"],
+      "is_new": false,                             // true ⇒ absent from the baseline run
+      "line": "since this morning · now closing · QIB 4.20x → 11.80x · GMP +18.0% → +24.0%"
+    }
   }],
 
   "leaderboard": [{ "source_name": "Anil Singhvi", "n_all": 14, "correct_all": 10,
@@ -267,7 +377,9 @@ Written every run (raw GitHub URL is the default feed for the web tab).
 ```
 
 Consumers must treat every scalar as nullable, and must show `accuracy_label` verbatim
-rather than recomputing a percentage.
+rather than recomputing a percentage. Same for `delta`: render `line` (or `parts`) as given —
+a missing `delta` means *we have nothing to compare against*, which is not the same as
+*nothing changed*, and must never be rendered as "no change".
 
 ---
 
@@ -303,6 +415,9 @@ create table pravesh_latest (
   key text primary key, payload jsonb not null, updated_at timestamptz
 );
 ```
+
+`pravesh_latest` holds the current snapshot under `key = 'current'` and every archived run
+under `key = 'run:<date>:<slot>'`. Pruning only ever touches the `run:` keys.
 
 ---
 
@@ -358,5 +473,8 @@ the workflow's `if: failure()` job emails a plain-text failure notice with the r
 4. GMP is labelled indicative and unofficial everywhere it appears.
 5. The Singhvi veto warns without secretly moving the number.
 6. No evidence ⇒ no score, not a zero.
+7. No earlier snapshot ⇒ no "since this morning" line. A delta is a measurement against a
+   real prior run or it does not appear, and a number that vanished from a source is a scrape
+   gap, never reported as a fall.
 
 *Informational only. Not investment advice.*

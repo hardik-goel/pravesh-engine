@@ -1,16 +1,20 @@
 """Pravesh orchestrator.
 
-    python -m src.main              # full run: scrape → score → persist → email + telegram
-    python -m src.main --dry-run    # writes out/pravesh_preview.html, prints the ping, sends nothing
+    python -m src.main                     # full run: scrape → score → persist → email + telegram
+    python -m src.main --dry-run           # writes out/pravesh_preview.html, prints the ping, sends nothing
+    python -m src.main --slot afternoon    # label the run (default: PRAVESH_SLOT, else manual)
 
 Pipeline:
     1. chittorgarh builds the calendar (the spine) + detail strip + live subscription
     2. listing outcomes resolve every open call and verdict in the ledger
     3. each enabled source contributes SourceCalls, matched onto the spine by name
     4. evidence tables assemble, my-take scores, both are persisted
-    5. data/latest.json is written (the web contract), then email + telegram go out
+    5. the day's earlier run is diffed in, so an afternoon report says what moved
+    6. data/latest.json is written (the web contract) and the run is archived under
+       (date, slot), then email + telegram go out
 
-A dead source degrades the run; it never ends it.
+A dead source degrades the run; it never ends it. A missing baseline costs the delta line
+and nothing else.
 """
 
 from __future__ import annotations
@@ -21,16 +25,20 @@ import sys
 from datetime import date, datetime, timezone
 from typing import Any, Callable, Optional, Sequence
 
-from .clock import stamp, today_market
+from . import slots
+from .clock import now_market, stamp, today_market
 from .config import (
     BRAND_NAME,
     BRAND_TAGLINE,
+    HISTORY_STORE,
     LOGGING,
     PRODUCT_DISCLAIMER,
+    RUN_SLOTS,
     SOURCES_ENABLED,
     STORE_BACKEND,
     WINDOWS,
 )
+from .engine import delta as delta_engine
 from .engine.evidence import build_all as build_evidence_tables
 from .engine.source_tracker import SourceTracker
 from .engine.take import TakeEngine
@@ -139,19 +147,27 @@ def build_latest_payload(result: RunResult, today: date) -> dict[str, Any]:
     for ipo in result.ipos:
         evidence = result.evidence.get(ipo.slug)
         take = result.takes.get(ipo.slug)
+        delta = result.deltas.get(ipo.slug)
         payload = ipo.to_dict()
         payload["closing_tomorrow"] = ipo.slug in closing
         payload["evidence"] = evidence.to_dict()["rows"] if evidence else []
         payload["take"] = take.to_dict() if take else None
         payload["flags"] = take.flags if take else []
+        # null when this is the day's first run, or when nothing moved. Never a fabricated
+        # "no change" — the absence is the statement.
+        payload["delta"] = delta.to_dict() if delta and delta.has_content else None
         ipos.append(payload)
 
     return {
         "schema_version": SCHEMA_VERSION,
         "brand": {"name": BRAND_NAME, "tagline": BRAND_TAGLINE},
         "generated_at": result.run_at,
-        "generated_at_market": stamp(),
+        "generated_at_market": stamp(when=result.run_at_market),
+        "generated_at_ist": result.run_at_market,
         "run_date": result.run_date,
+        "slot": result.slot,
+        "slot_label": slots.label(result.slot),
+        "slot_headline": slots.headline(result.slot, result.run_at_market),
         "counts": {
             "open": len(result.open_ipos),
             "closing_tomorrow": len(closing),
@@ -180,9 +196,19 @@ def run(
     skip_telegram: bool = False,
     store_backend: Optional[str] = None,
     today: Optional[date] = None,
+    slot: Optional[str] = None,
 ) -> RunResult:
     today = today or today_market()
-    log.info("=== %s run · %s · store=%s ===", BRAND_NAME, today.isoformat(), store_backend or STORE_BACKEND)
+    slot = slots.normalise(slot if slot is not None else slots.current())
+    run_at_market = now_market()
+    log.info(
+        "=== %s run · %s · slot=%s (%s) · store=%s ===",
+        BRAND_NAME,
+        today.isoformat(),
+        slot,
+        slots.label(slot),
+        store_backend or STORE_BACKEND,
+    )
 
     store: Store = build_store(store_backend)
     tracker = SourceTracker(store)
@@ -240,7 +266,29 @@ def run(
     takes = TakeEngine(tracker).build_all(universe, evidence)
     tracker.record_takes(takes.values(), universe)
 
-    # 5. Persist -------------------------------------------------------------------
+    # 5. What moved since this morning ----------------------------------------------
+    # Read before anything is written, so the baseline is the *previous* run and not the
+    # one we are about to save over.
+    baseline, baseline_slot = delta_engine.load_baseline(store, today.isoformat(), slot)
+    deltas = delta_engine.build_all(
+        universe,
+        baseline,
+        baseline_slot,
+        closing_slugs={
+            i.slug for i in universe if i.close_date and (i.close_date - today).days <= 1
+        },
+    )
+    if baseline_slot:
+        log.info(
+            "delta baseline: today's %s run · %d of %d IPO(s) moved",
+            baseline_slot,
+            len(deltas),
+            len(universe),
+        )
+    else:
+        log.info("no earlier run recorded for %s — this report carries no since-line", today.isoformat())
+
+    # 6. Persist -------------------------------------------------------------------
     result = RunResult(
         run_at=datetime.now(timezone.utc).isoformat(),
         run_date=today.isoformat(),
@@ -253,23 +301,32 @@ def run(
         sources_failed=sources_failed,
         sources_ok=sources_ok,
         dry_run=dry_run,
+        slot=slot,
+        run_at_market=run_at_market.isoformat(),
+        deltas=deltas,
     )
 
     if dry_run:
         log.info("dry run — nothing persisted, nothing sent")
     else:
         tracker.flush()
-        store.save_latest(build_latest_payload(result, today))
+        payload = build_latest_payload(result, today)
+        store.save_latest(payload)
+        # Archived per (date, slot): the next run's delta baseline, and the history the
+        # Track Record view reads.
+        store.save_run_snapshot(result.run_date, slot, payload)
+        store.prune_run_snapshots(int(HISTORY_STORE["retain_days"]))
 
-    # 6. Deliver -------------------------------------------------------------------
+    # 7. Deliver -------------------------------------------------------------------
     # The email always goes out, including on a quiet day — silence has to mean "nothing
     # to act on", never "the job broke". Every reason for not sending is logged below.
     subject = email_builder.build_subject(result, today)
     html_body = email_builder.build_html(result, today)
     message = telegram_ping.build_message(result, today)
     log.info(
-        "delivery: %s report · %d IPO(s) · email=%s telegram=%s",
+        "delivery: %s %s · %d IPO(s) · email=%s telegram=%s",
         "quiet" if result.is_quiet else "full",
+        slots.label(slot),
         len(universe),
         "skipped (dry run)" if dry_run else ("skipped (--no-email)" if skip_email else "sending"),
         "skipped (dry run)" if dry_run else ("skipped (--no-telegram)" if skip_telegram else "sending"),
@@ -306,6 +363,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--no-telegram", action="store_true", help="skip the telegram ping")
     parser.add_argument("--store", choices=["json", "supabase"], help="override the results store")
     parser.add_argument("--date", help="override today's date (YYYY-MM-DD), for backfills")
+    parser.add_argument(
+        "--slot",
+        choices=list(RUN_SLOTS),
+        help="which of the day's runs this is (default: PRAVESH_SLOT, else manual)",
+    )
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
     args = parser.parse_args(argv)
 
@@ -319,6 +381,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             skip_telegram=args.no_telegram,
             store_backend=args.store,
             today=reference,
+            slot=args.slot,
         )
     except Exception as exc:  # noqa: BLE001 — surface the failure loudly, exit non-zero
         log.exception("run failed")

@@ -1,5 +1,6 @@
-"""Evidence assembly, my-take scoring, and the source accuracy ledger."""
+"""Evidence assembly, my-take scoring, run-to-run deltas, and the source accuracy ledger."""
 
+from .delta import build_all as build_deltas, load_baseline
 from .evidence import broker_consensus, build_all as build_evidence_tables, build_evidence
 from .source_tracker import SourceTracker, grade
 from .take import TakeEngine
@@ -8,7 +9,9 @@ __all__ = [
     "SourceTracker",
     "TakeEngine",
     "broker_consensus",
+    "build_deltas",
     "build_evidence",
     "build_evidence_tables",
     "grade",
+    "load_baseline",
 ]

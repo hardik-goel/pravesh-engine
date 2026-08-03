@@ -10,11 +10,14 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import tempfile
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 
-from ..config import JSON_STORE
+from ..clock import today_market
+from ..config import HISTORY_STORE, JSON_STORE
 from ..models import SourceCall, VerdictRecord
 from .base import Store
 
@@ -35,6 +38,7 @@ class JsonStore(Store):
         self.source_calls_path = self.data_dir / str(JSON_STORE["source_calls_file"])
         self.verdicts_path = self.data_dir / str(JSON_STORE["verdicts_file"])
         self.latest_path = self.data_dir / str(JSON_STORE["latest_file"])
+        self.history_dir = self.data_dir / str(HISTORY_STORE["dir"])
 
     # -- io ----------------------------------------------------------------------------
 
@@ -99,3 +103,50 @@ class JsonStore(Store):
 
     def save_latest(self, payload: dict[str, Any]) -> None:
         self._write(self.latest_path, payload)
+
+    def load_latest(self) -> dict[str, Any] | None:
+        raw = self._read(self.latest_path)
+        return raw if isinstance(raw, dict) else None
+
+    # -- run archive -----------------------------------------------------------------
+
+    def snapshot_path(self, run_date: str, slot: str) -> Path:
+        name = str(HISTORY_STORE["filename"]).format(run_date=run_date, slot=slot)
+        return self.history_dir / name
+
+    def save_run_snapshot(self, run_date: str, slot: str, payload: dict[str, Any]) -> None:
+        self._write(self.snapshot_path(run_date, slot), payload)
+
+    def load_run_snapshot(self, run_date: str, slot: str) -> dict[str, Any] | None:
+        path = self.snapshot_path(run_date, slot)
+        if not path.exists():
+            return None
+        raw = self._read(path)
+        return raw if isinstance(raw, dict) else None
+
+    def prune_run_snapshots(self, retain_days: int) -> int:
+        """Delete archived runs older than `retain_days`, by the date in the filename.
+
+        The archive is committed back to the repo, so it has to stay bounded. Anything the
+        filename pattern does not explain is left alone — this deletes files, so it only
+        ever deletes ones it is certain it wrote.
+        """
+        if not self.history_dir.exists() or retain_days <= 0:
+            return 0
+        cutoff = today_market() - timedelta(days=int(retain_days))
+        removed = 0
+        for path in sorted(self.history_dir.glob("*.json")):
+            match = re.match(r"^(\d{4}-\d{2}-\d{2})-", path.name)
+            if not match:
+                log.debug("leaving %s alone — not a run snapshot filename", path.name)
+                continue
+            try:
+                stamped = date.fromisoformat(match.group(1))
+            except ValueError:
+                continue
+            if stamped < cutoff:
+                path.unlink(missing_ok=True)
+                removed += 1
+        if removed:
+            log.info("pruned %d archived run(s) older than %d days", removed, retain_days)
+        return removed

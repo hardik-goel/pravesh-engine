@@ -14,10 +14,10 @@ from __future__ import annotations
 
 import logging
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
-from ..config import SUPABASE
+from ..config import HISTORY_STORE, SUPABASE
 from ..models import SourceCall, VerdictRecord
 from .base import Store
 
@@ -102,10 +102,64 @@ class SupabaseStore(Store):
         self._upsert(self.verdicts_table, [v.to_dict() for v in verdicts], on_conflict="ipo_slug")
 
     def save_latest(self, payload: dict[str, Any]) -> None:
+        self._put(self.latest_row_key, payload)
+        log.info("wrote latest snapshot to %s", self.latest_table)
+
+    def load_latest(self) -> dict[str, Any] | None:
+        return self._get(self.latest_row_key)
+
+    # -- run archive -------------------------------------------------------------------
+    #
+    # Archived runs share the latest table — same shape, different key. One row per
+    # (run_date, slot), so the afternoon update can diff against the morning snapshot.
+
+    def _put(self, key: str, payload: dict[str, Any]) -> None:
         row = {
-            "key": self.latest_row_key,
+            "key": key,
             "payload": payload,
             "updated_at": datetime.now(timezone.utc).isoformat(),
         }
         self.client.table(self.latest_table).upsert(row, on_conflict="key").execute()
-        log.info("wrote latest snapshot to %s", self.latest_table)
+
+    def _get(self, key: str) -> dict[str, Any] | None:
+        try:
+            response = (
+                self.client.table(self.latest_table).select("payload").eq("key", key).limit(1).execute()
+            )
+        except Exception as exc:  # noqa: BLE001 — a missing baseline must not end the run
+            log.warning("could not read %s from %s: %s", key, self.latest_table, exc)
+            return None
+        rows = list(response.data or [])
+        payload = rows[0].get("payload") if rows else None
+        return payload if isinstance(payload, dict) else None
+
+    def _snapshot_key(self, run_date: str, slot: str) -> str:
+        return f"{HISTORY_STORE['supabase_key_prefix']}{run_date}:{slot}"
+
+    def save_run_snapshot(self, run_date: str, slot: str, payload: dict[str, Any]) -> None:
+        self._put(self._snapshot_key(run_date, slot), payload)
+        log.info("archived the %s run of %s", slot, run_date)
+
+    def load_run_snapshot(self, run_date: str, slot: str) -> dict[str, Any] | None:
+        return self._get(self._snapshot_key(run_date, slot))
+
+    def prune_run_snapshots(self, retain_days: int) -> int:
+        """Drop archived runs older than `retain_days`. Only ever touches `run:` keys."""
+        if retain_days <= 0:
+            return 0
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=int(retain_days))).isoformat()
+        try:
+            response = (
+                self.client.table(self.latest_table)
+                .delete()
+                .like("key", f"{HISTORY_STORE['supabase_key_prefix']}%")
+                .lt("updated_at", cutoff)
+                .execute()
+            )
+        except Exception as exc:  # noqa: BLE001 — housekeeping must not end the run
+            log.warning("could not prune archived runs: %s", exc)
+            return 0
+        removed = len(list(response.data or []))
+        if removed:
+            log.info("pruned %d archived run(s) older than %d days", removed, retain_days)
+        return removed

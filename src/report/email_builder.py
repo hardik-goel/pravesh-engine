@@ -6,8 +6,12 @@ do not try. Layout order is fixed:
   ⚡ Closing Tomorrow → Open Mainboard → Open SME → Opening This Week (PRELIMINARY)
   → Allotment & Listing Watch → footer (leaderboard, my own accuracy, failures, disclaimer)
 
-Every card is: name + verdict badge + Singhvi banner (if vetoed) → evidence table →
-My Take paragraph → detail strip.
+Every card is: name + verdict badge → what moved since the earlier run of the day (only
+when there is a real snapshot to compare against) → Singhvi banner (if vetoed) → evidence
+table → My Take paragraph → detail strip.
+
+The subject line and the header band both name the run — "03 Aug · 15:04 IST · afternoon
+update" — so a second report on the same day is never mistaken for a duplicate of the first.
 """
 
 from __future__ import annotations
@@ -23,6 +27,7 @@ from email.mime.text import MIMEText
 from pathlib import Path
 from typing import Optional, Sequence
 
+from .. import slots
 from ..clock import human_date, stamp, today_market
 from ..config import (
     BRAND_NAME,
@@ -33,7 +38,7 @@ from ..config import (
     PRODUCT_DISCLAIMER,
     ACCURACY,
 )
-from ..models import IPO, Evidence, RunResult, Segment, SourceAccuracy, Stance, Take
+from ..models import IPO, Evidence, IPODelta, RunResult, Segment, SourceAccuracy, Stance, Take
 
 log = logging.getLogger(__name__)
 
@@ -76,6 +81,13 @@ S = {
         f"background:{P['danger_bg']};color:{P['danger_fg']};border-left:3px solid {P['danger_fg']};"
         "padding:9px 12px;margin:12px 0 0 0;font-size:13px;font-weight:700;border-radius:2px;"
     ),
+    # "since this morning · QIB 4.20x → 11.80x". Deliberately quieter than the verdict
+    # badge and the veto banner — it is context, not the call.
+    "delta": (
+        f"margin:11px 0 0 0;padding:7px 11px;background:{P['page_bg']};"
+        f"border:1px dashed {P['hairline']};border-radius:2px;font-size:12px;color:{P['muted']};"
+    ),
+    "delta_key": f"color:{P['text']};font-weight:600;",
     "table": "width:100%;border-collapse:collapse;margin:14px 0 0 0;font-size:13px;",
     "th": (
         f"text-align:left;padding:6px 8px;border-bottom:1px solid {P['hairline']};"
@@ -138,6 +150,16 @@ def _badge(take: Take) -> str:
 
 def _banners(take: Take) -> str:
     return "".join(f'<div style="{S["banner"]}">{e(flag)}</div>' for flag in take.flags)
+
+
+def _delta_line(delta: Optional[IPODelta]) -> str:
+    """What moved since the earlier run of the same day. Nothing to say ⇒ nothing rendered."""
+    if delta is None or not delta.has_content:
+        return ""
+    if delta.is_new:
+        return f'<div style="{S["delta"]}"><span style="{S["delta_key"]}">{e(delta.line)}</span></div>'
+    moves = " &nbsp;·&nbsp; ".join(f'<span style="{S["delta_key"]}">{e(p)}</span>' for p in delta.parts)
+    return f'<div style="{S["delta"]}">{e(delta.since_label)} &nbsp;·&nbsp; {moves}</div>'
 
 
 def _evidence_table(evidence: Optional[Evidence]) -> str:
@@ -223,7 +245,14 @@ def _detail_strip(ipo: IPO) -> str:
     return f'<div style="{S["strip"]}">{cells}</div>'
 
 
-def _card(ipo: IPO, evidence: Optional[Evidence], take: Optional[Take], *, urgent: bool = False) -> str:
+def _card(
+    ipo: IPO,
+    evidence: Optional[Evidence],
+    take: Optional[Take],
+    *,
+    urgent: bool = False,
+    delta: Optional[IPODelta] = None,
+) -> str:
     sme_tag = f'<span style="{S["sme_tag"]}">SME · HIGHER RISK</span>' if ipo.is_sme else ""
     urgency = "⚡ " if urgent else ""
     badge = _badge(take) if take else ""
@@ -236,6 +265,7 @@ def _card(ipo: IPO, evidence: Optional[Evidence], take: Optional[Take], *, urgen
         f'<p style="{S["card_name"]}">{urgency}{e(ipo.name)}{sme_tag}</p></td>'
         f'<td style="vertical-align:top;padding:0;text-align:right;white-space:nowrap;">{badge}</td>'
         f"</tr></table>"
+        f"{_delta_line(delta)}"
         f"{banner}"
         f"{_evidence_table(evidence)}"
         f"{take_box}"
@@ -278,7 +308,8 @@ def _footer(result: RunResult) -> str:
         f'<div style="margin-top:6px;"><strong>My own rolling accuracy</strong> &nbsp;{e(own)}</div>'
         f"{failures}"
         f'<div style="margin-top:10px;">{e(PRODUCT_DISCLAIMER)}</div>'
-        f'<div style="margin-top:6px;">Generated {e(stamp())} · {e(BRAND_NAME)}</div>'
+        f'<div style="margin-top:6px;">Generated {e(stamp(when=result.run_at_market))} · '
+        f"{e(slots.label(result.slot))} · {e(BRAND_NAME)}</div>"
         f"</div>"
     )
 
@@ -315,7 +346,13 @@ def build_html(result: RunResult, today: Optional[date] = None) -> str:
 
     def cards(ipos: Sequence[IPO], *, urgent: bool = False) -> str:
         return "".join(
-            _card(ipo, result.evidence.get(ipo.slug), result.takes.get(ipo.slug), urgent=urgent)
+            _card(
+                ipo,
+                result.evidence.get(ipo.slug),
+                result.takes.get(ipo.slug),
+                urgent=urgent,
+                delta=result.deltas.get(ipo.slug),
+            )
             for ipo in ipos
         )
 
@@ -328,7 +365,10 @@ def build_html(result: RunResult, today: Optional[date] = None) -> str:
     ]
 
     body = [
-        _header(f"{human_date(today, '%d %b %Y')} · {len(result.open_ipos)} open · {len(closing)} closing soon"),
+        _header(
+            f"{slots.headline(result.slot, result.run_at_market)} · "
+            f"{len(result.open_ipos)} open · {len(closing)} closing soon"
+        ),
         _section("⚡ Closing tomorrow", "last window to apply", cards(closing, urgent=True)),
         _section("Open · Mainboard", "", cards(open_main)),
         _section("Open · SME", "higher risk, thinner liquidity", cards(open_sme)),
@@ -336,8 +376,11 @@ def build_html(result: RunResult, today: Optional[date] = None) -> str:
         _section("Allotment & listing watch", "closed, awaiting listing", _watch_table(result)),
         _footer(result),
     ]
+    moved = sum(1 for d in result.deltas.values() if d.has_content)
+    movement = f" {moved} moved since the earlier run." if moved else ""
     preheader = (
-        f"{len(result.open_ipos)} open, {len(closing)} closing soon. Evidence table, my take, your call."
+        f"{len(result.open_ipos)} open, {len(closing)} closing soon.{movement} "
+        "Evidence table, my take, your call."
     )
     return _document("".join(body), preheader)
 
@@ -380,7 +423,7 @@ def build_quiet_html(result: RunResult, today: Optional[date] = None) -> str:
             f"{e('; '.join(result.sources_failed))}</p>"
         )
     inner = (
-        _header(f"{human_date(today, '%d %b %Y')} · all quiet")
+        _header(f"{slots.headline(result.slot, result.run_at_market)} · all quiet")
         + f'<div style="{S["card"]}"><p style="margin:0;font-size:14px;">'
         f"{e(str(EMAIL['quiet_body']))}</p>{failures}</div>"
         + _footer(result)
@@ -394,14 +437,16 @@ def build_quiet_html(result: RunResult, today: Optional[date] = None) -> str:
 
 
 def build_subject(result: RunResult, today: Optional[date] = None) -> str:
+    """Always carries which run this is — two subjects a day that read identically would be
+    indistinguishable in an inbox, and the second one would look like a duplicate."""
     today = today or today_market()
-    date_label = human_date(today, "%d %b")
+    headline = slots.headline(result.slot, result.run_at_market)
     if result.is_quiet:
-        return str(EMAIL["quiet_subject_template"]).format(brand=BRAND_NAME, date=date_label)
+        return str(EMAIL["quiet_subject_template"]).format(brand=BRAND_NAME, headline=headline)
     closing = result.closing_tomorrow(today)
     subject = str(EMAIL["subject_template"]).format(
         brand=BRAND_NAME,
-        date=date_label,
+        headline=headline,
         open_count=len(result.open_ipos),
         closing_count=len(closing),
     )

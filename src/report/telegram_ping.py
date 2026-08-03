@@ -4,12 +4,17 @@ One compact message, ≤4096 chars, no tables. It is a nudge, not the report —
 nudge carries the verdict, because a one-liner you have to open your inbox to decode is
 not a nudge:
 
-  header (date + counts)
+  header (date + IST time + which run this is + counts)
   ⚡ NAME (SME) — APPLY · QIB 12.4x · GMP +18% · Singhvi: Apply — closes 12 Aug
+    since this morning · QIB 4.20x → 12.40x · GMP +18.0% → +24.0%
     ⚠ Anil Singhvi says AVOID
   ⚪ OTHER NAME — PRELIMINARY · leaning AVOID · GMP +2% — closes 14 Aug
   ...
   Full report in your inbox.
+
+The header names the slot ("afternoon update") because the same IPO reads differently at
+09:00 and at 15:00. The "since" line only appears when there is a real earlier snapshot to
+compare against.
 
 IPOs are ordered most-actionable first (closing tomorrow, then by conviction), so when
 there are too many to fit, what gets dropped is what mattered least today.
@@ -25,9 +30,10 @@ from typing import Optional
 
 import requests
 
+from .. import slots
 from ..clock import human_date, today_market
 from ..config import BRAND_NAME, HTTP, TELEGRAM, VERDICT_BANDS
-from ..models import IPO, RunResult, Take
+from ..models import IPO, IPODelta, RunResult, Take
 
 log = logging.getLogger(__name__)
 
@@ -86,8 +92,10 @@ def _conviction(take: Optional[Take]) -> int:
     return _BAND_ORDER.index(take.verdict_key) if take.verdict_key in _BAND_ORDER else len(_BAND_ORDER)
 
 
-def _ipo_block(ipo: IPO, take: Optional[Take], urgent: bool) -> list[str]:
-    """One IPO's lines: the verdict line, plus any red-flag banner underneath it."""
+def _ipo_block(
+    ipo: IPO, take: Optional[Take], urgent: bool, delta: Optional[IPODelta] = None
+) -> list[str]:
+    """One IPO's lines: the verdict line, what moved since the earlier run, then any flags."""
     prefix = str(TELEGRAM["closing_tomorrow_prefix"]) if urgent else ""
     sme = " (SME)" if ipo.is_sme else ""
     emoji = take.verdict_emoji if take else "•"
@@ -95,6 +103,8 @@ def _ipo_block(ipo: IPO, take: Optional[Take], urgent: bool) -> list[str]:
         f"{prefix}{emoji} <b>{_e(ipo.name)}</b>{sme} — <b>{_e(_verdict_word(take))}</b> · "
         f"{_e(_reason(take))} — closes {_e(human_date(ipo.close_date))}"
     ]
+    if delta and delta.has_content:
+        lines.append(f"   <i>{_e(delta.line)}</i>")
     if take and take.flags:
         lines.extend(f"   <b>{_e(flag)}</b>" for flag in take.flags)
     return lines
@@ -103,11 +113,12 @@ def _ipo_block(ipo: IPO, take: Optional[Take], urgent: bool) -> list[str]:
 def build_message(result: RunResult, today: Optional[date] = None) -> str:
     """The exact text that gets sent. Pure function — used by --dry-run too."""
     today = today or today_market()
-    date_label = human_date(today, "%d %b")
+    # "03 Aug · 15:04 IST · afternoon update" — which run this is, before anything else.
+    headline = slots.headline(result.slot, result.run_at_market)
 
     if result.is_quiet:
         lines = [
-            f"<b>{_e(BRAND_NAME)}</b> · {_e(date_label)}",
+            f"<b>{_e(BRAND_NAME)}</b> · {_e(headline)}",
             "All quiet — no open, closing or listing IPOs today.",
         ]
         if result.sources_failed:
@@ -117,7 +128,7 @@ def build_message(result: RunResult, today: Optional[date] = None) -> str:
 
     closing = {i.slug for i in result.closing_tomorrow(today)}
     head = [
-        f"<b>{_e(BRAND_NAME)}</b> · {_e(date_label)}",
+        f"<b>{_e(BRAND_NAME)}</b> · {_e(headline)}",
         f"{len(result.open_ipos)} open · {len(closing)} closing soon · "
         f"{len(result.upcoming_ipos)} upcoming",
         "",
@@ -134,7 +145,13 @@ def build_message(result: RunResult, today: Optional[date] = None) -> str:
         ),
     )
     blocks = [
-        _ipo_block(ipo, result.takes.get(ipo.slug), ipo.slug in closing) for ipo in ordered
+        _ipo_block(
+            ipo,
+            result.takes.get(ipo.slug),
+            ipo.slug in closing,
+            result.deltas.get(ipo.slug),
+        )
+        for ipo in ordered
     ]
 
     upcoming_lines: list[str] = []
