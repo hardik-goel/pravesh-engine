@@ -1,19 +1,21 @@
 name: Pravesh Daily
 
 on:
-  # PENDING REMOVAL — see "Two runs a day" in the README.
+  # There is deliberately no `schedule:` block. It was `cron: "30 3 * * 1-5"` (03:30 UTC =
+  # 09:00 IST) and it was removed on 2026-08-03 because GitHub's scheduler is unusable here
+  # for two compounding reasons:
   #
-  # GitHub's scheduler has never fired this workflow: the block below is correct and on the
-  # default branch, and nothing has ever dispatched from it (checked on weekdays at 09:00,
-  # 09:30 and 11:20 IST). Free-tier scheduled workflows are best-effort. The trinetra-backend
-  # trigger replaces it and dispatches both slots itself.
+  #   * It drifts, badly. On 2026-08-03 that cron fired at 06:41 UTC — 3h12m late, 12:11 IST.
+  #     Earlier checks at 09:00, 09:30 and 11:20 IST had found nothing dispatched and we had
+  #     concluded it never fired at all; it was in fact arriving after every check.
+  #   * Its nominal time is the exact start of the backend trigger's morning window
+  #     (09:00-10:30 IST). A schedule trigger carries no inputs, so its runs fall back to the
+  #     `morning` slot — an on-time cron would have delivered a second morning report on top
+  #     of the backend's, to the same inbox and channel.
   #
-  # Delete this block once that trigger is verified in production. Leaving both live risks a
-  # duplicate morning run — the schedule cannot pass a slot, so its runs fall back to
-  # "morning" and would collide with the backend's morning dispatch.
-  schedule:
-    # 03:30 UTC = 09:00 IST, weekdays only (Indian primary market does not bid on weekends)
-    - cron: "30 3 * * 1-5"
+  # trinetra-backend (lib/praveshTrigger.js) is now the only trigger: it dispatches both slots
+  # on an IST window check it controls. See "Two runs a day" in the README, including how to
+  # restore a cron as a fallback if that ever needs revisiting.
   workflow_dispatch:
     inputs:
       slot:
@@ -59,8 +61,9 @@ jobs:
 
       - name: Run Pravesh
         env:
-          # Which of the day's runs this is. Set by whoever dispatched us; a schedule
-          # trigger carries no inputs, so it falls back to the morning slot.
+          # Which of the day's runs this is. The backend trigger passes it explicitly; the
+          # fallback covers a trigger that carries no inputs (a restored cron, an API call
+          # that omits the field) so a run is never left unlabelled.
           PRAVESH_SLOT: ${{ inputs.slot || 'morning' }}
           # Delivery
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}

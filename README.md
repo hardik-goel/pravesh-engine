@@ -177,10 +177,21 @@ slot is an edit there plus a window in the backend's config — no code change.
 
 ### What triggers a run
 
-**Not GitHub's scheduler.** The `schedule:` block in `pravesh-daily.yml` is correct and has
-been on the default branch throughout, and it has *never* fired — checked on weekdays at
-09:00, 09:30 and 11:20 IST, with every run in the history a manual one. Free-tier scheduled
-workflows are best-effort on shared infrastructure and can drift or skip entirely.
+**Not GitHub's scheduler — there is no `schedule:` block any more.** It was
+`cron: "30 3 * * 1-5"` (03:30 UTC = 09:00 IST) and it was removed on **2026-08-03**.
+
+We first believed it never fired: checks on weekdays at 09:00, 09:30 and 11:20 IST found
+nothing dispatched, and every run in the history was a manual one. That reading was wrong in
+an instructive way. On 2026-08-03 the cron did fire — at **06:41 UTC, 3h12m late**, which is
+12:11 IST, *after* every one of those checks. It was not skipping; it was arriving late enough
+to look like skipping. Free-tier scheduled workflows are best-effort on shared infrastructure,
+and "best-effort" turned out to mean hours of drift rather than silence.
+
+That made keeping it as a harmless fallback untenable, because its nominal time is the **exact
+start of the backend trigger's morning window** (09:00–10:30 IST). A schedule trigger carries
+no inputs, so its runs fall back to the `morning` slot: an on-time cron would have put a second
+morning report in the same inbox and the same Telegram channel as the backend's. Drift was the
+only thing keeping them apart, and drift is not a design.
 
 The trigger we control lives in **trinetra-backend** (`lib/praveshTrigger.js`): it checks the
 IST clock every few minutes and, when it is inside a slot's window on a weekday and that slot
@@ -197,11 +208,11 @@ window fires the dispatch. An external uptime pinger hitting `/health` from ~08:
 makes the morning run punctual; without one it happens whenever the instance first wakes inside
 the window. See that repo's README for the env vars and `/pravesh/trigger-status`.
 
-> **Remove the `schedule:` block once the backend trigger is verified in production.** With
-> both live you risk a duplicate morning run: a schedule trigger carries no inputs, so its
-> runs fall back to the `morning` slot and collide with the backend's morning dispatch. The
-> block is marked `PENDING REMOVAL` in the workflow — delete those four lines, keep the
-> `workflow_dispatch` block, and the backend becomes the only trigger.
+> **If you ever need a cron back as a fallback, do not restore the old one.** Put it well
+> clear of both windows — `cron: "0 8 * * 1-5"` (08:00 UTC = 13:30 IST) sits between them with
+> hours of headroom on each side, so even a long drift cannot land it on a backend dispatch.
+> Expect it to arrive late, and expect its runs to be labelled `morning` regardless of when
+> they land, since a schedule trigger cannot pass a slot.
 
 ### How a run knows which slot it is
 
