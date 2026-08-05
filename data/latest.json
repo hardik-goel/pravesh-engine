@@ -1,16 +1,12 @@
 {
-  "schema_version": 3,
+  "schema_version": 1,
   "brand": {
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-08-05T05:00:42.271343+00:00",
-  "generated_at_market": "05 Aug 2026, 10:29 IST",
-  "generated_at_ist": "2026-08-05T10:29:21.854755+05:30",
+  "generated_at": "2026-08-05T05:02:06.143169+00:00",
+  "generated_at_market": "05 Aug 2026, 10:32 IST",
   "run_date": "2026-08-05",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "05 Aug · 10:29 IST · morning report",
   "counts": {
     "open": 3,
     "closing_tomorrow": 2,
@@ -81,10 +77,9 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-05T05:00:42.268085+00:00"
+        "created_at": "2026-08-05T05:02:06.140973+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Propshop Events",
@@ -149,10 +144,9 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-05T05:00:42.268122+00:00"
+        "created_at": "2026-08-05T05:02:06.141010+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Poojaa Precision",
@@ -191,7 +185,7 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹235 premium (+78.1% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹225 premium (+74.8% of the upper band), per ipowatch.in.",
           "accuracy_pct": 100.0,
           "accuracy_n": 2,
           "accuracy_label": "insufficient history (n=2)",
@@ -217,10 +211,9 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-05T05:00:42.268139+00:00"
+        "created_at": "2026-08-05T05:02:06.141027+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "H.R. Hygiene Products",
@@ -310,10 +303,9 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 1%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.268265+00:00"
+        "created_at": "2026-08-05T05:02:06.141158+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Manipal Health",
@@ -384,7 +376,7 @@
       ],
       "take": {
         "ipo_slug": "manipal-health",
-        "score": 14.1,
+        "score": 28.3,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
@@ -403,7 +395,7 @@
             "base_weight": 25.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 25.0,
-            "contribution": 0.98,
+            "contribution": 0.8,
             "note": "+0.5% vs 40% for full credit (indicative) · uncalibrated (n=2 < 10)"
           },
           {
@@ -411,10 +403,10 @@
             "label": "Anil Singhvi",
             "raw_value": null,
             "normalised": 1.0,
-            "base_weight": 7.5,
+            "base_weight": 15.0,
             "calibration_multiplier": 1.0,
-            "effective_weight": 7.5,
-            "contribution": 23.08,
+            "effective_weight": 15.0,
+            "contribution": 37.5,
             "note": "called it Subscribe · uncalibrated (n=0 < 10)"
           }
         ],
@@ -424,10 +416,9 @@
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (insufficient history (n=0))",
         "strongest_against": "the grey market premium is only 1%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.268423+00:00"
+        "created_at": "2026-08-05T05:02:06.141386+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Dhaval Packaging",
@@ -516,10 +507,9 @@
         ],
         "strongest_for": "the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-05T05:00:42.268553+00:00"
+        "created_at": "2026-08-05T05:02:06.141526+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Juniper Green Energy",
@@ -578,9 +568,9 @@
         },
         {
           "source_name": "QIB signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "QIB book at 13.03x · overall 4.00x; institutional demand clears the 10x bar.",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "QIB book at 1.00x · overall 0.39x; institutional demand below 3x — thin.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -618,10 +608,9 @@
         ],
         "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-08-05T05:00:42.268664+00:00"
+        "created_at": "2026-08-05T05:02:06.141636+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "MV Electrosystems",
@@ -691,9 +680,9 @@
         },
         {
           "source_name": "QIB signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "QIB book at 22.83x · overall 99.13x; institutional demand clears the 10x bar.",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "QIB book at 0.03x · overall 8.32x; institutional demand below 3x — thin.",
           "accuracy_pct": null,
           "accuracy_n": 0,
           "accuracy_label": "insufficient history (n=0)",
@@ -742,10 +731,9 @@
         ],
         "strongest_for": "the grey market is quoting a 24% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Swastika Investmart explicitly say avoid",
-        "created_at": "2026-08-05T05:00:42.268806+00:00"
+        "created_at": "2026-08-05T05:02:06.141775+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Oneindig Technologies",
@@ -834,10 +822,9 @@
         ],
         "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-05T05:00:42.268912+00:00"
+        "created_at": "2026-08-05T05:02:06.141888+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Fusion Klassroom",
@@ -874,17 +861,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -938,10 +914,9 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.269024+00:00"
+        "created_at": "2026-08-05T05:02:06.141995+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "G.V. Electricals",
@@ -978,17 +953,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1042,10 +1006,9 @@
         ],
         "strongest_for": "the grey market is quoting a 20% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "591716% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-05T05:00:42.269153+00:00"
+        "created_at": "2026-08-05T05:02:06.142100+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Anawil Wire & Engineering",
@@ -1082,17 +1045,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1147,10 +1099,9 @@
         ],
         "strongest_for": "the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "731567% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-05T05:00:42.269262+00:00"
+        "created_at": "2026-08-05T05:02:06.142208+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Aegeus Technologies",
@@ -1187,17 +1138,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1250,10 +1190,9 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.269361+00:00"
+        "created_at": "2026-08-05T05:02:06.142353+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Ardee Industries",
@@ -1290,17 +1229,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1385,10 +1313,9 @@
         ],
         "strongest_for": "the grey market is quoting a 15% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-08-05T05:00:42.269486+00:00"
+        "created_at": "2026-08-05T05:02:06.142480+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "LAPL Automotive",
@@ -1425,17 +1352,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1489,10 +1405,9 @@
         ],
         "strongest_for": "the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-05T05:00:42.269588+00:00"
+        "created_at": "2026-08-05T05:02:06.142588+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "LEAP India",
@@ -1529,17 +1444,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1592,10 +1496,9 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.269679+00:00"
+        "created_at": "2026-08-05T05:02:06.142695+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Optimystix Entertainment",
@@ -1632,17 +1535,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1696,10 +1588,9 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.269778+00:00"
+        "created_at": "2026-08-05T05:02:06.142806+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Technocraft Ventures",
@@ -1736,17 +1627,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1799,10 +1679,9 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 5%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.269966+00:00"
+        "created_at": "2026-08-05T05:02:06.142903+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Dhoot Transmission",
@@ -1839,17 +1718,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -1902,10 +1770,9 @@
         ],
         "strongest_for": "the grey market is quoting a 29% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "624007% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-05T05:00:42.270057+00:00"
+        "created_at": "2026-08-05T05:02:06.143004+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     },
     {
       "name": "Molbio Diagnostics",
@@ -1942,17 +1809,6 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
           "stance": "NO_VIEW",
           "stance_label": "No view",
           "rationale": "No Zee Business call found for this issue.",
@@ -2004,10 +1860,9 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-05T05:00:42.270163+00:00"
+        "created_at": "2026-08-05T05:02:06.143093+00:00"
       },
-      "flags": [],
-      "delta": null
+      "flags": []
     }
   ],
   "leaderboard": [],
@@ -2024,389 +1879,10 @@
     "nse_subscription",
     "gmp",
     "qib_signal",
-    "singhvi",
-    "sandeep_jain",
     "brokers"
   ],
-  "sources_failed": [],
-  "expert_calls": [],
-  "expert_coverage": [
-    {
-      "expert": "Anil Singhvi",
-      "queried": 9,
-      "calls": 0,
-      "noView": 9,
-      "unreachable": 0,
-      "droppedNoUrl": 0
-    },
-    {
-      "expert": "Sandeep Jain",
-      "queried": 9,
-      "calls": 0,
-      "noView": 9,
-      "unreachable": 0,
-      "droppedNoUrl": 0
-    }
-  ],
-  "expert_reachability": [
-    {
-      "ipoSlug": "anawil-wire-engineering",
-      "ipo_slug": "anawil-wire-engineering",
-      "ipoName": "Anawil Wire & Engineering",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "aegeus-technologies",
-      "ipo_slug": "aegeus-technologies",
-      "ipoName": "Aegeus Technologies",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "ardee-industries",
-      "ipo_slug": "ardee-industries",
-      "ipoName": "Ardee Industries",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search",
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "lapl-automotive",
-      "ipo_slug": "lapl-automotive",
-      "ipoName": "LAPL Automotive",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "leap-india",
-      "ipo_slug": "leap-india",
-      "ipoName": "LEAP India",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "optimystix-entertainment",
-      "ipo_slug": "optimystix-entertainment",
-      "ipoName": "Optimystix Entertainment",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "technocraft-ventures",
-      "ipo_slug": "technocraft-ventures",
-      "ipoName": "Technocraft Ventures",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        }
-      ]
-    },
-    {
-      "ipoSlug": "dhoot-transmission",
-      "ipo_slug": "dhoot-transmission",
-      "ipoName": "Dhoot Transmission",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        }
-      ]
-    },
-    {
-      "ipoSlug": "molbio-diagnostics",
-      "ipo_slug": "molbio-diagnostics",
-      "ipoName": "Molbio Diagnostics",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        }
-      ]
-    }
-  ],
-  "source_status": [
-    {
-      "source": "gmp",
-      "ok": true,
-      "reason": "ok",
-      "routes": []
-    },
-    {
-      "source": "qib_signal",
-      "ok": true,
-      "reason": "ok",
-      "routes": []
-    },
-    {
-      "source": "singhvi",
-      "ok": true,
-      "reason": "zeebiz search: responded 9/9, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
-      "routes": [
-        {
-          "route": "zeebiz search",
-          "attempted": 9,
-          "answered": 9,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded 9/9, no matching item"
-        },
-        {
-          "route": "Google News RSS",
-          "attempted": 3,
-          "answered": 0,
-          "hits": 0,
-          "dropped": true,
-          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
-        },
-        {
-          "route": "DuckDuckGo",
-          "attempted": 3,
-          "answered": 0,
-          "hits": 0,
-          "dropped": true,
-          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
-        }
-      ]
-    },
-    {
-      "source": "sandeep_jain",
-      "ok": true,
-      "reason": "zeebiz search: responded 9/9, no matching item; Google News RSS: responded 1/6, no matching item — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
-      "routes": [
-        {
-          "route": "zeebiz search",
-          "attempted": 9,
-          "answered": 9,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded 9/9, no matching item"
-        },
-        {
-          "route": "Google News RSS",
-          "attempted": 6,
-          "answered": 1,
-          "hits": 0,
-          "dropped": true,
-          "reason": "responded 1/6, no matching item — route dropped after 3 in a row"
-        },
-        {
-          "route": "DuckDuckGo",
-          "attempted": 3,
-          "answered": 0,
-          "hits": 0,
-          "dropped": true,
-          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
-        }
-      ]
-    },
-    {
-      "source": "brokers",
-      "ok": true,
-      "reason": "ok",
-      "routes": []
-    }
+  "sources_failed": [
+    "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
   ],
   "disclaimer": "Informational only. Not investment advice. Not a recommendation to buy or sell any security. Do your own research — the final call is yours."
 }
