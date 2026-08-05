@@ -1078,5 +1078,25 @@
     "correct": null,
     "listing_gain_pct": null,
     "resolved_at": null
+  },
+  {
+    "source_name": "QIB signal",
+    "ipo_slug": "ardee-industries",
+    "ipo_name": "Ardee Industries",
+    "stance": "AVOID",
+    "rationale": "QIB book at 0.00x · overall 0.10x; institutional demand below 3x — thin.",
+    "url": "https://ipowatch.in/ardee-industries-ipo/",
+    "captured_at": "2026-08-05T04:45:46.058648+00:00",
+    "segment": "MAINBOARD",
+    "is_synthetic": true,
+    "raw_call": "",
+    "published_at": null,
+    "publisher": "",
+    "discovery_reachable": true,
+    "discovery_route": null,
+    "resolved": false,
+    "correct": null,
+    "listing_gain_pct": null,
+    "resolved_at": null
   }
 ]
