@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-08-06T03:41:51.158046+00:00",
-  "generated_at_market": "06 Aug 2026, 09:10 IST",
-  "generated_at_ist": "2026-08-06T09:10:19.385292+05:30",
+  "generated_at": "2026-08-06T03:59:01.563982+00:00",
+  "generated_at_market": "06 Aug 2026, 09:27 IST",
+  "generated_at_ist": "2026-08-06T09:27:25.837692+05:30",
   "run_date": "2026-08-06",
   "slot": "morning",
   "slot_label": "morning report",
-  "slot_headline": "06 Aug · 09:10 IST · morning report",
+  "slot_headline": "06 Aug · 09:27 IST · morning report",
   "counts": {
     "open": 4,
     "closing_tomorrow": 3,
@@ -81,7 +81,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-06T03:41:51.154677+00:00"
+        "created_at": "2026-08-06T03:59:01.560373+00:00"
       },
       "flags": [],
       "delta": null
@@ -160,7 +160,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-06T03:41:51.154705+00:00"
+        "created_at": "2026-08-06T03:59:01.560418+00:00"
       },
       "flags": [],
       "delta": null
@@ -263,7 +263,7 @@
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (insufficient history (n=0))",
         "strongest_against": "233028% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-06T03:41:51.154807+00:00"
+        "created_at": "2026-08-06T03:59:01.560566+00:00"
       },
       "flags": [],
       "delta": null
@@ -355,7 +355,7 @@
         ],
         "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-06T03:41:51.155006+00:00"
+        "created_at": "2026-08-06T03:59:01.560761+00:00"
       },
       "flags": [],
       "delta": null
@@ -457,7 +457,7 @@
         ],
         "strongest_for": "the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-08-06T03:41:51.155164+00:00"
+        "created_at": "2026-08-06T03:59:01.560885+00:00"
       },
       "flags": [],
       "delta": null
@@ -581,7 +581,7 @@
         ],
         "strongest_for": "the grey market is quoting a 26% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Swastika Investmart explicitly say avoid",
-        "created_at": "2026-08-06T03:41:51.155336+00:00"
+        "created_at": "2026-08-06T03:59:01.561035+00:00"
       },
       "flags": [],
       "delta": null
@@ -673,7 +673,7 @@
         ],
         "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-06T03:41:51.155467+00:00"
+        "created_at": "2026-08-06T03:59:01.561156+00:00"
       },
       "flags": [],
       "delta": null
@@ -777,7 +777,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-06T03:41:51.155593+00:00"
+        "created_at": "2026-08-06T03:59:01.561270+00:00"
       },
       "flags": [],
       "delta": null
@@ -882,7 +882,7 @@
         ],
         "strongest_for": "the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "731567% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-06T03:41:51.155717+00:00"
+        "created_at": "2026-08-06T03:59:01.561385+00:00"
       },
       "flags": [],
       "delta": null
@@ -985,7 +985,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-06T03:41:51.155856+00:00"
+        "created_at": "2026-08-06T03:59:01.561495+00:00"
       },
       "flags": [],
       "delta": null
@@ -1120,7 +1120,7 @@
         ],
         "strongest_for": "the grey market is quoting a 28% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "the QIB book is only 1.1x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-08-06T03:41:51.156011+00:00"
+        "created_at": "2026-08-06T03:59:01.561645+00:00"
       },
       "flags": [],
       "delta": null
@@ -1224,7 +1224,7 @@
         ],
         "strongest_for": "the grey market is quoting a 20% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "591716% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-06T03:41:51.156150+00:00"
+        "created_at": "2026-08-06T03:59:01.561758+00:00"
       },
       "flags": [],
       "delta": null
@@ -1328,7 +1328,7 @@
         ],
         "strongest_for": "the grey market is quoting a 32% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-06T03:41:51.156262+00:00"
+        "created_at": "2026-08-06T03:59:01.561866+00:00"
       },
       "flags": [],
       "delta": null
@@ -1431,7 +1431,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-08-06T03:41:51.156370+00:00"
+        "created_at": "2026-08-06T03:59:01.561968+00:00"
       },
       "flags": [],
       "delta": null
@@ -1535,7 +1535,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-06T03:41:51.156472+00:00"
+        "created_at": "2026-08-06T03:59:01.562069+00:00"
       },
       "flags": [],
       "delta": null
@@ -1638,7 +1638,7 @@
         ],
         "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "942857% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-06T03:41:51.156567+00:00"
+        "created_at": "2026-08-06T03:59:01.562165+00:00"
       },
       "flags": [],
       "delta": null
@@ -1741,7 +1741,7 @@
         ],
         "strongest_for": "the grey market is quoting a 29% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "624007% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-06T03:41:51.156650+00:00"
+        "created_at": "2026-08-06T03:59:01.562255+00:00"
       },
       "flags": [],
       "delta": null
@@ -1844,7 +1844,7 @@
         ],
         "strongest_for": "the grey market is quoting a 21% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "975418% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-06T03:41:51.156728+00:00"
+        "created_at": "2026-08-06T03:59:01.562345+00:00"
       },
       "flags": [],
       "delta": null
@@ -1946,7 +1946,7 @@
         ],
         "strongest_for": "only 8% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-06T03:41:51.156805+00:00"
+        "created_at": "2026-08-06T03:59:01.562432+00:00"
       },
       "flags": [],
       "delta": null
@@ -2050,7 +2050,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-06T03:41:51.156953+00:00"
+        "created_at": "2026-08-06T03:59:01.562529+00:00"
       },
       "flags": [],
       "delta": null
