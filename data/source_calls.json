@@ -34,10 +34,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-08-12T09:34:29.821813+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -394,10 +394,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-08-12T09:34:29.821813+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -794,10 +794,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-08-12T09:34:29.821813+00:00"
   },
   {
     "source_name": "Sandeep Jain",
