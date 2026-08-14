@@ -1,21 +1,32 @@
 name: Pravesh Daily
 
 on:
-  # There is deliberately no `schedule:` block. It was `cron: "30 3 * * 1-5"` (03:30 UTC =
-  # 09:00 IST) and it was removed on 2026-08-03 because GitHub's scheduler is unusable here
-  # for two compounding reasons:
+  # SAFETY NET, not the schedule. trinetra-backend (lib/praveshTrigger.js) is still the
+  # primary trigger and still owns the slot windows; this only covers the days it cannot
+  # fire at all.
   #
-  #   * It drifts, badly. On 2026-08-03 that cron fired at 06:41 UTC — 3h12m late, 12:11 IST.
-  #     Earlier checks at 09:00, 09:30 and 11:20 IST had found nothing dispatched and we had
-  #     concluded it never fired at all; it was in fact arriving after every check.
-  #   * Its nominal time is the exact start of the backend trigger's morning window
-  #     (09:00-10:30 IST). A schedule trigger carries no inputs, so its runs fall back to the
-  #     `morning` slot — an on-time cron would have delivered a second morning report on top
-  #     of the backend's, to the same inbox and channel.
+  # Why it cannot: the backend runs on a free Render instance that sleeps after ~15 minutes
+  # idle, and its keep-alive is a SELF-ping — it holds an awake instance awake and cannot
+  # wake a sleeping one. So the morning dispatch happens only if something external hits
+  # the backend between 09:00 and 10:30 IST. On 2026-08-12 and 2026-08-14 nothing did, and
+  # no morning report existed at all.
   #
-  # trinetra-backend (lib/praveshTrigger.js) is now the only trigger: it dispatches both slots
-  # on an IST window check it controls. See "Two runs a day" in the README, including how to
-  # restore a cron as a fallback if that ever needs revisiting.
+  # The cron was removed on 2026-08-03 for two reasons, and both are answered here rather
+  # than wished away:
+  #
+  #   * It drifts, badly — that cron fired 3h12m late on 2026-08-03. Which is why these
+  #     fire AFTER their window closes and are timed for lateness. A report at noon beats
+  #     no report, and nothing here depends on the minute.
+  #   * A schedule carries no inputs, so an on-time cron used to deliver a SECOND morning
+  #     report on top of the backend's. Now scripts/slot_guard.py runs first: if any run is
+  #     already archived for today at or after this slot's window opened — the trigger's or
+  #     a manual one — every delivery step is skipped.
+  #
+  # Not holiday-aware: the backend trigger skips market holidays and this does not, so a
+  # holiday can produce one quiet report. That is the accepted cost of the net.
+  schedule:
+    - cron: "15 5 * * 1-5"    # 10:45 IST — after the 09:00-10:30 morning window closes
+    - cron: "45 10 * * 1-5"   # 16:15 IST — after the 15:00-16:00 afternoon window closes
   workflow_dispatch:
     inputs:
       slot:
@@ -44,6 +55,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
+    env:
+      # Which of the day's runs this is. A dispatch says so explicitly; a schedule carries
+      # no inputs, so the slot comes from WHICH cron fired. Anything started some other way
+      # is labelled `morning` rather than left unlabelled.
+      SLOT: ${{ inputs.slot || (github.event.schedule == '45 10 * * 1-5' && 'afternoon') || 'morning' }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -59,12 +76,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # Only the safety net asks permission. A dispatch — by hand or from the backend
+      # trigger — always runs: someone asked for this report on purpose.
+      - name: Has this slot already been delivered today?
+        id: guard
+        if: github.event_name == 'schedule'
+        run: python scripts/slot_guard.py --slot "$SLOT"
+
       - name: Run Pravesh
+        if: ${{ github.event_name != 'schedule' || steps.guard.outputs.run == 'true' }}
         env:
-          # Which of the day's runs this is. The backend trigger passes it explicitly; the
-          # fallback covers a trigger that carries no inputs (a restored cron, an API call
-          # that omits the field) so a run is never left unlabelled.
-          PRAVESH_SLOT: ${{ inputs.slot || 'morning' }}
+          PRAVESH_SLOT: ${{ env.SLOT }}
           # Delivery
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -84,7 +106,7 @@ jobs:
           fi
 
       - name: Commit results (JSON store only)
-        if: ${{ vars.PRAVESH_STORE != 'supabase' && inputs.dry_run != true }}
+        if: ${{ vars.PRAVESH_STORE != 'supabase' && inputs.dry_run != true && (github.event_name != 'schedule' || steps.guard.outputs.run == 'true') }}
         env:
           BRANCH: ${{ github.ref_name }}
         run: |

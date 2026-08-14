@@ -182,10 +182,12 @@ slot is an edit there plus a window in the backend's config — no code change.
 
 ### What triggers a run
 
-**Not GitHub's scheduler — there is no `schedule:` block any more.** It was
-`cron: "30 3 * * 1-5"` (03:30 UTC = 09:00 IST) and it was removed on **2026-08-03**.
+The backend trigger is the schedule. GitHub's cron is a **safety net underneath it**, and
+nothing more — it was removed entirely on 2026-08-03 and came back on 2026-08-14 in a form
+that cannot collide with the trigger. Read the history below before touching either.
 
-We first believed it never fired: checks on weekdays at 09:00, 09:30 and 11:20 IST found
+**Why the old cron went (2026-08-03).** It was `cron: "30 3 * * 1-5"` (03:30 UTC = 09:00
+IST). We first believed it never fired: checks on weekdays at 09:00, 09:30 and 11:20 IST found
 nothing dispatched, and every run in the history was a manual one. That reading was wrong in
 an instructive way. On 2026-08-03 the cron did fire — at **06:41 UTC, 3h12m late**, which is
 12:11 IST, *after* every one of those checks. It was not skipping; it was arriving late enough
@@ -213,17 +215,43 @@ window fires the dispatch. An external uptime pinger hitting `/health` from ~08:
 makes the morning run punctual; without one it happens whenever the instance first wakes inside
 the window. See that repo's README for the env vars and `/pravesh/trigger-status`.
 
-> **If you ever need a cron back as a fallback, do not restore the old one.** Put it well
-> clear of both windows — `cron: "0 8 * * 1-5"` (08:00 UTC = 13:30 IST) sits between them with
-> hours of headroom on each side, so even a long drift cannot land it on a backend dispatch.
-> Expect it to arrive late, and expect its runs to be labelled `morning` regardless of when
-> they land, since a schedule trigger cannot pass a slot.
+**Why a cron came back (2026-08-14), and why this one is safe.** The window is only a window
+if something is alive to look at the clock. On **2026-08-12 and 2026-08-14 no morning report
+existed at all**: nothing hit the backend between 09:00 and 10:30 IST, the instance stayed
+asleep, and `/pravesh/trigger-status` showed `dispatchedToday: false` with `lastError: null`
+— the trigger was armed, correct, and never got a tick. Missing a morning entirely is worse
+than a late one, so the net is back:
+
+```yaml
+schedule:
+  - cron: "15 5 * * 1-5"    # 10:45 IST — AFTER the morning window closes
+  - cron: "45 10 * * 1-5"   # 16:15 IST — AFTER the afternoon window closes
+```
+
+Both objections that killed the old cron are answered rather than wished away:
+
+* **Drift** — these fire *after* their window closes and are timed for lateness. A report at
+  noon beats no report, and nothing here depends on the minute.
+* **Duplicates** — `scripts/slot_guard.py` runs first on schedule events only. It looks for
+  any run archived under today's date whose `generated_at_ist` is at or after this slot's
+  window opened (`config.SLOT_WINDOW_START`) and, if it finds one, sets `run=false` and every
+  delivery step is skipped. Slot labels are ignored on purpose: a `manual` run at 09:33
+  covers the morning as well as one labelled `morning`. A dispatch — by hand or from the
+  backend — is never guarded, because someone asked for that report on purpose.
+
+The cron is **not holiday-aware** and the backend trigger is, so a market holiday can produce
+one quiet report. Accepted cost.
+
+The permanent fix for the underlying cause is an external uptime pinger on the backend's
+`/health` from ~08:45 IST: it keeps the instance awake through both windows, which makes the
+trigger punctual and leaves this net with nothing to do.
 
 ### How a run knows which slot it is
 
-`PRAVESH_SLOT` — set by the workflow from the dispatch input (`inputs.slot || 'morning'`, so a
-schedule trigger still labels itself). Locally, `--slot morning|afternoon|manual`. An unknown
-or missing value degrades to `manual`: a mislabelled report still goes out.
+`PRAVESH_SLOT` — set by the workflow's job-level `SLOT`: the dispatch input when there is one,
+otherwise *which cron fired* (`github.event.schedule`), otherwise `morning`. Locally,
+`--slot morning|afternoon|manual`. An unknown or missing value degrades to `manual`: a
+mislabelled report still goes out.
 
 The slot and the IST timestamp appear in the Telegram header, the email subject and header
 band, and `latest.json` — all three from one captured moment, so they cannot disagree:

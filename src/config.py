@@ -479,6 +479,16 @@ RUN_SLOTS: Final[dict[str, dict[str, str]]] = {
     "manual": {"label": "manual run", "since": "since the last run"},
 }
 
+# IST window opening times for the slots the backend trigger dispatches — the same
+# windows as PRAVESH_TRIGGER_SLOTS in trinetra-backend (lib/praveshTrigger.js). Duplicated
+# here for exactly one purpose: the scheduled fallback (scripts/slot_guard.py) has to know
+# whether a report for this slot already went out before it sends another. Keep in step
+# with the backend; a wrong time here only ever costs a duplicate or a missed fallback.
+SLOT_WINDOW_START: Final[dict[str, str]] = {
+    "morning": "09:00",
+    "afternoon": "15:00",
+}
+
 SLOT_HEADLINE: Final[dict[str, str]] = {
     "template": "{date} · {time} {tz} · {label}",
     "date_format": "%d %b",
