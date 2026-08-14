@@ -126,6 +126,20 @@ def build_message(result: RunResult, today: Optional[date] = None) -> str:
         lines.append(str(TELEGRAM["footer"]))
         return "\n".join(lines)
 
+    # Nothing to show, and no grounds for saying so. The one thing this ping must never
+    # do is let a blind run look like a calm one.
+    if not result.ipos:
+        lines = [
+            f"<b>{_e(BRAND_NAME)}</b> · {_e(headline)}",
+            "<b>Could not read the IPO calendar this run.</b> This is NOT a quiet day — "
+            "there may be issues open or closing that this report cannot see. Check the "
+            "calendar directly before deciding anything.",
+        ]
+        if result.sources_failed:
+            lines.append(f"⚠ Degraded: {_e('; '.join(result.sources_failed))}")
+        lines.append(str(TELEGRAM["footer"]))
+        return "\n".join(lines)
+
     closing = {i.slug for i in result.closing_tomorrow(today)}
     head = [
         f"<b>{_e(BRAND_NAME)}</b> · {_e(headline)}",

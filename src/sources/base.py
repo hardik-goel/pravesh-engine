@@ -313,7 +313,20 @@ DEFAULT_TABLE_SELECTORS: dict[str, str] = {
     "header_cell": "th",
     "cell": "td",
     "link": "a[href]",
+    # Decorative nodes inside a cell, removed before any text is read. Boards hang
+    # status pills off the company name ("Behari Lal Engineering CT"), and a name that
+    # carries one no longer matches the same issue anywhere else — not the ledger, not
+    # the GMP feed, not the previous run. Empty by default; each source names its own.
+    "drop": "",
 }
+
+
+def _drop_decoration(soup: BeautifulSoup, selector: str) -> None:
+    """Remove decorative nodes in place, so cell text is the data and nothing else."""
+    if not selector:
+        return
+    for node in soup.select(selector):
+        node.decompose()
 
 
 def match_header(header: str, header_keys: dict[str, list[str]]) -> Optional[str]:
@@ -341,6 +354,7 @@ def parse_tables(
     uses `<td>`" pattern, and never emits that header row as data.
     """
     sel = {**DEFAULT_TABLE_SELECTORS, **(selectors or {})}
+    _drop_decoration(soup, sel["drop"])
     tables: list[list[dict[str, Any]]] = []
     for table_index, table in enumerate(soup.select(sel["table"])):
         header_row: Optional[Tag] = None
@@ -365,7 +379,16 @@ def parse_tables(
             if header_row is not None and tr is header_row:
                 continue
             cells = tr.select(sel["cell"])
-            if len(cells) < 2:
+            if not cells:
+                continue
+            # A row can collapse its columns into one cell — chittorgarh's dashboard
+            # prints "Skyways Air Services 24 - 27 Aug" under a Company / Issue Date
+            # header. That is still data: the source's own splitter recovers the dates
+            # from the name. Dropping it cost the entire calendar table, which left a
+            # dateless recommendation table further down the page to win the name match
+            # and produced a calendar where every issue had no dates. Any OTHER
+            # single-cell row is a layout row, not data.
+            if len(cells) < 2 and mapped[:1] != ["name"]:
                 continue
             row: dict[str, Any] = {"_table": table_index}
             for index, cell in enumerate(cells):

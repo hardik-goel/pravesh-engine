@@ -416,11 +416,11 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
 
 ```jsonc
 {
-  // 2 added expert_calls / expert_coverage / source_status; 3 added expert_reachability.
-  // Both purely additive — every earlier key is unchanged and still present, so an older
-  // consumer keeps working. The number moves so consumers can feature-detect on it rather
-  // than on a key's presence.
-  "schema_version": 3,
+  // 2 added expert_calls / expert_coverage / source_status; 3 added expert_reachability;
+  // 4 added calendar_readable. All purely additive — every earlier key is unchanged and
+  // still present, so an older consumer keeps working. The number moves so consumers can
+  // feature-detect on it rather than on a key's presence.
+  "schema_version": 4,
   "brand": { "name": "Trinetra Pravesh", "tagline": "…" },
   "generated_at": "2026-08-03T09:34:11+00:00",   // UTC ISO
   "generated_at_market": "03 Aug 2026, 15:04 IST",
@@ -510,6 +510,14 @@ archived to `data/history/<run_date>-<slot>.json`, so any past run reads with th
                 "resolved": true, "correct": true, "flags": [] }],
   "sources_ok": ["ipowatch", "nse_subscription", "gmp"],
   "sources_failed": ["singhvi: … "],               // non-empty ⇒ show a degraded notice
+
+  // Whether the calendar could be read at all (schema_version ≥ 4). Treat as `true` when
+  // absent. When it is false, `counts` is all zeros and `ipos` is empty for the SAME
+  // reason a genuinely quiet day is — and the two mean opposite things. Render "could not
+  // read the IPO calendar", NEVER "no IPOs today": issues may be open and closing right
+  // now, unseen. On 2026-08-14 this shipped as "All quiet" with two mainboard issues open
+  // and closing that day, which is what the flag exists to prevent.
+  "calendar_readable": true,
 
   // ---- named-expert ingest surface (schema_version ≥ 2) -------------------------
   // One row per attributable expert view. NO_VIEW is never a row (it is not a call);

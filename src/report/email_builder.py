@@ -343,6 +343,8 @@ def build_html(result: RunResult, today: Optional[date] = None) -> str:
     today = today or today_market()
     if result.is_quiet:
         return build_quiet_html(result, today)
+    if not result.ipos:
+        return build_blind_html(result, today)
 
     def cards(ipos: Sequence[IPO], *, urgent: bool = False) -> str:
         return "".join(
@@ -431,6 +433,34 @@ def build_quiet_html(result: RunResult, today: Optional[date] = None) -> str:
     return _document(inner, str(EMAIL["quiet_body"]))
 
 
+def build_blind_html(result: RunResult, today: Optional[date] = None) -> str:
+    """Empty, and unable to claim the day was empty.
+
+    The quiet template exists to say "nothing to do". This one exists to say the
+    opposite thing that produces an identical-looking report: the calendar could not be
+    read, so the absence of issues here is an absence of information, not of IPOs.
+    """
+    today = today or today_market()
+    failures = ""
+    if result.sources_failed:
+        failures = (
+            f'<p style="{S["strip"]}color:{P["danger_fg"]};">⚠ What broke: '
+            f"{e('; '.join(result.sources_failed))}</p>"
+        )
+    warning = (
+        "Could not read the IPO calendar this run. This is <b>not</b> a quiet day — there "
+        "may be issues open or closing right now that this report cannot see. Check the "
+        "calendar directly before deciding anything."
+    )
+    inner = (
+        _header(f"{slots.headline(result.slot, result.run_at_market)} · calendar unreadable")
+        + f'<div style="{S["card"]}"><p style="margin:0;font-size:14px;color:{P["danger_fg"]};">'
+        f"{warning}</p>{failures}</div>"
+        + _footer(result)
+    )
+    return _document(inner, "Could not read the IPO calendar this run.")
+
+
 # --------------------------------------------------------------------------------------
 # Subject + delivery
 # --------------------------------------------------------------------------------------
@@ -443,6 +473,10 @@ def build_subject(result: RunResult, today: Optional[date] = None) -> str:
     headline = slots.headline(result.slot, result.run_at_market)
     if result.is_quiet:
         return str(EMAIL["quiet_subject_template"]).format(brand=BRAND_NAME, headline=headline)
+    # Empty but not quiet: the calendar could not be read. The subject has to say so,
+    # because a quiet-looking subject is the version that gets left unopened.
+    if not result.ipos:
+        return f"{BRAND_NAME} · {headline} — could not read the IPO calendar"
     closing = result.closing_tomorrow(today)
     subject = str(EMAIL["subject_template"]).format(
         brand=BRAND_NAME,

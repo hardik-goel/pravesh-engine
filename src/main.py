@@ -58,10 +58,13 @@ log = logging.getLogger("pravesh.main")
 #   trinetra-backend ingest.
 # 3 (2026-08-03): added `expert_reachability` — per-ISSUE discovery state, so an empty
 #   result can be told apart from an unchecked one per IPO rather than per source.
-# Both bumps are purely ADDITIVE: every v1 and v2 key is unchanged and still present, so an
+# 4 (2026-08-14): added `calendar_readable` — the same distinction one level up. Zero
+#   IPOs with a readable calendar is a quiet day; zero with an unreadable one is a blind
+#   run, and they had been publishing as the identical payload.
+# Every bump is purely ADDITIVE: every earlier key is unchanged and still present, so an
 # older consumer keeps working. The number moves so consumers can feature-detect on it
 # rather than on the presence of a key.
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 
 def setup_logging(verbose: bool = False) -> None:
@@ -113,9 +116,12 @@ def run_role(
 ) -> tuple[Any, list[str]]:
     """Try each provider for a role until one answers.
 
-    Only the *winning* provider's complaints are reported. A documented-dead fallback
-    lower in the chain grumbling every morning would train the reader to ignore the
-    degraded notice — which is the one line that has to keep meaning something.
+    Everything up to and including the winner is reported. A provider only speaks if it
+    ran, and it only runs if every provider preferred over it came back empty — so the
+    preferred one dying is exactly the news worth printing, and it was previously the
+    one thing thrown away. A documented-dead fallback lower in the chain never runs
+    while the one above it works, so it still cannot train the reader to ignore the
+    degraded notice — the one line that has to keep meaning something.
     """
     collected: list[str] = []
     for provider in provider_chain(role, providers):
@@ -126,7 +132,7 @@ def run_role(
             log.info("%s ← %s", role, provider.name)
             if provider.name not in sources_ok:
                 sources_ok.append(provider.name)
-            return result, raised
+            return result, collected + raised
         collected.extend(raised)
         log.warning("%s provider %s returned nothing; trying the next one", role, provider.name)
     return None, collected
@@ -192,6 +198,10 @@ def build_latest_payload(result: RunResult, today: date) -> dict[str, Any]:
         "history": [record.to_dict() for record in result.history],
         "sources_ok": result.sources_ok,
         "sources_failed": result.sources_failed,
+        # False when the calendar answered but carried no dates. `counts` then reads as a
+        # quiet day and is not one: a consumer must render "could not read the calendar",
+        # never "no IPOs today". Added in schema 4.
+        "calendar_readable": result.calendar_readable,
         # Machine-readable ingest surface for trinetra-backend. `source_status` exists so a
         # hard block can never be read as "no calls today" — see engine/expert_feed.py.
         "expert_calls": result.expert_calls,
@@ -249,6 +259,21 @@ def run(
 
     universe = reporting_universe(calendar, today)
     log.info("calendar %d → reporting on %d", len(calendar), len(universe))
+
+    # A calendar can answer and still be useless. On 2026-08-14 the spine timed out, the
+    # fallback returned 20 rows with no dates on any of them, and every row was filtered
+    # out for having no dates — which the report then delivered as "all quiet", on a day
+    # two mainboard issues were open and closing. Silence must mean nothing is happening;
+    # it must never mean the dates never arrived.
+    dated = [i for i in calendar if i.open_date or i.close_date or i.listing_date]
+    calendar_readable = bool(dated)
+    if calendar and not dated:
+        sources_failed.append(
+            f"calendar: {len(calendar)} row(s) arrived with no dates on any of them — "
+            "the calendar could not be read, so today's silence carries no information"
+        )
+    elif calendar and not universe:
+        log.info("calendar is readable and genuinely has nothing in today's windows")
 
     # 2. Detail strip — every provider gets a pass, each only fills its own blanks --
     for provider in provider_chain("detail", providers):
@@ -336,6 +361,7 @@ def run(
         expert_coverage=expert_coverage,
         expert_reachability=expert_reachability,
         source_status=source_status,
+        calendar_readable=calendar_readable,
     )
 
     if dry_run:

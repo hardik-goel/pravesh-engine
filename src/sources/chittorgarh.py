@@ -6,6 +6,17 @@ Next.js app, so the report URLs return HTTP 200 with no table in the HTML. The l
 this provider yields nothing, `ipowatch.py` takes over as the calendar spine — that
 ordering lives in config.DATA_PROVIDERS, not here.
 
+DASHBOARD SHAPE (verified 2026-08-14): the fallback's calendar is the FIRST table, and
+its rows carry one `<td colspan="2">` holding both name and dates — "Skyways Air Services
+24 - 27 Aug" — with status pills (CT closing today, LT listing today, P pending) rendered
+inside the name. Two consequences, both handled and both easy to reintroduce: a row with
+a single cell must not be discarded (parse_tables), and `span.badge` must be stripped
+before the text is read (SELECTORS["drop"]) or every name is "Shiprocket CT" and matches
+nothing. Discarding the row let a recommendation-count table further down the page win
+the name match, producing a full calendar with no dates on any row — which reported as a
+quiet day while two mainboard issues were open and closing. Mainboard only: the SME
+report URL is client-rendered, so a run served by this fallback has no SME coverage.
+
 WHEN THIS BREAKS: patch SELECTORS / HEADER_KEYS / DETAIL_KEYS below. If the site returns
 rows again, put "chittorgarh" back at the head of config.DATA_PROVIDERS["calendar"].
 """
@@ -43,6 +54,10 @@ SELECTORS: dict[str, str] = {
     "header_cell": "th",
     "cell": "td",
     "link": "a[href]",
+    # Status pills the dashboard hangs off the company name: CT (closing today),
+    # LT (listing today), P (pending). They are rendered inside the name cell, so
+    # without this the issue reads as "Shiprocket CT" and matches nothing.
+    "drop": "span.badge",
 }
 
 HEADER_KEYS: dict[str, list[str]] = {

@@ -642,6 +642,10 @@ class RunResult:
     expert_coverage: list[dict[str, Any]] = field(default_factory=list)
     expert_reachability: list[dict[str, Any]] = field(default_factory=list)
     source_status: list[dict[str, Any]] = field(default_factory=list)
+    # False when the calendar answered but carried no dates, so nothing could be placed
+    # in a window. An empty report then says nothing about the day and must not be
+    # delivered as one — see is_quiet.
+    calendar_readable: bool = True
 
     # -- bucketing used by every surface --------------------------------------------
 
@@ -666,7 +670,13 @@ class RunResult:
 
     @property
     def is_quiet(self) -> bool:
-        return not (self.open_ipos or self.upcoming_ipos or self.watch_ipos)
+        """A day with nothing in it — which requires having been able to look.
+
+        An unreadable calendar produces the same empty buckets as a genuinely quiet
+        day. Reporting the two identically once announced "all quiet" on a day with
+        two mainboard issues open and closing, so emptiness alone is not enough.
+        """
+        return self.calendar_readable and not (self.open_ipos or self.upcoming_ipos or self.watch_ipos)
 
     def to_dict(self) -> dict[str, Any]:
         return {
