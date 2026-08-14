@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-08-14T09:36:47.034586+00:00",
-  "generated_at_market": "14 Aug 2026, 15:02 IST",
-  "generated_at_ist": "2026-08-14T15:02:47.507384+05:30",
+  "generated_at": "2026-08-14T10:22:00.705223+00:00",
+  "generated_at_market": "14 Aug 2026, 15:47 IST",
+  "generated_at_ist": "2026-08-14T15:47:40.404685+05:30",
   "run_date": "2026-08-14",
   "slot": "afternoon",
   "slot_label": "afternoon update",
-  "slot_headline": "14 Aug · 15:02 IST · afternoon update",
+  "slot_headline": "14 Aug · 15:47 IST · afternoon update",
   "counts": {
     "open": 9,
     "closing_tomorrow": 4,
@@ -114,7 +114,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-14T09:36:47.030070+00:00"
+        "created_at": "2026-08-14T10:22:00.698688+00:00"
       },
       "flags": [],
       "delta": null
@@ -204,7 +204,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-14T09:36:47.030110+00:00"
+        "created_at": "2026-08-14T10:22:00.698729+00:00"
       },
       "flags": [],
       "delta": null
@@ -294,7 +294,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-08-14T09:36:47.030134+00:00"
+        "created_at": "2026-08-14T10:22:00.698749+00:00"
       },
       "flags": [],
       "delta": null
@@ -419,7 +419,7 @@
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (insufficient history (n=1))",
         "strongest_against": "5072023% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.030280+00:00"
+        "created_at": "2026-08-14T10:22:00.698908+00:00"
       },
       "flags": [],
       "delta": null
@@ -523,7 +523,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.030446+00:00"
+        "created_at": "2026-08-14T10:22:00.699093+00:00"
       },
       "flags": [],
       "delta": null
@@ -659,7 +659,7 @@
         ],
         "strongest_for": "1 of 1 named brokerages back the issue (Anand Rathi)",
         "strongest_against": "942857% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.030627+00:00"
+        "created_at": "2026-08-14T10:22:00.699308+00:00"
       },
       "flags": [],
       "delta": null
@@ -773,7 +773,7 @@
         ],
         "strongest_for": "the grey market is quoting a 32% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "624007% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.030754+00:00"
+        "created_at": "2026-08-14T10:22:00.699438+00:00"
       },
       "flags": [],
       "delta": null
@@ -887,7 +887,7 @@
         ],
         "strongest_for": "the grey market is quoting a 19% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "975418% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.030891+00:00"
+        "created_at": "2026-08-14T10:22:00.699603+00:00"
       },
       "flags": [],
       "delta": null
@@ -1023,7 +1023,7 @@
         ],
         "strongest_for": "1 of 1 named brokerages back the issue (Anand Rathi)",
         "strongest_against": "574924% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.031047+00:00"
+        "created_at": "2026-08-14T10:22:00.699791+00:00"
       },
       "flags": [],
       "delta": null
@@ -1126,7 +1126,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.031144+00:00"
+        "created_at": "2026-08-14T10:22:00.699928+00:00"
       },
       "flags": [],
       "delta": null
@@ -1150,11 +1150,11 @@
       "ofs_cr": 7320001.0,
       "ofs_pct": 2426895.1,
       "subscription": {
-        "qib": 52.19,
-        "nii": 117.14,
-        "retail": 27.9,
+        "qib": 120.7,
+        "nii": 128.87,
+        "retail": 30.86,
         "employee": null,
-        "total": 55.44,
+        "total": 78.2,
         "updated_at": "NSE · BLEL"
       },
       "gmp": 80.0,
@@ -1201,7 +1201,7 @@
           "source_name": "QIB signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "QIB book at 52.19x · overall 55.44x; institutional demand clears the 10x bar.",
+          "rationale": "QIB book at 120.70x · overall 78.20x; institutional demand clears the 10x bar.",
           "accuracy_pct": 75.0,
           "accuracy_n": 4,
           "accuracy_label": "insufficient history (n=4)",
@@ -1216,8 +1216,8 @@
         "verdict_label": "APPLY",
         "verdict_emoji": "🟢",
         "verdict_color": "#1E7A4B",
-        "paragraph": "The strongest argument for Behari Lal Engineering is that institutions have taken the QIB book to 52.2x, which is real money committing before listing. Against it: 2426895% of the issue is promoters and existing holders selling down, not capital going into the company. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
-        "one_liner": "APPLY (QIB 52.2x · total 55.4x · GMP +28%)",
+        "paragraph": "The strongest argument for Behari Lal Engineering is that institutions have taken the QIB book to 120.7x, which is real money committing before listing. Against it: 2426895% of the issue is promoters and existing holders selling down, not capital going into the company. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
+        "one_liner": "APPLY (QIB 120.7x · total 78.2x · GMP +28%)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -1225,13 +1225,13 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 52.19,
+            "raw_value": 120.7,
             "normalised": 1.0,
             "base_weight": 30.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 30.0,
             "contribution": 42.86,
-            "note": "52.19x vs 20x for full credit · uncalibrated (n=4 < 10)"
+            "note": "120.70x vs 20x for full credit · uncalibrated (n=4 < 10)"
           },
           {
             "key": "gmp",
@@ -1247,21 +1247,21 @@
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 55.44,
+            "raw_value": 78.2,
             "normalised": 1.0,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
             "contribution": 21.43,
-            "note": "55.44x overall · not calibrated"
+            "note": "78.20x overall · not calibrated"
           }
         ],
         "modifiers": [
           "-10 — 2426895% of the issue is offer-for-sale"
         ],
-        "strongest_for": "institutions have taken the QIB book to 52.2x, which is real money committing before listing",
+        "strongest_for": "institutions have taken the QIB book to 120.7x, which is real money committing before listing",
         "strongest_against": "2426895% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.031248+00:00"
+        "created_at": "2026-08-14T10:22:00.700087+00:00"
       },
       "flags": [],
       "delta": null
@@ -1365,7 +1365,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.031376+00:00"
+        "created_at": "2026-08-14T10:22:00.700222+00:00"
       },
       "flags": [],
       "delta": null
@@ -1468,7 +1468,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.031461+00:00"
+        "created_at": "2026-08-14T10:22:00.700358+00:00"
       },
       "flags": [],
       "delta": null
@@ -1492,11 +1492,11 @@
       "ofs_cr": 75462363.0,
       "ofs_pct": 4665427.9,
       "subscription": {
-        "qib": 47.68,
-        "nii": 42.92,
-        "retail": 28.06,
-        "employee": 33.24,
-        "total": 47.28,
+        "qib": 78.08,
+        "nii": 47.4,
+        "retail": 30.75,
+        "employee": 41.96,
+        "total": 65.79,
         "updated_at": "NSE · SHIPROCKET"
       },
       "gmp": 36.0,
@@ -1543,7 +1543,7 @@
           "source_name": "QIB signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "QIB book at 47.68x · overall 47.28x; institutional demand clears the 10x bar.",
+          "rationale": "QIB book at 78.08x · overall 65.79x; institutional demand clears the 10x bar.",
           "accuracy_pct": 75.0,
           "accuracy_n": 4,
           "accuracy_label": "insufficient history (n=4)",
@@ -1558,8 +1558,8 @@
         "verdict_label": "APPLY",
         "verdict_emoji": "🟢",
         "verdict_color": "#1E7A4B",
-        "paragraph": "The strongest argument for Shiprocket is that institutions have taken the QIB book to 47.7x, which is real money committing before listing. Against it: 4665428% of the issue is promoters and existing holders selling down, not capital going into the company. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
-        "one_liner": "APPLY (QIB 47.7x · total 47.3x · GMP +37% · Singhvi: Subscribe)",
+        "paragraph": "The strongest argument for Shiprocket is that institutions have taken the QIB book to 78.1x, which is real money committing before listing. Against it: 4665428% of the issue is promoters and existing holders selling down, not capital going into the company. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
+        "one_liner": "APPLY (QIB 78.1x · total 65.8x · GMP +37% · Singhvi: Subscribe)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -1567,13 +1567,13 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 47.68,
+            "raw_value": 78.08,
             "normalised": 1.0,
             "base_weight": 30.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 30.0,
             "contribution": 38.71,
-            "note": "47.68x vs 20x for full credit · uncalibrated (n=4 < 10)"
+            "note": "78.08x vs 20x for full credit · uncalibrated (n=4 < 10)"
           },
           {
             "key": "gmp",
@@ -1589,13 +1589,13 @@
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 47.28,
+            "raw_value": 65.79,
             "normalised": 1.0,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
             "contribution": 19.35,
-            "note": "47.28x overall · not calibrated"
+            "note": "65.79x overall · not calibrated"
           },
           {
             "key": "singhvi",
@@ -1612,9 +1612,9 @@
         "modifiers": [
           "-10 — 4665428% of the issue is offer-for-sale"
         ],
-        "strongest_for": "institutions have taken the QIB book to 47.7x, which is real money committing before listing",
+        "strongest_for": "institutions have taken the QIB book to 78.1x, which is real money committing before listing",
         "strongest_against": "4665428% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.031576+00:00"
+        "created_at": "2026-08-14T10:22:00.700572+00:00"
       },
       "flags": [],
       "delta": null
@@ -1717,7 +1717,7 @@
         ],
         "strongest_for": "the grey market is quoting a 40% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-14T09:36:47.031659+00:00"
+        "created_at": "2026-08-14T10:22:00.700708+00:00"
       },
       "flags": [],
       "delta": null
@@ -1820,7 +1820,7 @@
         ],
         "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.031741+00:00"
+        "created_at": "2026-08-14T10:22:00.700836+00:00"
       },
       "flags": [],
       "delta": null
@@ -1923,7 +1923,7 @@
         ],
         "strongest_for": "the grey market is quoting a 17% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-14T09:36:47.031822+00:00"
+        "created_at": "2026-08-14T10:22:00.700953+00:00"
       },
       "flags": [],
       "delta": null
@@ -2026,7 +2026,7 @@
         ],
         "strongest_for": "the grey market is quoting a 16% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "it is an SME issue — thin post-listing liquidity, larger lot size and far less disclosure than a mainboard name",
-        "created_at": "2026-08-14T09:36:47.031904+00:00"
+        "created_at": "2026-08-14T10:22:00.701068+00:00"
       },
       "flags": [],
       "delta": null
@@ -2130,7 +2130,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.031985+00:00"
+        "created_at": "2026-08-14T10:22:00.701180+00:00"
       },
       "flags": [],
       "delta": null
@@ -2232,7 +2232,7 @@
         ],
         "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-08-14T09:36:47.032060+00:00"
+        "created_at": "2026-08-14T10:22:00.701287+00:00"
       },
       "flags": [],
       "delta": null
@@ -2335,7 +2335,7 @@
         ],
         "strongest_for": "the grey market is quoting a 19% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "1463272% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.032135+00:00"
+        "created_at": "2026-08-14T10:22:00.701395+00:00"
       },
       "flags": [],
       "delta": null
@@ -2438,7 +2438,7 @@
         ],
         "strongest_for": "the grey market is quoting a 9% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "2723460% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.032210+00:00"
+        "created_at": "2026-08-14T10:22:00.701530+00:00"
       },
       "flags": [],
       "delta": null
@@ -2541,7 +2541,7 @@
         ],
         "strongest_for": "the grey market is quoting a 9% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "1076472% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-08-14T09:36:47.032331+00:00"
+        "created_at": "2026-08-14T10:22:00.701643+00:00"
       },
       "flags": [],
       "delta": null
@@ -2644,7 +2644,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.032416+00:00"
+        "created_at": "2026-08-14T10:22:00.701749+00:00"
       },
       "flags": [],
       "delta": null
@@ -2747,7 +2747,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-08-14T09:36:47.032491+00:00"
+        "created_at": "2026-08-14T10:22:00.701851+00:00"
       },
       "flags": [],
       "delta": null
