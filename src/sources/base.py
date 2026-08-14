@@ -5,7 +5,7 @@ Contract every source honours:
     failure in `self.failures`. One dead scraper must never kill a run.
   * `segment_coverage` declares which segments the source speaks to. A source is simply
     not asked about segments it does not cover.
-  * All network access goes through `http_get`: 10s timeout, 2 retries, exponential
+  * All network access goes through `http_get`: timeout and retries per config.HTTP, exponential
     backoff, realistic User-Agent — all from config.HTTP.
 """
 

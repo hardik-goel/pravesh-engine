@@ -40,8 +40,14 @@ MARKET: Final[dict[str, object]] = {
 # --------------------------------------------------------------------------------------
 
 HTTP: Final[dict[str, object]] = {
-    "timeout_seconds": 10,
-    "retries": 2,  # total attempts = retries + 1
+    # ipowatch.in — the calendar spine — intermittently connect-times-out from GitHub's
+    # runners: three 10s attempts failed at 04:04 on 2026-08-14 and the same host answered
+    # fine fifty minutes later, and again for the GMP page inside the failing run. The
+    # cost of one slow attempt is seconds; the cost of losing the spine is the whole
+    # report, so this waits rather than gives up. A run is ~3 min against the workflow's
+    # 25 min timeout-minutes, so the extra patience is affordable.
+    "timeout_seconds": 25,
+    "retries": 3,  # total attempts = retries + 1
     "backoff_base_seconds": 1.5,  # attempt N sleeps backoff_base ** N
     "user_agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
