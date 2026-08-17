@@ -163,5 +163,35 @@
     "resolved": false,
     "correct": null,
     "flags": []
+  },
+  {
+    "ipo_slug": "horizon-industrial-parks",
+    "ipo_name": "Horizon Industrial Parks",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 10.4,
+    "created_at": "2026-08-17T03:47:19.292433+00:00",
+    "listing_date": "2026-08-24",
+    "issue_price": 60.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
+  },
+  {
+    "ipo_slug": "lalithaa-jewellery-mart",
+    "ipo_name": "Lalithaa Jewellery Mart",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 13.3,
+    "created_at": "2026-08-17T03:47:19.292563+00:00",
+    "listing_date": "2026-08-24",
+    "issue_price": 201.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
   }
 ]
