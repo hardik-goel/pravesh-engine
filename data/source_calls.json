@@ -1734,10 +1734,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": false,
+    "listing_gain_pct": 11.08,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -1774,10 +1774,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 9.97,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -1874,10 +1874,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 11.08,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -1914,10 +1914,10 @@
     "publisher": "Zee Business",
     "discovery_reachable": true,
     "discovery_route": "Google News RSS",
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 9.97,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -1994,10 +1994,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 11.08,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -2034,10 +2034,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 9.97,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -2194,10 +2194,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 15.62,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -2214,10 +2214,10 @@
     "publisher": "Zee Business",
     "discovery_reachable": true,
     "discovery_route": "Google News RSS",
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 15.62,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -2234,10 +2234,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 15.62,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -2324,7 +2324,7 @@
     "ipo_slug": "skyways-air",
     "ipo_name": "Skyways Air",
     "stance": "APPLY",
-    "rationale": "Indicative, unofficial grey-market premium: ₹46 premium (+33.3% of the upper band), per ipowatch.in.",
+    "rationale": "Indicative, unofficial grey-market premium: ₹37 premium (+26.8% of the upper band), per ipowatch.in.",
     "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-08-17T03:45:45.396393+00:00",
     "segment": "MAINBOARD",
@@ -2354,10 +2354,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 111.33,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -2414,10 +2414,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 111.33,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -2474,10 +2474,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 111.33,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "QIB signal",
@@ -2534,10 +2534,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 21.95,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -2574,10 +2574,10 @@
     "publisher": "Zee Business",
     "discovery_reachable": true,
     "discovery_route": "Google News RSS",
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 21.95,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -2614,10 +2614,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 21.95,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "QIB signal",
@@ -2634,10 +2634,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": false,
+    "listing_gain_pct": 11.08,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "QIB signal",
@@ -2654,10 +2654,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 9.97,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -2754,10 +2754,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 11.08,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -2784,7 +2784,7 @@
     "ipo_slug": "symbiotec-pharmalab",
     "ipo_name": "Symbiotec Pharmalab",
     "stance": "APPLY",
-    "rationale": "Indicative, unofficial grey-market premium: ₹260 premium (+26.3% of the upper band), per ipowatch.in.",
+    "rationale": "Indicative, unofficial grey-market premium: ₹205 premium (+20.7% of the upper band), per ipowatch.in.",
     "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-08-19T09:31:45.482996+00:00",
     "segment": "MAINBOARD",
@@ -2814,10 +2814,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 15.62,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -3014,10 +3014,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 111.33,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Brokerage Anand Rathi Research",
@@ -3034,10 +3034,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 15.62,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anand Rathi",
@@ -3054,10 +3054,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 15.62,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anand Rathi",
@@ -3074,10 +3074,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 111.33,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -3114,10 +3114,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": true,
+    "listing_gain_pct": 21.95,
+    "resolved_at": "2026-08-31T09:35:19.410037+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -3484,7 +3484,7 @@
     "ipo_slug": "esds-software",
     "ipo_name": "ESDS Software",
     "stance": "APPLY",
-    "rationale": "Indicative, unofficial grey-market premium: ₹325 premium (+75.8% of the upper band), per ipowatch.in.",
+    "rationale": "Indicative, unofficial grey-market premium: ₹328 premium (+76.5% of the upper band), per ipowatch.in.",
     "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-08-25T09:34:19.079222+00:00",
     "segment": "MAINBOARD",
@@ -3503,8 +3503,8 @@
     "source_name": "GMP signal",
     "ipo_slug": "purple-style-labs",
     "ipo_name": "Purple Style Labs",
-    "stance": "NEUTRAL",
-    "rationale": "Indicative, unofficial grey-market premium: ₹34 premium (+5.9% of the upper band), per ipowatch.in.",
+    "stance": "AVOID",
+    "rationale": "Indicative, unofficial grey-market premium: ₹28 premium (+4.9% of the upper band), per ipowatch.in.",
     "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-08-25T09:34:19.079222+00:00",
     "segment": "MAINBOARD",
@@ -3704,7 +3704,7 @@
     "ipo_slug": "deepa-jewellers",
     "ipo_name": "Deepa Jewellers",
     "stance": "APPLY",
-    "rationale": "Indicative, unofficial grey-market premium: ₹47 premium (+26.6% of the upper band), per ipowatch.in.",
+    "rationale": "Indicative, unofficial grey-market premium: ₹46 premium (+26.0% of the upper band), per ipowatch.in.",
     "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-08-27T04:40:13.834888+00:00",
     "segment": "MAINBOARD",
@@ -3723,9 +3723,9 @@
     "source_name": "QIB signal",
     "ipo_slug": "lumino-industries",
     "ipo_name": "Lumino Industries",
-    "stance": "AVOID",
-    "rationale": "QIB book at 0.05x · overall 2.86x; institutional demand below 3x — thin.",
-    "url": "https://www.chittorgarh.com/ipo/lumino-industries-ipo/2013/",
+    "stance": "APPLY",
+    "rationale": "QIB book at 127.72x · overall 75.35x; institutional demand clears the 10x bar.",
+    "url": "https://ipowatch.in/lumino-industries-ipo/",
     "captured_at": "2026-08-27T04:40:13.845289+00:00",
     "segment": "MAINBOARD",
     "is_synthetic": true,
@@ -3844,7 +3844,7 @@
     "ipo_slug": "esds-software",
     "ipo_name": "ESDS Software",
     "stance": "AVOID",
-    "rationale": "QIB book at 0.01x · overall 1.54x; institutional demand below 3x — thin.",
+    "rationale": "QIB book at 0.24x · overall 17.20x; institutional demand below 3x — thin.",
     "url": "https://ipowatch.in/esds-software-solution-ipo/",
     "captured_at": "2026-08-28T17:26:41.501702+00:00",
     "segment": "MAINBOARD",
@@ -3864,8 +3864,8 @@
     "ipo_slug": "priority-jewels",
     "ipo_name": "Priority Jewels",
     "stance": "AVOID",
-    "rationale": "QIB book at 0.44x · overall 1.37x; institutional demand below 3x — thin.",
-    "url": "https://www.chittorgarh.com/ipo/priority-jewels-ipo/2435/",
+    "rationale": "QIB book at 0.56x · overall 17.79x; institutional demand below 3x — thin.",
+    "url": "https://ipowatch.in/priority-jewels-ipo/",
     "captured_at": "2026-08-28T17:26:41.501702+00:00",
     "segment": "MAINBOARD",
     "is_synthetic": true,
@@ -3988,6 +3988,66 @@
     "url": null,
     "captured_at": "2026-08-31T04:29:46.651723+00:00",
     "segment": "MAINBOARD",
+    "is_synthetic": false,
+    "raw_call": "",
+    "published_at": null,
+    "publisher": "",
+    "discovery_reachable": true,
+    "discovery_route": null,
+    "resolved": false,
+    "correct": null,
+    "listing_gain_pct": null,
+    "resolved_at": null
+  },
+  {
+    "source_name": "QIB signal",
+    "ipo_slug": "purple-style-labs",
+    "ipo_name": "Purple Style Labs",
+    "stance": "AVOID",
+    "rationale": "QIB book at 0.00x · overall 0.07x; institutional demand below 3x — thin.",
+    "url": "https://ipowatch.in/purple-style-labs-ipo/",
+    "captured_at": "2026-08-31T09:35:20.516084+00:00",
+    "segment": "MAINBOARD",
+    "is_synthetic": true,
+    "raw_call": "",
+    "published_at": null,
+    "publisher": "",
+    "discovery_reachable": true,
+    "discovery_route": null,
+    "resolved": false,
+    "correct": null,
+    "listing_gain_pct": null,
+    "resolved_at": null
+  },
+  {
+    "source_name": "Anil Singhvi",
+    "ipo_slug": "fly-hi-maritime",
+    "ipo_name": "Fly-Hi Maritime",
+    "stance": "NO_VIEW",
+    "rationale": "No Zee Business call found for this issue.",
+    "url": null,
+    "captured_at": "2026-08-31T09:35:20.516237+00:00",
+    "segment": "SME",
+    "is_synthetic": false,
+    "raw_call": "",
+    "published_at": null,
+    "publisher": "",
+    "discovery_reachable": true,
+    "discovery_route": null,
+    "resolved": false,
+    "correct": null,
+    "listing_gain_pct": null,
+    "resolved_at": null
+  },
+  {
+    "source_name": "Sandeep Jain",
+    "ipo_slug": "fly-hi-maritime",
+    "ipo_name": "Fly-Hi Maritime",
+    "stance": "NO_VIEW",
+    "rationale": "No Zee Business call found for this issue.",
+    "url": null,
+    "captured_at": "2026-08-31T09:35:31.452786+00:00",
+    "segment": "SME",
     "is_synthetic": false,
     "raw_call": "",
     "published_at": null,
