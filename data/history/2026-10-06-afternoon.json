@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-10-05T19:24:28.445074+00:00",
-  "generated_at_market": "06 Oct 2026, 00:53 IST",
-  "generated_at_ist": "2026-10-06T00:53:36.524304+05:30",
+  "generated_at": "2026-10-06T09:38:12.282227+00:00",
+  "generated_at_market": "06 Oct 2026, 15:07 IST",
+  "generated_at_ist": "2026-10-06T15:07:15.515986+05:30",
   "run_date": "2026-10-06",
   "slot": "afternoon",
   "slot_label": "afternoon update",
-  "slot_headline": "06 Oct · 00:53 IST · afternoon update",
+  "slot_headline": "06 Oct · 15:07 IST · afternoon update",
   "counts": {
     "open": 4,
     "closing_tomorrow": 4,
@@ -44,9 +44,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 1.0,
-      "gmp_pct": 3.12,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/acevector-ipo/",
       "exchange": null,
       "closing_tomorrow": false,
@@ -98,28 +98,17 @@
       ],
       "take": {
         "ipo_slug": "acevector",
-        "score": 14.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "score": 90.0,
+        "verdict_key": "APPLY",
+        "verdict_label": "PRELIMINARY — APPLY",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Acevector is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: the grey market premium is only 3%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +3% · Singhvi: Subscribe)",
+        "verdict_color": "#1E7A4B",
+        "paragraph": "The strongest argument for Acevector is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: 9895833% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
+        "one_liner": "PRELIMINARY — APPLY (Singhvi: Subscribe)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
         "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 3.12,
-            "normalised": 0.078,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 6.43,
-            "note": "+3.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
           {
             "key": "singhvi",
             "label": "Anil Singhvi",
@@ -128,7 +117,7 @@
             "base_weight": 7.5,
             "calibration_multiplier": 1.0,
             "effective_weight": 7.5,
-            "contribution": 17.54,
+            "contribution": 100.0,
             "note": "called it Subscribe · uncalibrated (n=9 < 10)"
           }
         ],
@@ -137,8 +126,8 @@
           "PRELIMINARY — bidding data not published yet"
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (78% (n=9))",
-        "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-10-05T19:24:28.442908+00:00"
+        "strongest_against": "9895833% of the issue is promoters and existing holders selling down, not capital going into the company",
+        "created_at": "2026-10-06T09:38:12.280154+00:00"
       },
       "flags": [],
       "delta": null
@@ -228,7 +217,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.442973+00:00"
+        "created_at": "2026-10-06T09:38:12.280252+00:00"
       },
       "flags": [],
       "delta": null
@@ -318,7 +307,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.442990+00:00"
+        "created_at": "2026-10-06T09:38:12.280279+00:00"
       },
       "flags": [],
       "delta": null
@@ -349,9 +338,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 10.0,
-      "gmp_pct": 7.19,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/german-green-steel-ipo/",
       "exchange": null,
       "closing_tomorrow": false,
@@ -403,36 +392,23 @@
       ],
       "take": {
         "ipo_slug": "german-green-steel",
-        "score": 8.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "score": 0.0,
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for German Green Steel is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 328947% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +7%)",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on German Green Steel yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
         "preliminary": true,
-        "has_score": true,
+        "has_score": false,
         "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 7.19,
-            "normalised": 0.1798,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 17.98,
-            "note": "+7.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          }
-        ],
+        "components": [],
         "modifiers": [
-          "-10 — 328947% of the issue is offer-for-sale",
-          "PRELIMINARY — bidding data not published yet"
+          "No scorable input available"
         ],
-        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "328947% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-10-05T19:24:28.443063+00:00"
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-10-06T09:38:12.280298+00:00"
       },
       "flags": [],
       "delta": null
@@ -522,7 +498,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443108+00:00"
+        "created_at": "2026-10-06T09:38:12.280308+00:00"
       },
       "flags": [],
       "delta": null
@@ -553,9 +529,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 123.0,
-      "gmp_pct": 45.22,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/orient-cables-ipo/",
       "exchange": null,
       "closing_tomorrow": false,
@@ -607,36 +583,23 @@
       ],
       "take": {
         "ipo_slug": "orient-cables",
-        "score": 90.0,
-        "verdict_key": "APPLY",
-        "verdict_label": "PRELIMINARY — APPLY",
+        "score": 0.0,
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
         "verdict_emoji": "⚪",
-        "verdict_color": "#1E7A4B",
-        "paragraph": "The strongest argument for Orient Cables is that the grey market is quoting a 45% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 1545183% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
-        "one_liner": "PRELIMINARY — APPLY (GMP +45%)",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on Orient Cables yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
         "preliminary": true,
-        "has_score": true,
+        "has_score": false,
         "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 45.22,
-            "normalised": 1.0,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 100.0,
-            "note": "+45.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          }
-        ],
+        "components": [],
         "modifiers": [
-          "-10 — 1545183% of the issue is offer-for-sale",
-          "PRELIMINARY — bidding data not published yet"
+          "No scorable input available"
         ],
-        "strongest_for": "the grey market is quoting a 45% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "1545183% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-10-05T19:24:28.443175+00:00"
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-10-06T09:38:12.280317+00:00"
       },
       "flags": [],
       "delta": null
@@ -667,9 +630,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 0.0,
-      "gmp_pct": 0.0,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/runwal-enterprises-ipo/",
       "exchange": null,
       "closing_tomorrow": false,
@@ -722,34 +685,22 @@
       "take": {
         "ipo_slug": "runwal-enterprises",
         "score": 0.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Runwal Enterprises is that only 0% is offer-for-sale, so most of the raise funds the business. Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +0%)",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on Runwal Enterprises yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
         "preliminary": true,
-        "has_score": true,
+        "has_score": false,
         "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 0.0,
-            "normalised": 0.0,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          }
-        ],
+        "components": [],
         "modifiers": [
-          "PRELIMINARY — bidding data not published yet"
+          "No scorable input available"
         ],
-        "strongest_for": "only 0% is offer-for-sale, so most of the raise funds the business",
-        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-10-05T19:24:28.443265+00:00"
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-10-06T09:38:12.280326+00:00"
       },
       "flags": [],
       "delta": null
@@ -839,7 +790,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443305+00:00"
+        "created_at": "2026-10-06T09:38:12.280334+00:00"
       },
       "flags": [],
       "delta": null
@@ -929,7 +880,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443316+00:00"
+        "created_at": "2026-10-06T09:38:12.280342+00:00"
       },
       "flags": [],
       "delta": null
@@ -1019,7 +970,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443325+00:00"
+        "created_at": "2026-10-06T09:38:12.280376+00:00"
       },
       "flags": [],
       "delta": null
@@ -1120,7 +1071,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443335+00:00"
+        "created_at": "2026-10-06T09:38:12.280386+00:00"
       },
       "flags": [],
       "delta": null
@@ -1151,9 +1102,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 17.0,
-      "gmp_pct": 10.18,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/shah-investors-home-ipo/",
       "exchange": null,
       "closing_tomorrow": false,
@@ -1205,35 +1156,23 @@
       ],
       "take": {
         "ipo_slug": "shah-investor-s",
-        "score": 25.4,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "score": 0.0,
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Shah Investor's is that the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +10%)",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on Shah Investor's yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
         "preliminary": true,
-        "has_score": true,
+        "has_score": false,
         "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 10.18,
-            "normalised": 0.2545,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 25.45,
-            "note": "+10.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          }
-        ],
+        "components": [],
         "modifiers": [
-          "PRELIMINARY — bidding data not published yet"
+          "No scorable input available"
         ],
-        "strongest_for": "the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-10-05T19:24:28.443390+00:00"
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-10-06T09:38:12.280395+00:00"
       },
       "flags": [],
       "delta": null
@@ -1323,7 +1262,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443436+00:00"
+        "created_at": "2026-10-06T09:38:12.280403+00:00"
       },
       "flags": [],
       "delta": null
@@ -1413,7 +1352,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443461+00:00"
+        "created_at": "2026-10-06T09:38:12.280411+00:00"
       },
       "flags": [],
       "delta": null
@@ -1503,7 +1442,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443471+00:00"
+        "created_at": "2026-10-06T09:38:12.280419+00:00"
       },
       "flags": [],
       "delta": null
@@ -1593,7 +1532,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443480+00:00"
+        "created_at": "2026-10-06T09:38:12.280426+00:00"
       },
       "flags": [],
       "delta": null
@@ -1683,7 +1622,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443489+00:00"
+        "created_at": "2026-10-06T09:38:12.280433+00:00"
       },
       "flags": [],
       "delta": null
@@ -1773,7 +1712,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443498+00:00"
+        "created_at": "2026-10-06T09:38:12.280440+00:00"
       },
       "flags": [],
       "delta": null
@@ -1863,7 +1802,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443507+00:00"
+        "created_at": "2026-10-06T09:38:12.280448+00:00"
       },
       "flags": [],
       "delta": null
@@ -1953,7 +1892,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443516+00:00"
+        "created_at": "2026-10-06T09:38:12.280455+00:00"
       },
       "flags": [],
       "delta": null
@@ -1984,8 +1923,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 3.0,
-      "gmp_pct": 4.0,
+      "gmp": 1.0,
+      "gmp_pct": 1.33,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/nityas-gems-jewellery-ipo/",
       "exchange": null,
@@ -2039,7 +1978,7 @@
           "source_name": "GMP signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹3 premium (+4.0% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹1 premium (+1.3% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -2060,13 +1999,13 @@
       ],
       "take": {
         "ipo_slug": "nityas-gems",
-        "score": 38.6,
-        "verdict_key": "RISKY",
-        "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
+        "score": 34.1,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9A7407",
-        "paragraph": "The strongest argument for Nityas Gems is that 2 of 2 named brokerages back the issue (Anand Rathi, Brokerage Anand Rathi). Against it: the grey market premium is only 4%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
-        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +4% · brokers 2/2)",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Nityas Gems is that 2 of 2 named brokerages back the issue (Anand Rathi, Brokerage Anand Rathi). Against it: the grey market premium is only 1%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +1% · brokers 2/2)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -2074,13 +2013,13 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 4.0,
-            "normalised": 0.1,
+            "raw_value": 1.33,
+            "normalised": 0.0333,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 6.71,
-            "note": "+4.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 2.23,
+            "note": "+1.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "brokers",
@@ -2098,8 +2037,8 @@
           "PRELIMINARY — bidding data not published yet"
         ],
         "strongest_for": "2 of 2 named brokerages back the issue (Anand Rathi, Brokerage Anand Rathi)",
-        "strongest_against": "the grey market premium is only 4%, so no listing pop is being priced in",
-        "created_at": "2026-10-05T19:24:28.443663+00:00"
+        "strongest_against": "the grey market premium is only 1%, so no listing pop is being priced in",
+        "created_at": "2026-10-06T09:38:12.280619+00:00"
       },
       "flags": [],
       "delta": null
@@ -2189,7 +2128,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443703+00:00"
+        "created_at": "2026-10-06T09:38:12.280692+00:00"
       },
       "flags": [],
       "delta": null
@@ -2279,7 +2218,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443717+00:00"
+        "created_at": "2026-10-06T09:38:12.280716+00:00"
       },
       "flags": [],
       "delta": null
@@ -2369,7 +2308,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443727+00:00"
+        "created_at": "2026-10-06T09:38:12.280733+00:00"
       },
       "flags": [],
       "delta": null
@@ -2459,7 +2398,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443736+00:00"
+        "created_at": "2026-10-06T09:38:12.280747+00:00"
       },
       "flags": [],
       "delta": null
@@ -2490,8 +2429,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 20.0,
-      "gmp_pct": 9.09,
+      "gmp": 2.0,
+      "gmp_pct": 0.91,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/vishal-nirmiti-ipo/",
       "exchange": null,
@@ -2521,9 +2460,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹20 premium (+9.1% of the upper band), per ipowatch.in.",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹2 premium (+0.9% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -2544,13 +2483,13 @@
       ],
       "take": {
         "ipo_slug": "vishal-nirmiti",
-        "score": 22.7,
+        "score": 2.3,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Vishal Nirmiti is that the grey market is quoting a 9% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +9%)",
+        "paragraph": "The strongest argument for Vishal Nirmiti is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 1%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +1%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -2558,21 +2497,21 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 9.09,
-            "normalised": 0.2273,
+            "raw_value": 0.91,
+            "normalised": 0.0227,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 22.73,
-            "note": "+9.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 2.27,
+            "note": "+0.9% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 9% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-10-05T19:24:28.443786+00:00"
+        "strongest_for": "there is no strong positive signal on the table yet",
+        "strongest_against": "the grey market premium is only 1%, so no listing pop is being priced in",
+        "created_at": "2026-10-06T09:38:12.280806+00:00"
       },
       "flags": [],
       "delta": null
@@ -2662,7 +2601,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443832+00:00"
+        "created_at": "2026-10-06T09:38:12.280872+00:00"
       },
       "flags": [],
       "delta": null
@@ -2752,7 +2691,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443842+00:00"
+        "created_at": "2026-10-06T09:38:12.280892+00:00"
       },
       "flags": [],
       "delta": null
@@ -2842,7 +2781,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443851+00:00"
+        "created_at": "2026-10-06T09:38:12.280906+00:00"
       },
       "flags": [],
       "delta": null
@@ -2932,7 +2871,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-05T19:24:28.443860+00:00"
+        "created_at": "2026-10-06T09:38:12.280915+00:00"
       },
       "flags": [],
       "delta": null
