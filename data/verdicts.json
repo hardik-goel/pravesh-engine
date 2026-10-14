@@ -934,10 +934,27 @@
     "ipo_name": "HD Fire Protect",
     "segment": "MAINBOARD",
     "verdict_key": "AVOID",
-    "score": 27.1,
+    "score": 30.1,
     "created_at": "2026-10-12T20:00:33.081832+00:00",
     "listing_date": "2026-10-20",
     "issue_price": 271.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": [
+      "⚠ Anil Singhvi says AVOID"
+    ]
+  },
+  {
+    "ipo_slug": "fusion-cx",
+    "ipo_name": "Fusion CX",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 12.9,
+    "created_at": "2026-10-14T09:35:03.755383+00:00",
+    "listing_date": "2026-10-22",
+    "issue_price": 289.0,
     "listing_price": null,
     "listing_gain_pct": null,
     "resolved": false,
