@@ -4,52 +4,52 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-10-15T09:37:10.381554+00:00",
-  "generated_at_market": "15 Oct 2026, 15:02 IST",
-  "generated_at_ist": "2026-10-15T15:02:33.201449+05:30",
-  "run_date": "2026-10-15",
+  "generated_at": "2026-10-16T09:35:57.530406+00:00",
+  "generated_at_market": "16 Oct 2026, 15:01 IST",
+  "generated_at_ist": "2026-10-16T15:01:51.982376+05:30",
+  "run_date": "2026-10-16",
   "slot": "afternoon",
   "slot_label": "afternoon update",
-  "slot_headline": "15 Oct · 15:02 IST · afternoon update",
+  "slot_headline": "16 Oct · 15:01 IST · afternoon update",
   "counts": {
-    "open": 9,
-    "closing_tomorrow": 4,
+    "open": 5,
+    "closing_tomorrow": 1,
     "upcoming": 2,
-    "watch": 0
+    "watch": 1
   },
   "ipos": [
     {
       "name": "HD Fire Protect",
       "slug": "hd-fire-protect",
       "segment": "MAINBOARD",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-10-13",
       "close_date": "2026-10-15",
-      "allotment_date": "2026-10-16",
-      "listing_date": "2026-10-20",
+      "allotment_date": null,
+      "listing_date": "2026-10-21",
       "price_band_low": 258.0,
       "price_band_high": 271.0,
       "price_band_label": "₹258–₹271",
       "lot_size": 55,
       "min_investment": 14905.0,
-      "issue_size_cr": 712.0,
+      "issue_size_cr": 26284500.0,
       "fresh_issue_cr": 0.0,
       "ofs_cr": 26284500.0,
-      "ofs_pct": 3691643.3,
+      "ofs_pct": 100.0,
       "subscription": {
-        "qib": 93.99,
-        "nii": 83.1,
-        "retail": 18.06,
-        "employee": 13.96,
-        "total": 61.06,
-        "updated_at": "NSE · HDFIRE"
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
       },
-      "gmp": 91.0,
-      "gmp_pct": 33.58,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/hd-fire-protect-ipo/",
-      "exchange": null,
-      "closing_tomorrow": true,
+      "gmp": 82.0,
+      "gmp_pct": 30.3,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/hd-fire-protect-ipo/2628/",
+      "exchange": "BSE, NSE",
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -88,11 +88,11 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹91 premium (+33.6% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹82 premium (+30.3% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         },
         {
@@ -109,49 +109,27 @@
       ],
       "take": {
         "ipo_slug": "hd-fire-protect",
-        "score": 77.7,
-        "verdict_key": "APPLY",
-        "verdict_label": "APPLY",
-        "verdict_emoji": "🟢",
-        "verdict_color": "#1E7A4B",
-        "paragraph": "The strongest argument for HD Fire Protect is that institutions have taken the QIB book to 94.0x, which is real money committing before listing. Against it: 3691643% of the issue is promoters and existing holders selling down, not capital going into the company. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
-        "one_liner": "APPLY (QIB 94.0x · total 61.1x · GMP +34% · Singhvi: Subscribe · brokers 0/1)",
-        "preliminary": false,
+        "score": 61.4,
+        "verdict_key": "LISTING_GAINS",
+        "verdict_label": "PRELIMINARY — LISTING GAINS ONLY",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#1F5F9E",
+        "paragraph": "The strongest argument for HD Fire Protect is that the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 100% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That reads as a listing-day trade rather than something to hold — take the pop if it comes and reassess. Final call is yours.",
+        "one_liner": "PRELIMINARY — LISTING GAINS ONLY (GMP +30% · Singhvi: Subscribe · brokers 0/1)",
+        "preliminary": true,
         "has_score": true,
         "flags": [],
         "components": [
           {
-            "key": "qib",
-            "label": "QIB subscription",
-            "raw_value": 93.99,
-            "normalised": 1.0,
-            "base_weight": 30.0,
-            "calibration_multiplier": 1.368,
-            "effective_weight": 41.04,
-            "contribution": 35.35,
-            "note": "93.99x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
-          },
-          {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 33.58,
-            "normalised": 0.8395,
+            "raw_value": 30.3,
+            "normalised": 0.7575,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 25.49,
-            "note": "+33.6% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
-          {
-            "key": "total_subscription",
-            "label": "Overall subscription",
-            "raw_value": 61.06,
-            "normalised": 1.0,
-            "base_weight": 15.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 15.0,
-            "contribution": 12.92,
-            "note": "61.06x overall · not calibrated"
+            "contribution": 44.47,
+            "note": "+30.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "singhvi",
@@ -161,7 +139,7 @@
             "base_weight": 7.5,
             "calibration_multiplier": 1.0,
             "effective_weight": 7.5,
-            "contribution": 6.46,
+            "contribution": 12.49,
             "note": "called it Subscribe · uncalibrated (n=9 < 10)"
           },
           {
@@ -172,95 +150,17 @@
             "base_weight": 15.0,
             "calibration_multiplier": 1.153,
             "effective_weight": 17.295,
-            "contribution": 7.45,
+            "contribution": 14.4,
             "note": "0/1 bullish, accuracy-weighted · calibrated ×1.15 on 69% (n=13)"
           }
         ],
         "modifiers": [
-          "-10 — 3691643% of the issue is offer-for-sale"
+          "-10 — 100% of the issue is offer-for-sale",
+          "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "institutions have taken the QIB book to 94.0x, which is real money committing before listing",
-        "strongest_against": "3691643% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-10-15T09:37:10.379919+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Vaibhav Vyapaar",
-      "slug": "vaibhav-vyapaar",
-      "segment": "SME",
-      "status": "OPEN",
-      "open_date": "2026-10-13",
-      "close_date": "2026-10-15",
-      "allotment_date": "2026-10-16",
-      "listing_date": "2026-10-21",
-      "price_band_low": 50.0,
-      "price_band_high": 52.0,
-      "price_band_label": "₹50–₹52",
-      "lot_size": 4000,
-      "min_investment": 208000.0,
-      "issue_size_cr": 40.54,
-      "fresh_issue_cr": 40.54,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/vaibhav-vyapaar-ipo/",
-      "exchange": "NSE SME",
-      "closing_tomorrow": true,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "vaibhav-vyapaar",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Vaibhav Vyapaar yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-15T09:37:10.379994+00:00"
+        "strongest_for": "the grey market is quoting a 30% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "100% of the issue is promoters and existing holders selling down, not capital going into the company",
+        "created_at": "2026-10-16T09:35:57.528424+00:00"
       },
       "flags": [],
       "delta": null
@@ -272,41 +172,41 @@
       "status": "OPEN",
       "open_date": "2026-10-14",
       "close_date": "2026-10-16",
-      "allotment_date": "2026-10-19",
+      "allotment_date": null,
       "listing_date": "2026-10-22",
       "price_band_low": 275.0,
       "price_band_high": 289.0,
       "price_band_label": "₹275–₹289",
       "lot_size": 51,
       "min_investment": 14739.0,
-      "issue_size_cr": 702.0,
-      "fresh_issue_cr": 500.0,
+      "issue_size_cr": 24290657.0,
+      "fresh_issue_cr": 17301038.0,
       "ofs_cr": 6989619.0,
-      "ofs_pct": 995672.2,
+      "ofs_pct": 28.8,
       "subscription": {
-        "qib": 0.0,
-        "nii": 1.3,
-        "retail": 2.39,
+        "qib": 2.08,
+        "nii": 2.79,
+        "retail": 3.65,
         "employee": null,
-        "total": 0.7,
+        "total": 2.56,
         "updated_at": "NSE · FUSIONCX"
       },
-      "gmp": 34.0,
-      "gmp_pct": 11.76,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/fusion-cx-ipo/",
-      "exchange": null,
+      "gmp": 20.0,
+      "gmp_pct": 6.9,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/fusion-cx-ipo/2455/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Zee Business: “Fusion CX IPO: Rs 702 crore issue opens today; should you apply? Anil Singhvi shares his views - Zee Business”",
+          "rationale": "Zee Business: “Fusion CX IPO Last Day Today: Issue subscribed 1.23 times so far; should you apply? Anil Singhvi shares his view - Zee Business”",
           "accuracy_pct": 77.8,
           "accuracy_n": 9,
           "accuracy_label": "78% (n=9)",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWGZoUkozUDJkU014RXZwVUE5VWJpTnd3MUNoUUhXTWNyQ1J1bmR1RVBDY1RUeWVzUGtPU0NwTFNVXzM4VVlwdlpRa3pNckRuckZCOE54dnNzVmdBYnQwVm8wR0w0clNSSVg2SG50b1VKWjRmYjZlQ3lldWhidjJNQVhGTFVsbDZVYV9SdnBvbm1yWXRkMkFlSUx5dTFiWHlJRy14YUVucGVzeV9VTEFtemw2cVNiQk52QU4yc2QweDhXRjdLSTN0aVB1THRPeGxzSEM5Xw?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPd1dEM09MN3hJVHU5aHlFR2ZYSl9Sckg1MWg1S21pS1RYb2RRMEJXU2FFeERaVU5YTElrUUpBV3VuV1VUTG5xVnlDRU5XY0RwTlJVLVlQZHRpUlAyN1I5bWFNQmRjaEJ0aGltYVB1azFJV3lzaEJFT0RpMWlIWVVmNnZEQTNfQmtDcVRIT1NqQXhqMHd4NnR3RklvQ1ItZHpYQzZWTzZUbXVPY3ZvQ0paQWU2eFZkZzZxZjRmdG15M1JXdXZGZmdlYVFSVmxvZGZ5NU1oNlZ5d085TUJQS3Y1UUR6RXo2RHBpVU9j?oc=5",
           "is_synthetic": false
         },
         {
@@ -335,34 +235,34 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹34 premium (+11.8% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹20 premium (+6.9% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         },
         {
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 0.00x · overall 0.70x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 2.08x · overall 2.56x; institutional demand below 3x — thin.",
           "accuracy_pct": 82.1,
           "accuracy_n": 28,
           "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/fusion-cx-ipo/",
+          "url": "https://www.chittorgarh.com/ipo/fusion-cx-ipo/2455/",
           "is_synthetic": true
         }
       ],
       "take": {
         "ipo_slug": "fusion-cx",
-        "score": 13.2,
+        "score": 24.2,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Fusion CX is that the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 0.0x · total 0.7x · GMP +12% · Singhvi: Subscribe · brokers 0/1)",
+        "paragraph": "The strongest argument for Fusion CX is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: the QIB book is only 2.1x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 2.1x · total 2.6x · GMP +7% · Singhvi: Subscribe · brokers 0/1)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -370,35 +270,35 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 0.0,
-            "normalised": 0.0,
+            "raw_value": 2.08,
+            "normalised": 0.104,
             "base_weight": 30.0,
             "calibration_multiplier": 1.368,
             "effective_weight": 41.04,
-            "contribution": 0.0,
-            "note": "0.00x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
+            "contribution": 3.68,
+            "note": "2.08x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
           },
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 11.76,
-            "normalised": 0.294,
+            "raw_value": 6.9,
+            "normalised": 0.1725,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 8.93,
-            "note": "+11.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 5.24,
+            "note": "+6.9% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.7,
-            "normalised": 0.028,
+            "raw_value": 2.56,
+            "normalised": 0.1024,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.36,
-            "note": "0.70x overall · not calibrated"
+            "contribution": 1.32,
+            "note": "2.56x overall · not calibrated"
           },
           {
             "key": "singhvi",
@@ -423,91 +323,10 @@
             "note": "0/1 bullish, accuracy-weighted · calibrated ×1.15 on 69% (n=13)"
           }
         ],
-        "modifiers": [
-          "-10 — 995672% of the issue is offer-for-sale"
-        ],
-        "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-10-15T09:37:10.380122+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Ravita Engineering",
-      "slug": "ravita-engineering",
-      "segment": "SME",
-      "status": "OPEN",
-      "open_date": "2026-10-14",
-      "close_date": "2026-10-16",
-      "allotment_date": "2026-10-19",
-      "listing_date": "2026-10-22",
-      "price_band_low": 105.0,
-      "price_band_high": 112.0,
-      "price_band_label": "₹105–₹112",
-      "lot_size": 2400,
-      "min_investment": 268800.0,
-      "issue_size_cr": 116.05,
-      "fresh_issue_cr": 116.05,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/ravita-engineering-services-ipo/",
-      "exchange": "NSE SME",
-      "closing_tomorrow": true,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "ravita-engineering",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Ravita Engineering yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-15T09:37:10.380155+00:00"
+        "modifiers": [],
+        "strongest_for": "Anil Singhvi has called it subscribe (78% (n=9))",
+        "strongest_against": "the QIB book is only 2.1x — institutions are not showing up, which is the single most reliable warning sign in this market",
+        "created_at": "2026-10-16T09:35:57.528668+00:00"
       },
       "flags": [],
       "delta": null
@@ -519,30 +338,30 @@
       "status": "OPEN",
       "open_date": "2026-10-15",
       "close_date": "2026-10-19",
-      "allotment_date": "2026-10-21",
+      "allotment_date": null,
       "listing_date": "2026-10-23",
       "price_band_low": 558.0,
       "price_band_high": 586.0,
       "price_band_label": "₹558–₹586",
       "lot_size": 25,
       "min_investment": 14650.0,
-      "issue_size_cr": 2533.7,
+      "issue_size_cr": 43239042.0,
       "fresh_issue_cr": 0.0,
-      "ofs_cr": 46998959.0,
-      "ofs_pct": 1854953.6,
+      "ofs_cr": 43239042.0,
+      "ofs_pct": 100.0,
       "subscription": {
         "qib": 0.06,
-        "nii": 0.59,
-        "retail": 0.33,
-        "employee": 0.86,
-        "total": 0.28,
+        "nii": 1.34,
+        "retail": 0.72,
+        "employee": 1.49,
+        "total": 0.6,
         "updated_at": "NSE · BONFIG"
       },
-      "gmp": 180.0,
-      "gmp_pct": 30.71,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/bonfiglioli-transmissions-ipo/",
-      "exchange": null,
+      "gmp": 125.0,
+      "gmp_pct": 21.3,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/bonfiglioli-transmissions-ipo/2861/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -571,45 +390,45 @@
           "source_name": "Anand Rathi",
           "stance": "SUBSCRIBE_LONG_TERM",
           "stance_label": "Subscribe — long term",
-          "rationale": "Anand Rathi has recommended a \"Subscribe for Long Term\" rating. Listen to this article in summarized format Unlock AI Briefing and Premium Content (What's moving Sensex and Nifty Track latest market…",
+          "rationale": "Anand Rathi assigned a \"Subscribe for Long Term\" rating, citing growth in automation despite fully valued pricing metrics. (What's moving Sensex and Nifty Track latest market news , stock tips ,…",
           "accuracy_pct": 71.4,
           "accuracy_n": 7,
           "accuracy_label": "71% (n=7)",
-          "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonfiglioli-transmissions-ipo-opens-today-gmp-at-30-should-you-subscribe/articleshow/134956322.cms",
+          "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/bonfiglioli-transmissions-ipo-day-2-gmp-at-24-check-subscription-status-should-you-subscribe/articleshow/134981228.cms",
           "is_synthetic": false
         },
         {
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹180 premium (+30.7% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹125 premium (+21.3% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         },
         {
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 0.06x · overall 0.28x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 0.06x · overall 0.60x; institutional demand below 3x — thin.",
           "accuracy_pct": 82.1,
           "accuracy_n": 28,
           "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/bonfiglioli-transmissions-ipo/",
+          "url": "https://www.chittorgarh.com/ipo/bonfiglioli-transmissions-ipo/2861/",
           "is_synthetic": true
         }
       ],
       "take": {
         "ipo_slug": "bonfiglioli-transmissions",
-        "score": 29.9,
+        "score": 22.5,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Bonfiglioli Transmissions is that the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.1x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 0.1x · total 0.3x · GMP +31% · brokers 1/1)",
+        "paragraph": "The strongest argument for Bonfiglioli Transmissions is that the grey market is quoting a 21% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.1x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 0.1x · total 0.6x · GMP +21% · brokers 1/1)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -628,24 +447,24 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 30.71,
-            "normalised": 0.7678,
+            "raw_value": 21.3,
+            "normalised": 0.5325,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 24.93,
-            "note": "+30.7% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 17.29,
+            "note": "+21.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.28,
-            "normalised": 0.0112,
+            "raw_value": 0.6,
+            "normalised": 0.024,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.15,
-            "note": "0.28x overall · not calibrated"
+            "contribution": 0.33,
+            "note": "0.60x overall · not calibrated"
           },
           {
             "key": "brokers",
@@ -660,46 +479,46 @@
           }
         ],
         "modifiers": [
-          "-10 — 1854954% of the issue is offer-for-sale"
+          "-10 — 100% of the issue is offer-for-sale"
         ],
-        "strongest_for": "the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 21% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "the QIB book is only 0.1x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-10-15T09:37:10.380267+00:00"
+        "created_at": "2026-10-16T09:35:57.528829+00:00"
       },
       "flags": [],
       "delta": null
     },
     {
-      "name": "Sahajanand Medical",
-      "slug": "sahajanand-medical",
+      "name": "Sahajanand Medical Technologies",
+      "slug": "sahajanand-medical-technologies",
       "segment": "MAINBOARD",
       "status": "OPEN",
       "open_date": "2026-10-15",
       "close_date": "2026-10-19",
-      "allotment_date": "2026-10-21",
+      "allotment_date": null,
       "listing_date": "2026-10-23",
       "price_band_low": 327.0,
       "price_band_high": 344.0,
       "price_band_label": "₹327–₹344",
       "lot_size": 43,
       "min_investment": 14792.0,
-      "issue_size_cr": 475.5,
+      "issue_size_cr": 13822116.0,
       "fresh_issue_cr": 0.0,
       "ofs_cr": 13822116.0,
-      "ofs_pct": 2906859.3,
+      "ofs_pct": 100.0,
       "subscription": {
         "qib": 0.0,
-        "nii": 0.13,
-        "retail": 0.15,
-        "employee": 0.04,
-        "total": 0.09,
+        "nii": 0.38,
+        "retail": 0.37,
+        "employee": 0.07,
+        "total": 0.23,
         "updated_at": "NSE · SMT"
       },
-      "gmp": 42.0,
-      "gmp_pct": 12.21,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/sahajanand-medical-technologies-ipo/",
-      "exchange": null,
+      "gmp": 40.0,
+      "gmp_pct": 11.6,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/sahajanand-medical-technologies-ipo/2550/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -728,34 +547,34 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹42 premium (+12.2% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹40 premium (+11.6% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         },
         {
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 0.00x · overall 0.09x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 0.00x · overall 0.23x; institutional demand below 3x — thin.",
           "accuracy_pct": 82.1,
           "accuracy_n": 28,
           "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/sahajanand-medical-technologies-ipo/",
+          "url": "https://www.chittorgarh.com/ipo/sahajanand-medical-technologies-ipo/2550/",
           "is_synthetic": true
         }
       ],
       "take": {
-        "ipo_slug": "sahajanand-medical",
-        "score": 1.8,
+        "ipo_slug": "sahajanand-medical-technologies",
+        "score": 1.3,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Sahajanand Medical is that the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 0.0x · total 0.1x · GMP +12%)",
+        "paragraph": "The strongest argument for Sahajanand Medical Technologies is that the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 0.0x · total 0.2x · GMP +12%)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -774,146 +593,67 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 12.21,
-            "normalised": 0.3053,
+            "raw_value": 11.6,
+            "normalised": 0.29,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 11.79,
-            "note": "+12.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 11.2,
+            "note": "+11.6% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.09,
-            "normalised": 0.0036,
+            "raw_value": 0.23,
+            "normalised": 0.0092,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.06,
-            "note": "0.09x overall · not calibrated"
+            "contribution": 0.15,
+            "note": "0.23x overall · not calibrated"
           }
         ],
         "modifiers": [
-          "-10 — 2906859% of the issue is offer-for-sale"
+          "-10 — 100% of the issue is offer-for-sale"
         ],
         "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-10-15T09:37:10.380342+00:00"
+        "created_at": "2026-10-16T09:35:57.528940+00:00"
       },
       "flags": [],
       "delta": null
     },
     {
-      "name": "Shellz India",
-      "slug": "shellz-india",
-      "segment": "SME",
-      "status": "OPEN",
-      "open_date": "2026-10-15",
-      "close_date": "2026-10-19",
-      "allotment_date": "2026-10-21",
-      "listing_date": "2026-10-23",
-      "price_band_low": 170.0,
-      "price_band_high": 179.0,
-      "price_band_label": "₹170–₹179",
-      "lot_size": 1600,
-      "min_investment": 286400.0,
-      "issue_size_cr": 60.0,
-      "fresh_issue_cr": 59.97,
-      "ofs_cr": 0.03,
-      "ofs_pct": 0.1,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/shellz-india-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "shellz-india",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Shellz India yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-10-15T09:37:10.380367+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Tonbo Imaging",
-      "slug": "tonbo-imaging",
+      "name": "Tonbo Imaging India",
+      "slug": "tonbo-imaging-india",
       "segment": "MAINBOARD",
       "status": "OPEN",
       "open_date": "2026-10-15",
       "close_date": "2026-10-19",
-      "allotment_date": "2026-10-21",
+      "allotment_date": null,
       "listing_date": "2026-10-23",
       "price_band_low": 665.0,
       "price_band_high": 700.0,
       "price_band_label": "₹665–₹700",
       "lot_size": 21,
       "min_investment": 14700.0,
-      "issue_size_cr": 852.2,
+      "issue_size_cr": 12174046.0,
       "fresh_issue_cr": 0.0,
       "ofs_cr": 12174046.0,
-      "ofs_pct": 1428543.3,
+      "ofs_pct": 100.0,
       "subscription": {
-        "qib": 2.12,
-        "nii": 4.77,
-        "retail": 1.83,
-        "employee": 4.26,
-        "total": 2.26,
+        "qib": 2.15,
+        "nii": 11.58,
+        "retail": 4.39,
+        "employee": 9.28,
+        "total": 4.64,
         "updated_at": "NSE · TONBO"
       },
       "gmp": 500.0,
-      "gmp_pct": 71.43,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/tonbo-imaging-india-ipo/",
-      "exchange": null,
+      "gmp_pct": 71.4,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/tonbo-imaging-india-ipo/3215/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -942,34 +682,34 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹500 premium (+71.4% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹500 premium (+71.4% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         },
         {
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 2.12x · overall 2.26x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 2.15x · overall 4.64x; institutional demand below 3x — thin.",
           "accuracy_pct": 82.1,
           "accuracy_n": 28,
           "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/tonbo-imaging-india-ipo/",
+          "url": "https://www.chittorgarh.com/ipo/tonbo-imaging-india-ipo/3215/",
           "is_synthetic": true
         }
       ],
       "take": {
-        "ipo_slug": "tonbo-imaging",
-        "score": 34.9,
-        "verdict_key": "AVOID",
-        "verdict_label": "AVOID",
-        "verdict_emoji": "🔴",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Tonbo Imaging is that the grey market is quoting a 71% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 2.1x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 2.1x · total 2.3x · GMP +71%)",
+        "ipo_slug": "tonbo-imaging-india",
+        "score": 36.5,
+        "verdict_key": "RISKY",
+        "verdict_label": "RISKY — high risk appetite only",
+        "verdict_emoji": "🟡",
+        "verdict_color": "#9A7407",
+        "paragraph": "The strongest argument for Tonbo Imaging India is that the grey market is quoting a 71% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 2.1x — institutions are not showing up, which is the single most reliable warning sign in this market. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
+        "one_liner": "RISKY — high risk appetite only (QIB 2.1x · total 4.6x · GMP +71%)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -977,18 +717,18 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 2.12,
-            "normalised": 0.106,
+            "raw_value": 2.15,
+            "normalised": 0.1075,
             "base_weight": 30.0,
             "calibration_multiplier": 1.368,
             "effective_weight": 41.04,
-            "contribution": 4.77,
-            "note": "2.12x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
+            "contribution": 4.83,
+            "note": "2.15x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
           },
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 71.43,
+            "raw_value": 71.4,
             "normalised": 1.0,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
@@ -999,56 +739,56 @@
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 2.26,
-            "normalised": 0.0904,
+            "raw_value": 4.64,
+            "normalised": 0.1856,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 1.49,
-            "note": "2.26x overall · not calibrated"
+            "contribution": 3.05,
+            "note": "4.64x overall · not calibrated"
           }
         ],
         "modifiers": [
-          "-10 — 1428543% of the issue is offer-for-sale"
+          "-10 — 100% of the issue is offer-for-sale"
         ],
         "strongest_for": "the grey market is quoting a 71% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "the QIB book is only 2.1x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-10-15T09:37:10.380423+00:00"
+        "created_at": "2026-10-16T09:35:57.529042+00:00"
       },
       "flags": [],
       "delta": null
     },
     {
-      "name": "Zetwerk",
-      "slug": "zetwerk",
+      "name": "Zetwerk Manufacturing Business",
+      "slug": "zetwerk-manufacturing-business",
       "segment": "MAINBOARD",
       "status": "OPEN",
       "open_date": "2026-10-15",
       "close_date": "2026-10-19",
-      "allotment_date": "2026-10-21",
+      "allotment_date": null,
       "listing_date": "2026-10-23",
       "price_band_low": 143.0,
       "price_band_high": 151.0,
       "price_band_label": "₹143–₹151",
       "lot_size": 99,
       "min_investment": 14949.0,
-      "issue_size_cr": 5012.3,
-      "fresh_issue_cr": 2830.0,
+      "issue_size_cr": 332007155.0,
+      "fresh_issue_cr": 187482119.0,
       "ofs_cr": 144525036.0,
-      "ofs_pct": 2883407.5,
+      "ofs_pct": 43.5,
       "subscription": {
-        "qib": 0.0,
-        "nii": 0.04,
-        "retail": 0.11,
-        "employee": 0.17,
-        "total": 0.03,
+        "qib": 0.2,
+        "nii": 0.09,
+        "retail": 0.22,
+        "employee": 0.33,
+        "total": 0.18,
         "updated_at": "NSE · ZETWERK"
       },
-      "gmp": 23.0,
-      "gmp_pct": 15.23,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/zetwerk-ipo/",
-      "exchange": null,
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
+      "detail_url": "https://www.chittorgarh.com/ipo/zetwerk-ipo/3091/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -1074,37 +814,26 @@
           "is_synthetic": false
         },
         {
-          "source_name": "GMP signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹23 premium (+15.2% of the upper band), per ipowatch.in.",
-          "accuracy_pct": 84.6,
-          "accuracy_n": 26,
-          "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-          "is_synthetic": true
-        },
-        {
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 0.00x · overall 0.03x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 0.20x · overall 0.18x; institutional demand below 3x — thin.",
           "accuracy_pct": 82.1,
           "accuracy_n": 28,
           "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/zetwerk-ipo/",
+          "url": "https://www.chittorgarh.com/ipo/zetwerk-ipo/3091/",
           "is_synthetic": true
         }
       ],
       "take": {
-        "ipo_slug": "zetwerk",
-        "score": 11.2,
+        "ipo_slug": "zetwerk-manufacturing-business",
+        "score": 12.6,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Zetwerk is that the grey market is quoting a 15% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 0.0x · total 0.0x · GMP +15% · Singhvi: Subscribe)",
+        "paragraph": "The strongest argument for Zetwerk Manufacturing Business is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: the QIB book is only 0.2x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 0.2x · total 0.2x · Singhvi: Subscribe)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -1112,35 +841,24 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 0.0,
-            "normalised": 0.0,
+            "raw_value": 0.2,
+            "normalised": 0.01,
             "base_weight": 30.0,
             "calibration_multiplier": 1.368,
             "effective_weight": 41.04,
-            "contribution": 0.0,
-            "note": "0.00x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
-          },
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 15.23,
-            "normalised": 0.3808,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 13.59,
-            "note": "+15.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 0.65,
+            "note": "0.20x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.03,
-            "normalised": 0.0012,
+            "raw_value": 0.18,
+            "normalised": 0.0072,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.02,
-            "note": "0.03x overall · not calibrated"
+            "contribution": 0.17,
+            "note": "0.18x overall · not calibrated"
           },
           {
             "key": "singhvi",
@@ -1150,16 +868,14 @@
             "base_weight": 7.5,
             "calibration_multiplier": 1.0,
             "effective_weight": 7.5,
-            "contribution": 7.59,
+            "contribution": 11.8,
             "note": "called it Subscribe · uncalibrated (n=9 < 10)"
           }
         ],
-        "modifiers": [
-          "-10 — 2883408% of the issue is offer-for-sale"
-        ],
-        "strongest_for": "the grey market is quoting a 15% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-10-15T09:37:10.380503+00:00"
+        "modifiers": [],
+        "strongest_for": "Anil Singhvi has called it subscribe (78% (n=9))",
+        "strongest_against": "the QIB book is only 0.2x — institutions are not showing up, which is the single most reliable warning sign in this market",
+        "created_at": "2026-10-16T09:35:57.529138+00:00"
       },
       "flags": [],
       "delta": null
@@ -1171,15 +887,15 @@
       "status": "UPCOMING",
       "open_date": "2026-10-21",
       "close_date": "2026-10-23",
-      "allotment_date": "2026-10-26",
+      "allotment_date": null,
       "listing_date": "2026-10-28",
       "price_band_low": 1065.0,
       "price_band_high": 1119.0,
       "price_band_label": "₹1,065–₹1,119",
       "lot_size": 12,
       "min_investment": 13428.0,
-      "issue_size_cr": 30187.7,
-      "fresh_issue_cr": 30213.0,
+      "issue_size_cr": 270000000.0,
+      "fresh_issue_cr": 270000000.0,
       "ofs_cr": 0.0,
       "ofs_pct": 0.0,
       "subscription": {
@@ -1190,11 +906,11 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 220.0,
-      "gmp_pct": 19.66,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/jio-platforms-ipo/",
-      "exchange": null,
+      "gmp": 222.0,
+      "gmp_pct": 19.8,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/jio-platforms-ipo/3152/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -1223,17 +939,17 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹220 premium (+19.7% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹222 premium (+19.8% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         }
       ],
       "take": {
         "ipo_slug": "jio-platforms",
-        "score": 49.1,
+        "score": 49.5,
         "verdict_key": "RISKY",
         "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
         "verdict_emoji": "⚪",
@@ -1247,13 +963,13 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 19.66,
-            "normalised": 0.4915,
+            "raw_value": 19.8,
+            "normalised": 0.495,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 49.15,
-            "note": "+19.7% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 49.5,
+            "note": "+19.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
@@ -1261,7 +977,7 @@
         ],
         "strongest_for": "the grey market is quoting a 20% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-10-15T09:37:10.380559+00:00"
+        "created_at": "2026-10-16T09:35:57.529220+00:00"
       },
       "flags": [],
       "delta": null
@@ -1273,17 +989,17 @@
       "status": "UPCOMING",
       "open_date": "2026-10-21",
       "close_date": "2026-10-23",
-      "allotment_date": "2026-10-26",
+      "allotment_date": null,
       "listing_date": "2026-10-28",
       "price_band_low": 660.0,
       "price_band_high": 693.0,
       "price_band_label": "₹660–₹693",
       "lot_size": 21,
       "min_investment": 14553.0,
-      "issue_size_cr": 1450.0,
-      "fresh_issue_cr": 500.0,
-      "ofs_cr": 3950.0,
-      "ofs_pct": 272.4,
+      "issue_size_cr": 20923520.0,
+      "fresh_issue_cr": 7215007.0,
+      "ofs_cr": 13708513.0,
+      "ofs_pct": 65.5,
       "subscription": {
         "qib": null,
         "nii": null,
@@ -1292,11 +1008,11 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 85.0,
-      "gmp_pct": 12.26,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/paras-healthcare-ipo/",
-      "exchange": null,
+      "gmp": 91.0,
+      "gmp_pct": 13.1,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/paras-healthcare-ipo/2256/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -1325,23 +1041,23 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹85 premium (+12.3% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹91 premium (+13.1% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         }
       ],
       "take": {
         "ipo_slug": "paras-healthcare",
-        "score": 20.6,
+        "score": 32.8,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Paras Healthcare is that the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 272% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +12%)",
+        "paragraph": "The strongest argument for Paras Healthcare is that the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +13%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -1349,22 +1065,21 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 12.26,
-            "normalised": 0.3065,
+            "raw_value": 13.1,
+            "normalised": 0.3275,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 30.65,
-            "note": "+12.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 32.75,
+            "note": "+13.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
-          "-10 — 272% of the issue is offer-for-sale",
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "272% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-10-15T09:37:10.380615+00:00"
+        "strongest_for": "the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "bidding data has not been published yet, so demand is unproven",
+        "created_at": "2026-10-16T09:35:57.529304+00:00"
       },
       "flags": [],
       "delta": null
@@ -1917,17 +1632,19 @@
     }
   ],
   "sources_ok": [
-    "ipowatch",
+    "chittorgarh",
     "nse_subscription",
-    "gmp",
     "qib_signal",
     "singhvi",
     "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
+    "ipowatch: calendar table empty — check SELECTORS",
+    "chittorgarh: no rows for sme — check SELECTORS",
     "ipowatch: listing table empty — check SELECTORS",
-    "chittorgarh: listing performance table empty — check SELECTORS"
+    "chittorgarh: listing performance table empty — check SELECTORS",
+    "gmp: gmp_primary returned no rows — check SELECTORS"
   ],
   "calendar_readable": true,
   "expert_calls": [
@@ -1937,38 +1654,21 @@
       "ipoName": "Fusion CX",
       "segment": "MAINBOARD",
       "expert": "Anil Singhvi",
-      "call": "apply",
+      "call": "subscribe",
       "stanceNormalised": "APPLY",
       "target": null,
       "stop": null,
-      "rationale": "Zee Business: “Fusion CX IPO: Rs 702 crore issue opens today; should you apply? Anil Singhvi shares his views - Zee Business”",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWGZoUkozUDJkU014RXZwVUE5VWJpTnd3MUNoUUhXTWNyQ1J1bmR1RVBDY1RUeWVzUGtPU0NwTFNVXzM4VVlwdlpRa3pNckRuckZCOE54dnNzVmdBYnQwVm8wR0w0clNSSVg2SG50b1VKWjRmYjZlQ3lldWhidjJNQVhGTFVsbDZVYV9SdnBvbm1yWXRkMkFlSUx5dTFiWHlJRy14YUVucGVzeV9VTEFtemw2cVNiQk52QU4yc2QweDhXRjdLSTN0aVB1THRPeGxzSEM5Xw?oc=5",
-      "seenAt": "2026-10-14T06:52:06+00:00",
+      "rationale": "Zee Business: “Fusion CX IPO Last Day Today: Issue subscribed 1.23 times so far; should you apply? Anil Singhvi shares his view - Zee Business”",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPd1dEM09MN3hJVHU5aHlFR2ZYSl9Sckg1MWg1S21pS1RYb2RRMEJXU2FFeERaVU5YTElrUUpBV3VuV1VUTG5xVnlDRU5XY0RwTlJVLVlQZHRpUlAyN1I5bWFNQmRjaEJ0aGltYVB1azFJV3lzaEJFT0RpMWlIWVVmNnZEQTNfQmtDcVRIT1NqQXhqMHd4NnR3RklvQ1ItZHpYQzZWTzZUbXVPY3ZvQ0paQWU2eFZkZzZxZjRmdG15M1JXdXZGZmdlYVFSVmxvZGZ5NU1oNlZ5d085TUJQS3Y1UUR6RXo2RHBpVU9j?oc=5",
+      "seenAt": "2026-10-16T05:20:39+00:00",
       "capturedAt": "2026-10-09T09:50:28.142600+00:00",
       "source": "Zee Business",
       "listingDate": "2026-10-22"
     },
     {
       "symbol": null,
-      "ipoSlug": "hd-fire-protect",
-      "ipoName": "HD Fire Protect",
-      "segment": "MAINBOARD",
-      "expert": "Anil Singhvi",
-      "call": "subscribe",
-      "stanceNormalised": "APPLY",
-      "target": null,
-      "stop": null,
-      "rationale": "Zee Business: “HD Fire Protect IPO Last Day: Issue subscribed 24.11 times so far; should you apply? Anil Singhvi shares his view - Zee Business”",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQRGZqLUdkQlpzRlZOR0hNTmRVNDUwc0tkbTJ0LWNxMTdlWTVzZ2tOMnowX3ZtdS1XTktjek56ZkdEc0JKTVBoLTd6eFFLOUJKQ0hjdkVOc0VWdnZobTVJZHUyckZfOEFrSExHZzFnbGFuZmdnUzNjOFgzMklwbkxKTmRJWFVaRVBkOExWSFhuLU81U0FrRFhzWTJTNHczUk9NaE1FblNYSFlUeWowNGtmOWV5VDRDRlc4NlpJQkExd3UxSnJQN2lBaEMtN2dFT0w0TUZJd21LRGsxZ0JUTlJtOVk4M1hJOTFFVWhCMw?oc=5",
-      "seenAt": "2026-10-15T05:24:39+00:00",
-      "capturedAt": "2026-10-07T09:33:45.825359+00:00",
-      "source": "Zee Business",
-      "listingDate": "2026-10-20"
-    },
-    {
-      "symbol": null,
-      "ipoSlug": "zetwerk",
-      "ipoName": "Zetwerk",
+      "ipoSlug": "zetwerk-manufacturing-business",
+      "ipoName": "Zetwerk Manufacturing Business",
       "segment": "MAINBOARD",
       "expert": "Anil Singhvi",
       "call": "subscribe",
@@ -1978,7 +1678,7 @@
       "rationale": "Zee Business: “Zetwerk IPO Opens: Should you subscribe to the Rs 5,012 crore issue? Anil Singhvi explains - Zee Business”",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMjhWLWZON3ppTnhHZ0RzbXd0akJSVUNZRENwbGNRbnZNeXM1M2REa1RkRE1Ud0hCeEhxbzVOMWFTLVBuenFxSWpmOEpUMXRSckJyQ05TblZUSURkUjZtTnJHQi0wU3BLZE5vSHZxUHFPYXVGN1ZFcXYtWTA2UWRwVXVXOFgyYTNoNTAwY3dmYlVGeC1OY1lwS080dEpqR0xiek55bVVJcjBNQWhodjdMakZOakhPVmstQWJoUmZTdGZrZUE0UWxQYlpfdGN5d2c?oc=5",
       "seenAt": "2026-10-15T04:52:52+00:00",
-      "capturedAt": "2026-10-12T10:01:42.671700+00:00",
+      "capturedAt": "2026-10-16T09:35:20.276811+00:00",
       "source": "Zee Business",
       "listingDate": "2026-10-23"
     }
@@ -1986,88 +1686,22 @@
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 11,
-      "calls": 3,
-      "noView": 8,
+      "queried": 7,
+      "calls": 2,
+      "noView": 5,
       "unreachable": 0,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 11,
+      "queried": 7,
       "calls": 0,
-      "noView": 11,
+      "noView": 7,
       "unreachable": 0,
       "droppedNoUrl": 0
     }
   ],
   "expert_reachability": [
-    {
-      "ipoSlug": "hd-fire-protect",
-      "ipo_slug": "hd-fire-protect",
-      "ipoName": "HD Fire Protect",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": "Google News RSS",
-          "answeredRoutes": [
-            "zeebiz search",
-            "Google News RSS"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "vaibhav-vyapaar",
-      "ipo_slug": "vaibhav-vyapaar",
-      "ipoName": "Vaibhav Vyapaar",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
     {
       "ipoSlug": "fusion-cx",
       "ipo_slug": "fusion-cx",
@@ -2101,39 +1735,6 @@
       ]
     },
     {
-      "ipoSlug": "ravita-engineering",
-      "ipo_slug": "ravita-engineering",
-      "ipoName": "Ravita Engineering",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS"
-          ]
-        }
-      ]
-    },
-    {
       "ipoSlug": "bonfiglioli-transmissions",
       "ipo_slug": "bonfiglioli-transmissions",
       "ipoName": "Bonfiglioli Transmissions",
@@ -2161,15 +1762,16 @@
             "zeebiz search"
           ],
           "quietRoutes": [
-            "Google News RSS"
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         }
       ]
     },
     {
-      "ipoSlug": "sahajanand-medical",
-      "ipo_slug": "sahajanand-medical",
-      "ipoName": "Sahajanand Medical",
+      "ipoSlug": "sahajanand-medical-technologies",
+      "ipo_slug": "sahajanand-medical-technologies",
+      "ipoName": "Sahajanand Medical Technologies",
       "reachable": true,
       "expertsChecked": 2,
       "expertsTotal": 2,
@@ -2182,7 +1784,43 @@
             "zeebiz search",
             "Google News RSS"
           ],
-          "quietRoutes": []
+          "quietRoutes": [
+            "DuckDuckGo"
+          ]
+        },
+        {
+          "expert": "Sandeep Jain",
+          "reachable": true,
+          "via": null,
+          "answeredRoutes": [
+            "zeebiz search"
+          ],
+          "quietRoutes": [
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
+        }
+      ]
+    },
+    {
+      "ipoSlug": "tonbo-imaging-india",
+      "ipo_slug": "tonbo-imaging-india",
+      "ipoName": "Tonbo Imaging India",
+      "reachable": true,
+      "expertsChecked": 2,
+      "expertsTotal": 2,
+      "routes": [
+        {
+          "expert": "Anil Singhvi",
+          "reachable": true,
+          "via": null,
+          "answeredRoutes": [
+            "zeebiz search",
+            "Google News RSS"
+          ],
+          "quietRoutes": [
+            "DuckDuckGo"
+          ]
         },
         {
           "expert": "Sandeep Jain",
@@ -2198,68 +1836,9 @@
       ]
     },
     {
-      "ipoSlug": "shellz-india",
-      "ipo_slug": "shellz-india",
-      "ipoName": "Shellz India",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        }
-      ]
-    },
-    {
-      "ipoSlug": "tonbo-imaging",
-      "ipo_slug": "tonbo-imaging",
-      "ipoName": "Tonbo Imaging",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search",
-            "Google News RSS"
-          ],
-          "quietRoutes": []
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": []
-        }
-      ]
-    },
-    {
-      "ipoSlug": "zetwerk",
-      "ipo_slug": "zetwerk",
-      "ipoName": "Zetwerk",
+      "ipoSlug": "zetwerk-manufacturing-business",
+      "ipo_slug": "zetwerk-manufacturing-business",
+      "ipoName": "Zetwerk Manufacturing Business",
       "reachable": true,
       "expertsChecked": 2,
       "expertsTotal": 2,
@@ -2348,8 +1927,8 @@
   "source_status": [
     {
       "source": "gmp",
-      "ok": true,
-      "reason": "ok",
+      "ok": false,
+      "reason": "gmp: gmp_primary returned no rows — check SELECTORS",
       "routes": []
     },
     {
@@ -2361,23 +1940,23 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: responded 11/11, no matching item; Google News RSS: 3 match(es) from 7/11 responses; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: responded 7/7, no matching item; Google News RSS: 2 match(es) from 6/7 responses; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 11,
-          "answered": 11,
+          "attempted": 7,
+          "answered": 7,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 11/11, no matching item"
+          "reason": "responded 7/7, no matching item"
         },
         {
           "route": "Google News RSS",
-          "attempted": 11,
-          "answered": 7,
-          "hits": 3,
+          "attempted": 7,
+          "answered": 6,
+          "hits": 2,
           "dropped": false,
-          "reason": "3 match(es) from 7/11 responses"
+          "reason": "2 match(es) from 6/7 responses"
         },
         {
           "route": "DuckDuckGo",
@@ -2392,23 +1971,23 @@
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: responded 11/11, no matching item; Google News RSS: responded 1/6, no matching item — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: responded 7/7, no matching item; Google News RSS: responded 1/4, no matching item — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 11,
-          "answered": 11,
+          "attempted": 7,
+          "answered": 7,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 11/11, no matching item"
+          "reason": "responded 7/7, no matching item"
         },
         {
           "route": "Google News RSS",
-          "attempted": 6,
+          "attempted": 4,
           "answered": 1,
           "hits": 0,
           "dropped": true,
-          "reason": "responded 1/6, no matching item — route dropped after 3 in a row"
+          "reason": "responded 1/4, no matching item — route dropped after 3 in a row"
         },
         {
           "route": "DuckDuckGo",
