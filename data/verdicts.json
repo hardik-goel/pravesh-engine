@@ -1108,5 +1108,35 @@
     "resolved": false,
     "correct": null,
     "flags": []
+  },
+  {
+    "ipo_slug": "bls-polymers",
+    "ipo_name": "BLS Polymers",
+    "segment": "MAINBOARD",
+    "verdict_key": "RISKY",
+    "score": 36.9,
+    "created_at": "2026-10-27T10:32:19.624770+00:00",
+    "listing_date": "2026-11-03",
+    "issue_price": 150.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
+  },
+  {
+    "ipo_slug": "sfc-environmental",
+    "ipo_name": "SFC Environmental",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 0.0,
+    "created_at": "2026-10-27T10:32:19.624941+00:00",
+    "listing_date": "2026-11-03",
+    "issue_price": 330.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
   }
 ]
