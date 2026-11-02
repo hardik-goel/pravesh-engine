@@ -4,18 +4,18 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-02T03:43:17.480779+00:00",
-  "generated_at_market": "02 Nov 2026, 09:11 IST",
-  "generated_at_ist": "2026-11-02T09:11:57.946677+05:30",
-  "run_date": "2026-11-02",
-  "slot": "manual",
-  "slot_label": "manual run",
-  "slot_headline": "02 Nov · 09:11 IST · manual run",
+  "generated_at": "2026-11-02T20:30:46.977982+00:00",
+  "generated_at_market": "03 Nov 2026, 01:59 IST",
+  "generated_at_ist": "2026-11-03T01:59:43.198346+05:30",
+  "run_date": "2026-11-03",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "03 Nov · 01:59 IST · afternoon update",
   "counts": {
-    "open": 7,
-    "closing_tomorrow": 6,
+    "open": 5,
+    "closing_tomorrow": 5,
     "upcoming": 0,
-    "watch": 6
+    "watch": 5
   },
   "ipos": [
     {
@@ -92,7 +92,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479305+00:00"
+        "created_at": "2026-11-02T20:30:46.976489+00:00"
       },
       "flags": [],
       "delta": null
@@ -217,7 +217,7 @@
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (78% (n=9))",
         "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-11-02T03:43:17.479463+00:00"
+        "created_at": "2026-11-02T20:30:46.976636+00:00"
       },
       "flags": [],
       "delta": null
@@ -226,7 +226,7 @@
       "name": "BLS Polymers",
       "slug": "bls-polymers",
       "segment": "MAINBOARD",
-      "status": "CLOSED",
+      "status": "LISTED",
       "open_date": "2026-10-27",
       "close_date": "2026-10-29",
       "allotment_date": "2026-10-30",
@@ -330,7 +330,7 @@
         ],
         "strongest_for": "the grey market is quoting a 47% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-02T03:43:17.479557+00:00"
+        "created_at": "2026-11-02T20:30:46.976741+00:00"
       },
       "flags": [],
       "delta": null
@@ -339,7 +339,7 @@
       "name": "SFC Environmental",
       "slug": "sfc-environmental",
       "segment": "MAINBOARD",
-      "status": "CLOSED",
+      "status": "LISTED",
       "open_date": "2026-10-27",
       "close_date": "2026-10-29",
       "allotment_date": "2026-10-30",
@@ -444,7 +444,7 @@
         ],
         "strongest_for": "the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "78% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-11-02T03:43:17.479634+00:00"
+        "created_at": "2026-11-02T20:30:46.976832+00:00"
       },
       "flags": [],
       "delta": null
@@ -453,7 +453,7 @@
       "name": "Wiscon Industries",
       "slug": "wiscon-industries",
       "segment": "SME",
-      "status": "CLOSED",
+      "status": "LISTED",
       "open_date": "2026-10-27",
       "close_date": "2026-10-29",
       "allotment_date": "2026-10-30",
@@ -523,7 +523,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479663+00:00"
+        "created_at": "2026-11-02T20:30:46.976871+00:00"
       },
       "flags": [],
       "delta": null
@@ -602,7 +602,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479672+00:00"
+        "created_at": "2026-11-02T20:30:46.976884+00:00"
       },
       "flags": [],
       "delta": null
@@ -681,7 +681,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479680+00:00"
+        "created_at": "2026-11-02T20:30:46.976893+00:00"
       },
       "flags": [],
       "delta": null
@@ -795,7 +795,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-11-02T03:43:17.479722+00:00"
+        "created_at": "2026-11-02T20:30:46.976946+00:00"
       },
       "flags": [],
       "delta": null
@@ -804,7 +804,7 @@
       "name": "Antala Industries",
       "slug": "antala-industries",
       "segment": "SME",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-10-29",
       "close_date": "2026-11-02",
       "allotment_date": "2026-11-03",
@@ -831,7 +831,7 @@
       "gmp_source": null,
       "detail_url": "https://ipowatch.in/antala-industries-ipo/",
       "exchange": "BSE SME",
-      "closing_tomorrow": true,
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -874,7 +874,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479751+00:00"
+        "created_at": "2026-11-02T20:30:46.976982+00:00"
       },
       "flags": [],
       "delta": null
@@ -883,7 +883,7 @@
       "name": "Bombay Coated and Special Steels",
       "slug": "bombay-coated-and-special-steels",
       "segment": "MAINBOARD",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-10-29",
       "close_date": "2026-11-02",
       "allotment_date": "2026-11-03",
@@ -898,11 +898,11 @@
       "ofs_cr": 0.0,
       "ofs_pct": 0.0,
       "subscription": {
-        "qib": 0.0,
-        "nii": 1.8,
-        "retail": 1.82,
+        "qib": 16.43,
+        "nii": 66.58,
+        "retail": 21.0,
         "employee": null,
-        "total": 1.12,
+        "total": 32.73,
         "updated_at": "NSE · BCSSL"
       },
       "gmp": 9.0,
@@ -910,7 +910,7 @@
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/bombay-coated-special-steels-ipo/",
       "exchange": null,
-      "closing_tomorrow": true,
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -947,9 +947,9 @@
         },
         {
           "source_name": "QIB signal",
-          "stance": "AVOID",
-          "stance_label": "Avoid",
-          "rationale": "QIB book at 0.00x · overall 1.12x; institutional demand below 3x — thin.",
+          "stance": "APPLY",
+          "stance_label": "Subscribe",
+          "rationale": "QIB book at 16.43x · overall 32.73x; institutional demand clears the 10x bar.",
           "accuracy_pct": 82.1,
           "accuracy_n": 28,
           "accuracy_label": "82% (n=28)",
@@ -959,13 +959,13 @@
       ],
       "take": {
         "ipo_slug": "bombay-coated-and-special-steels",
-        "score": 11.3,
-        "verdict_key": "AVOID",
-        "verdict_label": "AVOID",
-        "verdict_emoji": "🔴",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Bombay Coated and Special Steels is that the grey market is quoting a 11% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 0.0x · total 1.1x · GMP +11%)",
+        "score": 64.0,
+        "verdict_key": "LISTING_GAINS",
+        "verdict_label": "LISTING GAINS ONLY",
+        "verdict_emoji": "🔵",
+        "verdict_color": "#1F5F9E",
+        "paragraph": "The strongest argument for Bombay Coated and Special Steels is that institutions have taken the QIB book to 16.4x, which is real money committing before listing. Against it: nothing in the evidence stands out as a red flag, which is itself worth double-checking. That reads as a listing-day trade rather than something to hold — take the pop if it comes and reassess. Final call is yours.",
+        "one_liner": "LISTING GAINS ONLY (QIB 16.4x · total 32.7x · GMP +11%)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -973,13 +973,13 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 0.0,
-            "normalised": 0.0,
+            "raw_value": 16.43,
+            "normalised": 0.8215,
             "base_weight": 30.0,
             "calibration_multiplier": 1.368,
             "effective_weight": 41.04,
-            "contribution": 0.0,
-            "note": "0.00x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
+            "contribution": 36.93,
+            "note": "16.43x vs 20x for full credit · calibrated ×1.37 on 82% (n=28)"
           },
           {
             "key": "gmp",
@@ -995,19 +995,19 @@
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 1.12,
-            "normalised": 0.0448,
+            "raw_value": 32.73,
+            "normalised": 1.0,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.74,
-            "note": "1.12x overall · not calibrated"
+            "contribution": 16.43,
+            "note": "32.73x overall · not calibrated"
           }
         ],
         "modifiers": [],
-        "strongest_for": "the grey market is quoting a 11% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-11-02T03:43:17.479817+00:00"
+        "strongest_for": "institutions have taken the QIB book to 16.4x, which is real money committing before listing",
+        "strongest_against": "nothing in the evidence stands out as a red flag, which is itself worth double-checking",
+        "created_at": "2026-11-02T20:30:46.977063+00:00"
       },
       "flags": [],
       "delta": null
@@ -1086,7 +1086,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479845+00:00"
+        "created_at": "2026-11-02T20:30:46.977102+00:00"
       },
       "flags": [],
       "delta": null
@@ -1165,7 +1165,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479853+00:00"
+        "created_at": "2026-11-02T20:30:46.977182+00:00"
       },
       "flags": [],
       "delta": null
@@ -1244,7 +1244,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479860+00:00"
+        "created_at": "2026-11-02T20:30:46.977193+00:00"
       },
       "flags": [],
       "delta": null
@@ -1323,7 +1323,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479867+00:00"
+        "created_at": "2026-11-02T20:30:46.977202+00:00"
       },
       "flags": [],
       "delta": null
@@ -1359,7 +1359,7 @@
       "gmp_source": null,
       "detail_url": "https://ipowatch.in/vedant-poly-fabs-ipo/",
       "exchange": "NSE SME",
-      "closing_tomorrow": false,
+      "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -1402,7 +1402,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T03:43:17.479874+00:00"
+        "created_at": "2026-11-02T20:30:46.977210+00:00"
       },
       "flags": [],
       "delta": null
@@ -1972,90 +1972,22 @@
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 7,
+      "queried": 5,
       "calls": 0,
-      "noView": 7,
+      "noView": 5,
       "unreachable": 0,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 7,
+      "queried": 5,
       "calls": 0,
-      "noView": 7,
+      "noView": 5,
       "unreachable": 0,
       "droppedNoUrl": 0
     }
   ],
   "expert_reachability": [
-    {
-      "ipoSlug": "antala-industries",
-      "ipo_slug": "antala-industries",
-      "ipoName": "Antala Industries",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "bombay-coated-and-special-steels",
-      "ipo_slug": "bombay-coated-and-special-steels",
-      "ipoName": "Bombay Coated and Special Steels",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search",
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search",
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
     {
       "ipoSlug": "hgs-india",
       "ipo_slug": "hgs-india",
@@ -2106,7 +2038,8 @@
             "zeebiz search"
           ],
           "quietRoutes": [
-            "Google News RSS"
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         },
         {
@@ -2117,7 +2050,8 @@
             "zeebiz search"
           ],
           "quietRoutes": [
-            "Google News RSS"
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         }
       ]
@@ -2138,7 +2072,8 @@
             "zeebiz search"
           ],
           "quietRoutes": [
-            "Google News RSS"
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         },
         {
@@ -2149,7 +2084,8 @@
             "zeebiz search"
           ],
           "quietRoutes": [
-            "Google News RSS"
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         }
       ]
@@ -2227,23 +2163,23 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: responded 7/7, no matching item; Google News RSS: responded 1/5, no matching item — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: responded 5/5, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 7,
-          "answered": 7,
+          "attempted": 5,
+          "answered": 5,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 7/7, no matching item"
+          "reason": "responded 5/5, no matching item"
         },
         {
           "route": "Google News RSS",
-          "attempted": 5,
-          "answered": 1,
+          "attempted": 3,
+          "answered": 0,
           "hits": 0,
           "dropped": true,
-          "reason": "responded 1/5, no matching item — route dropped after 3 in a row"
+          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
         },
         {
           "route": "DuckDuckGo",
@@ -2258,23 +2194,23 @@
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: responded 7/7, no matching item; Google News RSS: responded 1/5, no matching item — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: responded 5/5, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 7,
-          "answered": 7,
+          "attempted": 5,
+          "answered": 5,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 7/7, no matching item"
+          "reason": "responded 5/5, no matching item"
         },
         {
           "route": "Google News RSS",
-          "attempted": 5,
-          "answered": 1,
+          "attempted": 3,
+          "answered": 0,
           "hits": 0,
           "dropped": true,
-          "reason": "responded 1/5, no matching item — route dropped after 3 in a row"
+          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
         },
         {
           "route": "DuckDuckGo",
