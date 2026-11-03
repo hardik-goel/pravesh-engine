@@ -4,18 +4,18 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-02T20:30:46.977982+00:00",
-  "generated_at_market": "03 Nov 2026, 01:59 IST",
-  "generated_at_ist": "2026-11-03T01:59:43.198346+05:30",
+  "generated_at": "2026-11-03T12:46:21.229788+00:00",
+  "generated_at_market": "03 Nov 2026, 18:15 IST",
+  "generated_at_ist": "2026-11-03T18:15:24.854500+05:30",
   "run_date": "2026-11-03",
-  "slot": "afternoon",
-  "slot_label": "afternoon update",
-  "slot_headline": "03 Nov · 01:59 IST · afternoon update",
+  "slot": "morning",
+  "slot_label": "morning report",
+  "slot_headline": "03 Nov · 18:15 IST · morning report",
   "counts": {
-    "open": 5,
+    "open": 6,
     "closing_tomorrow": 5,
     "upcoming": 0,
-    "watch": 5
+    "watch": 4
   },
   "ipos": [
     {
@@ -92,7 +92,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.976489+00:00"
+        "created_at": "2026-11-03T12:46:21.227750+00:00"
       },
       "flags": [],
       "delta": null
@@ -123,9 +123,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 54.0,
-      "gmp_pct": 3.24,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://ipowatch.in/eaaa-india-alternatives-ipo/",
       "exchange": null,
       "closing_tomorrow": false,
@@ -177,28 +177,17 @@
       ],
       "take": {
         "ipo_slug": "eaaa-india-alternatives",
-        "score": 14.2,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "score": 90.0,
+        "verdict_key": "APPLY",
+        "verdict_label": "PRELIMINARY — APPLY",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for EAAA India Alternatives is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: the grey market premium is only 3%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +3% · Singhvi: Subscribe)",
+        "verdict_color": "#1E7A4B",
+        "paragraph": "The strongest argument for EAAA India Alternatives is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: 100% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
+        "one_liner": "PRELIMINARY — APPLY (Singhvi: Subscribe)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
         "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 3.24,
-            "normalised": 0.081,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 6.68,
-            "note": "+3.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
           {
             "key": "singhvi",
             "label": "Anil Singhvi",
@@ -207,7 +196,7 @@
             "base_weight": 7.5,
             "calibration_multiplier": 1.0,
             "effective_weight": 7.5,
-            "contribution": 17.54,
+            "contribution": 100.0,
             "note": "called it Subscribe · uncalibrated (n=9 < 10)"
           }
         ],
@@ -216,8 +205,8 @@
           "PRELIMINARY — bidding data not published yet"
         ],
         "strongest_for": "Anil Singhvi has called it subscribe (78% (n=9))",
-        "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-11-02T20:30:46.976636+00:00"
+        "strongest_against": "100% of the issue is promoters and existing holders selling down, not capital going into the company",
+        "created_at": "2026-11-03T12:46:21.227922+00:00"
       },
       "flags": [],
       "delta": null
@@ -330,7 +319,7 @@
         ],
         "strongest_for": "the grey market is quoting a 47% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-02T20:30:46.976741+00:00"
+        "created_at": "2026-11-03T12:46:21.228109+00:00"
       },
       "flags": [],
       "delta": null
@@ -361,8 +350,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 26.0,
-      "gmp_pct": 7.88,
+      "gmp": 15.0,
+      "gmp_pct": 4.55,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/sfc-environmental-technologies-ipo/",
       "exchange": "17.53",
@@ -392,9 +381,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹26 premium (+7.9% of the upper band), per ipowatch.in.",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹15 premium (+4.5% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -415,13 +404,13 @@
       ],
       "take": {
         "ipo_slug": "sfc-environmental",
-        "score": 9.7,
+        "score": 1.4,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for SFC Environmental is that the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: 78% of the issue is promoters and existing holders selling down, not capital going into the company. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +8%)",
+        "paragraph": "The strongest argument for SFC Environmental is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 5%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +5%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -429,22 +418,22 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 7.88,
-            "normalised": 0.197,
+            "raw_value": 4.55,
+            "normalised": 0.1137,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 19.7,
-            "note": "+7.9% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 11.37,
+            "note": "+4.5% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "-10 — 78% of the issue is offer-for-sale",
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "78% of the issue is promoters and existing holders selling down, not capital going into the company",
-        "created_at": "2026-11-02T20:30:46.976832+00:00"
+        "strongest_for": "there is no strong positive signal on the table yet",
+        "strongest_against": "the grey market premium is only 5%, so no listing pop is being priced in",
+        "created_at": "2026-11-03T12:46:21.228266+00:00"
       },
       "flags": [],
       "delta": null
@@ -523,7 +512,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.976871+00:00"
+        "created_at": "2026-11-03T12:46:21.228339+00:00"
       },
       "flags": [],
       "delta": null
@@ -602,7 +591,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.976884+00:00"
+        "created_at": "2026-11-03T12:46:21.228359+00:00"
       },
       "flags": [],
       "delta": null
@@ -681,7 +670,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.976893+00:00"
+        "created_at": "2026-11-03T12:46:21.228373+00:00"
       },
       "flags": [],
       "delta": null
@@ -712,8 +701,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 5.0,
-      "gmp_pct": 3.09,
+      "gmp": 7.0,
+      "gmp_pct": 4.32,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://ipowatch.in/mksons-fine-jewels-ipo/",
       "exchange": null,
@@ -745,7 +734,7 @@
           "source_name": "GMP signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹5 premium (+3.1% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+4.3% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -766,13 +755,13 @@
       ],
       "take": {
         "ipo_slug": "m-k-sons-fine-jewels",
-        "score": 0.0,
+        "score": 0.8,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for M.K.Sons Fine Jewels is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 3%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +3%)",
+        "paragraph": "The strongest argument for M.K.Sons Fine Jewels is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 4%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +4%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -780,13 +769,13 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 3.09,
-            "normalised": 0.0772,
+            "raw_value": 4.32,
+            "normalised": 0.108,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 7.72,
-            "note": "+3.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 10.8,
+            "note": "+4.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
@@ -794,87 +783,8 @@
           "PRELIMINARY — bidding data not published yet"
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
-        "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-11-02T20:30:46.976946+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Antala Industries",
-      "slug": "antala-industries",
-      "segment": "SME",
-      "status": "CLOSED",
-      "open_date": "2026-10-29",
-      "close_date": "2026-11-02",
-      "allotment_date": "2026-11-03",
-      "listing_date": "2026-11-05",
-      "price_band_low": 63.0,
-      "price_band_high": 67.0,
-      "price_band_label": "₹63–₹67",
-      "lot_size": 4000,
-      "min_investment": 268000.0,
-      "issue_size_cr": 23.33,
-      "fresh_issue_cr": 23.33,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/antala-industries-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "antala-industries",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Antala Industries yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.976982+00:00"
+        "strongest_against": "the grey market premium is only 4%, so no listing pop is being priced in",
+        "created_at": "2026-11-03T12:46:21.228458+00:00"
       },
       "flags": [],
       "delta": null
@@ -1007,7 +917,7 @@
         "modifiers": [],
         "strongest_for": "institutions have taken the QIB book to 16.4x, which is real money committing before listing",
         "strongest_against": "nothing in the evidence stands out as a red flag, which is itself worth double-checking",
-        "created_at": "2026-11-02T20:30:46.977063+00:00"
+        "created_at": "2026-11-03T12:46:21.228659+00:00"
       },
       "flags": [],
       "delta": null
@@ -1086,7 +996,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.977102+00:00"
+        "created_at": "2026-11-03T12:46:21.228734+00:00"
       },
       "flags": [],
       "delta": null
@@ -1165,7 +1075,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.977182+00:00"
+        "created_at": "2026-11-03T12:46:21.228755+00:00"
       },
       "flags": [],
       "delta": null
@@ -1244,7 +1154,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.977193+00:00"
+        "created_at": "2026-11-03T12:46:21.228770+00:00"
       },
       "flags": [],
       "delta": null
@@ -1323,7 +1233,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.977202+00:00"
+        "created_at": "2026-11-03T12:46:21.228783+00:00"
       },
       "flags": [],
       "delta": null
@@ -1402,7 +1312,86 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-02T20:30:46.977210+00:00"
+        "created_at": "2026-11-03T12:46:21.228795+00:00"
+      },
+      "flags": [],
+      "delta": null
+    },
+    {
+      "name": "Antala Industries",
+      "slug": "antala-industries",
+      "segment": "SME",
+      "status": "OPEN",
+      "open_date": "2026-10-29",
+      "close_date": "2026-11-05",
+      "allotment_date": "2026-11-06",
+      "listing_date": "2026-11-11",
+      "price_band_low": 62.0,
+      "price_band_high": 66.0,
+      "price_band_label": "₹62–₹66",
+      "lot_size": 4000,
+      "min_investment": 264000.0,
+      "issue_size_cr": 22.98,
+      "fresh_issue_cr": 22.98,
+      "ofs_cr": 0.0,
+      "ofs_pct": 0.0,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
+      "detail_url": "https://ipowatch.in/antala-industries-ipo/",
+      "exchange": "BSE SME",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": 77.8,
+          "accuracy_n": 9,
+          "accuracy_label": "78% (n=9)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "Sandeep Jain",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        }
+      ],
+      "take": {
+        "ipo_slug": "antala-industries",
+        "score": 0.0,
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on Antala Industries yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
+        "preliminary": true,
+        "has_score": false,
+        "flags": [],
+        "components": [],
+        "modifiers": [
+          "No scorable input available"
+        ],
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-11-03T12:46:21.228808+00:00"
       },
       "flags": [],
       "delta": null
@@ -1972,17 +1961,17 @@
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 5,
+      "queried": 6,
       "calls": 0,
-      "noView": 5,
+      "noView": 6,
       "unreachable": 0,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 5,
+      "queried": 6,
       "calls": 0,
-      "noView": 5,
+      "noView": 6,
       "unreachable": 0,
       "droppedNoUrl": 0
     }
@@ -2145,6 +2134,34 @@
           "quietRoutes": []
         }
       ]
+    },
+    {
+      "ipoSlug": "antala-industries",
+      "ipo_slug": "antala-industries",
+      "ipoName": "Antala Industries",
+      "reachable": true,
+      "expertsChecked": 2,
+      "expertsTotal": 2,
+      "routes": [
+        {
+          "expert": "Anil Singhvi",
+          "reachable": true,
+          "via": null,
+          "answeredRoutes": [
+            "zeebiz search"
+          ],
+          "quietRoutes": []
+        },
+        {
+          "expert": "Sandeep Jain",
+          "reachable": true,
+          "via": null,
+          "answeredRoutes": [
+            "zeebiz search"
+          ],
+          "quietRoutes": []
+        }
+      ]
     }
   ],
   "source_status": [
@@ -2163,15 +2180,15 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: responded 5/5, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: responded 6/6, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 5,
-          "answered": 5,
+          "attempted": 6,
+          "answered": 6,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 5/5, no matching item"
+          "reason": "responded 6/6, no matching item"
         },
         {
           "route": "Google News RSS",
@@ -2194,15 +2211,15 @@
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: responded 5/5, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: responded 6/6, no matching item; Google News RSS: responded, nothing in the result set — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 5,
-          "answered": 5,
+          "attempted": 6,
+          "answered": 6,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 5/5, no matching item"
+          "reason": "responded 6/6, no matching item"
         },
         {
           "route": "Google News RSS",
