@@ -4,477 +4,38 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-05T13:09:26.397921+00:00",
-  "generated_at_market": "05 Nov 2026, 18:38 IST",
-  "generated_at_ist": "2026-11-05T18:38:54.837491+05:30",
-  "run_date": "2026-11-05",
+  "generated_at": "2026-11-06T12:54:54.602355+00:00",
+  "generated_at_market": "06 Nov 2026, 18:24 IST",
+  "generated_at_ist": "2026-11-06T18:24:46.502562+05:30",
+  "run_date": "2026-11-06",
   "slot": "morning",
   "slot_label": "morning report",
-  "slot_headline": "05 Nov · 18:38 IST · morning report",
+  "slot_headline": "06 Nov · 18:24 IST · morning report",
   "counts": {
-    "open": 1,
-    "closing_tomorrow": 1,
+    "open": 0,
+    "closing_tomorrow": 0,
     "upcoming": 0,
-    "watch": 5
+    "watch": 2
   },
   "ipos": [
-    {
-      "name": "BLS Polymers",
-      "slug": "bls-polymers",
-      "segment": "MAINBOARD",
-      "status": "LISTED",
-      "open_date": "2026-10-27",
-      "close_date": "2026-10-29",
-      "allotment_date": "2026-10-30",
-      "listing_date": "2026-11-03",
-      "price_band_low": 142.0,
-      "price_band_high": 150.0,
-      "price_band_label": "₹142–₹150",
-      "lot_size": 100,
-      "min_investment": 15000.0,
-      "issue_size_cr": 255.0,
-      "fresh_issue_cr": 255.0,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/bls-polymers-ipo/",
-      "exchange": null,
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "GMP signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹70 premium (+46.7% of the upper band), per ipowatch.in.",
-          "accuracy_pct": 84.6,
-          "accuracy_n": 26,
-          "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-          "is_synthetic": true
-        },
-        {
-          "source_name": "QIB signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "QIB book at 127.39x · overall 155.48x; institutional demand clears the 10x bar.",
-          "accuracy_pct": 82.1,
-          "accuracy_n": 28,
-          "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/bls-polymers-ipo/",
-          "is_synthetic": true
-        }
-      ],
-      "take": {
-        "ipo_slug": "bls-polymers",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on BLS Polymers yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.396784+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "SFC Environmental",
-      "slug": "sfc-environmental",
-      "segment": "MAINBOARD",
-      "status": "LISTED",
-      "open_date": "2026-10-27",
-      "close_date": "2026-10-29",
-      "allotment_date": "2026-10-30",
-      "listing_date": "2026-11-03",
-      "price_band_low": 313.0,
-      "price_band_high": 330.0,
-      "price_band_label": "₹313–₹330",
-      "lot_size": 45,
-      "min_investment": 14850.0,
-      "issue_size_cr": 668.0,
-      "fresh_issue_cr": 150.0,
-      "ofs_cr": 518.0,
-      "ofs_pct": 77.5,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/sfc-environmental-technologies-ipo/",
-      "exchange": "17.53",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "GMP signal",
-          "stance": "AVOID",
-          "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹15 premium (+4.5% of the upper band), per ipowatch.in.",
-          "accuracy_pct": 84.6,
-          "accuracy_n": 26,
-          "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-          "is_synthetic": true
-        },
-        {
-          "source_name": "QIB signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "QIB book at 5.80x · overall 4.26x; institutions are in but short of the 10x bar.",
-          "accuracy_pct": 82.1,
-          "accuracy_n": 28,
-          "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/sfc-environmental-technologies-ipo/",
-          "is_synthetic": true
-        }
-      ],
-      "take": {
-        "ipo_slug": "sfc-environmental",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on SFC Environmental yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.396821+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Wiscon Industries",
-      "slug": "wiscon-industries",
-      "segment": "SME",
-      "status": "LISTED",
-      "open_date": "2026-10-27",
-      "close_date": "2026-10-29",
-      "allotment_date": "2026-10-30",
-      "listing_date": "2026-11-03",
-      "price_band_low": 194.0,
-      "price_band_high": 204.0,
-      "price_band_label": "₹194–₹204",
-      "lot_size": 1200,
-      "min_investment": 244800.0,
-      "issue_size_cr": 110.0,
-      "fresh_issue_cr": 88.01,
-      "ofs_cr": 1078200.0,
-      "ofs_pct": 980181.8,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/wiscon-industries-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "wiscon-industries",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Wiscon Industries yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.396840+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Ajwa Projects",
-      "slug": "ajwa-projects",
-      "segment": "SME",
-      "status": "LISTED",
-      "open_date": "2026-10-28",
-      "close_date": "2026-10-30",
-      "allotment_date": "2026-11-02",
-      "listing_date": "2026-11-04",
-      "price_band_low": 203.0,
-      "price_band_high": 203.0,
-      "price_band_label": "₹203",
-      "lot_size": 1200,
-      "min_investment": 243600.0,
-      "issue_size_cr": 38.05,
-      "fresh_issue_cr": 30.45,
-      "ofs_cr": 374400.0,
-      "ofs_pct": 983968.5,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/ajwa-projects-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "ajwa-projects",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Ajwa Projects yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.396853+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Carver Roboweld",
-      "slug": "carver-roboweld",
-      "segment": "SME",
-      "status": "LISTED",
-      "open_date": "2026-10-28",
-      "close_date": "2026-10-30",
-      "allotment_date": "2026-11-02",
-      "listing_date": "2026-11-04",
-      "price_band_low": 76.0,
-      "price_band_high": 80.0,
-      "price_band_label": "₹76–₹80",
-      "lot_size": 3200,
-      "min_investment": 256000.0,
-      "issue_size_cr": 28.29,
-      "fresh_issue_cr": 28.29,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/carver-roboweld-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "carver-roboweld",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Carver Roboweld yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.396866+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
     {
       "name": "M.K.Sons Fine Jewels",
       "slug": "m-k-sons-fine-jewels",
       "segment": "MAINBOARD",
-      "status": "LISTED",
+      "status": "CLOSED",
       "open_date": "2026-10-28",
       "close_date": "2026-10-30",
-      "allotment_date": "2026-11-02",
-      "listing_date": "2026-11-04",
+      "allotment_date": null,
+      "listing_date": null,
       "price_band_low": 153.0,
       "price_band_high": 162.0,
       "price_band_label": "₹153–₹162",
       "lot_size": 91,
       "min_investment": 14742.0,
-      "issue_size_cr": 275.4,
-      "fresh_issue_cr": 220.32,
+      "issue_size_cr": 17000000.0,
+      "fresh_issue_cr": 13600000.0,
       "ofs_cr": 3400000.0,
-      "ofs_pct": 1234567.9,
+      "ofs_pct": 20.0,
       "subscription": {
         "qib": null,
         "nii": null,
@@ -483,11 +44,11 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/mksons-fine-jewels-ipo/",
-      "exchange": null,
+      "gmp": 11.0,
+      "gmp_pct": 6.8,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/mksons-fine-jewels-ipo/3100/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -516,11 +77,11 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹10 premium (+6.2% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹11 premium (+6.8% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         },
         {
@@ -537,43 +98,55 @@
       ],
       "take": {
         "ipo_slug": "m-k-sons-fine-jewels",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
+        "score": 17.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on M.K.Sons Fine Jewels yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for M.K.Sons Fine Jewels is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +7%)",
         "preliminary": true,
-        "has_score": false,
+        "has_score": true,
         "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 6.8,
+            "normalised": 0.17,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.41,
+            "effective_weight": 35.25,
+            "contribution": 17.0,
+            "note": "+6.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          }
         ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.396879+00:00"
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "bidding data has not been published yet, so demand is unproven",
+        "created_at": "2026-11-06T12:54:54.601376+00:00"
       },
       "flags": [],
       "delta": null
     },
     {
-      "name": "Bombay Coated and Special Steels",
-      "slug": "bombay-coated-and-special-steels",
+      "name": "Bombay Coated & Special Steels",
+      "slug": "bombay-coated-special-steels",
       "segment": "MAINBOARD",
-      "status": "LISTED",
+      "status": "CLOSED",
       "open_date": "2026-10-29",
       "close_date": "2026-11-02",
-      "allotment_date": "2026-11-03",
-      "listing_date": "2026-11-05",
+      "allotment_date": null,
+      "listing_date": null,
       "price_band_low": 78.0,
       "price_band_high": 82.0,
       "price_band_label": "₹78–₹82",
       "lot_size": 182,
       "min_investment": 14924.0,
-      "issue_size_cr": 183.06,
-      "fresh_issue_cr": 183.06,
+      "issue_size_cr": 22324120.0,
+      "fresh_issue_cr": 22324120.0,
       "ofs_cr": 0.0,
       "ofs_pct": 0.0,
       "subscription": {
@@ -584,11 +157,11 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 9.0,
-      "gmp_pct": 10.98,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://ipowatch.in/bombay-coated-special-steels-ipo/",
-      "exchange": null,
+      "gmp": 8.0,
+      "gmp_pct": 9.8,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/bombay-coated-and-special-steels-ipo/2671/",
+      "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
         {
@@ -617,34 +190,23 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹9 premium (+11.0% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹8 premium (+9.8% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-          "is_synthetic": true
-        },
-        {
-          "source_name": "QIB signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "QIB book at 16.43x · overall 32.73x; institutional demand clears the 10x bar.",
-          "accuracy_pct": 82.1,
-          "accuracy_n": 28,
-          "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/bombay-coated-special-steels-ipo/",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
           "is_synthetic": true
         }
       ],
       "take": {
-        "ipo_slug": "bombay-coated-and-special-steels",
-        "score": 27.4,
+        "ipo_slug": "bombay-coated-special-steels",
+        "score": 24.5,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Bombay Coated and Special Steels is that the grey market is quoting a 11% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +11%)",
+        "paragraph": "The strongest argument for Bombay Coated & Special Steels is that the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +10%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -652,495 +214,21 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 10.98,
-            "normalised": 0.2745,
+            "raw_value": 9.8,
+            "normalised": 0.245,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 27.45,
-            "note": "+11.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 24.5,
+            "note": "+9.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 11% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-05T13:09:26.397008+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "HGS (India)",
-      "slug": "hgs-india",
-      "segment": "SME",
-      "status": "CLOSED",
-      "open_date": "2026-10-30",
-      "close_date": "2026-11-03",
-      "allotment_date": "2026-11-04",
-      "listing_date": "2026-11-06",
-      "price_band_low": 114.0,
-      "price_band_high": 120.0,
-      "price_band_label": "₹114–₹120",
-      "lot_size": 2400,
-      "min_investment": 288000.0,
-      "issue_size_cr": 34.56,
-      "fresh_issue_cr": 27.91,
-      "ofs_cr": 554000.0,
-      "ofs_pct": 1603009.3,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/hgs-india-ipo/",
-      "exchange": "NSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "hgs-india",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on HGS (India) yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.397078+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Johnsoncab Electricals",
-      "slug": "johnsoncab-electricals",
-      "segment": "SME",
-      "status": "CLOSED",
-      "open_date": "2026-10-30",
-      "close_date": "2026-11-03",
-      "allotment_date": "2026-11-04",
-      "listing_date": "2026-11-06",
-      "price_band_low": 190.0,
-      "price_band_high": 200.0,
-      "price_band_label": "₹190–₹200",
-      "lot_size": 1200,
-      "min_investment": 240000.0,
-      "issue_size_cr": 56.02,
-      "fresh_issue_cr": 56.02,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/johnsoncab-electricals-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "johnsoncab-electricals",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Johnsoncab Electricals yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.397101+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Maxwell Engineering",
-      "slug": "maxwell-engineering",
-      "segment": "SME",
-      "status": "CLOSED",
-      "open_date": "2026-10-30",
-      "close_date": "2026-11-03",
-      "allotment_date": "2026-11-04",
-      "listing_date": "2026-11-06",
-      "price_band_low": 150.0,
-      "price_band_high": 158.0,
-      "price_band_label": "₹150–₹158",
-      "lot_size": 1600,
-      "min_investment": 252800.0,
-      "issue_size_cr": 57.64,
-      "fresh_issue_cr": 57.64,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/maxwell-engineering-solutions-ipo/",
-      "exchange": "NSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "maxwell-engineering",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Maxwell Engineering yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.397149+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Vectras Enprocon",
-      "slug": "vectras-enprocon",
-      "segment": "SME",
-      "status": "CLOSED",
-      "open_date": "2026-10-30",
-      "close_date": "2026-11-03",
-      "allotment_date": "2026-11-04",
-      "listing_date": "2026-11-06",
-      "price_band_low": 99.0,
-      "price_band_high": 105.0,
-      "price_band_label": "₹99–₹105",
-      "lot_size": 2400,
-      "min_investment": 252000.0,
-      "issue_size_cr": 53.05,
-      "fresh_issue_cr": 42.59,
-      "ofs_cr": 996000.0,
-      "ofs_pct": 1877474.1,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/vectras-enprocon-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "vectras-enprocon",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Vectras Enprocon yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.397169+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Vedant Poly Fabs",
-      "slug": "vedant-poly-fabs",
-      "segment": "SME",
-      "status": "CLOSED",
-      "open_date": "2026-11-02",
-      "close_date": "2026-11-04",
-      "allotment_date": "2026-11-05",
-      "listing_date": "2026-11-09",
-      "price_band_low": 88.0,
-      "price_band_high": 94.0,
-      "price_band_label": "₹88–₹94",
-      "lot_size": 2400,
-      "min_investment": 225600.0,
-      "issue_size_cr": 56.68,
-      "fresh_issue_cr": 51.01,
-      "ofs_cr": 603600.0,
-      "ofs_pct": 1064925.9,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/vedant-poly-fabs-ipo/",
-      "exchange": "NSE SME",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "vedant-poly-fabs",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Vedant Poly Fabs yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.397183+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Antala Industries",
-      "slug": "antala-industries",
-      "segment": "SME",
-      "status": "OPEN",
-      "open_date": "2026-10-29",
-      "close_date": "2026-11-05",
-      "allotment_date": "2026-11-06",
-      "listing_date": "2026-11-11",
-      "price_band_low": 62.0,
-      "price_band_high": 66.0,
-      "price_band_label": "₹62–₹66",
-      "lot_size": 4000,
-      "min_investment": 264000.0,
-      "issue_size_cr": 22.98,
-      "fresh_issue_cr": 22.98,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": null,
-      "gmp_pct": null,
-      "gmp_source": null,
-      "detail_url": "https://ipowatch.in/antala-industries-ipo/",
-      "exchange": "BSE SME",
-      "closing_tomorrow": true,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "antala-industries",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Antala Industries yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. It is an SME issue, so thin coverage is normal — that is a reason for caution, not comfort. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-05T13:09:26.397196+00:00"
+        "created_at": "2026-11-06T12:54:54.601546+00:00"
       },
       "flags": [],
       "delta": null
@@ -1693,80 +781,47 @@
     }
   ],
   "sources_ok": [
-    "ipowatch",
-    "gmp",
+    "chittorgarh",
     "qib_signal",
     "singhvi",
     "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
+    "ipowatch: calendar table empty — check SELECTORS",
+    "chittorgarh: no rows for sme — check SELECTORS",
     "nse: current-issue feed empty or unreachable",
     "chittorgarh: live subscription table empty — check SELECTORS",
     "ipowatch: listing table empty — check SELECTORS",
-    "chittorgarh: listing performance table empty — check SELECTORS"
+    "chittorgarh: listing performance table empty — check SELECTORS",
+    "gmp: gmp_primary returned no rows — check SELECTORS"
   ],
   "calendar_readable": true,
   "expert_calls": [],
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 1,
+      "queried": 0,
       "calls": 0,
-      "noView": 1,
+      "noView": 0,
       "unreachable": 0,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 1,
+      "queried": 0,
       "calls": 0,
-      "noView": 1,
+      "noView": 0,
       "unreachable": 0,
       "droppedNoUrl": 0
     }
   ],
-  "expert_reachability": [
-    {
-      "ipoSlug": "antala-industries",
-      "ipo_slug": "antala-industries",
-      "ipoName": "Antala Industries",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "zeebiz search"
-          ],
-          "quietRoutes": [
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    }
-  ],
+  "expert_reachability": [],
   "source_status": [
     {
       "source": "gmp",
-      "ok": true,
-      "reason": "ok",
+      "ok": false,
+      "reason": "gmp: gmp_primary returned no rows — check SELECTORS",
       "routes": []
     },
     {
@@ -1778,64 +833,14 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: responded 1/1, no matching item; Google News RSS: responded, nothing in the result set; DuckDuckGo: responded, nothing in the result set",
-      "routes": [
-        {
-          "route": "zeebiz search",
-          "attempted": 1,
-          "answered": 1,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded 1/1, no matching item"
-        },
-        {
-          "route": "Google News RSS",
-          "attempted": 1,
-          "answered": 0,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded, nothing in the result set"
-        },
-        {
-          "route": "DuckDuckGo",
-          "attempted": 1,
-          "answered": 0,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded, nothing in the result set"
-        }
-      ]
+      "reason": "ok",
+      "routes": []
     },
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: responded 1/1, no matching item; Google News RSS: responded, nothing in the result set; DuckDuckGo: responded, nothing in the result set",
-      "routes": [
-        {
-          "route": "zeebiz search",
-          "attempted": 1,
-          "answered": 1,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded 1/1, no matching item"
-        },
-        {
-          "route": "Google News RSS",
-          "attempted": 1,
-          "answered": 0,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded, nothing in the result set"
-        },
-        {
-          "route": "DuckDuckGo",
-          "attempted": 1,
-          "answered": 0,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded, nothing in the result set"
-        }
-      ]
+      "reason": "ok",
+      "routes": []
     },
     {
       "source": "brokers",
