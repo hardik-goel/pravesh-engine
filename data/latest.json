@@ -4,133 +4,20 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-06T12:54:54.602355+00:00",
-  "generated_at_market": "06 Nov 2026, 18:24 IST",
-  "generated_at_ist": "2026-11-06T18:24:46.502562+05:30",
-  "run_date": "2026-11-06",
+  "generated_at": "2026-11-09T13:50:59.187853+00:00",
+  "generated_at_market": "09 Nov 2026, 19:20 IST",
+  "generated_at_ist": "2026-11-09T19:20:51.690468+05:30",
+  "run_date": "2026-11-09",
   "slot": "morning",
   "slot_label": "morning report",
-  "slot_headline": "06 Nov · 18:24 IST · morning report",
+  "slot_headline": "09 Nov · 19:20 IST · morning report",
   "counts": {
     "open": 0,
     "closing_tomorrow": 0,
     "upcoming": 0,
-    "watch": 2
+    "watch": 1
   },
   "ipos": [
-    {
-      "name": "M.K.Sons Fine Jewels",
-      "slug": "m-k-sons-fine-jewels",
-      "segment": "MAINBOARD",
-      "status": "CLOSED",
-      "open_date": "2026-10-28",
-      "close_date": "2026-10-30",
-      "allotment_date": null,
-      "listing_date": null,
-      "price_band_low": 153.0,
-      "price_band_high": 162.0,
-      "price_band_label": "₹153–₹162",
-      "lot_size": 91,
-      "min_investment": 14742.0,
-      "issue_size_cr": 17000000.0,
-      "fresh_issue_cr": 13600000.0,
-      "ofs_cr": 3400000.0,
-      "ofs_pct": 20.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": 11.0,
-      "gmp_pct": 6.8,
-      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
-      "detail_url": "https://www.chittorgarh.com/ipo/mksons-fine-jewels-ipo/3100/",
-      "exchange": "BSE, NSE",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "GMP signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹11 premium (+6.8% of the upper band), per www.investorgain.com.",
-          "accuracy_pct": 84.6,
-          "accuracy_n": 26,
-          "accuracy_label": "85% (n=26)",
-          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
-          "is_synthetic": true
-        },
-        {
-          "source_name": "QIB signal",
-          "stance": "AVOID",
-          "stance_label": "Avoid",
-          "rationale": "QIB book at 0.70x · overall 2.89x; institutional demand below 3x — thin.",
-          "accuracy_pct": 82.1,
-          "accuracy_n": 28,
-          "accuracy_label": "82% (n=28)",
-          "url": "https://ipowatch.in/mksons-fine-jewels-ipo/",
-          "is_synthetic": true
-        }
-      ],
-      "take": {
-        "ipo_slug": "m-k-sons-fine-jewels",
-        "score": 17.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for M.K.Sons Fine Jewels is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +7%)",
-        "preliminary": true,
-        "has_score": true,
-        "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 6.8,
-            "normalised": 0.17,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 17.0,
-            "note": "+6.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          }
-        ],
-        "modifiers": [
-          "PRELIMINARY — bidding data not published yet"
-        ],
-        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-06T12:54:54.601376+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
     {
       "name": "Bombay Coated & Special Steels",
       "slug": "bombay-coated-special-steels",
@@ -228,7 +115,7 @@
         ],
         "strongest_for": "the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-06T12:54:54.601546+00:00"
+        "created_at": "2026-11-09T13:50:59.187317+00:00"
       },
       "flags": [],
       "delta": null
