@@ -4,123 +4,20 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-09T13:50:59.187853+00:00",
-  "generated_at_market": "09 Nov 2026, 19:20 IST",
-  "generated_at_ist": "2026-11-09T19:20:51.690468+05:30",
-  "run_date": "2026-11-09",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "09 Nov · 19:20 IST · morning report",
+  "generated_at": "2026-11-09T21:03:16.557203+00:00",
+  "generated_at_market": "10 Nov 2026, 02:33 IST",
+  "generated_at_ist": "2026-11-10T02:33:10.600992+05:30",
+  "run_date": "2026-11-10",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "10 Nov · 02:33 IST · afternoon update",
   "counts": {
     "open": 0,
     "closing_tomorrow": 0,
     "upcoming": 0,
-    "watch": 1
+    "watch": 0
   },
-  "ipos": [
-    {
-      "name": "Bombay Coated & Special Steels",
-      "slug": "bombay-coated-special-steels",
-      "segment": "MAINBOARD",
-      "status": "CLOSED",
-      "open_date": "2026-10-29",
-      "close_date": "2026-11-02",
-      "allotment_date": null,
-      "listing_date": null,
-      "price_band_low": 78.0,
-      "price_band_high": 82.0,
-      "price_band_label": "₹78–₹82",
-      "lot_size": 182,
-      "min_investment": 14924.0,
-      "issue_size_cr": 22324120.0,
-      "fresh_issue_cr": 22324120.0,
-      "ofs_cr": 0.0,
-      "ofs_pct": 0.0,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": 8.0,
-      "gmp_pct": 9.8,
-      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
-      "detail_url": "https://www.chittorgarh.com/ipo/bombay-coated-and-special-steels-ipo/2671/",
-      "exchange": "BSE, NSE",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "GMP signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹8 premium (+9.8% of the upper band), per www.investorgain.com.",
-          "accuracy_pct": 84.6,
-          "accuracy_n": 26,
-          "accuracy_label": "85% (n=26)",
-          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
-          "is_synthetic": true
-        }
-      ],
-      "take": {
-        "ipo_slug": "bombay-coated-special-steels",
-        "score": 24.5,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Bombay Coated & Special Steels is that the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +10%)",
-        "preliminary": true,
-        "has_score": true,
-        "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 9.8,
-            "normalised": 0.245,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 24.5,
-            "note": "+9.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          }
-        ],
-        "modifiers": [
-          "PRELIMINARY — bidding data not published yet"
-        ],
-        "strongest_for": "the grey market is quoting a 10% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-09T13:50:59.187317+00:00"
-      },
-      "flags": [],
-      "delta": null
-    }
-  ],
+  "ipos": [],
   "leaderboard": [
     {
       "source_name": "GMP signal",
@@ -669,6 +566,7 @@
   ],
   "sources_ok": [
     "chittorgarh",
+    "gmp",
     "qib_signal",
     "singhvi",
     "sandeep_jain",
@@ -680,8 +578,7 @@
     "nse: current-issue feed empty or unreachable",
     "chittorgarh: live subscription table empty — check SELECTORS",
     "ipowatch: listing table empty — check SELECTORS",
-    "chittorgarh: listing performance table empty — check SELECTORS",
-    "gmp: gmp_primary returned no rows — check SELECTORS"
+    "chittorgarh: listing performance table empty — check SELECTORS"
   ],
   "calendar_readable": true,
   "expert_calls": [],
@@ -707,8 +604,8 @@
   "source_status": [
     {
       "source": "gmp",
-      "ok": false,
-      "reason": "gmp: gmp_primary returned no rows — check SELECTORS",
+      "ok": true,
+      "reason": "ok",
       "routes": []
     },
     {
