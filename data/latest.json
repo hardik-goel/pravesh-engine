@@ -4,20 +4,123 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-12T18:34:31.172126+00:00",
-  "generated_at_market": "13 Nov 2026, 00:04 IST",
-  "generated_at_ist": "2026-11-13T00:04:25.134616+05:30",
+  "generated_at": "2026-11-13T13:03:26.262194+00:00",
+  "generated_at_market": "13 Nov 2026, 18:33 IST",
+  "generated_at_ist": "2026-11-13T18:33:14.643214+05:30",
   "run_date": "2026-11-13",
-  "slot": "afternoon",
-  "slot_label": "afternoon update",
-  "slot_headline": "13 Nov · 00:04 IST · afternoon update",
+  "slot": "morning",
+  "slot_label": "morning report",
+  "slot_headline": "13 Nov · 18:33 IST · morning report",
   "counts": {
     "open": 0,
     "closing_tomorrow": 0,
-    "upcoming": 0,
+    "upcoming": 1,
     "watch": 0
   },
-  "ipos": [],
+  "ipos": [
+    {
+      "name": "Crystal Crop Protection",
+      "slug": "crystal-crop-protection",
+      "segment": "MAINBOARD",
+      "status": "UPCOMING",
+      "open_date": "2026-11-18",
+      "close_date": "2026-11-20",
+      "allotment_date": null,
+      "listing_date": "2026-11-26",
+      "price_band_low": 259.0,
+      "price_band_high": 272.0,
+      "price_band_label": "₹259–₹272",
+      "lot_size": 55,
+      "min_investment": 14960.0,
+      "issue_size_cr": 16754274.0,
+      "fresh_issue_cr": 13051580.0,
+      "ofs_cr": 3702694.0,
+      "ofs_pct": 22.1,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": 45.0,
+      "gmp_pct": 16.5,
+      "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+      "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
+      "exchange": "BSE, NSE",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": 77.8,
+          "accuracy_n": 9,
+          "accuracy_label": "78% (n=9)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "Sandeep Jain",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "APPLY",
+          "stance_label": "Subscribe",
+          "rationale": "Indicative, unofficial grey-market premium: ₹45 premium (+16.5% of the upper band), per www.investorgain.com.",
+          "accuracy_pct": 84.6,
+          "accuracy_n": 26,
+          "accuracy_label": "85% (n=26)",
+          "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "crystal-crop-protection",
+        "score": 41.2,
+        "verdict_key": "RISKY",
+        "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#9A7407",
+        "paragraph": "The strongest argument for Crystal Crop Protection is that the grey market is quoting a 16% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
+        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +16%)",
+        "preliminary": true,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 16.5,
+            "normalised": 0.4125,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.41,
+            "effective_weight": 35.25,
+            "contribution": 41.25,
+            "note": "+16.5% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          }
+        ],
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "the grey market is quoting a 16% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "bidding data has not been published yet, so demand is unproven",
+        "created_at": "2026-11-13T13:03:26.261839+00:00"
+      },
+      "flags": [],
+      "delta": null
+    }
+  ],
   "leaderboard": [
     {
       "source_name": "GMP signal",
@@ -566,10 +669,7 @@
   ],
   "sources_ok": [
     "chittorgarh",
-    "gmp",
     "qib_signal",
-    "singhvi",
-    "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
@@ -578,34 +678,70 @@
     "nse: current-issue feed empty or unreachable",
     "chittorgarh: live subscription table empty — check SELECTORS",
     "ipowatch: listing table empty — check SELECTORS",
-    "chittorgarh: listing performance table empty — check SELECTORS"
+    "chittorgarh: listing performance table empty — check SELECTORS",
+    "gmp: gmp_primary returned no rows — check SELECTORS",
+    "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+    "sandeep_jain: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
   ],
   "calendar_readable": true,
   "expert_calls": [],
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 0,
+      "queried": 1,
       "calls": 0,
-      "noView": 0,
-      "unreachable": 0,
+      "noView": 1,
+      "unreachable": 1,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 0,
+      "queried": 1,
       "calls": 0,
-      "noView": 0,
-      "unreachable": 0,
+      "noView": 1,
+      "unreachable": 1,
       "droppedNoUrl": 0
     }
   ],
-  "expert_reachability": [],
+  "expert_reachability": [
+    {
+      "ipoSlug": "crystal-crop-protection",
+      "ipo_slug": "crystal-crop-protection",
+      "ipoName": "Crystal Crop Protection",
+      "reachable": false,
+      "expertsChecked": 0,
+      "expertsTotal": 2,
+      "routes": [
+        {
+          "expert": "Anil Singhvi",
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
+        },
+        {
+          "expert": "Sandeep Jain",
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
+        }
+      ]
+    }
+  ],
   "source_status": [
     {
       "source": "gmp",
-      "ok": true,
-      "reason": "ok",
+      "ok": false,
+      "reason": "gmp: gmp_primary returned no rows — check SELECTORS",
       "routes": []
     },
     {
@@ -616,15 +752,65 @@
     },
     {
       "source": "singhvi",
-      "ok": true,
-      "reason": "ok",
-      "routes": []
+      "ok": false,
+      "reason": "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+      "routes": [
+        {
+          "route": "zeebiz search",
+          "attempted": 1,
+          "answered": 0,
+          "hits": 0,
+          "dropped": false,
+          "reason": "HTTP 404"
+        },
+        {
+          "route": "Google News RSS",
+          "attempted": 1,
+          "answered": 0,
+          "hits": 0,
+          "dropped": false,
+          "reason": "responded, nothing in the result set"
+        },
+        {
+          "route": "DuckDuckGo",
+          "attempted": 1,
+          "answered": 0,
+          "hits": 0,
+          "dropped": false,
+          "reason": "responded, nothing in the result set"
+        }
+      ]
     },
     {
       "source": "sandeep_jain",
-      "ok": true,
-      "reason": "ok",
-      "routes": []
+      "ok": false,
+      "reason": "sandeep_jain: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+      "routes": [
+        {
+          "route": "zeebiz search",
+          "attempted": 1,
+          "answered": 0,
+          "hits": 0,
+          "dropped": false,
+          "reason": "HTTP 404"
+        },
+        {
+          "route": "Google News RSS",
+          "attempted": 1,
+          "answered": 0,
+          "hits": 0,
+          "dropped": false,
+          "reason": "responded, nothing in the result set"
+        },
+        {
+          "route": "DuckDuckGo",
+          "attempted": 1,
+          "answered": 0,
+          "hits": 0,
+          "dropped": false,
+          "reason": "responded, nothing in the result set"
+        }
+      ]
     },
     {
       "source": "brokers",
