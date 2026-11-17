@@ -4,17 +4,17 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-17T14:20:16.087696+00:00",
-  "generated_at_market": "17 Nov 2026, 19:49 IST",
-  "generated_at_ist": "2026-11-17T19:49:57.232184+05:30",
-  "run_date": "2026-11-17",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "17 Nov · 19:49 IST · morning report",
+  "generated_at": "2026-11-17T19:22:27.637916+00:00",
+  "generated_at_market": "18 Nov 2026, 00:52 IST",
+  "generated_at_ist": "2026-11-18T00:52:02.008756+05:30",
+  "run_date": "2026-11-18",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "18 Nov · 00:52 IST · afternoon update",
   "counts": {
-    "open": 0,
+    "open": 1,
     "closing_tomorrow": 0,
-    "upcoming": 2,
+    "upcoming": 1,
     "watch": 0
   },
   "ipos": [
@@ -22,7 +22,7 @@
       "name": "Crystal Crop Protection",
       "slug": "crystal-crop-protection",
       "segment": "MAINBOARD",
-      "status": "UPCOMING",
+      "status": "OPEN",
       "open_date": "2026-11-18",
       "close_date": "2026-11-20",
       "allotment_date": null,
@@ -41,11 +41,11 @@
         "nii": null,
         "retail": null,
         "employee": null,
-        "total": null,
-        "updated_at": null
+        "total": 0.0,
+        "updated_at": "NSE · CRYSTALCP"
       },
-      "gmp": 17.0,
-      "gmp_pct": 6.2,
+      "gmp": 19.0,
+      "gmp_pct": 7.0,
       "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
       "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
       "exchange": "BSE, NSE",
@@ -77,7 +77,7 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹17 premium (+6.2% of the upper band), per www.investorgain.com.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹19 premium (+7.0% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -87,35 +87,44 @@
       ],
       "take": {
         "ipo_slug": "crystal-crop-protection",
-        "score": 15.5,
+        "score": 12.3,
         "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
-        "verdict_emoji": "⚪",
+        "verdict_label": "AVOID",
+        "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Crystal Crop Protection is that the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +6%)",
-        "preliminary": true,
+        "paragraph": "The strongest argument for Crystal Crop Protection is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: nothing in the evidence stands out as a red flag, which is itself worth double-checking. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (total 0.0x · GMP +7%)",
+        "preliminary": false,
         "has_score": true,
         "flags": [],
         "components": [
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 6.2,
-            "normalised": 0.155,
+            "raw_value": 7.0,
+            "normalised": 0.175,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 15.5,
-            "note": "+6.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 12.28,
+            "note": "+7.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          },
+          {
+            "key": "total_subscription",
+            "label": "Overall subscription",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 15.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 15.0,
+            "contribution": 0.0,
+            "note": "0.00x overall · not calibrated"
           }
         ],
-        "modifiers": [
-          "PRELIMINARY — bidding data not published yet"
-        ],
-        "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-17T14:20:16.086952+00:00"
+        "modifiers": [],
+        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "nothing in the evidence stands out as a red flag, which is itself worth double-checking",
+        "created_at": "2026-11-17T19:22:27.637116+00:00"
       },
       "flags": [],
       "delta": null
@@ -146,8 +155,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 4.0,
-      "gmp_pct": 2.9,
+      "gmp": 3.6,
+      "gmp_pct": 2.6,
       "gmp_source": "https://www.investorgain.com/report/live-ipo-gmp/331/",
       "detail_url": "https://www.chittorgarh.com/ipo/mahanadi-coalfields-ipo/3247/",
       "exchange": "BSE, NSE",
@@ -179,7 +188,7 @@
           "source_name": "GMP signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹4 premium (+2.9% of the upper band), per www.investorgain.com.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹4 premium (+2.6% of the upper band), per www.investorgain.com.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -203,13 +212,13 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 2.9,
-            "normalised": 0.0725,
+            "raw_value": 2.6,
+            "normalised": 0.065,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 7.25,
-            "note": "+2.9% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 6.5,
+            "note": "+2.6% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
@@ -218,7 +227,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 3%, so no listing pop is being priced in",
-        "created_at": "2026-11-17T14:20:16.087130+00:00"
+        "created_at": "2026-11-17T19:22:27.637274+00:00"
       },
       "flags": [],
       "delta": null
@@ -772,19 +781,18 @@
   ],
   "sources_ok": [
     "chittorgarh",
+    "nse_subscription",
     "qib_signal",
     "singhvi",
+    "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
     "ipowatch: calendar table empty — check SELECTORS",
     "chittorgarh: no rows for sme — check SELECTORS",
-    "nse: current-issue feed empty or unreachable",
-    "chittorgarh: live subscription table empty — check SELECTORS",
     "ipowatch: listing table empty — check SELECTORS",
     "chittorgarh: listing performance table empty — check SELECTORS",
-    "gmp: gmp_primary returned no rows — check SELECTORS",
-    "sandeep_jain: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
+    "gmp: gmp_primary returned no rows — check SELECTORS"
   ],
   "calendar_readable": true,
   "expert_calls": [],
@@ -802,7 +810,7 @@
       "queried": 2,
       "calls": 0,
       "noView": 2,
-      "unreachable": 2,
+      "unreachable": 1,
       "droppedNoUrl": 0
     }
   ],
@@ -845,7 +853,7 @@
       "ipo_slug": "mahanadi-coalfields",
       "ipoName": "Mahanadi Coalfields",
       "reachable": true,
-      "expertsChecked": 1,
+      "expertsChecked": 2,
       "expertsTotal": 2,
       "routes": [
         {
@@ -862,12 +870,13 @@
         },
         {
           "expert": "Sandeep Jain",
-          "reachable": false,
+          "reachable": true,
           "via": null,
-          "answeredRoutes": [],
+          "answeredRoutes": [
+            "Google News RSS"
+          ],
           "quietRoutes": [
             "zeebiz search",
-            "Google News RSS",
             "DuckDuckGo"
           ]
         }
@@ -920,8 +929,8 @@
     },
     {
       "source": "sandeep_jain",
-      "ok": false,
-      "reason": "sandeep_jain: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+      "ok": true,
+      "reason": "zeebiz search: HTTP 404; Google News RSS: responded 1/2, no matching item; DuckDuckGo: responded, nothing in the result set",
       "routes": [
         {
           "route": "zeebiz search",
@@ -934,10 +943,10 @@
         {
           "route": "Google News RSS",
           "attempted": 2,
-          "answered": 0,
+          "answered": 1,
           "hits": 0,
           "dropped": false,
-          "reason": "responded, nothing in the result set"
+          "reason": "responded 1/2, no matching item"
         },
         {
           "route": "DuckDuckGo",
