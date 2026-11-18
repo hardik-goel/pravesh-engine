@@ -10874,10 +10874,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 10.98,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -10894,10 +10894,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 10.98,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -10914,10 +10914,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 10.98,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -10934,10 +10934,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 5.56,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -10954,10 +10954,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 5.56,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -10974,10 +10974,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 5.56,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "GMP signal",
@@ -11054,10 +11054,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11074,10 +11074,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": -21.21,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11114,10 +11114,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 12.5,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11194,10 +11194,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11214,10 +11214,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": -21.21,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11254,10 +11254,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 12.5,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11374,10 +11374,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 33.33,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11394,10 +11394,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 19.0,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11414,10 +11414,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 89.87,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11434,10 +11434,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.95,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11454,10 +11454,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 33.33,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11474,10 +11474,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 19.0,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11494,10 +11494,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 89.87,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11514,10 +11514,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.95,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "QIB signal",
@@ -11534,10 +11534,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
-    "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "resolved": true,
+    "correct": false,
+    "listing_gain_pct": 5.56,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Anil Singhvi",
@@ -11554,10 +11554,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "Sandeep Jain",
@@ -11574,10 +11574,10 @@
     "publisher": "",
     "discovery_reachable": true,
     "discovery_route": null,
-    "resolved": false,
+    "resolved": true,
     "correct": null,
-    "listing_gain_pct": null,
-    "resolved_at": null
+    "listing_gain_pct": 0.0,
+    "resolved_at": "2026-11-18T13:54:25.673538+00:00"
   },
   {
     "source_name": "QIB signal",
@@ -11604,8 +11604,8 @@
     "ipo_slug": "crystal-crop-protection",
     "ipo_name": "Crystal Crop Protection",
     "stance": "NEUTRAL",
-    "rationale": "Indicative, unofficial grey-market premium: ₹19 premium (+7.0% of the upper band), per www.investorgain.com.",
-    "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+    "rationale": "Indicative, unofficial grey-market premium: ₹19 premium (+7.0% of the upper band), per ipowatch.in.",
+    "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-11-13T13:03:21.991236+00:00",
     "segment": "MAINBOARD",
     "is_synthetic": true,
@@ -11623,17 +11623,17 @@
     "source_name": "Anil Singhvi",
     "ipo_slug": "crystal-crop-protection",
     "ipo_name": "Crystal Crop Protection",
-    "stance": "NO_VIEW",
-    "rationale": "No Zee Business call found for this issue.",
-    "url": null,
+    "stance": "AVOID",
+    "rationale": "Zee Business: “Crystal Crop Protection IPO: Should you subscribe or avoid? Anil Singhvi explains - Zee Business”",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUUZqN2g2ZHp0TDhDYWZLS0tuTktIWWh0Z3UzNjdnaUFCR2IxOTFfdGd3dHhScmdKUE01UmRyVWt0X2E2NnRybzBEWlNaNWdIZnQ5cDBNUW92d0V0QklhcXNKQk8zNHVzeGR1bFZWYjdIZEF3OFZHa0hZSkJxNl90OU9ubjhuZlo2WGVocjRwRjhPLXItalYwRVJwYi02amFBbTlmZnR2cW9sUS0tQkswalhUZUhQbnF2XzluRHBDQUl6OU9a?oc=5",
     "captured_at": "2026-11-13T13:03:21.992441+00:00",
     "segment": "MAINBOARD",
     "is_synthetic": false,
-    "raw_call": "",
-    "published_at": null,
-    "publisher": "",
+    "raw_call": "avoid",
+    "published_at": "2026-11-18T07:11:56+00:00",
+    "publisher": "Zee Business",
     "discovery_reachable": true,
-    "discovery_route": null,
+    "discovery_route": "Google News RSS",
     "resolved": false,
     "correct": null,
     "listing_gain_pct": null,
@@ -11652,7 +11652,7 @@
     "raw_call": "",
     "published_at": null,
     "publisher": "",
-    "discovery_reachable": false,
+    "discovery_reachable": true,
     "discovery_route": null,
     "resolved": false,
     "correct": null,
@@ -11664,8 +11664,8 @@
     "ipo_slug": "mahanadi-coalfields",
     "ipo_name": "Mahanadi Coalfields",
     "stance": "AVOID",
-    "rationale": "Indicative, unofficial grey-market premium: ₹4 premium (+2.6% of the upper band), per www.investorgain.com.",
-    "url": "https://www.investorgain.com/report/live-ipo-gmp/331/",
+    "rationale": "Indicative, unofficial grey-market premium: ₹3 premium (+2.2% of the upper band), per ipowatch.in.",
+    "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
     "captured_at": "2026-11-16T13:36:03.996100+00:00",
     "segment": "MAINBOARD",
     "is_synthetic": true,
@@ -11709,6 +11709,26 @@
     "captured_at": "2026-11-16T13:36:05.166946+00:00",
     "segment": "MAINBOARD",
     "is_synthetic": false,
+    "raw_call": "",
+    "published_at": null,
+    "publisher": "",
+    "discovery_reachable": true,
+    "discovery_route": null,
+    "resolved": false,
+    "correct": null,
+    "listing_gain_pct": null,
+    "resolved_at": null
+  },
+  {
+    "source_name": "QIB signal",
+    "ipo_slug": "crystal-crop-protection",
+    "ipo_name": "Crystal Crop Protection",
+    "stance": "AVOID",
+    "rationale": "QIB book at 1.09x · overall 0.73x; institutional demand below 3x — thin.",
+    "url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
+    "captured_at": "2026-11-18T13:54:26.195213+00:00",
+    "segment": "MAINBOARD",
+    "is_synthetic": true,
     "raw_call": "",
     "published_at": null,
     "publisher": "",
