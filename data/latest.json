@@ -4,17 +4,17 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-18T13:54:39.469371+00:00",
-  "generated_at_market": "18 Nov 2026, 19:24 IST",
-  "generated_at_ist": "2026-11-18T19:24:17.621627+05:30",
-  "run_date": "2026-11-18",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "18 Nov · 19:24 IST · morning report",
+  "generated_at": "2026-11-18T19:02:00.138286+00:00",
+  "generated_at_market": "19 Nov 2026, 00:31 IST",
+  "generated_at_ist": "2026-11-19T00:31:30.041999+05:30",
+  "run_date": "2026-11-19",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "19 Nov · 00:31 IST · afternoon update",
   "counts": {
-    "open": 1,
-    "closing_tomorrow": 0,
-    "upcoming": 1,
+    "open": 2,
+    "closing_tomorrow": 1,
+    "upcoming": 0,
     "watch": 0
   },
   "ipos": [
@@ -49,7 +49,7 @@
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
       "exchange": "BSE, NSE",
-      "closing_tomorrow": false,
+      "closing_tomorrow": true,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -159,7 +159,7 @@
         "modifiers": [],
         "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-18T13:54:39.468563+00:00"
+        "created_at": "2026-11-18T19:02:00.137472+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -170,7 +170,7 @@
       "name": "Mahanadi Coalfields",
       "slug": "mahanadi-coalfields",
       "segment": "MAINBOARD",
-      "status": "UPCOMING",
+      "status": "OPEN",
       "open_date": "2026-11-19",
       "close_date": "2026-11-23",
       "allotment_date": null,
@@ -189,8 +189,8 @@
         "nii": null,
         "retail": null,
         "employee": null,
-        "total": null,
-        "updated_at": null
+        "total": 0.0,
+        "updated_at": "NSE · MAHACOAL"
       },
       "gmp": 3.0,
       "gmp_pct": 2.21,
@@ -237,12 +237,12 @@
         "ipo_slug": "mahanadi-coalfields",
         "score": 0.0,
         "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
-        "verdict_emoji": "⚪",
+        "verdict_label": "AVOID",
+        "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Mahanadi Coalfields is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 2%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +2%)",
-        "preliminary": true,
+        "paragraph": "The strongest argument for Mahanadi Coalfields is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 2%, so no listing pop is being priced in. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (total 0.0x · GMP +2%)",
+        "preliminary": false,
         "has_score": true,
         "flags": [],
         "components": [
@@ -254,17 +254,27 @@
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 5.53,
+            "contribution": 3.88,
             "note": "+2.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          },
+          {
+            "key": "total_subscription",
+            "label": "Overall subscription",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 15.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 15.0,
+            "contribution": 0.0,
+            "note": "0.00x overall · not calibrated"
           }
         ],
         "modifiers": [
-          "-10 — 100% of the issue is offer-for-sale",
-          "PRELIMINARY — bidding data not published yet"
+          "-10 — 100% of the issue is offer-for-sale"
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 2%, so no listing pop is being priced in",
-        "created_at": "2026-11-18T13:54:39.468737+00:00"
+        "created_at": "2026-11-18T19:02:00.137595+00:00"
       },
       "flags": [],
       "delta": null

@@ -1185,5 +1185,20 @@
     "flags": [
       "⚠ Anil Singhvi says AVOID"
     ]
+  },
+  {
+    "ipo_slug": "mahanadi-coalfields",
+    "ipo_name": "Mahanadi Coalfields",
+    "segment": "MAINBOARD",
+    "verdict_key": "AVOID",
+    "score": 0.0,
+    "created_at": "2026-11-18T19:02:00.137595+00:00",
+    "listing_date": "2026-11-27",
+    "issue_price": 136.0,
+    "listing_price": null,
+    "listing_gain_pct": null,
+    "resolved": false,
+    "correct": null,
+    "flags": []
   }
 ]
