@@ -4,17 +4,17 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-18T19:02:00.138286+00:00",
-  "generated_at_market": "19 Nov 2026, 00:31 IST",
-  "generated_at_ist": "2026-11-19T00:31:30.041999+05:30",
+  "generated_at": "2026-11-19T14:23:36.199557+00:00",
+  "generated_at_market": "19 Nov 2026, 19:52 IST",
+  "generated_at_ist": "2026-11-19T19:52:53.602516+05:30",
   "run_date": "2026-11-19",
-  "slot": "afternoon",
-  "slot_label": "afternoon update",
-  "slot_headline": "19 Nov · 00:31 IST · afternoon update",
+  "slot": "morning",
+  "slot_label": "morning report",
+  "slot_headline": "19 Nov · 19:52 IST · morning report",
   "counts": {
     "open": 2,
     "closing_tomorrow": 1,
-    "upcoming": 0,
+    "upcoming": 1,
     "watch": 0
   },
   "ipos": [
@@ -37,15 +37,15 @@
       "ofs_cr": 3702694.0,
       "ofs_pct": 22.1,
       "subscription": {
-        "qib": 1.09,
-        "nii": 0.6,
-        "retail": 0.64,
-        "employee": 1.46,
-        "total": 0.73,
+        "qib": 1.2,
+        "nii": 2.52,
+        "retail": 1.57,
+        "employee": 2.24,
+        "total": 1.63,
         "updated_at": "NSE · CRYSTALCP"
       },
-      "gmp": 19.0,
-      "gmp_pct": 6.99,
+      "gmp": 17.0,
+      "gmp_pct": 6.25,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
       "exchange": "BSE, NSE",
@@ -77,7 +77,7 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹19 premium (+7.0% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹17 premium (+6.2% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -88,7 +88,7 @@
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 1.09x · overall 0.73x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 1.20x · overall 1.63x; institutional demand below 3x — thin.",
           "accuracy_pct": 79.3,
           "accuracy_n": 29,
           "accuracy_label": "79% (n=29)",
@@ -98,13 +98,13 @@
       ],
       "take": {
         "ipo_slug": "crystal-crop-protection",
-        "score": 9.0,
+        "score": 9.1,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 1.1x · total 0.7x · GMP +7% · Singhvi: Avoid)",
+        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that only 22% is offer-for-sale, so most of the raise funds the business. Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 1.2x · total 1.6x · GMP +6% · Singhvi: Avoid)",
         "preliminary": false,
         "has_score": true,
         "flags": [
@@ -114,35 +114,35 @@
           {
             "key": "qib",
             "label": "QIB subscription",
-            "raw_value": 1.09,
-            "normalised": 0.0545,
+            "raw_value": 1.2,
+            "normalised": 0.06,
             "base_weight": 30.0,
             "calibration_multiplier": 1.322,
             "effective_weight": 39.66,
-            "contribution": 2.22,
-            "note": "1.09x vs 20x for full credit · calibrated ×1.32 on 79% (n=29)"
+            "contribution": 2.44,
+            "note": "1.20x vs 20x for full credit · calibrated ×1.32 on 79% (n=29)"
           },
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 6.99,
-            "normalised": 0.1748,
+            "raw_value": 6.25,
+            "normalised": 0.1562,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 6.33,
-            "note": "+7.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 5.65,
+            "note": "+6.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.73,
-            "normalised": 0.0292,
+            "raw_value": 1.63,
+            "normalised": 0.0652,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.45,
-            "note": "0.73x overall · not calibrated"
+            "contribution": 1.0,
+            "note": "1.63x overall · not calibrated"
           },
           {
             "key": "singhvi",
@@ -157,9 +157,9 @@
           }
         ],
         "modifiers": [],
-        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "only 22% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-18T19:02:00.137472+00:00"
+        "created_at": "2026-11-19T14:23:36.198745+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -185,17 +185,152 @@
       "ofs_cr": 661836300.0,
       "ofs_pct": 100.0,
       "subscription": {
+        "qib": 0.0,
+        "nii": 0.09,
+        "retail": 0.08,
+        "employee": 0.03,
+        "total": 0.06,
+        "updated_at": "NSE · MAHACOAL"
+      },
+      "gmp": 2.0,
+      "gmp_pct": 1.47,
+      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "detail_url": "https://www.chittorgarh.com/ipo/mahanadi-coalfields-ipo/3247/",
+      "exchange": "BSE, NSE",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "Mahanadi Coalfields IPO: Bet on this Rs 8,981 crore issue or wait? Anil Singhvi weighs in - Zee Business",
+          "accuracy_pct": 77.8,
+          "accuracy_n": 9,
+          "accuracy_label": "78% (n=9)",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVE8zbkZBamtZMHQySXppLVNxQ1BEVGp6dm80U1c5V3lHd3dhdEZpd3RrcGJ6UEl0Wm9WZGlubW93cjlhU2RmV0h3SDk1V2wtekF0RnpGVnpxNHdYMUkxSXNKXzR3R2dXbXFoOTBrb21pcjBHLXpPTEJ6d3ZWY0Njc28wVFZZOHFuQ24zNFdPS2gxUGdQX2JTam9wczVRV25XSHd1U1BBblZVRTRYTDNscWxsOWJyZmtkaGZ6cXpEMFczVzF3NW54dGptdXl4UQ?oc=5",
+          "is_synthetic": false
+        },
+        {
+          "source_name": "Sandeep Jain",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹2 premium (+1.5% of the upper band), per ipowatch.in.",
+          "accuracy_pct": 84.6,
+          "accuracy_n": 26,
+          "accuracy_label": "85% (n=26)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
+        },
+        {
+          "source_name": "QIB signal",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "QIB book at 0.00x · overall 0.06x; institutional demand below 3x — thin.",
+          "accuracy_pct": 79.3,
+          "accuracy_n": 29,
+          "accuracy_label": "79% (n=29)",
+          "url": "https://www.chittorgarh.com/ipo/mahanadi-coalfields-ipo/3247/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "mahanadi-coalfields",
+        "score": 0.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "AVOID",
+        "verdict_emoji": "🔴",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Mahanadi Coalfields is that there is no strong positive signal on the table yet. Against it: the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 0.0x · total 0.1x · GMP +1%)",
+        "preliminary": false,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "qib",
+            "label": "QIB subscription",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 30.0,
+            "calibration_multiplier": 1.322,
+            "effective_weight": 39.66,
+            "contribution": 0.0,
+            "note": "0.00x vs 20x for full credit · calibrated ×1.32 on 79% (n=29)"
+          },
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 1.47,
+            "normalised": 0.0367,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.41,
+            "effective_weight": 35.25,
+            "contribution": 1.44,
+            "note": "+1.5% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          },
+          {
+            "key": "total_subscription",
+            "label": "Overall subscription",
+            "raw_value": 0.06,
+            "normalised": 0.0024,
+            "base_weight": 15.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 15.0,
+            "contribution": 0.04,
+            "note": "0.06x overall · not calibrated"
+          }
+        ],
+        "modifiers": [
+          "-10 — 100% of the issue is offer-for-sale"
+        ],
+        "strongest_for": "there is no strong positive signal on the table yet",
+        "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
+        "created_at": "2026-11-19T14:23:36.198917+00:00"
+      },
+      "flags": [],
+      "delta": null
+    },
+    {
+      "name": "Foodlink F&B Holdings (India)",
+      "slug": "foodlink-f-b-holdings-india",
+      "segment": "MAINBOARD",
+      "status": "UPCOMING",
+      "open_date": "2026-11-26",
+      "close_date": "2026-11-30",
+      "allotment_date": null,
+      "listing_date": "2026-12-03",
+      "price_band_low": null,
+      "price_band_high": null,
+      "price_band_label": "—",
+      "lot_size": null,
+      "min_investment": null,
+      "issue_size_cr": null,
+      "fresh_issue_cr": 192.0,
+      "ofs_cr": 8835382.0,
+      "ofs_pct": null,
+      "subscription": {
         "qib": null,
         "nii": null,
         "retail": null,
         "employee": null,
-        "total": 0.0,
-        "updated_at": "NSE · MAHACOAL"
+        "total": null,
+        "updated_at": null
       },
-      "gmp": 3.0,
-      "gmp_pct": 2.21,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://www.chittorgarh.com/ipo/mahanadi-coalfields-ipo/3247/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
+      "detail_url": "https://www.chittorgarh.com/ipo/foodlink-fb-ipo/2493/",
       "exchange": "BSE, NSE",
       "closing_tomorrow": false,
       "evidence": [
@@ -220,61 +355,27 @@
           "accuracy_label": "insufficient history (n=0)",
           "url": null,
           "is_synthetic": false
-        },
-        {
-          "source_name": "GMP signal",
-          "stance": "AVOID",
-          "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹3 premium (+2.2% of the upper band), per ipowatch.in.",
-          "accuracy_pct": 84.6,
-          "accuracy_n": 26,
-          "accuracy_label": "85% (n=26)",
-          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-          "is_synthetic": true
         }
       ],
       "take": {
-        "ipo_slug": "mahanadi-coalfields",
+        "ipo_slug": "foodlink-f-b-holdings-india",
         "score": 0.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "AVOID",
-        "verdict_emoji": "🔴",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Mahanadi Coalfields is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 2%, so no listing pop is being priced in. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (total 0.0x · GMP +2%)",
-        "preliminary": false,
-        "has_score": true,
+        "verdict_key": "PRELIMINARY",
+        "verdict_label": "PRELIMINARY — no evidence yet",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#6B6B63",
+        "paragraph": "Nothing has landed on Foodlink F&B Holdings (India) yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
+        "one_liner": "PRELIMINARY — no evidence yet",
+        "preliminary": true,
+        "has_score": false,
         "flags": [],
-        "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 2.21,
-            "normalised": 0.0553,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 3.88,
-            "note": "+2.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
-          {
-            "key": "total_subscription",
-            "label": "Overall subscription",
-            "raw_value": 0.0,
-            "normalised": 0.0,
-            "base_weight": 15.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 15.0,
-            "contribution": 0.0,
-            "note": "0.00x overall · not calibrated"
-          }
-        ],
+        "components": [],
         "modifiers": [
-          "-10 — 100% of the issue is offer-for-sale"
+          "No scorable input available"
         ],
-        "strongest_for": "there is no strong positive signal on the table yet",
-        "strongest_against": "the grey market premium is only 2%, so no listing pop is being priced in",
-        "created_at": "2026-11-18T19:02:00.137595+00:00"
+        "strongest_for": "nothing yet",
+        "strongest_against": "no data of any kind has been published",
+        "created_at": "2026-11-19T14:23:36.198984+00:00"
       },
       "flags": [],
       "delta": null
@@ -877,18 +978,18 @@
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 2,
+      "queried": 3,
       "calls": 1,
-      "noView": 1,
-      "unreachable": 0,
+      "noView": 2,
+      "unreachable": 1,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 2,
+      "queried": 3,
       "calls": 0,
-      "noView": 2,
-      "unreachable": 0,
+      "noView": 3,
+      "unreachable": 1,
       "droppedNoUrl": 0
     }
   ],
@@ -937,13 +1038,12 @@
         {
           "expert": "Anil Singhvi",
           "reachable": true,
-          "via": null,
+          "via": "Google News RSS",
           "answeredRoutes": [
             "Google News RSS"
           ],
           "quietRoutes": [
-            "zeebiz search",
-            "DuckDuckGo"
+            "zeebiz search"
           ]
         },
         {
@@ -955,6 +1055,38 @@
           ],
           "quietRoutes": [
             "zeebiz search",
+            "DuckDuckGo"
+          ]
+        }
+      ]
+    },
+    {
+      "ipoSlug": "foodlink-f-b-holdings-india",
+      "ipo_slug": "foodlink-f-b-holdings-india",
+      "ipoName": "Foodlink F&B Holdings (India)",
+      "reachable": false,
+      "expertsChecked": 0,
+      "expertsTotal": 2,
+      "routes": [
+        {
+          "expert": "Anil Singhvi",
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
+        },
+        {
+          "expert": "Sandeep Jain",
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
             "DuckDuckGo"
           ]
         }
@@ -977,23 +1109,23 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404; Google News RSS: 1 match(es) from 2/2 responses; DuckDuckGo: responded, nothing in the result set",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: 2 match(es) from 2/3 responses; DuckDuckGo: responded, nothing in the result set",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 2,
+          "attempted": 3,
           "answered": 0,
           "hits": 0,
-          "dropped": false,
-          "reason": "HTTP 404"
+          "dropped": true,
+          "reason": "HTTP 404 — route dropped after 3 in a row"
         },
         {
           "route": "Google News RSS",
-          "attempted": 2,
+          "attempted": 3,
           "answered": 2,
-          "hits": 1,
+          "hits": 2,
           "dropped": false,
-          "reason": "1 match(es) from 2/2 responses"
+          "reason": "2 match(es) from 2/3 responses"
         },
         {
           "route": "DuckDuckGo",
@@ -1008,31 +1140,31 @@
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404; Google News RSS: responded 2/2, no matching item; DuckDuckGo: responded, nothing in the result set",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
-          "attempted": 2,
+          "attempted": 3,
           "answered": 0,
           "hits": 0,
-          "dropped": false,
-          "reason": "HTTP 404"
+          "dropped": true,
+          "reason": "HTTP 404 — route dropped after 3 in a row"
         },
         {
           "route": "Google News RSS",
-          "attempted": 2,
+          "attempted": 3,
           "answered": 2,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 2/2, no matching item"
+          "reason": "responded 2/3, no matching item"
         },
         {
           "route": "DuckDuckGo",
-          "attempted": 2,
+          "attempted": 3,
           "answered": 0,
           "hits": 0,
-          "dropped": false,
-          "reason": "responded, nothing in the result set"
+          "dropped": true,
+          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
         }
       ]
     },
