@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-19T14:23:36.199557+00:00",
-  "generated_at_market": "19 Nov 2026, 19:52 IST",
-  "generated_at_ist": "2026-11-19T19:52:53.602516+05:30",
-  "run_date": "2026-11-19",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "19 Nov · 19:52 IST · morning report",
+  "generated_at": "2026-11-19T19:09:35.187107+00:00",
+  "generated_at_market": "20 Nov 2026, 00:38 IST",
+  "generated_at_ist": "2026-11-20T00:38:58.937265+05:30",
+  "run_date": "2026-11-20",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "20 Nov · 00:38 IST · afternoon update",
   "counts": {
     "open": 2,
     "closing_tomorrow": 1,
@@ -159,7 +159,7 @@
         "modifiers": [],
         "strongest_for": "only 22% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-19T14:23:36.198745+00:00"
+        "created_at": "2026-11-19T19:09:35.186095+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -296,7 +296,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-11-19T14:23:36.198917+00:00"
+        "created_at": "2026-11-19T19:09:35.186312+00:00"
       },
       "flags": [],
       "delta": null
@@ -375,7 +375,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-19T14:23:36.198984+00:00"
+        "created_at": "2026-11-19T19:09:35.186397+00:00"
       },
       "flags": [],
       "delta": null
