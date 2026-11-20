@@ -4,25 +4,25 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-20T13:59:02.922104+00:00",
-  "generated_at_market": "20 Nov 2026, 19:28 IST",
-  "generated_at_ist": "2026-11-20T19:28:14.516221+05:30",
-  "run_date": "2026-11-20",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "20 Nov · 19:28 IST · morning report",
+  "generated_at": "2026-11-20T18:52:29.120281+00:00",
+  "generated_at_market": "21 Nov 2026, 00:18 IST",
+  "generated_at_ist": "2026-11-21T00:18:14.969271+05:30",
+  "run_date": "2026-11-21",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "21 Nov · 00:18 IST · afternoon update",
   "counts": {
-    "open": 2,
-    "closing_tomorrow": 1,
+    "open": 1,
+    "closing_tomorrow": 0,
     "upcoming": 2,
-    "watch": 0
+    "watch": 1
   },
   "ipos": [
     {
       "name": "Crystal Crop Protection",
       "slug": "crystal-crop-protection",
       "segment": "MAINBOARD",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-11-18",
       "close_date": "2026-11-20",
       "allotment_date": null,
@@ -37,19 +37,19 @@
       "ofs_cr": 3702694.0,
       "ofs_pct": 22.1,
       "subscription": {
-        "qib": 7.47,
-        "nii": 17.18,
-        "retail": 4.92,
-        "employee": 3.74,
-        "total": 10.06,
-        "updated_at": "NSE · CRYSTALCP"
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
       },
       "gmp": 14.0,
       "gmp_pct": 5.15,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
       "exchange": "BSE, NSE",
-      "closing_tomorrow": true,
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -98,30 +98,19 @@
       ],
       "take": {
         "ipo_slug": "crystal-crop-protection",
-        "score": 26.1,
+        "score": 10.6,
         "verdict_key": "AVOID",
-        "verdict_label": "AVOID",
-        "verdict_emoji": "🔴",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that the book is 10.1x subscribed overall. Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 7.5x · total 10.1x · GMP +5% · Singhvi: Avoid)",
-        "preliminary": false,
+        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +5% · Singhvi: Avoid)",
+        "preliminary": true,
         "has_score": true,
         "flags": [
           "⚠ Anil Singhvi says AVOID"
         ],
         "components": [
-          {
-            "key": "qib",
-            "label": "QIB subscription",
-            "raw_value": 7.47,
-            "normalised": 0.3735,
-            "base_weight": 30.0,
-            "calibration_multiplier": 1.322,
-            "effective_weight": 39.66,
-            "contribution": 15.21,
-            "note": "7.47x vs 20x for full credit · calibrated ×1.32 on 79% (n=29)"
-          },
           {
             "key": "gmp",
             "label": "Grey market premium",
@@ -130,19 +119,8 @@
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 4.66,
+            "contribution": 10.62,
             "note": "+5.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
-          {
-            "key": "total_subscription",
-            "label": "Overall subscription",
-            "raw_value": 10.06,
-            "normalised": 0.4024,
-            "base_weight": 15.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 15.0,
-            "contribution": 6.2,
-            "note": "10.06x overall · not calibrated"
           },
           {
             "key": "singhvi",
@@ -156,10 +134,12 @@
             "note": "called it Avoid · uncalibrated (n=9 < 10)"
           }
         ],
-        "modifiers": [],
-        "strongest_for": "the book is 10.1x subscribed overall",
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-20T13:59:02.921360+00:00"
+        "created_at": "2026-11-20T18:52:29.119529+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -203,11 +183,11 @@
           "source_name": "Anil Singhvi",
           "stance": "NO_VIEW",
           "stance_label": "No view",
-          "rationale": "Mahanadi Coalfields IPO: Bet on this Rs 8,981 crore issue or wait? Anil Singhvi weighs in - Zee Business",
+          "rationale": "No Zee Business call found for this issue.",
           "accuracy_pct": 77.8,
           "accuracy_n": 9,
           "accuracy_label": "78% (n=9)",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVE8zbkZBamtZMHQySXppLVNxQ1BEVGp6dm80U1c5V3lHd3dhdEZpd3RrcGJ6UEl0Wm9WZGlubW93cjlhU2RmV0h3SDk1V2wtekF0RnpGVnpxNHdYMUkxSXNKXzR3R2dXbXFoOTBrb21pcjBHLXpPTEJ6d3ZWY0Njc28wVFZZOHFuQ24zNFdPS2gxUGdQX2JTam9wczVRV25XSHd1U1BBblZVRTRYTDNscWxsOWJyZmtkaGZ6cXpEMFczVzF3NW54dGptdXl4UQ?oc=5",
+          "url": null,
           "is_synthetic": false
         },
         {
@@ -296,7 +276,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the QIB book is only 0.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-11-20T13:59:02.921494+00:00"
+        "created_at": "2026-11-20T18:52:29.119648+00:00"
       },
       "flags": [],
       "delta": null
@@ -375,7 +355,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-20T13:59:02.921536+00:00"
+        "created_at": "2026-11-20T18:52:29.119686+00:00"
       },
       "flags": [],
       "delta": null
@@ -454,7 +434,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-20T13:59:02.921547+00:00"
+        "created_at": "2026-11-20T18:52:29.119698+00:00"
       },
       "flags": [],
       "delta": null
@@ -1027,113 +1007,61 @@
     "ipowatch",
     "gmp",
     "qib_signal",
-    "singhvi",
-    "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
-    "chittorgarh: no rows for sme — check SELECTORS"
+    "chittorgarh: no rows for sme — check SELECTORS",
+    "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+    "sandeep_jain: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
   ],
   "calendar_readable": true,
-  "expert_calls": [
-    {
-      "symbol": null,
-      "ipoSlug": "crystal-crop-protection",
-      "ipoName": "Crystal Crop Protection",
-      "segment": "MAINBOARD",
-      "expert": "Anil Singhvi",
-      "call": "avoid",
-      "stanceNormalised": "AVOID",
-      "target": null,
-      "stop": null,
-      "rationale": "Zee Business: “Crystal Crop Protection IPO: Should you subscribe or avoid? Anil Singhvi explains - Zee Business”",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUUZqN2g2ZHp0TDhDYWZLS0tuTktIWWh0Z3UzNjdnaUFCR2IxOTFfdGd3dHhScmdKUE01UmRyVWt0X2E2NnRybzBEWlNaNWdIZnQ5cDBNUW92d0V0QklhcXNKQk8zNHVzeGR1bFZWYjdIZEF3OFZHa0hZSkJxNl90OU9ubjhuZlo2WGVocjRwRjhPLXItalYwRVJwYi02amFBbTlmZnR2cW9sUS0tQkswalhUZUhQbnF2XzluRHBDQUl6OU9a?oc=5",
-      "seenAt": "2026-11-18T07:11:56+00:00",
-      "capturedAt": "2026-11-13T13:03:21.992441+00:00",
-      "source": "Zee Business",
-      "listingDate": "2026-11-26"
-    }
-  ],
+  "expert_calls": [],
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 4,
-      "calls": 1,
+      "queried": 3,
+      "calls": 0,
       "noView": 3,
-      "unreachable": 2,
+      "unreachable": 3,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 4,
+      "queried": 3,
       "calls": 0,
-      "noView": 4,
-      "unreachable": 2,
+      "noView": 3,
+      "unreachable": 3,
       "droppedNoUrl": 0
     }
   ],
   "expert_reachability": [
     {
-      "ipoSlug": "crystal-crop-protection",
-      "ipo_slug": "crystal-crop-protection",
-      "ipoName": "Crystal Crop Protection",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": "Google News RSS",
-          "answeredRoutes": [
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "zeebiz search"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "zeebiz search",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
       "ipoSlug": "mahanadi-coalfields",
       "ipo_slug": "mahanadi-coalfields",
       "ipoName": "Mahanadi Coalfields",
-      "reachable": true,
-      "expertsChecked": 2,
+      "reachable": false,
+      "expertsChecked": 0,
       "expertsTotal": 2,
       "routes": [
         {
           "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": "Google News RSS",
-          "answeredRoutes": [
-            "Google News RSS"
-          ],
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
           "quietRoutes": [
-            "zeebiz search"
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         },
         {
           "expert": "Sandeep Jain",
-          "reachable": true,
+          "reachable": false,
           "via": null,
-          "answeredRoutes": [
-            "Google News RSS"
-          ],
+          "answeredRoutes": [],
           "quietRoutes": [
             "zeebiz search",
+            "Google News RSS",
             "DuckDuckGo"
           ]
         }
@@ -1185,6 +1113,7 @@
           "via": null,
           "answeredRoutes": [],
           "quietRoutes": [
+            "zeebiz search",
             "Google News RSS",
             "DuckDuckGo"
           ]
@@ -1195,7 +1124,9 @@
           "via": null,
           "answeredRoutes": [],
           "quietRoutes": [
-            "Google News RSS"
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         }
       ]
@@ -1216,8 +1147,8 @@
     },
     {
       "source": "singhvi",
-      "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: 2 match(es) from 2/4 responses; DuckDuckGo: responded, nothing in the result set",
+      "ok": false,
+      "reason": "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1225,30 +1156,30 @@
           "answered": 0,
           "hits": 0,
           "dropped": true,
-          "reason": "HTTP 404 — route dropped after 3 in a row"
+          "reason": "HTTP 403 — route dropped after 3 in a row"
         },
         {
           "route": "Google News RSS",
-          "attempted": 4,
-          "answered": 2,
-          "hits": 2,
-          "dropped": false,
-          "reason": "2 match(es) from 2/4 responses"
+          "attempted": 3,
+          "answered": 0,
+          "hits": 0,
+          "dropped": true,
+          "reason": "HTTPError (news.google.com) — route dropped after 3 in a row"
         },
         {
           "route": "DuckDuckGo",
-          "attempted": 2,
+          "attempted": 3,
           "answered": 0,
           "hits": 0,
-          "dropped": false,
-          "reason": "responded, nothing in the result set"
+          "dropped": true,
+          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
         }
       ]
     },
     {
       "source": "sandeep_jain",
-      "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/4, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "ok": false,
+      "reason": "sandeep_jain: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1256,15 +1187,15 @@
           "answered": 0,
           "hits": 0,
           "dropped": true,
-          "reason": "HTTP 404 — route dropped after 3 in a row"
+          "reason": "HTTP 403 — route dropped after 3 in a row"
         },
         {
           "route": "Google News RSS",
-          "attempted": 4,
-          "answered": 2,
+          "attempted": 3,
+          "answered": 0,
           "hits": 0,
-          "dropped": false,
-          "reason": "responded 2/4, no matching item"
+          "dropped": true,
+          "reason": "HTTPError (news.google.com) — route dropped after 3 in a row"
         },
         {
           "route": "DuckDuckGo",
