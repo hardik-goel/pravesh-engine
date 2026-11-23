@@ -4,18 +4,18 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-23T15:55:36.369542+00:00",
-  "generated_at_market": "23 Nov 2026, 21:24 IST",
-  "generated_at_ist": "2026-11-23T21:24:53.586908+05:30",
-  "run_date": "2026-11-23",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "23 Nov · 21:24 IST · morning report",
+  "generated_at": "2026-11-23T22:13:18.004238+00:00",
+  "generated_at_market": "24 Nov 2026, 03:42 IST",
+  "generated_at_ist": "2026-11-24T03:42:50.870459+05:30",
+  "run_date": "2026-11-24",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "24 Nov · 03:42 IST · afternoon update",
   "counts": {
-    "open": 1,
-    "closing_tomorrow": 1,
-    "upcoming": 2,
-    "watch": 1
+    "open": 0,
+    "closing_tomorrow": 0,
+    "upcoming": 3,
+    "watch": 2
   },
   "ipos": [
     {
@@ -139,7 +139,7 @@
         ],
         "strongest_for": "the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-23T15:55:36.368493+00:00"
+        "created_at": "2026-11-23T22:13:18.003177+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -150,7 +150,7 @@
       "name": "Mahanadi Coalfields",
       "slug": "mahanadi-coalfields",
       "segment": "MAINBOARD",
-      "status": "OPEN",
+      "status": "CLOSED",
       "open_date": "2026-11-19",
       "close_date": "2026-11-23",
       "allotment_date": null,
@@ -165,19 +165,19 @@
       "ofs_cr": 661836300.0,
       "ofs_pct": 100.0,
       "subscription": {
-        "qib": 1.61,
-        "nii": 0.52,
-        "retail": 0.3,
-        "employee": 0.14,
-        "total": 0.63,
-        "updated_at": "NSE · MAHACOAL"
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
       },
       "gmp": 0.0,
       "gmp_pct": 0.0,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/mahanadi-coalfields-ipo/3247/",
       "exchange": "BSE, NSE",
-      "closing_tomorrow": true,
+      "closing_tomorrow": false,
       "evidence": [
         {
           "source_name": "Anil Singhvi",
@@ -228,26 +228,15 @@
         "ipo_slug": "mahanadi-coalfields",
         "score": 0.0,
         "verdict_key": "AVOID",
-        "verdict_label": "AVOID",
-        "verdict_emoji": "🔴",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Mahanadi Coalfields is that there is no strong positive signal on the table yet. Against it: the QIB book is only 1.6x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 1.6x · total 0.6x · GMP +0%)",
-        "preliminary": false,
+        "paragraph": "The strongest argument for Mahanadi Coalfields is that there is no strong positive signal on the table yet. Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +0%)",
+        "preliminary": true,
         "has_score": true,
         "flags": [],
         "components": [
-          {
-            "key": "qib",
-            "label": "QIB subscription",
-            "raw_value": 1.61,
-            "normalised": 0.0805,
-            "base_weight": 30.0,
-            "calibration_multiplier": 1.322,
-            "effective_weight": 39.66,
-            "contribution": 3.55,
-            "note": "1.61x vs 20x for full credit · calibrated ×1.32 on 79% (n=29)"
-          },
           {
             "key": "gmp",
             "label": "Grey market premium",
@@ -258,25 +247,15 @@
             "effective_weight": 35.25,
             "contribution": 0.0,
             "note": "+0.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
-          {
-            "key": "total_subscription",
-            "label": "Overall subscription",
-            "raw_value": 0.63,
-            "normalised": 0.0252,
-            "base_weight": 15.0,
-            "calibration_multiplier": 1.0,
-            "effective_weight": 15.0,
-            "contribution": 0.42,
-            "note": "0.63x overall · not calibrated"
           }
         ],
         "modifiers": [
-          "-10 — 100% of the issue is offer-for-sale"
+          "-10 — 100% of the issue is offer-for-sale",
+          "PRELIMINARY — bidding data not published yet"
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
-        "strongest_against": "the QIB book is only 1.6x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-11-23T15:55:36.368684+00:00"
+        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
+        "created_at": "2026-11-23T22:13:18.003353+00:00"
       },
       "flags": [],
       "delta": null
@@ -378,7 +357,7 @@
         ],
         "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-23T15:55:36.368806+00:00"
+        "created_at": "2026-11-23T22:13:18.003477+00:00"
       },
       "flags": [],
       "delta": null
@@ -457,7 +436,109 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-23T15:55:36.368863+00:00"
+        "created_at": "2026-11-23T22:13:18.003544+00:00"
+      },
+      "flags": [],
+      "delta": null
+    },
+    {
+      "name": "Matangi Rubber",
+      "slug": "matangi-rubber",
+      "segment": "MAINBOARD",
+      "status": "UPCOMING",
+      "open_date": "2026-12-01",
+      "close_date": "2026-12-03",
+      "allotment_date": null,
+      "listing_date": "2026-12-08",
+      "price_band_low": 163.0,
+      "price_band_high": 172.0,
+      "price_band_label": "₹163–₹172",
+      "lot_size": 87,
+      "min_investment": 14964.0,
+      "issue_size_cr": 7276981.0,
+      "fresh_issue_cr": 5761831.0,
+      "ofs_cr": 1515150.0,
+      "ofs_pct": 20.8,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": 21.0,
+      "gmp_pct": 12.21,
+      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "detail_url": "https://www.chittorgarh.com/ipo/matangi-rubber-ipo/3136/",
+      "exchange": "BSE, NSE",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": 77.8,
+          "accuracy_n": 9,
+          "accuracy_label": "78% (n=9)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "Sandeep Jain",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "NEUTRAL",
+          "stance_label": "Neutral",
+          "rationale": "Indicative, unofficial grey-market premium: ₹21 premium (+12.2% of the upper band), per ipowatch.in.",
+          "accuracy_pct": 84.6,
+          "accuracy_n": 26,
+          "accuracy_label": "85% (n=26)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "matangi-rubber",
+        "score": 30.5,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Matangi Rubber is that the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +12%)",
+        "preliminary": true,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 12.21,
+            "normalised": 0.3053,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.41,
+            "effective_weight": 35.25,
+            "contribution": 30.53,
+            "note": "+12.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          }
+        ],
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "bidding data has not been published yet, so demand is unproven",
+        "created_at": "2026-11-23T22:13:18.003608+00:00"
       },
       "flags": [],
       "delta": null
@@ -1026,16 +1107,17 @@
   ],
   "sources_ok": [
     "chittorgarh",
-    "nse_subscription",
     "ipowatch",
     "gmp",
     "qib_signal",
-    "singhvi",
     "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
-    "chittorgarh: no rows for sme — check SELECTORS"
+    "chittorgarh: no rows for sme — check SELECTORS",
+    "nse: current-issue feed empty or unreachable",
+    "chittorgarh: live subscription table empty — check SELECTORS",
+    "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
   ],
   "calendar_readable": true,
   "expert_calls": [],
@@ -1045,7 +1127,7 @@
       "queried": 3,
       "calls": 0,
       "noView": 3,
-      "unreachable": 2,
+      "unreachable": 3,
       "droppedNoUrl": 0
     },
     {
@@ -1053,44 +1135,11 @@
       "queried": 3,
       "calls": 0,
       "noView": 3,
-      "unreachable": 1,
+      "unreachable": 2,
       "droppedNoUrl": 0
     }
   ],
   "expert_reachability": [
-    {
-      "ipoSlug": "mahanadi-coalfields",
-      "ipo_slug": "mahanadi-coalfields",
-      "ipoName": "Mahanadi Coalfields",
-      "reachable": true,
-      "expertsChecked": 2,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": true,
-          "via": "Google News RSS",
-          "answeredRoutes": [
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "zeebiz search"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": true,
-          "via": null,
-          "answeredRoutes": [
-            "Google News RSS"
-          ],
-          "quietRoutes": [
-            "zeebiz search",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
     {
       "ipoSlug": "foodlink-f-b-holdings-india",
       "ipo_slug": "foodlink-f-b-holdings-india",
@@ -1155,6 +1204,38 @@
           ]
         }
       ]
+    },
+    {
+      "ipoSlug": "matangi-rubber",
+      "ipo_slug": "matangi-rubber",
+      "ipoName": "Matangi Rubber",
+      "reachable": false,
+      "expertsChecked": 0,
+      "expertsTotal": 2,
+      "routes": [
+        {
+          "expert": "Anil Singhvi",
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
+        },
+        {
+          "expert": "Sandeep Jain",
+          "reachable": false,
+          "via": null,
+          "answeredRoutes": [],
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
+        }
+      ]
     }
   ],
   "source_status": [
@@ -1172,8 +1253,39 @@
     },
     {
       "source": "singhvi",
+      "ok": false,
+      "reason": "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+      "routes": [
+        {
+          "route": "zeebiz search",
+          "attempted": 3,
+          "answered": 0,
+          "hits": 0,
+          "dropped": true,
+          "reason": "HTTP 404 — route dropped after 3 in a row"
+        },
+        {
+          "route": "Google News RSS",
+          "attempted": 3,
+          "answered": 0,
+          "hits": 0,
+          "dropped": true,
+          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
+        },
+        {
+          "route": "DuckDuckGo",
+          "attempted": 3,
+          "answered": 0,
+          "hits": 0,
+          "dropped": true,
+          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
+        }
+      ]
+    },
+    {
+      "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: 1 match(es) from 1/3 responses; DuckDuckGo: responded, nothing in the result set",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 1/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1187,40 +1299,9 @@
           "route": "Google News RSS",
           "attempted": 3,
           "answered": 1,
-          "hits": 1,
-          "dropped": false,
-          "reason": "1 match(es) from 1/3 responses"
-        },
-        {
-          "route": "DuckDuckGo",
-          "attempted": 2,
-          "answered": 0,
           "hits": 0,
           "dropped": false,
-          "reason": "responded, nothing in the result set"
-        }
-      ]
-    },
-    {
-      "source": "sandeep_jain",
-      "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
-      "routes": [
-        {
-          "route": "zeebiz search",
-          "attempted": 3,
-          "answered": 0,
-          "hits": 0,
-          "dropped": true,
-          "reason": "HTTP 404 — route dropped after 3 in a row"
-        },
-        {
-          "route": "Google News RSS",
-          "attempted": 3,
-          "answered": 2,
-          "hits": 0,
-          "dropped": false,
-          "reason": "responded 2/3, no matching item"
+          "reason": "responded 1/3, no matching item"
         },
         {
           "route": "DuckDuckGo",
