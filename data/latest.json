@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-23T22:13:18.004238+00:00",
-  "generated_at_market": "24 Nov 2026, 03:42 IST",
-  "generated_at_ist": "2026-11-24T03:42:50.870459+05:30",
+  "generated_at": "2026-11-24T15:49:49.604774+00:00",
+  "generated_at_market": "24 Nov 2026, 21:19 IST",
+  "generated_at_ist": "2026-11-24T21:19:23.585779+05:30",
   "run_date": "2026-11-24",
-  "slot": "afternoon",
-  "slot_label": "afternoon update",
-  "slot_headline": "24 Nov · 03:42 IST · afternoon update",
+  "slot": "morning",
+  "slot_label": "morning report",
+  "slot_headline": "24 Nov · 21:19 IST · morning report",
   "counts": {
     "open": 0,
     "closing_tomorrow": 0,
@@ -44,8 +44,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 14.0,
-      "gmp_pct": 5.15,
+      "gmp": 18.0,
+      "gmp_pct": 6.6,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
       "exchange": "BSE, NSE",
@@ -77,7 +77,7 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹14 premium (+5.2% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹18 premium (+6.6% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -98,13 +98,13 @@
       ],
       "take": {
         "ipo_slug": "crystal-crop-protection",
-        "score": 10.6,
+        "score": 13.6,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +5% · Singhvi: Avoid)",
+        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +7% · Singhvi: Avoid)",
         "preliminary": true,
         "has_score": true,
         "flags": [
@@ -114,13 +114,13 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 5.15,
-            "normalised": 0.1288,
+            "raw_value": 6.6,
+            "normalised": 0.165,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 10.62,
-            "note": "+5.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 13.61,
+            "note": "+6.6% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "singhvi",
@@ -137,9 +137,9 @@
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 5% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-23T22:13:18.003177+00:00"
+        "created_at": "2026-11-24T15:49:49.603469+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -255,7 +255,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-11-23T22:13:18.003353+00:00"
+        "created_at": "2026-11-24T15:49:49.603664+00:00"
       },
       "flags": [],
       "delta": null
@@ -286,8 +286,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 12.0,
-      "gmp_pct": 6.28,
+      "gmp": 16.0,
+      "gmp_pct": 8.4,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/foodlink-fb-ipo/2493/",
       "exchange": "BSE, NSE",
@@ -319,7 +319,7 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹12 premium (+6.3% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹16 premium (+8.4% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -329,13 +329,13 @@
       ],
       "take": {
         "ipo_slug": "foodlink-f-b-holdings-india",
-        "score": 15.7,
+        "score": 21.0,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +6%)",
+        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +8%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -343,21 +343,21 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 6.28,
-            "normalised": 0.157,
+            "raw_value": 8.4,
+            "normalised": 0.21,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 15.7,
-            "note": "+6.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 21.0,
+            "note": "+8.4% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-23T22:13:18.003477+00:00"
+        "created_at": "2026-11-24T15:49:49.603829+00:00"
       },
       "flags": [],
       "delta": null
@@ -436,7 +436,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-23T22:13:18.003544+00:00"
+        "created_at": "2026-11-24T15:49:49.603903+00:00"
       },
       "flags": [],
       "delta": null
@@ -468,7 +468,7 @@
         "updated_at": null
       },
       "gmp": 21.0,
-      "gmp_pct": 12.21,
+      "gmp_pct": 12.2,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/matangi-rubber-ipo/3136/",
       "exchange": "BSE, NSE",
@@ -524,12 +524,12 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 12.21,
-            "normalised": 0.3053,
+            "raw_value": 12.2,
+            "normalised": 0.305,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 30.53,
+            "contribution": 30.5,
             "note": "+12.2% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
@@ -538,7 +538,7 @@
         ],
         "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-23T22:13:18.003608+00:00"
+        "created_at": "2026-11-24T15:49:49.603989+00:00"
       },
       "flags": [],
       "delta": null
@@ -1107,7 +1107,6 @@
   ],
   "sources_ok": [
     "chittorgarh",
-    "ipowatch",
     "gmp",
     "qib_signal",
     "sandeep_jain",
@@ -1117,6 +1116,8 @@
     "chittorgarh: no rows for sme — check SELECTORS",
     "nse: current-issue feed empty or unreachable",
     "chittorgarh: live subscription table empty — check SELECTORS",
+    "ipowatch: listing table empty — check SELECTORS",
+    "chittorgarh: listing performance table empty — check SELECTORS",
     "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
   ],
   "calendar_readable": true,
