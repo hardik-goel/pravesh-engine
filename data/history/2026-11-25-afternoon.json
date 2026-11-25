@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-24T20:52:22.158048+00:00",
-  "generated_at_market": "25 Nov 2026, 02:21 IST",
-  "generated_at_ist": "2026-11-25T02:21:46.011037+05:30",
+  "generated_at": "2026-11-25T09:37:26.985049+00:00",
+  "generated_at_market": "25 Nov 2026, 15:04 IST",
+  "generated_at_ist": "2026-11-25T15:04:11.318906+05:30",
   "run_date": "2026-11-25",
   "slot": "afternoon",
   "slot_label": "afternoon update",
-  "slot_headline": "25 Nov · 02:21 IST · afternoon update",
+  "slot_headline": "25 Nov · 15:04 IST · afternoon update",
   "counts": {
     "open": 0,
     "closing_tomorrow": 0,
@@ -139,7 +139,7 @@
         ],
         "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-24T20:52:22.156858+00:00"
+        "created_at": "2026-11-25T09:37:26.984127+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -255,7 +255,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-11-24T20:52:22.156945+00:00"
+        "created_at": "2026-11-25T09:37:26.984221+00:00"
       },
       "flags": [],
       "delta": null
@@ -286,8 +286,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 16.0,
-      "gmp_pct": 8.4,
+      "gmp": 27.0,
+      "gmp_pct": 14.1,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/foodlink-fb-ipo/2493/",
       "exchange": "BSE, NSE",
@@ -319,7 +319,7 @@
           "source_name": "GMP signal",
           "stance": "NEUTRAL",
           "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹16 premium (+8.4% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹27 premium (+14.1% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -329,13 +329,13 @@
       ],
       "take": {
         "ipo_slug": "foodlink-f-b-holdings-india",
-        "score": 21.0,
-        "verdict_key": "AVOID",
-        "verdict_label": "PRELIMINARY — AVOID",
+        "score": 35.2,
+        "verdict_key": "RISKY",
+        "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +8%)",
+        "verdict_color": "#9A7407",
+        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 14% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
+        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +14%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -343,21 +343,21 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 8.4,
-            "normalised": 0.21,
+            "raw_value": 14.1,
+            "normalised": 0.3525,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 21.0,
-            "note": "+8.4% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 35.25,
+            "note": "+14.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 8% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 14% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-24T20:52:22.156995+00:00"
+        "created_at": "2026-11-25T09:37:26.984286+00:00"
       },
       "flags": [],
       "delta": null
@@ -436,7 +436,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-24T20:52:22.157017+00:00"
+        "created_at": "2026-11-25T09:37:26.984315+00:00"
       },
       "flags": [],
       "delta": null
@@ -538,7 +538,7 @@
         ],
         "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-24T20:52:22.157057+00:00"
+        "created_at": "2026-11-25T09:37:26.984355+00:00"
       },
       "flags": [],
       "delta": null
@@ -552,11 +552,11 @@
       "close_date": "2026-12-04",
       "allotment_date": null,
       "listing_date": "2026-12-09",
-      "price_band_low": null,
-      "price_band_high": null,
-      "price_band_label": "—",
-      "lot_size": null,
-      "min_investment": null,
+      "price_band_low": 60.0,
+      "price_band_high": 65.0,
+      "price_band_label": "₹60–₹65",
+      "lot_size": 225,
+      "min_investment": 14625.0,
       "issue_size_cr": 27000000.0,
       "fresh_issue_cr": 27000000.0,
       "ofs_cr": 0.0,
@@ -569,8 +569,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 23.0,
-      "gmp_pct": null,
+      "gmp": 21.0,
+      "gmp_pct": 32.3,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/monomark-engineering-ipo/2972/",
       "exchange": "BSE, NSE",
@@ -597,27 +597,50 @@
           "accuracy_label": "insufficient history (n=0)",
           "url": null,
           "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "APPLY",
+          "stance_label": "Subscribe",
+          "rationale": "Indicative, unofficial grey-market premium: ₹21 premium (+32.3% of the upper band), per ipowatch.in.",
+          "accuracy_pct": 84.6,
+          "accuracy_n": 26,
+          "accuracy_label": "85% (n=26)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
         }
       ],
       "take": {
         "ipo_slug": "monomark-engineering-india",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
+        "score": 80.8,
+        "verdict_key": "APPLY",
+        "verdict_label": "PRELIMINARY — APPLY",
         "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Monomark Engineering (India) yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
+        "verdict_color": "#1E7A4B",
+        "paragraph": "The strongest argument for Monomark Engineering (India) is that the grey market is quoting a 32% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
+        "one_liner": "PRELIMINARY — APPLY (GMP +32%)",
         "preliminary": true,
-        "has_score": false,
+        "has_score": true,
         "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 32.3,
+            "normalised": 0.8075,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.41,
+            "effective_weight": 35.25,
+            "contribution": 80.75,
+            "note": "+32.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          }
         ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-24T20:52:22.157120+00:00"
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "the grey market is quoting a 32% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "bidding data has not been published yet, so demand is unproven",
+        "created_at": "2026-11-25T09:37:26.984407+00:00"
       },
       "flags": [],
       "delta": null
