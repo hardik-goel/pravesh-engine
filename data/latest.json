@@ -4,25 +4,25 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-25T09:37:26.985049+00:00",
-  "generated_at_market": "25 Nov 2026, 15:04 IST",
-  "generated_at_ist": "2026-11-25T15:04:11.318906+05:30",
-  "run_date": "2026-11-25",
+  "generated_at": "2026-11-25T20:10:24.614622+00:00",
+  "generated_at_market": "26 Nov 2026, 01:39 IST",
+  "generated_at_ist": "2026-11-26T01:39:36.532732+05:30",
+  "run_date": "2026-11-26",
   "slot": "afternoon",
   "slot_label": "afternoon update",
-  "slot_headline": "25 Nov · 15:04 IST · afternoon update",
+  "slot_headline": "26 Nov · 01:39 IST · afternoon update",
   "counts": {
-    "open": 0,
+    "open": 1,
     "closing_tomorrow": 0,
-    "upcoming": 4,
-    "watch": 2
+    "upcoming": 2,
+    "watch": 1
   },
   "ipos": [
     {
       "name": "Crystal Crop Protection",
       "slug": "crystal-crop-protection",
       "segment": "MAINBOARD",
-      "status": "CLOSED",
+      "status": "LISTED",
       "open_date": "2026-11-18",
       "close_date": "2026-11-20",
       "allotment_date": null,
@@ -44,9 +44,9 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 18.0,
-      "gmp_pct": 6.6,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "gmp": null,
+      "gmp_pct": null,
+      "gmp_source": null,
       "detail_url": "https://www.chittorgarh.com/ipo/crystal-crop-protection-ipo/2813/",
       "exchange": "BSE, NSE",
       "closing_tomorrow": false,
@@ -98,30 +98,19 @@
       ],
       "take": {
         "ipo_slug": "crystal-crop-protection",
-        "score": 13.6,
+        "score": 0.0,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +7% · Singhvi: Avoid)",
+        "paragraph": "Read the red banner above first — Anil Singhvi, a source with a real track record, is against this one. The strongest argument for Crystal Crop Protection is that only 22% is offer-for-sale, so most of the raise funds the business. Against it: Anil Singhvi has told viewers to avoid it (78% (n=9)). Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (Singhvi: Avoid)",
         "preliminary": true,
         "has_score": true,
         "flags": [
           "⚠ Anil Singhvi says AVOID"
         ],
         "components": [
-          {
-            "key": "gmp",
-            "label": "Grey market premium",
-            "raw_value": 6.6,
-            "normalised": 0.165,
-            "base_weight": 25.0,
-            "calibration_multiplier": 1.41,
-            "effective_weight": 35.25,
-            "contribution": 13.61,
-            "note": "+6.6% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
-          },
           {
             "key": "singhvi",
             "label": "Anil Singhvi",
@@ -137,9 +126,9 @@
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 7% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "only 22% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-25T09:37:26.984127+00:00"
+        "created_at": "2026-11-25T20:10:24.613699+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -255,7 +244,7 @@
         ],
         "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-11-25T09:37:26.984221+00:00"
+        "created_at": "2026-11-25T20:10:24.613879+00:00"
       },
       "flags": [],
       "delta": null
@@ -264,7 +253,7 @@
       "name": "Foodlink F&B Holdings (India)",
       "slug": "foodlink-f-b-holdings-india",
       "segment": "MAINBOARD",
-      "status": "UPCOMING",
+      "status": "OPEN",
       "open_date": "2026-11-26",
       "close_date": "2026-11-30",
       "allotment_date": null,
@@ -283,8 +272,8 @@
         "nii": null,
         "retail": null,
         "employee": null,
-        "total": null,
-        "updated_at": null
+        "total": 0.0,
+        "updated_at": "NSE · FOODLINK"
       },
       "gmp": 27.0,
       "gmp_pct": 14.1,
@@ -329,14 +318,14 @@
       ],
       "take": {
         "ipo_slug": "foodlink-f-b-holdings-india",
-        "score": 35.2,
-        "verdict_key": "RISKY",
-        "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#9A7407",
-        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 14% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
-        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +14%)",
-        "preliminary": true,
+        "score": 24.7,
+        "verdict_key": "AVOID",
+        "verdict_label": "AVOID",
+        "verdict_emoji": "🔴",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 14% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: nothing in the evidence stands out as a red flag, which is itself worth double-checking. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (total 0.0x · GMP +14%)",
+        "preliminary": false,
         "has_score": true,
         "flags": [],
         "components": [
@@ -348,95 +337,25 @@
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 35.25,
+            "contribution": 24.73,
             "note": "+14.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          },
+          {
+            "key": "total_subscription",
+            "label": "Overall subscription",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 15.0,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 15.0,
+            "contribution": 0.0,
+            "note": "0.00x overall · not calibrated"
           }
         ],
-        "modifiers": [
-          "PRELIMINARY — bidding data not published yet"
-        ],
+        "modifiers": [],
         "strongest_for": "the grey market is quoting a 14% premium (indicative and unofficial, but it is the only forward-looking price we get)",
-        "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-25T09:37:26.984286+00:00"
-      },
-      "flags": [],
-      "delta": null
-    },
-    {
-      "name": "Integris Medtech",
-      "slug": "integris-medtech",
-      "segment": "MAINBOARD",
-      "status": "UPCOMING",
-      "open_date": "2026-11-27",
-      "close_date": "2026-12-01",
-      "allotment_date": null,
-      "listing_date": "2026-12-04",
-      "price_band_low": null,
-      "price_band_high": null,
-      "price_band_label": "—",
-      "lot_size": null,
-      "min_investment": null,
-      "issue_size_cr": null,
-      "fresh_issue_cr": 600.0,
-      "ofs_cr": 10837266.0,
-      "ofs_pct": null,
-      "subscription": {
-        "qib": null,
-        "nii": null,
-        "retail": null,
-        "employee": null,
-        "total": null,
-        "updated_at": null
-      },
-      "gmp": 0.0,
-      "gmp_pct": null,
-      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
-      "detail_url": "https://www.chittorgarh.com/ipo/integris-medtech-ipo/2774/",
-      "exchange": "BSE, NSE",
-      "closing_tomorrow": false,
-      "evidence": [
-        {
-          "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": 77.8,
-          "accuracy_n": 9,
-          "accuracy_label": "78% (n=9)",
-          "url": null,
-          "is_synthetic": false
-        },
-        {
-          "source_name": "Sandeep Jain",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
-          "accuracy_pct": null,
-          "accuracy_n": 0,
-          "accuracy_label": "insufficient history (n=0)",
-          "url": null,
-          "is_synthetic": false
-        }
-      ],
-      "take": {
-        "ipo_slug": "integris-medtech",
-        "score": 0.0,
-        "verdict_key": "PRELIMINARY",
-        "verdict_label": "PRELIMINARY — no evidence yet",
-        "verdict_emoji": "⚪",
-        "verdict_color": "#6B6B63",
-        "paragraph": "Nothing has landed on Integris Medtech yet — no bidding data, no grey-market print and no named analyst on record. There is no honest score to give here, so this is a placeholder, not a call. Check back once the book opens. Final call is yours.",
-        "one_liner": "PRELIMINARY — no evidence yet",
-        "preliminary": true,
-        "has_score": false,
-        "flags": [],
-        "components": [],
-        "modifiers": [
-          "No scorable input available"
-        ],
-        "strongest_for": "nothing yet",
-        "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-25T09:37:26.984315+00:00"
+        "strongest_against": "nothing in the evidence stands out as a red flag, which is itself worth double-checking",
+        "created_at": "2026-11-25T20:10:24.613971+00:00"
       },
       "flags": [],
       "delta": null
@@ -538,7 +457,7 @@
         ],
         "strongest_for": "the grey market is quoting a 12% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-25T09:37:26.984355+00:00"
+        "created_at": "2026-11-25T20:10:24.614031+00:00"
       },
       "flags": [],
       "delta": null
@@ -640,7 +559,7 @@
         ],
         "strongest_for": "the grey market is quoting a 32% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-25T09:37:26.984407+00:00"
+        "created_at": "2026-11-25T20:10:24.614084+00:00"
       },
       "flags": [],
       "delta": null
@@ -1209,36 +1128,35 @@
   ],
   "sources_ok": [
     "chittorgarh",
+    "nse_subscription",
     "gmp",
     "qib_signal",
+    "singhvi",
     "sandeep_jain",
     "brokers"
   ],
   "sources_failed": [
     "chittorgarh: no rows for sme — check SELECTORS",
-    "nse: no live issue matched the calendar",
-    "chittorgarh: live subscription table empty — check SELECTORS",
     "ipowatch: listing table empty — check SELECTORS",
-    "chittorgarh: listing performance table empty — check SELECTORS",
-    "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing"
+    "chittorgarh: listing performance table empty — check SELECTORS"
   ],
   "calendar_readable": true,
   "expert_calls": [],
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 4,
+      "queried": 3,
       "calls": 0,
-      "noView": 4,
-      "unreachable": 4,
+      "noView": 3,
+      "unreachable": 2,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 4,
+      "queried": 3,
       "calls": 0,
-      "noView": 4,
-      "unreachable": 3,
+      "noView": 3,
+      "unreachable": 2,
       "droppedNoUrl": 0
     }
   ],
@@ -1248,17 +1166,18 @@
       "ipo_slug": "foodlink-f-b-holdings-india",
       "ipoName": "Foodlink F&B Holdings (India)",
       "reachable": true,
-      "expertsChecked": 1,
+      "expertsChecked": 2,
       "expertsTotal": 2,
       "routes": [
         {
           "expert": "Anil Singhvi",
-          "reachable": false,
+          "reachable": true,
           "via": null,
-          "answeredRoutes": [],
+          "answeredRoutes": [
+            "Google News RSS"
+          ],
           "quietRoutes": [
             "zeebiz search",
-            "Google News RSS",
             "DuckDuckGo"
           ]
         },
@@ -1271,38 +1190,6 @@
           ],
           "quietRoutes": [
             "zeebiz search",
-            "DuckDuckGo"
-          ]
-        }
-      ]
-    },
-    {
-      "ipoSlug": "integris-medtech",
-      "ipo_slug": "integris-medtech",
-      "ipoName": "Integris Medtech",
-      "reachable": false,
-      "expertsChecked": 0,
-      "expertsTotal": 2,
-      "routes": [
-        {
-          "expert": "Anil Singhvi",
-          "reachable": false,
-          "via": null,
-          "answeredRoutes": [],
-          "quietRoutes": [
-            "zeebiz search",
-            "Google News RSS",
-            "DuckDuckGo"
-          ]
-        },
-        {
-          "expert": "Sandeep Jain",
-          "reachable": false,
-          "via": null,
-          "answeredRoutes": [],
-          "quietRoutes": [
-            "zeebiz search",
-            "Google News RSS",
             "DuckDuckGo"
           ]
         }
@@ -1353,7 +1240,11 @@
           "reachable": false,
           "via": null,
           "answeredRoutes": [],
-          "quietRoutes": []
+          "quietRoutes": [
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
+          ]
         },
         {
           "expert": "Sandeep Jain",
@@ -1361,7 +1252,9 @@
           "via": null,
           "answeredRoutes": [],
           "quietRoutes": [
-            "Google News RSS"
+            "zeebiz search",
+            "Google News RSS",
+            "DuckDuckGo"
           ]
         }
       ]
@@ -1382,8 +1275,8 @@
     },
     {
       "source": "singhvi",
-      "ok": false,
-      "reason": "singhvi: every discovery route (zeebiz, Google News, DuckDuckGo) returned nothing",
+      "ok": true,
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 1/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1396,10 +1289,10 @@
         {
           "route": "Google News RSS",
           "attempted": 3,
-          "answered": 0,
+          "answered": 1,
           "hits": 0,
-          "dropped": true,
-          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
+          "dropped": false,
+          "reason": "responded 1/3, no matching item"
         },
         {
           "route": "DuckDuckGo",
@@ -1414,7 +1307,7 @@
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 1/4, no matching item — route dropped after 3 in a row; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 1/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1426,11 +1319,11 @@
         },
         {
           "route": "Google News RSS",
-          "attempted": 4,
+          "attempted": 3,
           "answered": 1,
           "hits": 0,
-          "dropped": true,
-          "reason": "responded 1/4, no matching item — route dropped after 3 in a row"
+          "dropped": false,
+          "reason": "responded 1/3, no matching item"
         },
         {
           "route": "DuckDuckGo",

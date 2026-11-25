@@ -11772,7 +11772,7 @@
     "raw_call": "",
     "published_at": null,
     "publisher": "",
-    "discovery_reachable": false,
+    "discovery_reachable": true,
     "discovery_route": null,
     "resolved": false,
     "correct": null,
