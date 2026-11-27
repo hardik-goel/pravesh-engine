@@ -4,13 +4,13 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-27T04:38:34.457579+00:00",
-  "generated_at_market": "27 Nov 2026, 10:08 IST",
-  "generated_at_ist": "2026-11-27T10:08:05.184733+05:30",
+  "generated_at": "2026-11-27T09:44:21.489053+00:00",
+  "generated_at_market": "27 Nov 2026, 15:03 IST",
+  "generated_at_ist": "2026-11-27T15:03:06.423052+05:30",
   "run_date": "2026-11-27",
-  "slot": "morning",
-  "slot_label": "morning report",
-  "slot_headline": "27 Nov · 10:08 IST · morning report",
+  "slot": "afternoon",
+  "slot_label": "afternoon update",
+  "slot_headline": "27 Nov · 15:03 IST · afternoon update",
   "counts": {
     "open": 1,
     "closing_tomorrow": 0,
@@ -128,12 +128,21 @@
         ],
         "strongest_for": "only 22% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-27T04:38:34.455968+00:00"
+        "created_at": "2026-11-27T09:44:21.487391+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
       ],
-      "delta": null
+      "delta": {
+        "ipo_slug": "crystal-crop-protection",
+        "since_label": "since this morning",
+        "baseline_slot": "morning",
+        "parts": [
+          "now closing"
+        ],
+        "is_new": false,
+        "line": "since this morning · now closing"
+      }
     },
     {
       "name": "Mahanadi Coalfields",
@@ -231,10 +240,19 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-27T04:38:34.456074+00:00"
+        "created_at": "2026-11-27T09:44:21.487469+00:00"
       },
       "flags": [],
-      "delta": null
+      "delta": {
+        "ipo_slug": "mahanadi-coalfields",
+        "since_label": "since this morning",
+        "baseline_slot": "morning",
+        "parts": [
+          "now closing"
+        ],
+        "is_new": false,
+        "line": "since this morning · now closing"
+      }
     },
     {
       "name": "Foodlink F&B Holdings (India)",
@@ -256,14 +274,14 @@
       "ofs_pct": 46.8,
       "subscription": {
         "qib": 1.01,
-        "nii": 0.39,
-        "retail": 1.63,
+        "nii": 0.56,
+        "retail": 2.22,
         "employee": null,
-        "total": 0.93,
+        "total": 1.07,
         "updated_at": "NSE · FOODLINK"
       },
-      "gmp": 7.0,
-      "gmp_pct": 3.7,
+      "gmp": 4.0,
+      "gmp_pct": 2.1,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/foodlink-fb-ipo/2493/",
       "exchange": "BSE, NSE",
@@ -271,13 +289,13 @@
       "evidence": [
         {
           "source_name": "Anil Singhvi",
-          "stance": "NO_VIEW",
-          "stance_label": "No view",
-          "rationale": "No Zee Business call found for this issue.",
+          "stance": "APPLY",
+          "stance_label": "Subscribe",
+          "rationale": "Zee Business: “Foodlink F&B Holdings IPO Day 2: Issue subscribed 1.24 times so far; should you apply? Anil Singhvi shares his view - Zee Business”",
           "accuracy_pct": 77.8,
           "accuracy_n": 9,
           "accuracy_label": "78% (n=9)",
-          "url": null,
+          "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQM3JoLXl6MjY4NndDUlNLb1ZFcHR3b3JQTjctSnBFelJZc0x0ZEJPRElXZUVJMWhPMGlHb2tyaDBNMjY0ckRQNWNKTWVKNGxaeTY4M19CcjVTR0ZEOXROMmwya0xMajNhaXdodkVtamZ4ZkN1bDRxM25XUHpLM3BMdTlXYWNDeVVMRTJuRUFJQ090TzRqWUxqbXNqdjhxQjNMamlnWHUzcklIRDdfNE45c1lXeWx6aGQ1WnR6UHhjNllVZ2JRcUpOLTNjZnlRc2lRM0tfMlc2TnF1Q2VTT2R1Q1pzN1pQS2xDQVk5YXd3?oc=5",
           "is_synthetic": false
         },
         {
@@ -306,7 +324,7 @@
           "source_name": "GMP signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+3.7% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹4 premium (+2.1% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -317,7 +335,7 @@
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 1.01x · overall 0.93x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 1.01x · overall 1.07x; institutional demand below 3x — thin.",
           "accuracy_pct": 79.3,
           "accuracy_n": 29,
           "accuracy_label": "79% (n=29)",
@@ -327,13 +345,13 @@
       ],
       "take": {
         "ipo_slug": "foodlink-f-b-holdings-india",
-        "score": 13.5,
+        "score": 18.0,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that there is no strong positive signal on the table yet. Against it: the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 1.0x · total 0.9x · GMP +4% · brokers 0/1)",
+        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that Anil Singhvi has called it subscribe (78% (n=9)). Against it: the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 1.0x · total 1.1x · GMP +2% · Singhvi: Subscribe · brokers 0/1)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -346,30 +364,41 @@
             "base_weight": 30.0,
             "calibration_multiplier": 1.322,
             "effective_weight": 39.66,
-            "contribution": 1.87,
+            "contribution": 1.75,
             "note": "1.01x vs 20x for full credit · calibrated ×1.32 on 79% (n=29)"
           },
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 3.7,
-            "normalised": 0.0925,
+            "raw_value": 2.1,
+            "normalised": 0.0525,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 3.04,
-            "note": "+3.7% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 1.61,
+            "note": "+2.1% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.93,
-            "normalised": 0.0372,
+            "raw_value": 1.07,
+            "normalised": 0.0428,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.52,
-            "note": "0.93x overall · not calibrated"
+            "contribution": 0.56,
+            "note": "1.07x overall · not calibrated"
+          },
+          {
+            "key": "singhvi",
+            "label": "Anil Singhvi",
+            "raw_value": null,
+            "normalised": 1.0,
+            "base_weight": 7.5,
+            "calibration_multiplier": 1.0,
+            "effective_weight": 7.5,
+            "contribution": 6.54,
+            "note": "called it Subscribe · uncalibrated (n=9 < 10)"
           },
           {
             "key": "brokers",
@@ -379,17 +408,29 @@
             "base_weight": 15.0,
             "calibration_multiplier": 1.153,
             "effective_weight": 17.295,
-            "contribution": 8.07,
+            "contribution": 7.54,
             "note": "0/1 bullish, accuracy-weighted · calibrated ×1.15 on 69% (n=13)"
           }
         ],
         "modifiers": [],
-        "strongest_for": "there is no strong positive signal on the table yet",
+        "strongest_for": "Anil Singhvi has called it subscribe (78% (n=9))",
         "strongest_against": "the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-11-27T04:38:34.456349+00:00"
+        "created_at": "2026-11-27T09:44:21.487718+00:00"
       },
       "flags": [],
-      "delta": null
+      "delta": {
+        "ipo_slug": "foodlink-f-b-holdings-india",
+        "since_label": "since this morning",
+        "baseline_slot": "morning",
+        "parts": [
+          "Total 0.93x → 1.07x",
+          "GMP +3.7% → +2.1%",
+          "NII 0.39x → 0.56x",
+          "Retail 1.63x → 2.22x"
+        ],
+        "is_new": false,
+        "line": "since this morning · Total 0.93x → 1.07x · GMP +3.7% → +2.1% · NII 0.39x → 0.56x · Retail 1.63x → 2.22x"
+      }
     },
     {
       "name": "Matangi Rubber",
@@ -417,8 +458,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 27.0,
-      "gmp_pct": 15.7,
+      "gmp": 22.0,
+      "gmp_pct": 12.8,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/matangi-rubber-ipo/3136/",
       "exchange": "BSE, NSE",
@@ -448,9 +489,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "APPLY",
-          "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹27 premium (+15.7% of the upper band), per ipowatch.in.",
+          "stance": "NEUTRAL",
+          "stance_label": "Neutral",
+          "rationale": "Indicative, unofficial grey-market premium: ₹22 premium (+12.8% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -460,13 +501,13 @@
       ],
       "take": {
         "ipo_slug": "matangi-rubber",
-        "score": 39.2,
-        "verdict_key": "RISKY",
-        "verdict_label": "PRELIMINARY — RISKY — high risk appetite only",
+        "score": 32.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
-        "verdict_color": "#9A7407",
-        "paragraph": "The strongest argument for Matangi Rubber is that the grey market is quoting a 16% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is a thin case: worth a shot only if you carry genuine risk appetite and can sit on the position if listing disappoints. Final call is yours.",
-        "one_liner": "PRELIMINARY — RISKY — high risk appetite only (GMP +16%)",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Matangi Rubber is that the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +13%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -474,24 +515,33 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 15.7,
-            "normalised": 0.3925,
+            "raw_value": 12.8,
+            "normalised": 0.32,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 39.25,
-            "note": "+15.7% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 32.0,
+            "note": "+12.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 16% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 13% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-27T04:38:34.456508+00:00"
+        "created_at": "2026-11-27T09:44:21.487861+00:00"
       },
       "flags": [],
-      "delta": null
+      "delta": {
+        "ipo_slug": "matangi-rubber",
+        "since_label": "since this morning",
+        "baseline_slot": "morning",
+        "parts": [
+          "GMP +15.7% → +12.8%"
+        ],
+        "is_new": false,
+        "line": "since this morning · GMP +15.7% → +12.8%"
+      }
     },
     {
       "name": "Monomark Engineering (India)",
@@ -519,8 +569,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 24.0,
-      "gmp_pct": 36.9,
+      "gmp": 20.0,
+      "gmp_pct": 30.8,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/monomark-engineering-ipo/2972/",
       "exchange": "BSE, NSE",
@@ -552,7 +602,7 @@
           "source_name": "GMP signal",
           "stance": "APPLY",
           "stance_label": "Subscribe",
-          "rationale": "Indicative, unofficial grey-market premium: ₹24 premium (+36.9% of the upper band), per ipowatch.in.",
+          "rationale": "Indicative, unofficial grey-market premium: ₹20 premium (+30.8% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -562,13 +612,13 @@
       ],
       "take": {
         "ipo_slug": "monomark-engineering-india",
-        "score": 92.2,
+        "score": 77.0,
         "verdict_key": "APPLY",
         "verdict_label": "PRELIMINARY — APPLY",
         "verdict_emoji": "⚪",
         "verdict_color": "#1E7A4B",
-        "paragraph": "The strongest argument for Monomark Engineering (India) is that the grey market is quoting a 37% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
-        "one_liner": "PRELIMINARY — APPLY (GMP +37%)",
+        "paragraph": "The strongest argument for Monomark Engineering (India) is that the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. On balance the case for applying holds up, with that risk priced in rather than ignored. Final call is yours.",
+        "one_liner": "PRELIMINARY — APPLY (GMP +31%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -576,24 +626,33 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 36.9,
-            "normalised": 0.9225,
+            "raw_value": 30.8,
+            "normalised": 0.77,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 92.25,
-            "note": "+36.9% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 77.0,
+            "note": "+30.8% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "the grey market is quoting a 37% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "the grey market is quoting a 31% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-27T04:38:34.456653+00:00"
+        "created_at": "2026-11-27T09:44:21.488011+00:00"
       },
       "flags": [],
-      "delta": null
+      "delta": {
+        "ipo_slug": "monomark-engineering-india",
+        "since_label": "since this morning",
+        "baseline_slot": "morning",
+        "parts": [
+          "GMP +36.9% → +30.8%"
+        ],
+        "is_new": false,
+        "line": "since this morning · GMP +36.9% → +30.8%"
+      }
     },
     {
       "name": "Swara Baby Products",
@@ -621,8 +680,8 @@
         "total": null,
         "updated_at": null
       },
-      "gmp": 0.0,
-      "gmp_pct": 0.0,
+      "gmp": 7.0,
+      "gmp_pct": 6.3,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/swara-baby-products-ipo/3186/",
       "exchange": "BSE, NSE",
@@ -652,9 +711,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "AVOID",
-          "stance_label": "Avoid",
-          "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
+          "stance": "NEUTRAL",
+          "stance_label": "Neutral",
+          "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+6.3% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -664,13 +723,13 @@
       ],
       "take": {
         "ipo_slug": "swara-baby-products",
-        "score": 0.0,
+        "score": 15.8,
         "verdict_key": "AVOID",
         "verdict_label": "PRELIMINARY — AVOID",
         "verdict_emoji": "⚪",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Swara Baby Products is that only 38% is offer-for-sale, so most of the raise funds the business. Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "PRELIMINARY — AVOID (GMP +0%)",
+        "paragraph": "The strongest argument for Swara Baby Products is that the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: bidding data has not been published yet, so demand is unproven. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +6%)",
         "preliminary": true,
         "has_score": true,
         "flags": [],
@@ -678,24 +737,33 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 0.0,
-            "normalised": 0.0,
+            "raw_value": 6.3,
+            "normalised": 0.1575,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 0.0,
-            "note": "+0.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 15.75,
+            "note": "+6.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           }
         ],
         "modifiers": [
           "PRELIMINARY — bidding data not published yet"
         ],
-        "strongest_for": "only 38% is offer-for-sale, so most of the raise funds the business",
-        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
-        "created_at": "2026-11-27T04:38:34.456789+00:00"
+        "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_against": "bidding data has not been published yet, so demand is unproven",
+        "created_at": "2026-11-27T09:44:21.488135+00:00"
       },
       "flags": [],
-      "delta": null
+      "delta": {
+        "ipo_slug": "swara-baby-products",
+        "since_label": "since this morning",
+        "baseline_slot": "morning",
+        "parts": [
+          "GMP +0.0% → +6.3%"
+        ],
+        "is_new": false,
+        "line": "since this morning · GMP +0.0% → +6.3%"
+      }
     }
   ],
   "leaderboard": [
@@ -1274,13 +1342,31 @@
     "chittorgarh: listing performance table empty — check SELECTORS"
   ],
   "calendar_readable": true,
-  "expert_calls": [],
+  "expert_calls": [
+    {
+      "symbol": null,
+      "ipoSlug": "foodlink-f-b-holdings-india",
+      "ipoName": "Foodlink F&B Holdings (India)",
+      "segment": "MAINBOARD",
+      "expert": "Anil Singhvi",
+      "call": "subscribe",
+      "stanceNormalised": "APPLY",
+      "target": null,
+      "stop": null,
+      "rationale": "Zee Business: “Foodlink F&B Holdings IPO Day 2: Issue subscribed 1.24 times so far; should you apply? Anil Singhvi shares his view - Zee Business”",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQM3JoLXl6MjY4NndDUlNLb1ZFcHR3b3JQTjctSnBFelJZc0x0ZEJPRElXZUVJMWhPMGlHb2tyaDBNMjY0ckRQNWNKTWVKNGxaeTY4M19CcjVTR0ZEOXROMmwya0xMajNhaXdodkVtamZ4ZkN1bDRxM25XUHpLM3BMdTlXYWNDeVVMRTJuRUFJQ090TzRqWUxqbXNqdjhxQjNMamlnWHUzcklIRDdfNE45c1lXeWx6aGQ1WnR6UHhjNllVZ2JRcUpOLTNjZnlRc2lRM0tfMlc2TnF1Q2VTT2R1Q1pzN1pQS2xDQVk5YXd3?oc=5",
+      "seenAt": "2026-11-27T05:52:47+00:00",
+      "capturedAt": "2026-11-19T14:23:15.336451+00:00",
+      "source": "Zee Business",
+      "listingDate": "2026-12-03"
+    }
+  ],
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
       "queried": 4,
-      "calls": 0,
-      "noView": 4,
+      "calls": 1,
+      "noView": 3,
       "unreachable": 2,
       "droppedNoUrl": 0
     },
@@ -1305,13 +1391,12 @@
         {
           "expert": "Anil Singhvi",
           "reachable": true,
-          "via": null,
+          "via": "Google News RSS",
           "answeredRoutes": [
             "Google News RSS"
           ],
           "quietRoutes": [
-            "zeebiz search",
-            "DuckDuckGo"
+            "zeebiz search"
           ]
         },
         {
@@ -1407,7 +1492,9 @@
           "answeredRoutes": [
             "Google News RSS"
           ],
-          "quietRoutes": []
+          "quietRoutes": [
+            "DuckDuckGo"
+          ]
         },
         {
           "expert": "Sandeep Jain",
@@ -1437,7 +1524,7 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/4, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: 1 match(es) from 2/4 responses; DuckDuckGo: ConnectTimeout (html.duckduckgo.com) — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1451,9 +1538,9 @@
           "route": "Google News RSS",
           "attempted": 4,
           "answered": 2,
-          "hits": 0,
+          "hits": 1,
           "dropped": false,
-          "reason": "responded 2/4, no matching item"
+          "reason": "1 match(es) from 2/4 responses"
         },
         {
           "route": "DuckDuckGo",
@@ -1461,14 +1548,14 @@
           "answered": 0,
           "hits": 0,
           "dropped": true,
-          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
+          "reason": "ConnectTimeout (html.duckduckgo.com) — route dropped after 3 in a row"
         }
       ]
     },
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/4, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/4, no matching item; DuckDuckGo: ConnectTimeout (html.duckduckgo.com) — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1492,7 +1579,7 @@
           "answered": 0,
           "hits": 0,
           "dropped": true,
-          "reason": "responded, nothing in the result set — route dropped after 3 in a row"
+          "reason": "ConnectTimeout (html.duckduckgo.com) — route dropped after 3 in a row"
         }
       ]
     },
