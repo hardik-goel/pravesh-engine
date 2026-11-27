@@ -4,18 +4,18 @@
     "name": "Trinetra Pravesh",
     "tagline": "IPO intelligence — evidence first."
   },
-  "generated_at": "2026-11-26T19:49:14.551348+00:00",
-  "generated_at_market": "27 Nov 2026, 01:18 IST",
-  "generated_at_ist": "2026-11-27T01:18:46.432650+05:30",
+  "generated_at": "2026-11-27T04:38:34.457579+00:00",
+  "generated_at_market": "27 Nov 2026, 10:08 IST",
+  "generated_at_ist": "2026-11-27T10:08:05.184733+05:30",
   "run_date": "2026-11-27",
-  "slot": "afternoon",
-  "slot_label": "afternoon update",
-  "slot_headline": "27 Nov · 01:18 IST · afternoon update",
+  "slot": "morning",
+  "slot_label": "morning report",
+  "slot_headline": "27 Nov · 10:08 IST · morning report",
   "counts": {
     "open": 1,
     "closing_tomorrow": 0,
-    "upcoming": 2,
-    "watch": 1
+    "upcoming": 3,
+    "watch": 2
   },
   "ipos": [
     {
@@ -128,7 +128,7 @@
         ],
         "strongest_for": "only 22% is offer-for-sale, so most of the raise funds the business",
         "strongest_against": "Anil Singhvi has told viewers to avoid it (78% (n=9))",
-        "created_at": "2026-11-26T19:49:14.550201+00:00"
+        "created_at": "2026-11-27T04:38:34.455968+00:00"
       },
       "flags": [
         "⚠ Anil Singhvi says AVOID"
@@ -139,11 +139,11 @@
       "name": "Mahanadi Coalfields",
       "slug": "mahanadi-coalfields",
       "segment": "MAINBOARD",
-      "status": "LISTED",
+      "status": "CLOSED",
       "open_date": "2026-11-19",
       "close_date": "2026-11-23",
       "allotment_date": null,
-      "listing_date": "2026-11-27",
+      "listing_date": null,
       "price_band_low": 129.0,
       "price_band_high": 136.0,
       "price_band_label": "₹129–₹136",
@@ -231,7 +231,7 @@
         ],
         "strongest_for": "nothing yet",
         "strongest_against": "no data of any kind has been published",
-        "created_at": "2026-11-26T19:49:14.550280+00:00"
+        "created_at": "2026-11-27T04:38:34.456074+00:00"
       },
       "flags": [],
       "delta": null
@@ -256,14 +256,14 @@
       "ofs_pct": 46.8,
       "subscription": {
         "qib": 1.01,
-        "nii": 0.35,
-        "retail": 1.41,
+        "nii": 0.39,
+        "retail": 1.63,
         "employee": null,
-        "total": 0.87,
+        "total": 0.93,
         "updated_at": "NSE · FOODLINK"
       },
-      "gmp": 12.0,
-      "gmp_pct": 6.3,
+      "gmp": 7.0,
+      "gmp_pct": 3.7,
       "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
       "detail_url": "https://www.chittorgarh.com/ipo/foodlink-fb-ipo/2493/",
       "exchange": "BSE, NSE",
@@ -304,9 +304,9 @@
         },
         {
           "source_name": "GMP signal",
-          "stance": "NEUTRAL",
-          "stance_label": "Neutral",
-          "rationale": "Indicative, unofficial grey-market premium: ₹12 premium (+6.3% of the upper band), per ipowatch.in.",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹7 premium (+3.7% of the upper band), per ipowatch.in.",
           "accuracy_pct": 84.6,
           "accuracy_n": 26,
           "accuracy_label": "85% (n=26)",
@@ -317,7 +317,7 @@
           "source_name": "QIB signal",
           "stance": "AVOID",
           "stance_label": "Avoid",
-          "rationale": "QIB book at 1.01x · overall 0.87x; institutional demand below 3x — thin.",
+          "rationale": "QIB book at 1.01x · overall 0.93x; institutional demand below 3x — thin.",
           "accuracy_pct": 79.3,
           "accuracy_n": 29,
           "accuracy_label": "79% (n=29)",
@@ -327,13 +327,13 @@
       ],
       "take": {
         "ipo_slug": "foodlink-f-b-holdings-india",
-        "score": 15.6,
+        "score": 13.5,
         "verdict_key": "AVOID",
         "verdict_label": "AVOID",
         "verdict_emoji": "🔴",
         "verdict_color": "#9E2B25",
-        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get). Against it: the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
-        "one_liner": "AVOID (QIB 1.0x · total 0.9x · GMP +6% · brokers 0/1)",
+        "paragraph": "The strongest argument for Foodlink F&B Holdings (India) is that there is no strong positive signal on the table yet. Against it: the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "AVOID (QIB 1.0x · total 0.9x · GMP +4% · brokers 0/1)",
         "preliminary": false,
         "has_score": true,
         "flags": [],
@@ -352,24 +352,24 @@
           {
             "key": "gmp",
             "label": "Grey market premium",
-            "raw_value": 6.3,
-            "normalised": 0.1575,
+            "raw_value": 3.7,
+            "normalised": 0.0925,
             "base_weight": 25.0,
             "calibration_multiplier": 1.41,
             "effective_weight": 35.25,
-            "contribution": 5.18,
-            "note": "+6.3% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+            "contribution": 3.04,
+            "note": "+3.7% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
           },
           {
             "key": "total_subscription",
             "label": "Overall subscription",
-            "raw_value": 0.87,
-            "normalised": 0.0348,
+            "raw_value": 0.93,
+            "normalised": 0.0372,
             "base_weight": 15.0,
             "calibration_multiplier": 1.0,
             "effective_weight": 15.0,
-            "contribution": 0.49,
-            "note": "0.87x overall · not calibrated"
+            "contribution": 0.52,
+            "note": "0.93x overall · not calibrated"
           },
           {
             "key": "brokers",
@@ -384,9 +384,9 @@
           }
         ],
         "modifiers": [],
-        "strongest_for": "the grey market is quoting a 6% premium (indicative and unofficial, but it is the only forward-looking price we get)",
+        "strongest_for": "there is no strong positive signal on the table yet",
         "strongest_against": "the QIB book is only 1.0x — institutions are not showing up, which is the single most reliable warning sign in this market",
-        "created_at": "2026-11-26T19:49:14.550460+00:00"
+        "created_at": "2026-11-27T04:38:34.456349+00:00"
       },
       "flags": [],
       "delta": null
@@ -488,7 +488,7 @@
         ],
         "strongest_for": "the grey market is quoting a 16% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-26T19:49:14.550564+00:00"
+        "created_at": "2026-11-27T04:38:34.456508+00:00"
       },
       "flags": [],
       "delta": null
@@ -590,7 +590,109 @@
         ],
         "strongest_for": "the grey market is quoting a 37% premium (indicative and unofficial, but it is the only forward-looking price we get)",
         "strongest_against": "bidding data has not been published yet, so demand is unproven",
-        "created_at": "2026-11-26T19:49:14.550677+00:00"
+        "created_at": "2026-11-27T04:38:34.456653+00:00"
+      },
+      "flags": [],
+      "delta": null
+    },
+    {
+      "name": "Swara Baby Products",
+      "slug": "swara-baby-products",
+      "segment": "MAINBOARD",
+      "status": "UPCOMING",
+      "open_date": "2026-12-02",
+      "close_date": "2026-12-04",
+      "allotment_date": null,
+      "listing_date": "2026-12-09",
+      "price_band_low": 105.0,
+      "price_band_high": 111.0,
+      "price_band_label": "₹105–₹111",
+      "lot_size": 135,
+      "min_investment": 14985.0,
+      "issue_size_cr": 72072072.0,
+      "fresh_issue_cr": 45045045.0,
+      "ofs_cr": 27027027.0,
+      "ofs_pct": 37.5,
+      "subscription": {
+        "qib": null,
+        "nii": null,
+        "retail": null,
+        "employee": null,
+        "total": null,
+        "updated_at": null
+      },
+      "gmp": 0.0,
+      "gmp_pct": 0.0,
+      "gmp_source": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+      "detail_url": "https://www.chittorgarh.com/ipo/swara-baby-products-ipo/3186/",
+      "exchange": "BSE, NSE",
+      "closing_tomorrow": false,
+      "evidence": [
+        {
+          "source_name": "Anil Singhvi",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": 77.8,
+          "accuracy_n": 9,
+          "accuracy_label": "78% (n=9)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "Sandeep Jain",
+          "stance": "NO_VIEW",
+          "stance_label": "No view",
+          "rationale": "No Zee Business call found for this issue.",
+          "accuracy_pct": null,
+          "accuracy_n": 0,
+          "accuracy_label": "insufficient history (n=0)",
+          "url": null,
+          "is_synthetic": false
+        },
+        {
+          "source_name": "GMP signal",
+          "stance": "AVOID",
+          "stance_label": "Avoid",
+          "rationale": "Indicative, unofficial grey-market premium: ₹0 premium (+0.0% of the upper band), per ipowatch.in.",
+          "accuracy_pct": 84.6,
+          "accuracy_n": 26,
+          "accuracy_label": "85% (n=26)",
+          "url": "https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/",
+          "is_synthetic": true
+        }
+      ],
+      "take": {
+        "ipo_slug": "swara-baby-products",
+        "score": 0.0,
+        "verdict_key": "AVOID",
+        "verdict_label": "PRELIMINARY — AVOID",
+        "verdict_emoji": "⚪",
+        "verdict_color": "#9E2B25",
+        "paragraph": "The strongest argument for Swara Baby Products is that only 38% is offer-for-sale, so most of the raise funds the business. Against it: the grey market premium is only 0%, so no listing pop is being priced in. Bidding has not opened yet, so this is a preliminary read that will move once QIB and grey-market numbers land. That is not enough to justify locking up money and taking listing risk here. Final call is yours.",
+        "one_liner": "PRELIMINARY — AVOID (GMP +0%)",
+        "preliminary": true,
+        "has_score": true,
+        "flags": [],
+        "components": [
+          {
+            "key": "gmp",
+            "label": "Grey market premium",
+            "raw_value": 0.0,
+            "normalised": 0.0,
+            "base_weight": 25.0,
+            "calibration_multiplier": 1.41,
+            "effective_weight": 35.25,
+            "contribution": 0.0,
+            "note": "+0.0% vs 40% for full credit (indicative) · calibrated ×1.41 on 85% (n=26)"
+          }
+        ],
+        "modifiers": [
+          "PRELIMINARY — bidding data not published yet"
+        ],
+        "strongest_for": "only 38% is offer-for-sale, so most of the raise funds the business",
+        "strongest_against": "the grey market premium is only 0%, so no listing pop is being priced in",
+        "created_at": "2026-11-27T04:38:34.456789+00:00"
       },
       "flags": [],
       "delta": null
@@ -1176,17 +1278,17 @@
   "expert_coverage": [
     {
       "expert": "Anil Singhvi",
-      "queried": 3,
+      "queried": 4,
       "calls": 0,
-      "noView": 3,
+      "noView": 4,
       "unreachable": 2,
       "droppedNoUrl": 0
     },
     {
       "expert": "Sandeep Jain",
-      "queried": 3,
+      "queried": 4,
       "calls": 0,
-      "noView": 3,
+      "noView": 4,
       "unreachable": 2,
       "droppedNoUrl": 0
     }
@@ -1289,6 +1391,34 @@
           ]
         }
       ]
+    },
+    {
+      "ipoSlug": "swara-baby-products",
+      "ipo_slug": "swara-baby-products",
+      "ipoName": "Swara Baby Products",
+      "reachable": true,
+      "expertsChecked": 2,
+      "expertsTotal": 2,
+      "routes": [
+        {
+          "expert": "Anil Singhvi",
+          "reachable": true,
+          "via": null,
+          "answeredRoutes": [
+            "Google News RSS"
+          ],
+          "quietRoutes": []
+        },
+        {
+          "expert": "Sandeep Jain",
+          "reachable": true,
+          "via": null,
+          "answeredRoutes": [
+            "Google News RSS"
+          ],
+          "quietRoutes": []
+        }
+      ]
     }
   ],
   "source_status": [
@@ -1307,7 +1437,7 @@
     {
       "source": "singhvi",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 1/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/4, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1319,11 +1449,11 @@
         },
         {
           "route": "Google News RSS",
-          "attempted": 3,
-          "answered": 1,
+          "attempted": 4,
+          "answered": 2,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 1/3, no matching item"
+          "reason": "responded 2/4, no matching item"
         },
         {
           "route": "DuckDuckGo",
@@ -1338,7 +1468,7 @@
     {
       "source": "sandeep_jain",
       "ok": true,
-      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 1/3, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
+      "reason": "zeebiz search: HTTP 404 — route dropped after 3 in a row; Google News RSS: responded 2/4, no matching item; DuckDuckGo: responded, nothing in the result set — route dropped after 3 in a row",
       "routes": [
         {
           "route": "zeebiz search",
@@ -1350,11 +1480,11 @@
         },
         {
           "route": "Google News RSS",
-          "attempted": 3,
-          "answered": 1,
+          "attempted": 4,
+          "answered": 2,
           "hits": 0,
           "dropped": false,
-          "reason": "responded 1/3, no matching item"
+          "reason": "responded 2/4, no matching item"
         },
         {
           "route": "DuckDuckGo",
